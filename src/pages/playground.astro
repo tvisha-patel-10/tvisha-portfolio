@@ -1,0 +1,141 @@
+---
+import BaseLayout from "../layouts/baseLayout.astro";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Playground — Tvisha Patel</title>
+        <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+        <link rel="stylesheet" href="/src/css/main.css" />
+        <link rel="stylesheet" href="/src/css/playground.css" />
+    </head>
+
+    <body>
+        <div class="page">
+            <BaseLayout
+                title="Playground — Tvisha Patel"
+                currentPage="playground"
+            >
+                <section class="playground-intro wrap">
+                    <h1 class="page-heading">Playground</h1>
+                    <p class="lede">
+                        Some fun experiments I’ve been making in my free time.
+                    </p>
+                </section>
+
+                <section class="playground-grid wrap">
+                    <article class="play-card">
+                        <div
+                            class="placeholder"
+                            role="img"
+                            aria-label="Hue Hunt placeholder"
+                        >
+                        </div>
+                        <div class="play-card-copy">
+                            <h2>Hue Hunt</h2>
+                            <p>Fun game testing your color matching skills</p>
+                        </div>
+                    </article>
+
+                    <article class="play-card">
+                        <div
+                            class="placeholder"
+                            role="img"
+                            aria-label="Digital name card placeholder"
+                        >
+                        </div>
+                        <div class="play-card-copy">
+                            <h2>Digital name card</h2>
+                            <p>Interactive name card to get to know me more!</p>
+                        </div>
+                    </article>
+
+                    <article class="play-card">
+                        <div
+                            class="placeholder"
+                            role="img"
+                            aria-label="Piano Pal placeholder"
+                        >
+                        </div>
+                        <div class="play-card-copy">
+                            <h2>Piano Pal</h2>
+                            <p>
+                                I used to be in winter percussion as a synth
+                                player, so chords were EVERYTHING. I built this
+                                to get back into my prime chording times
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="play-card">
+                        <div
+                            class="placeholder"
+                            role="img"
+                            aria-label="Shower thoughts generator placeholder"
+                        >
+                        </div>
+                        <div class="play-card-copy">
+                            <h2>Shower thoughts generator</h2>
+                            <p>
+                                I’m always having shower thoughts....even out of
+                                the shower. Use this to have your next
+                                introspective thought
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="play-card">
+                        <div
+                            class="placeholder"
+                            role="img"
+                            aria-label="Pixel art canvas placeholder"
+                        >
+                        </div>
+                        <div class="play-card-copy">
+                            <h2>Pixel art canvas</h2>
+                            <p>
+                                Pixel art has the best learning curve to cool
+                                art ratio imo, so I made this quick editor to
+                                have some fun with!
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="play-card">
+                        <div
+                            class="placeholder"
+                            role="img"
+                            aria-label="Minecraft build ideas placeholder"
+                        >
+                        </div>
+                        <div class="play-card-copy">
+                            <h2>Minecraft build ideas</h2>
+                            <p>
+                                Sometimes idk what to build next in my Minecraft
+                                world...so I made something that will give me
+                                ideas
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="play-card">
+                        <div
+                            class="placeholder"
+                            role="img"
+                            aria-label="App in the making placeholder"
+                        >
+                        </div>
+                        <div class="play-card-copy">
+                            <h2>An app in the making 👀</h2>
+                            <p>Coming soon...</p>
+                        </div>
+                    </article>
+                </section>
+            </BaseLayout>
+        </div>
+        <div class="copy-toast" role="status">Email copied</div>
+    </body>
+</html>

@@ -1,0 +1,57 @@
+.playground-intro {
+    padding-top: clamp(1.5rem, 4vw, 4.4rem);
+    padding-bottom: var(--space-40);
+}
+
+.playground-intro .page-heading {
+    margin-bottom: var(--space-12);
+}
+
+.playground-intro .lede {
+    max-width: 58rem;
+}
+
+.playground-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-40);
+    padding-bottom: var(--space-80);
+}
+
+.play-card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-20);
+    color: inherit;
+}
+
+.play-card .placeholder {
+    height: 203px;
+    transition: transform var(--transition);
+}
+
+.play-card-copy {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+}
+
+.play-card h2 {
+    font-size: var(--text-title);
+    font-weight: 700;
+}
+
+.play-card p {
+    font-size: var(--text-body);
+    font-weight: 500;
+}
+
+.play-card:hover h2 {
+    color: var(--color-accent);
+}
+
+@media (max-width: 800px) {
+    .playground-grid {
+        grid-template-columns: 1fr;
+    }
+}

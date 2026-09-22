@@ -1,0 +1,177 @@
+---
+interface Props {
+    title: string;
+    currentPage?: "home" | "about" | "playground";
+}
+
+const { title, currentPage = "home" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{title}</title>
+        <link rel="icon" href="public/portfolio-favicon.webp" />
+        <link rel="stylesheet" href="/src/css/main.css" />
+
+        <style>
+            .copy-toast {
+                position: fixed;
+                right: 24px;
+                bottom: 24px;
+                z-index: 50;
+                padding: 10px 16px;
+                width: fit-content;
+                border-radius: 8px;
+                background: rgba(17, 17, 17, 0.92);
+                color: white;
+                font-size: 0.85rem;
+                line-height: 1;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(8px);
+                transition:
+                    opacity 0.2s ease,
+                    transform 0.2s ease,
+                    visibility 0.2s ease;
+            }
+
+            .copy-toast.visible {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="page">
+            <header class="site-header">
+                <div class="header-wrap">
+                    <a class="logo" href="/" aria-label="Tvisha Patel home">
+                        <img src="src/images/computer-image.svg" alt="" />
+                    </a>
+                    <button
+                        class="nav-toggle"
+                        type="button"
+                        aria-label="Open menu"
+                    >
+                        <span></span>
+                    </button>
+                    <nav class="site-nav">
+                        <a
+                            href="/"
+                            class={currentPage === "home" ? "is-active" : ""}
+                            >Home</a
+                        >
+                        <a
+                            href="/about"
+                            class={currentPage === "about" ? "is-active" : ""}
+                            >About</a
+                        >
+                        <a
+                            href="/playground"
+                            class={currentPage === "playground"
+                                ? "is-active"
+                                : ""}>Playground</a
+                        >
+                    </nav>
+                </div>
+            </header>
+
+            <main>
+                <slot />
+            </main>
+
+            <footer class="site-footer">
+                <div class="wrap">
+                    <div class="footer-brand">
+                        <p>Tvisha Patel</p>
+                        <img src="src/images/computer-image-light.svg" alt="" />
+                    </div>
+                    <div class="footer-row">
+                        <div class="footer-links">
+                            <a
+                                class="dotted-link"
+                                href="https://www.linkedin.com/in/tvishapatel-10/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                LinkedIn
+                                <span class="icon" aria-hidden="true"
+                                    ><img
+                                        src="src/icons/arrow-up-right-light.svg"
+                                        alt=""
+                                    /></span
+                                >
+                            </a>
+                            <span>/</span>
+                            <a
+                                class="dotted-link"
+                                href="mailto:tvishapatel0@gmail.com?subject=Let's chat"
+                            >
+                                Book a time
+                                <span class="icon" aria-hidden="true"
+                                    ><img
+                                        src="src/icons/arrow-up-right-light.svg"
+                                        alt=""
+                                    /></span
+                                >
+                            </a>
+                            <span>/</span>
+                            <button
+                                class="copy-email"
+                                type="button"
+                                data-copy="tvishapatel0@gmail.com"
+                                aria-label="Copy email address"
+                            >
+                                <span class="email-text"
+                                    >tvishapatel0@gmail.com</span
+                                >
+                                <span class="icon" aria-hidden="true"
+                                    ><img
+                                        src="/src/icons/copy.svg"
+                                        alt=""
+                                    /></span
+                                >
+                            </button>
+                        </div>
+                        <p class="footer-note">Designed and coded by me</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <div class="copy-toast" role="status">Email copied</div>
+    </body>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const buttons = document.querySelectorAll(".copy-email");
+            const toast = document.querySelector(".copy-toast");
+
+            buttons.forEach((button) => {
+                button.addEventListener("click", async () => {
+                    const text = (button as HTMLButtonElement).dataset.copy;
+
+                    if (!text) return;
+
+                    try {
+                        await navigator.clipboard.writeText(text);
+
+                        if (toast) {
+                            toast.textContent = "Email copied";
+                            toast.classList.add("visible");
+                            setTimeout(
+                                () => toast.classList.remove("visible"),
+                                2000,
+                            );
+                        }
+                    } catch (error) {
+                        console.error("Copy failed:", error);
+                    }
+                });
+            });
+        });
+    </script>
+</html>

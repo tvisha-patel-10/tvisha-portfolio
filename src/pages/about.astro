@@ -1,0 +1,322 @@
+---
+import BaseLayout from "../layouts/baseLayout.astro";
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>About — Tvisha Patel</title>
+        <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+        <link rel="stylesheet" href="/src/css/main.css" />
+        <link rel="stylesheet" href="/src/css/about.css" />
+    </head>
+
+    <body>
+        <div class="page">
+            <BaseLayout title="About — Tvisha Patel" currentPage="about">
+                <section class="about-hero wrap">
+                    <div class="about-copy">
+                        <h1 class="page-heading">
+                            Welcome to my corner of the internet
+                        </h1>
+                        <p class="lede">
+                            I’m Tvisha, it’s nice to meet you (sorta)!
+                            Currently, I’m leading design at Strawberry.me,
+                            helping consumers get the career coaching to change
+                            their lives
+                        </p>
+                        <p class="lede">
+                            When I’m not designing, you can find me playing
+                            Minecraft, petting my family’s cat, hosting
+                            community events in the Bay, or you might not find
+                            me because I’m traveling and trying new food :b
+                        </p>
+                        <div class="about-actions">
+                            <a
+                                class="btn"
+                                href="https://drive.google.com/file/d/1iGJitbl__3uw8Sq7sjBv0e-dSwgS7pjQ/view?usp=sharing"
+                                target="_blank"
+                                rel="noopener noreferrer">Resume</a
+                            >
+                            <a class="btn" href="mailto:tvishapatel0@gmail.com"
+                                >Email</a
+                            >
+                        </div>
+                    </div>
+                    <div class="about-photo">
+                        <div
+                            class="placeholder about-photo-main"
+                            role="img"
+                            aria-label="Portrait placeholder"
+                        >
+                            <img
+                                src="/src/images/profilepic.webp"
+                                style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px"
+                                alt=""
+                            />
+                        </div>
+                        <div
+                            class="about-photo-cat"
+                            role="img"
+                            aria-label="Photo of my cat"
+                        >
+                            <img src="/src/images/king.webp" alt="" />
+                        </div>
+                        <div class="cat-note" aria-hidden="true">
+                            <div class="cat-note-arrows">
+                                <img src="/src/icons/cat-arrow.svg" alt="" />
+                                <img
+                                    src="/src/icons/cat-arrow-head.svg"
+                                    alt=""
+                                />
+                            </div>
+                            <span>proof of cat</span>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="facts wrap">
+                    <div>
+                        <h2 class="section-heading">What I’m up to</h2>
+                        <p>
+                            Trying to get to 30 mins straight on the
+                            stair-master at the gym
+                        </p>
+                        <p>Building an app...coming soon 👀</p>
+                    </div>
+                    <div>
+                        <h2 class="section-heading">What I love</h2>
+                        <p>
+                            Sunset pics, c a t, trying new food, hosting
+                            community events
+                        </p>
+                        <p>Using funky stickers in Slack</p>
+                    </div>
+                    <!-- <div>
+                        <iframe
+                            data-testid="embed-iframe"
+                            style="border-radius:12px"
+                            src="https://open.spotify.com/embed/track/6MFSqc8pzXlwfzXqWZEKd4?utm_source=generator&theme=0&si=58541b6e1ab144d8"
+                            width="100%"
+                            height="152"
+                            frameBorder="0"
+                            allowfullscreen=""
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy"></iframe>
+                    </div> -->
+                    <div>
+                        <h2 class="section-heading">Favorite song right now</h2>
+
+                        <div class="music-player">
+                            <!-- The automated injection frame is managed entirely by JavaScript -->
+                            <div id="player-container"></div>
+
+                            <!-- Interactive Turntable Component -->
+                            <div
+                                class="turntable-wrapper"
+                                id="turntable"
+                                title="Play 'petal'"
+                            >
+                                <!-- Tonearm Assembly -->
+                                <div class="tonearm" id="tonearm">
+                                    <div class="tonearm-base"></div>
+                                    <div class="tonearm-stick">
+                                        <div class="needle"></div>
+                                    </div>
+                                </div>
+
+                                <div class="record-disc" id="record">
+                                    <!-- Subtle radial sheen to make it look semi-transparent and clear -->
+                                    <div class="vinyl-body"></div>
+                                    <div class="grooves-overlay"></div>
+                                    <div class="glare-effect"></div>
+
+                                    <!-- Center Label featuring the custom flower artwork sticker -->
+                                    <div class="center-label">
+                                        <img
+                                            src="/src/images/petals_in_pavement.webp"
+                                            alt="Center Flowers"
+                                            class="flower-sticker"
+                                        />
+                                        <div class="center-hole"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Track Information Block -->
+                            <div class="track-info">
+                                <h1 class="track-title">big feelings</h1>
+                                <p class="track-artist">Ariana Grande</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="wild wrap">
+                    <h2 class="section-heading">Tvisha in the wild</h2>
+                    <div class="wild-grid">
+                        <div
+                            class="placeholder"
+                            role="img"
+                            aria-label="Photo placeholder"
+                        >
+                        </div>
+                        <div
+                            class="placeholder"
+                            role="img"
+                            aria-label="Photo placeholder"
+                        >
+                        </div>
+                        <div
+                            class="placeholder wild-tall"
+                            role="img"
+                            aria-label="Photo placeholder"
+                        >
+                        </div>
+                        <div
+                            class="placeholder wild-wide"
+                            role="img"
+                            aria-label="Photo placeholder"
+                        >
+                        </div>
+                        <div
+                            class="placeholder"
+                            role="img"
+                            aria-label="Photo placeholder"
+                        >
+                        </div>
+                        <div
+                            class="placeholder"
+                            role="img"
+                            aria-label="Photo placeholder"
+                        >
+                        </div>
+                        <div
+                            class="placeholder"
+                            role="img"
+                            aria-label="Photo placeholder"
+                        >
+                        </div>
+                        <div
+                            class="placeholder"
+                            role="img"
+                            aria-label="Photo placeholder"
+                        >
+                        </div>
+                    </div>
+                </section>
+            </BaseLayout>
+        </div>
+        <div class="copy-toast" role="status">Email copied</div>
+        <script>
+            // Declare active playback states across global bindings
+            let isPlaying = false;
+            let player: any = null;
+
+            const turntable = document.getElementById("turntable");
+
+            // ==========================================
+            // INPUT YOUR YOUTUBE URL OR VIDEO ID HERE
+            // ==========================================
+            const youtubeSource = "https://www.youtube.com/watch?v=FXultmvqvyA";
+
+            function getYoutubeId(url: string) {
+                const match = url.match(
+                    /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&?]+)/,
+                );
+                return match ? match[1] : null;
+            }
+
+            const youtubeId = getYoutubeId(youtubeSource);
+
+            // Safely mount and asynchronously load the external YouTube SDK pipeline
+            function loadYoutubeAPI() {
+                if (!youtubeId) return;
+
+                // Check if script is already rendered globally
+                if (!window.hasOwnProperty("YT")) {
+                    const tag = document.createElement("script");
+                    tag.src = "https://www.youtube.com/iframe_api";
+
+                    // FIX: Added explicit [0] index to target the actual script element in the collection
+                    const firstScriptTag =
+                        document.getElementsByTagName("script")[0];
+                    if (firstScriptTag && firstScriptTag.parentNode) {
+                        firstScriptTag.parentNode.insertBefore(
+                            tag,
+                            firstScriptTag,
+                        );
+                    } else {
+                        // Fallback if no script tag exists inside the head structure yet
+                        document.head.appendChild(tag);
+                    }
+                }
+
+                // Assign global initialization lifecycle hook
+                (window as any).onYouTubeIframeAPIReady = () => {
+                    player = new (window as any).YT.Player("player-container", {
+                        height: "0",
+                        width: "0",
+                        videoId: youtubeId,
+                        playerVars: {
+                            playsinline: 1,
+                            controls: 0,
+                            disablekb: 1,
+                            enablejsapi: 1,
+                        },
+                        events: {
+                            onStateChange: onPlayerStateChange,
+                            onError: (e: any) =>
+                                console.error("YouTube Player Error:", e),
+                        },
+                    });
+                };
+            }
+
+            // Handle cross-window message data notifications automatically
+            function onPlayerStateChange(event: any) {
+                // State 0 indicates the track payload finished playing natively
+                if (event.data === 0) {
+                    setPlaybackState(false);
+                }
+            }
+
+            // Handle synchronized UI mutations smoothly
+            function setPlaybackState(play: boolean) {
+                if (!turntable) return;
+
+                // Fail-safe protection layer: If player isn't fully initialized by the API yet, skip commands
+                if (!player || typeof player.playVideo !== "function") {
+                    console.warn(
+                        "YouTube API is still initializing. Please wait a moment.",
+                    );
+                    return;
+                }
+
+                isPlaying = play;
+
+                if (isPlaying) {
+                    turntable.classList.add("playing");
+                    turntable.title = "Pause 'petal'";
+                    player.playVideo();
+                } else {
+                    turntable.classList.remove("playing");
+                    turntable.title = "Play 'petal'";
+                    player.pauseVideo();
+                }
+            }
+
+            // Bind interaction event streams
+            if (turntable) {
+                turntable.addEventListener("click", () => {
+                    setPlaybackState(!isPlaying);
+                });
+
+                // Boot sequence integration
+                loadYoutubeAPI();
+            }
+        </script>
+    </body>
+</html>

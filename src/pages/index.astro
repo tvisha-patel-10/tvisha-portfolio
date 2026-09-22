@@ -1,17 +1,143 @@
 ---
-
+import BaseLayout from "../layouts/baseLayout.astro";
 ---
 
+<!doctype html>
 <html lang="en">
 	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Tvisha Patel — Product Designer</title>
+		<link rel="icon" type="image/png" href="assets/images/favicon.png" />
+		<link rel="stylesheet" href="/src/css/main.css" />
+		<link rel="stylesheet" href="/src/css/home.css" />
 	</head>
+
 	<body>
-		<h1>Astro</h1>
+		<div class="page">
+			<BaseLayout title="Home — Tvisha Patel" currentPage="home">
+				<section class="hero wrap">
+					<h1 class="hero-title">Hey, I’m Tvisha</h1>
+					<p class="hero-tagline">
+						A product designer building purposeful and productive
+						experiences
+						<span class="sparkles">✧✶</span>
+					</p>
+					<p class="hero-role">
+						<span>Currently leading design at</span>
+						<a
+							href="https://strawberry.me"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							Strawberry.me
+							<span class="icon" aria-hidden="true">
+								<img
+									src="/src/icons/arrow-up-right.svg"
+									alt=""
+								/>
+							</span>
+						</a>
+						<span class="arr-note">($20M+ ARR)</span>
+					</p>
+					<a
+						class="scroll-cue"
+						href="#work"
+						aria-label="Scroll to work"
+					>
+						<img src="/src/icons/chevron.svg" alt="" />
+					</a>
+				</section>
+
+				<section class="stats wrap">
+					<div>
+						<p class="stat-value">$20M+ ARR</p>
+						<p class="stat-label">
+							Revenue contributed to through design decisions
+						</p>
+					</div>
+					<div>
+						<p class="stat-value">5M+</p>
+						<p class="stat-label">Users reached</p>
+					</div>
+					<div>
+						<p class="stat-value">3+</p>
+						<p class="stat-label">
+							Design systems built from scratch
+						</p>
+					</div>
+				</section>
+
+				<section class="work-list wrap" id="work">
+					<a class="work-card" href="">
+						<div class="work-card-copy">
+							<p class="eyebrow">
+								Strawberry.me | Founding Product Designer •
+								2024-present
+							</p>
+							<h2>
+								0→1 design for AI-assisted coaching platform |
+								$20M+ ARR
+							</h2>
+							<p>
+								Designing an AI-message draft workflow for
+								coaches that increased coach activation by X%
+								and client retention by 15%
+							</p>
+						</div>
+						<div
+							class="placeholder"
+							role="img"
+							aria-label="Strawberry.me case study image placeholder"
+						>
+						</div>
+					</a>
+
+					<a class="work-card" href="">
+						<div class="work-card-copy">
+							<p class="eyebrow">Betterhelp | 2023</p>
+							<h2>
+								Simplifying technical complexity for clients and
+								therapists
+							</h2>
+							<p>
+								Designed a 33% more streamlined user flow by
+								cutting unnecessary steps and friction,
+								increasing call efficiency by minimizing session
+								time lost to technical issues
+							</p>
+						</div>
+						<div
+							class="placeholder"
+							role="img"
+							aria-label="BetterHelp calls case study image placeholder"
+						>
+						</div>
+					</a>
+
+					<a class="work-card" href="">
+						<div class="work-card-copy">
+							<p class="eyebrow">Betterhelp | 2022</p>
+							<h2>
+								How I increased retention by 200% with a 47%
+								more effective dashboard
+							</h2>
+							<p>
+								Redesigned the mentor dashboard to look more
+								modern, have intuitive workflows, and be
+								consistent with the rest of the platform.
+							</p>
+						</div>
+						<div
+							class="placeholder"
+							role="img"
+							aria-label="BetterHelp dashboard case study image placeholder"
+						>
+						</div>
+					</a>
+				</section>
+			</BaseLayout>
+		</div>
+		<div class="copy-toast" role="status">Email copied</div>
 	</body>
 </html>

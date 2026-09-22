@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Geom:ital,wght@0,300..900;1,300..900&family=Gloria+Hallelujah&display=swap" rel="stylesheet');
+
+:root {
+    --color-bg: #fefdfb;
+    --color-text: #3b3636;
+    --color-ink: #000000;
+    --color-accent: #a13900;
+    --color-footer: #b75620;
+    --color-placeholder: #d9d9d9;
+    --color-cream: #fefdfb;
+
+    --font-display: 'Geom', sans-serif;
+    --font-body: "Figtree", sans-serif;
+    --font-hand: "Gloria Hallelujah", cursive;
+
+    --text-hero: clamp(3.5rem, 8.8vw, 8rem);
+    --text-title: clamp(1.75rem, 2.5vw, 2.25rem);
+    --text-section: clamp(1.5rem, 2.1vw, 1.875rem);
+    --text-body: clamp(1.125rem, 1.7vw, 1.5rem);
+    --text-nav: clamp(1.05rem, 1.6vw, 1.5rem);
+    --text-small: 1rem;
+
+    --space-4: 0.25rem;
+    --space-8: 0.5rem;
+    --space-12: 0.75rem;
+    --space-16: 1rem;
+    --space-20: 1.25rem;
+    --space-24: 1.5rem;
+    --space-32: 2rem;
+    --space-40: 2.5rem;
+    --space-48: 3rem;
+    --space-60: 3.75rem;
+    --space-80: 5rem;
+    --space-120: 7.5rem;
+
+    --page-pad: clamp(1.5rem, 4.2vw, 3.75rem);
+    --header-pad: clamp(1.25rem, 3.3vw, 2.94rem);
+    --content-max: 82.5625rem;
+    --header-max: 84.1875rem;
+    --radius-card: 16px;
+    --radius-btn: 4px;
+    --transition: 0.25s ease;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    font-weight: 500;
+    line-height: 1.35;
+    color: var(--color-text);
+    background: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: inherit;
+}
+
+.page {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrap {
+    width: min(var(--content-max), calc(100% - (var(--page-pad) * 2)));
+    margin-inline: auto;
+}
+
+.header-wrap {
+    width: min(var(--header-max), calc(100% - (var(--header-pad) * 2)));
+    margin-inline: auto;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.15;
+}
+
+.eyebrow {
+    font-family: var(--font-body);
+    font-size: var(--text-body);
+    font-weight: 500;
+    color: var(--color-accent);
+    line-height: 1.2;
+}
+
+.lede {
+    font-size: var(--text-body);
+    font-weight: 500;
+    color: var(--color-text);
+    line-height: 1.35;
+}
+
+.section-heading {
+    font-family: var(--font-body);
+    font-size: var(--text-section);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-text);
+}
+
+.page-heading {
+    font-family: var(--font-display);
+    font-size: var(--text-section);
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--color-accent);
+}
+
+.site-header {
+    padding-top: var(--space-32);
+    padding-bottom: var(--space-24);
+}
+
+.site-header .header-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-24);
+}
+
+.logo {
+    width: 66px;
+    height: 66px;
+    flex-shrink: 0;
+    transition: transform var(--transition);
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(2rem, 7vw, 6.25rem);
+}
+
+.site-nav a {
+    font-size: var(--text-nav);
+    font-weight: 600;
+    color: var(--color-ink);
+    position: relative;
+    transition: color var(--transition);
+}
+
+.site-nav a:hover,
+.site-nav a.is-active {
+    color: var(--color-accent);
+}
+
+.nav-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-toggle span,
+.nav-toggle span::before,
+.nav-toggle span::after {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--color-text);
+    position: relative;
+}
+
+.nav-toggle span::before,
+.nav-toggle span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+
+.nav-toggle span::before {
+    top: -6px;
+}
+
+.nav-toggle span::after {
+    top: 6px;
+}
+
+.placeholder {
+    background: var(--color-placeholder);
+    border-radius: var(--radius-card);
+    width: 100%;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 54px;
+    padding: 15px 30px;
+    background: var(--color-accent);
+    color: var(--color-cream);
+    font-size: var(--text-body);
+    font-weight: 500;
+    border-radius: var(--radius-btn);
+    transition: transform var(--transition), background var(--transition);
+}
+
+.btn:hover {
+    background: #8a3000;
+}
+
+.dotted-link {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-thickness: 12.5%;
+    text-underline-offset: 0.18em;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    display: inline-flex;
+}
+
+.icon img {
+    width: 24px;
+    height: 24px;
+}
+
+.inline-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    font-weight: 600;
+}
+
+.inline-link .icon {
+    margin-left: 2px;
+}
+
+.site-footer {
+    margin-top: auto;
+    background: var(--color-footer);
+    color: var(--color-cream);
+    padding: var(--space-60) 0 var(--space-60);
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-12);
+    margin-bottom: var(--space-32);
+}
+
+.footer-brand p {
+    font-family: var(--font-display);
+    font-size: var(--text-title);
+    font-weight: 700;
+    color: var(--color-cream);
+    line-height: 1;
+}
+
+.footer-brand img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+}
+
+.footer-row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: var(--space-16);
+    flex-wrap: wrap;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: var(--text-body);
+    font-weight: 500;
+}
+
+.footer-links a {
+    display: inline-flex;
+    align-items: center;
+    color: var(--color-cream);
+}
+
+.footer-links .dotted-link {
+    text-decoration-color: var(--color-cream);
+}
+
+.copy-email {
+    display: inline-flex;
+    font-size: var(--text-body);
+    font-weight: 500;
+    align-items: center;
+    gap: 4px;
+}
+
+.copy-email:hover,
+.footer-links a:hover {
+    opacity: 0.85;
+}
+
+.footer-note {
+    font-size: var(--text-small);
+    font-weight: 500;
+    margin-left: auto;
+}
+
+.copy-toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(12px);
+    background: var(--color-text);
+    color: var(--color-cream);
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    z-index: 20;
+}
+
+.copy-toast.is-visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.coming-soon {
+    padding: var(--space-80) 0 var(--space-120);
+}
+
+.coming-soon h1 {
+    font-size: var(--text-title);
+    margin-bottom: var(--space-12);
+}
+
+.coming-soon p {
+    font-size: var(--text-body);
+    margin-bottom: var(--space-32);
+}
+
+@media (max-width: 800px) {
+    .nav-toggle {
+        display: inline-flex;
+    }
+
+    .site-nav {
+        display: none;
+        position: absolute;
+        top: 108px;
+        right: var(--header-pad);
+        left: var(--header-pad);
+        background: var(--color-bg);
+        border: 1px solid rgba(59, 54, 54, 0.12);
+        border-radius: 12px;
+        padding: var(--space-20);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-16);
+        z-index: 10;
+        box-shadow: 0 12px 32px rgba(59, 54, 54, 0.08);
+    }
+
+    .site-header.is-open .site-nav {
+        display: flex;
+    }
+
+    .site-header {
+        position: relative;
+    }
+
+    .footer-note {
+        margin-left: 0;
+        width: 100%;
+    }
+}

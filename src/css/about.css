@@ -1,0 +1,417 @@
+.about-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.9fr);
+    gap: clamp(1.5rem, 3.5vw, 3rem);
+    align-items: start;
+    padding-top: clamp(1rem, 3vw, 2.75rem);
+    padding-bottom: var(--space-80);
+}
+
+.about-copy {
+    max-width: 47rem;
+    padding-top: clamp(3rem, 7vw, 7.75rem);
+}
+
+.about-copy .page-heading {
+    margin-bottom: var(--space-20);
+}
+
+.about-copy .lede+.lede {
+    margin-top: var(--space-20);
+}
+
+.about-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-20);
+    margin-top: var(--space-48);
+}
+
+.about-photo {
+    position: relative;
+    min-height: 28rem;
+}
+
+.about-photo-main {
+    width: min(100%, 547px);
+    margin-left: auto;
+    aspect-ratio: 3 / 4;
+}
+
+.about-photo-cat {
+    position: absolute;
+    width: min(48%, 260px);
+    aspect-ratio: 260 / 277;
+    left: -16%;
+    bottom: 0%;
+    border-radius: 0;
+}
+
+.cat-note {
+    position: absolute;
+    right: 30%;
+    bottom: 18%;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+.cat-note span {
+    font-family: var(--font-hand);
+    font-size: clamp(1.5rem, 2.4vw, 2.25rem);
+    color: var(--color-accent);
+    letter-spacing: -0.05em;
+    line-height: 1.23;
+    white-space: nowrap;
+}
+
+.cat-note-arrows {
+    display: flex;
+    align-items: center;
+    margin-right: 8px;
+}
+
+.cat-note-arrows img:first-child {
+    width: 67px;
+    height: auto;
+}
+
+.cat-note-arrows img:last-child {
+    width: 14px;
+    height: auto;
+    margin-left: -42px;
+    transform: rotate(89deg);
+}
+
+.facts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--space-40);
+    padding-bottom: var(--space-60);
+}
+
+.facts h2 {
+    font-family: var(--font-body);
+    font-size: var(--text-section);
+    font-weight: 600;
+    margin-bottom: var(--space-20);
+}
+
+.facts p {
+    font-size: var(--text-body);
+    font-weight: 500;
+}
+
+.facts p+p {
+    margin-top: var(--space-16);
+}
+
+/* Main Container Frame */
+.music-player {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    transform: scale(0.5);
+    transform-origin: top center;
+    margin-bottom: -110px
+}
+
+/* Turntable Clickable Region */
+.turntable-wrapper {
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    width: 256px;
+    height: 256px;
+}
+
+@media (min-width: 768px) {
+    .turntable-wrapper {
+        width: 320px;
+        height: 320px;
+    }
+}
+
+/* Tonearm Wrapper with Right-Top Axis Origin */
+.tonearm {
+    position: absolute;
+    z-index: 20;
+    top: -5%;
+    right: -10%;
+    width: 60%;
+    height: 15%;
+    pointer-events: none;
+    transform-origin: top right;
+    transform: rotate(10deg);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.turntable-wrapper.playing .tonearm {
+    transform: rotate(-22deg);
+    /* Swings deep onto the track layout */
+}
+
+@media (min-width: 640px) {
+    .tonearm {
+        top: -8%;
+        right: -15%;
+    }
+}
+
+/* Tonearm Structural Elements */
+.tonearm-base {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #d4d4d8;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transform: translate(50%, -50%);
+    border: 4px solid #18181b;
+    z-index: 10;
+}
+
+@media (min-width: 768px) {
+    .tonearm-base {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.tonearm-stick {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 90%;
+    height: 6px;
+    background-color: #e4e4e7;
+    border-radius: 9999px;
+    transform-origin: right;
+    transform: rotate(-12deg);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+@media (min-width: 640px) {
+    .tonearm-stick {
+        right: 15px;
+    }
+}
+
+@media (min-width: 768px) {
+    .tonearm-stick {
+        height: 8px;
+    }
+}
+
+.needle {
+    width: 14px;
+    height: 14px;
+    background-color: #3f3f46;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transform: translateX(-50%) rotate(12deg);
+}
+
+/* Clear / Cloudy White Pearl Vinyl Disc Structure */
+.record-disc {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+    animation: spin 5s linear infinite;
+    animation-play-state: paused;
+}
+
+.turntable-wrapper.playing .record-disc {
+    animation-play-state: running;
+}
+
+/* Milky / Pearl Clear Vinyl Material Styling Layer */
+.vinyl-body {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(232, 232, 241, 0.85) 0%, rgba(175, 175, 182, 0.7) 60%, rgba(135, 135, 143, 0.6) 100%);
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2px);
+}
+
+/* Sound Wave Groove Ring Multipliers */
+.grooves-overlay {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle, transparent 25%, rgba(255, 255, 255, 0.15) 26%, transparent 27%, transparent 40%, rgba(0, 0, 0, 0.08) 41%, transparent 42%, transparent 55%, rgba(255, 255, 255, 0.12) 56%, transparent 57%, transparent 70%, rgba(0, 0, 0, 0.1) 71%, transparent 72%, transparent 85%, rgba(255, 255, 255, 0.08) 86%, transparent 87%);
+}
+
+/* Translucent Surface Sheen Glare Reflection */
+.glare-effect {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.4) 0%, transparent 45%, transparent 55%, rgba(255, 255, 255, 0.15) 100%);
+}
+
+/* Center Center Flower Label Sticker Area */
+.center-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 32%;
+    height: 32%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flower-sticker {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(120%);
+    /* Custom monochrome daisy setting from artwork */
+}
+
+.center-hole {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #1e1e21;
+    /* Matches main room backdrop to look like a cutout */
+    border-radius: 50%;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.8);
+}
+
+/* Track Typography Formatting */
+.track-info {
+    margin-top: 28px;
+    text-align: center;
+    color: #f4f4f5;
+}
+
+.track-title {
+    font-family: (--var-font-display);
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: -0.025em;
+}
+
+.track-artist {
+    margin: 4px 0 0 0;
+    font-size: 0.95rem;
+    color: #a1a1aa;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* Rotation Automation Loop */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.wild {
+    padding-bottom: var(--space-80);
+}
+
+.wild h2 {
+    font-family: var(--font-body);
+    font-size: var(--text-section);
+    font-weight: 600;
+    margin-bottom: var(--space-32);
+}
+
+.wild-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-auto-rows: minmax(180px, 1fr);
+    gap: var(--space-16);
+}
+
+.wild-grid .placeholder {
+    min-height: 220px;
+    aspect-ratio: 1;
+}
+
+.wild-tall {
+    grid-row: span 2;
+    aspect-ratio: 420 / 879 !important;
+    min-height: 0;
+    height: 100%;
+}
+
+.wild-wide {
+    grid-column: span 2;
+    grid-row: span 2;
+    aspect-ratio: auto !important;
+    min-height: 0;
+    height: 100%;
+}
+
+@media (max-width: 960px) {
+    .about-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .about-copy {
+        padding-top: 0;
+        max-width: none;
+        order: 1;
+    }
+
+    .about-photo {
+        order: 0;
+        max-width: 420px;
+    }
+
+    .facts {
+        grid-template-columns: 1fr;
+        gap: var(--space-32);
+    }
+
+    .wild-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: auto;
+    }
+
+    .wild-tall,
+    .wild-wide {
+        grid-column: span 1;
+        grid-row: span 1;
+        aspect-ratio: 1 !important;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .about-actions,
+    .wild-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cat-note {
+        right: 0;
+        bottom: 10%;
+    }
+}
