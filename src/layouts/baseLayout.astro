@@ -146,6 +146,9 @@ const { title, currentPage = "home" } = Astro.props;
         <div class="copy-toast" role="status">Email copied</div>
     </body>
     <script>
+        import "../scripts/main.js";
+    </script>
+    <script>
         document.addEventListener("DOMContentLoaded", () => {
             const buttons = document.querySelectorAll(".copy-email");
             const toast = document.querySelector(".copy-toast");
