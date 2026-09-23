@@ -1,0 +1,730 @@
+---
+// src/layouts/CaseStudyLayout.astro
+const { frontmatter } = Astro.props;
+
+// Destructure frontmatter with defaults
+const {
+    title = "",
+    year = "",
+    subtitle = "",
+    heroImage = "",
+    role = "",
+    timeline = "",
+    team = [],
+    skills = [],
+    sections = [],
+} = frontmatter;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{title} | Portfolio</title>
+
+        <style is:global>
+            /* --- Google Fonts (matches rest of site) --- */
+            @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Geom:ital,wght@0,300..900;1,300..900&display=swap");
+
+            /* --- DESIGN TOKENS (customize these) --- */
+            :root {
+                --cs-bg: #ffffff;
+                --cs-text: #1a1a1a;
+                --cs-text-muted: #71717a;
+                --cs-border: rgba(0, 0, 0, 0.1);
+                --cs-accent: #6366f1;
+                --cs-callout-border: #b0b0b0;
+                --cs-font-display: "Geom", sans-serif;
+                --cs-font: "Figtree", sans-serif;
+            }
+
+            /* --- RESET --- */
+            *,
+            *::before,
+            *::after {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            body {
+                font-family: var(--cs-font);
+                background-color: var(--cs-bg);
+                color: var(--cs-text);
+                line-height: 1.6;
+            }
+
+            h1,
+            h2,
+            h3,
+            h4 {
+                font-family: var(--cs-font-display);
+            }
+
+            /* ================================================
+               MASTER 3-COLUMN GRID
+               sidebar (auto) | content (auto) | spacer (1fr)
+               ================================================ */
+            .cs-page {
+                min-height: 100vh;
+                padding: 0 1.5rem;
+            }
+
+            .cs-grid {
+                display: grid;
+                max-width: 1800px;
+                margin: 0 auto;
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+
+            @media (min-width: 768px) {
+                .cs-grid {
+                    grid-template-columns: auto auto 1fr;
+                    gap: 2rem;
+                }
+            }
+
+            /* ================================================
+               STICKY SIDEBAR
+               ================================================ */
+            .cs-sidebar {
+                padding: 3rem 0 0;
+                min-width: 160px;
+            }
+
+            @media (min-width: 768px) {
+                .cs-sidebar {
+                    position: sticky;
+                    top: 0;
+                    height: fit-content;
+                    padding: 3rem 0;
+                }
+            }
+
+            /* Back link */
+            .cs-back {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                color: var(--cs-text);
+                text-decoration: none;
+                font-size: 0.875rem;
+                font-weight: 500;
+                opacity: 0.5;
+                transition: opacity 0.2s ease;
+            }
+
+            .cs-back:hover {
+                opacity: 1;
+            }
+
+            .cs-back svg {
+                width: 18px;
+                height: 18px;
+            }
+
+            /* Scrollspy navigation */
+            .cs-nav {
+                margin-top: 2rem;
+                display: none;
+            }
+
+            @media (min-width: 768px) {
+                .cs-nav {
+                    display: block;
+                }
+            }
+
+            .cs-nav ul {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .cs-nav a {
+                color: var(--cs-text);
+                text-decoration: none;
+                font-size: 0.875rem;
+                opacity: 0.5;
+                transition:
+                    color 0.2s ease,
+                    opacity 0.2s ease;
+                cursor: pointer;
+                text-align: left;
+            }
+
+            .cs-nav a:hover {
+                opacity: 1;
+                color: var(--cs-text);
+            }
+
+            .cs-nav a.active {
+                opacity: 1;
+                color: var(--cs-text);
+            }
+
+            /* ================================================
+               MAIN CONTENT COLUMN
+               ================================================ */
+            .cs-content {
+                width: 100%;
+                max-width: 896px;
+                padding: 3rem 0;
+                display: flex;
+                flex-direction: column;
+                gap: 3rem;
+            }
+
+            @media (min-width: 768px) {
+                .cs-content {
+                    gap: 6rem;
+                }
+            }
+
+            @media (min-width: 1024px) {
+                .cs-content {
+                    max-width: 1024px;
+                }
+            }
+
+            /* Right spacer (empty, for visual balance) */
+            .cs-spacer {
+                display: none;
+            }
+
+            @media (min-width: 768px) {
+                .cs-spacer {
+                    display: block;
+                    padding: 3rem 0;
+                }
+            }
+
+            /* ================================================
+               HERO SECTION
+               ================================================ */
+            .cs-hero {
+                display: flex;
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .cs-hero-text {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            /* "ProjectName • Year" label */
+            .cs-hero-label {
+                font-size: 0.875rem;
+                font-weight: 500;
+                line-height: 1.4;
+                color: var(--cs-text);
+            }
+
+            /* Main heading (subtitle field) */
+            .cs-hero h1 {
+                font-size: 2.25rem;
+                line-height: 1.15;
+                font-weight: 600;
+                letter-spacing: -0.01em;
+            }
+
+            /* Hero image */
+            .cs-hero-image {
+                width: 100%;
+                aspect-ratio: 16 / 9;
+                border: 1px solid var(--cs-border);
+                overflow: hidden;
+            }
+
+            .cs-hero-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+                margin: 0;
+                border-radius: 0;
+            }
+
+            /* 4-column metadata row */
+            .cs-meta {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            @media (min-width: 768px) {
+                .cs-meta {
+                    flex-direction: row;
+                    gap: 3rem;
+                }
+            }
+
+            .cs-meta-item {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                flex: 1;
+            }
+
+            .cs-meta-item h4 {
+                font-size: 0.875rem;
+                font-weight: 600;
+                line-height: 1.4;
+                opacity: 1;
+            }
+
+            .cs-meta-item p {
+                font-size: 1rem;
+                line-height: 1.6;
+                margin: 0;
+            }
+
+            /* ================================================
+               SECTION STRUCTURE
+               ================================================ */
+            .cs-section {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            /* Section label (h4 — "Overview", "Market Research", etc.) */
+            .section-label {
+                font-size: 1.125rem;
+                font-weight: 600;
+                line-height: 1.4;
+                margin-bottom: 0.25rem;
+            }
+
+            /* Section heading (h2) */
+            .cs-section h2 {
+                font-size: 2rem;
+                line-height: 1.3;
+                font-weight: 600;
+                margin-bottom: -0.5rem;
+            }
+
+            /* Sub-heading (h3) */
+            .cs-section h3 {
+                font-size: 1.25rem;
+                line-height: 1.4;
+                font-weight: 600;
+            }
+
+            /* Body text */
+            .cs-section p {
+                font-size: 1.125rem;
+                line-height: 1.6;
+            }
+
+            /* Section divider */
+            .section-divider {
+                height: 1px;
+                width: 100%;
+                background-color: var(--cs-border);
+                margin: 4rem 0 2rem;
+            }
+
+            /* ================================================
+               UTILITY: MEDIA WITH SIDE CAPTION
+               60% media | 40% caption on desktop, stacked on mobile
+               ================================================ */
+            .media-with-caption {
+                width: 100%;
+                display: flex;
+                gap: 1.5rem;
+                align-items: center;
+                margin: 1rem 0;
+            }
+
+            .media-with-caption .media-content {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                width: 100%;
+            }
+
+            @media (min-width: 768px) {
+                .media-with-caption .media-content {
+                    grid-template-columns: 60% auto;
+                    align-items: end;
+                }
+            }
+
+            .media-with-caption .media-visual {
+                width: 100%;
+                border: 1px solid var(--cs-border);
+                overflow: hidden;
+            }
+
+            .media-with-caption .media-visual img,
+            .media-with-caption .media-visual video {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                display: block;
+                margin: 0;
+                border-radius: 0;
+            }
+
+            .media-with-caption .media-caption {
+                display: flex;
+                flex-direction: column;
+                height: fit-content;
+            }
+
+            .media-with-caption .media-caption h3 {
+                font-size: 0.875rem;
+                line-height: 1.4;
+                margin-top: 0.5rem;
+            }
+
+            /* Mobile: show caption above media */
+            .media-caption-mobile {
+                display: block;
+                padding-bottom: 1.5rem;
+            }
+
+            .media-caption-desktop {
+                display: none;
+            }
+
+            @media (min-width: 768px) {
+                .media-caption-mobile {
+                    display: none;
+                }
+
+                .media-caption-desktop {
+                    display: block;
+                }
+            }
+
+            /* ================================================
+               UTILITY: FULL-WIDTH MEDIA
+               ================================================ */
+            .full-width-media {
+                width: 100%;
+            }
+
+            .full-width-media img,
+            .full-width-media video {
+                width: 100%;
+                height: auto;
+                object-fit: contain;
+                display: block;
+                margin: 0;
+                border-radius: 0;
+            }
+
+            /* ================================================
+               UTILITY: CALLOUT / BLOCKQUOTE
+               ================================================ */
+            .callout {
+                font-style: italic;
+                padding: 0;
+                margin: 1.5rem 0;
+                padding-left: 1rem;
+                border-left: 2px solid var(--cs-callout-border);
+            }
+
+            .callout h3 {
+                font-size: 1.125rem;
+                line-height: 1.4;
+                font-weight: 600;
+            }
+
+            /* ================================================
+               UTILITY: MULTI-COLUMN CARDS
+               (Pain Points, Reflections, etc.)
+               ================================================ */
+            .column-cards {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                width: 100%;
+                margin-top: 0.5rem;
+            }
+
+            @media (min-width: 768px) {
+                .column-cards {
+                    flex-direction: row;
+                }
+            }
+
+            .column-card {
+                display: flex;
+                flex-direction: column;
+                gap: 0.25rem;
+                flex: 1;
+            }
+
+            .column-card h3 {
+                font-size: 1.125rem;
+                line-height: 1.4;
+                font-weight: 600;
+            }
+
+            .column-card p {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            /* ================================================
+               UTILITY GRIDS
+               ================================================ */
+            .grid-2 {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+                margin: 1.5rem 0;
+            }
+
+            .grid-3 {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
+                margin: 1.5rem 0;
+            }
+
+            .grid-4 {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+                margin: 1.5rem 0;
+            }
+
+            @media (min-width: 768px) {
+                .grid-4 {
+                    grid-template-columns: repeat(4, 1fr);
+                }
+            }
+
+            .grid-card {
+                background: #f8f8f8;
+                padding: 1.5rem;
+                border-radius: 8px;
+            }
+
+            /* ================================================
+               IMAGES & FIGMA EMBEDS (global resets)
+               ================================================ */
+            .cs-content img,
+            .cs-content video {
+                width: 100%;
+                height: auto;
+                border-radius: 0;
+                margin: 1rem 0;
+            }
+
+            .figma-container {
+                position: relative;
+                width: 100%;
+                padding-bottom: 56.25%; /* 16:9 */
+                height: 0;
+                margin: 1.5rem 0;
+            }
+
+            .figma-container iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 1px solid var(--cs-border);
+                border-radius: 0;
+            }
+
+            /* ================================================
+               MOBILE RESPONSIVE OVERRIDES
+               ================================================ */
+            @media (max-width: 767px) {
+                .cs-grid {
+                    grid-template-columns: 1fr;
+                    gap: 0;
+                }
+
+                .cs-sidebar {
+                    position: static;
+                    width: 100%;
+                    height: auto;
+                    padding: 3rem 0 0;
+                }
+
+                .cs-content {
+                    padding: 3rem 0;
+                }
+
+                .cs-hero h1 {
+                    font-size: 1.75rem;
+                }
+
+                .grid-2,
+                .grid-3 {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="cs-page">
+            <main class="cs-grid">
+                <!-- ======== SIDEBAR ======== -->
+                <aside class="cs-sidebar">
+                    <a href="/" class="cs-back">
+                        <svg
+                            focusable="false"
+                            aria-hidden="true"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20z"
+                                fill="currentColor"></path>
+                        </svg>
+                        Back
+                    </a>
+
+                    {
+                        sections.length > 0 && (
+                            <nav class="cs-nav">
+                                <ul>
+                                    {sections.map(
+                                        (s: { id: string; label: string }) => (
+                                            <li>
+                                                <a
+                                                    href={`#${s.id}`}
+                                                    class="nav-link"
+                                                >
+                                                    {s.label}
+                                                </a>
+                                            </li>
+                                        ),
+                                    )}
+                                </ul>
+                            </nav>
+                        )
+                    }
+                </aside>
+
+                <!-- ======== MAIN CONTENT ======== -->
+                <div class="cs-content">
+                    <!-- Hero -->
+                    <div class="cs-hero">
+                        <div class="cs-hero-text">
+                            <h4 class="cs-hero-label">
+                                {title}{year && <Fragment> • {year}</Fragment>}
+                            </h4>
+                            <h1>{subtitle}</h1>
+                        </div>
+
+                        {
+                            heroImage && (
+                                <div class="cs-hero-image">
+                                    <img
+                                        src={heroImage}
+                                        alt={`Project thumbnail for ${title}`}
+                                        loading="eager"
+                                    />
+                                </div>
+                            )
+                        }
+
+                        {
+                            (role ||
+                                timeline ||
+                                team.length > 0 ||
+                                skills.length > 0) && (
+                                <div class="cs-meta">
+                                    {role && (
+                                        <div class="cs-meta-item">
+                                            <h4>Role</h4>
+                                            <p>{role}</p>
+                                        </div>
+                                    )}
+                                    {timeline && (
+                                        <div class="cs-meta-item">
+                                            <h4>Timeline</h4>
+                                            <p>{timeline}</p>
+                                        </div>
+                                    )}
+                                    {team.length > 0 && (
+                                        <div class="cs-meta-item">
+                                            <h4>Team</h4>
+                                            <div>
+                                                {team.map((t: string) => (
+                                                    <p>{t}</p>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+                                    {skills.length > 0 && (
+                                        <div class="cs-meta-item">
+                                            <h4>Skills</h4>
+                                            <div>
+                                                {skills.map((s: string) => (
+                                                    <p>{s}</p>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
+                            )
+                        }
+                    </div>
+
+                    <!-- Content slot (markdown body injected here) -->
+                    <slot />
+                </div>
+
+                <!-- ======== RIGHT SPACER ======== -->
+                <div class="cs-spacer"></div>
+            </main>
+        </div>
+
+        <!-- ======== SCROLLSPY JS ======== -->
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                // Observe all <section> elements inside the content area
+                const sections = document.querySelectorAll(
+                    ".cs-content section",
+                );
+                const navLinks = document.querySelectorAll(".cs-nav .nav-link");
+
+                if (sections.length === 0 || navLinks.length === 0) return;
+
+                const observerOptions = {
+                    root: null,
+                    rootMargin: "-20% 0px -60% 0px",
+                    threshold: 0,
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            const currentId = entry.target.getAttribute("id");
+
+                            navLinks.forEach((link) => {
+                                if (
+                                    link.getAttribute("href") ===
+                                    `#${currentId}`
+                                ) {
+                                    link.classList.add("active");
+                                } else {
+                                    link.classList.remove("active");
+                                }
+                            });
+                        }
+                    });
+                }, observerOptions);
+
+                sections.forEach((section) => observer.observe(section));
+            });
+        </script>
+    </body>
+</html>

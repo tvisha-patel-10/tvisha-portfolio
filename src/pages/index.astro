@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/baseLayout.astro";
 
+import "../css/main.css";
 import "../css/home.css";
 ---
 
@@ -10,9 +11,11 @@ import "../css/home.css";
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Tvisha Patel — Product Designer</title>
-		<link rel="icon" type="image/png" href="assets/images/favicon.png" />
-		<link rel="stylesheet" href="/src/css/main.css" />
-		<link rel="stylesheet" href="/src/css/home.css" />
+		<link
+			rel="icon"
+			type="image/webp"
+			href="/portfolio-favicon.webp"
+		/>
 	</head>
 
 	<body>
@@ -35,7 +38,7 @@ import "../css/home.css";
 							Strawberry.me
 							<span class="icon" aria-hidden="true">
 								<img
-									src="/src/icons/arrow-up-right.svg"
+									src="/icons/arrow-up-right.svg"
 									alt=""
 								/>
 							</span>
@@ -47,7 +50,7 @@ import "../css/home.css";
 						href="#work"
 						aria-label="Scroll to work"
 					>
-						<img src="/src/icons/chevron.svg" alt="" />
+						<img src="/icons/chevron.svg" alt="" />
 					</a>
 				</section>
 
@@ -117,9 +120,9 @@ import "../css/home.css";
 						</div>
 					</a>
 
-					<a class="work-card" href="">
+					<a class="work-card" href="/case-studies/echokids">
 						<div class="work-card-copy">
-							<p class="eyebrow">Betterhelp | 2022</p>
+							<p class="eyebrow">EchoKids | 2022</p>
 							<h2>
 								How I increased retention by 200% with a 47%
 								more effective dashboard
@@ -133,7 +136,7 @@ import "../css/home.css";
 						<div
 							class="placeholder"
 							role="img"
-							aria-label="BetterHelp dashboard case study image placeholder"
+							aria-label="EchoKids case study image placeholder"
 						>
 						</div>
 					</a>
