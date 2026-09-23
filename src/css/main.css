@@ -3,9 +3,7 @@
 :root {
     --color-bg: #fefdfb;
     --color-text: #3b3636;
-    --color-ink: #000000;
     --color-accent: #a13900;
-    --color-footer: #b75620;
     --color-placeholder: #d9d9d9;
     --color-cream: #fefdfb;
 
@@ -175,7 +173,7 @@ h3 {
 .site-nav a {
     font-size: var(--text-nav);
     font-weight: 600;
-    color: var(--color-ink);
+    color: var(--color-text);
     position: relative;
     transition: color var(--transition);
 }
@@ -274,7 +272,7 @@ h3 {
 
 .site-footer {
     margin-top: auto;
-    background: var(--color-footer);
+    background: var(--color-accent);
     color: var(--color-cream);
     padding: var(--space-60) 0 var(--space-60);
 }
@@ -341,7 +339,7 @@ h3 {
 }
 
 .footer-note {
-    font-size: var(--text-small);
+    font-size: var(--text-body);
     font-weight: 500;
     margin-left: auto;
 }

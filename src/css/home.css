@@ -95,24 +95,51 @@
 
 .stats {
     display: grid;
-    grid-template-columns: 1.4fr 0.7fr 1fr;
-    gap: var(--space-24);
-    text-align: center;
+    grid-template-columns: minmax(100px, 0.8fr) repeat(3, minmax(0, 1.2fr));
+    gap: clamp(1.5rem, 3.5vw, 3.5rem);
+    align-items: start;
     margin-bottom: clamp(4rem, 8vw, 7.75rem);
+}
+
+.stat-impact {
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 0.25rem;
+}
+
+.impact-label {
+    font-family: var(--font-body);
+    font-size: var(--text-section);
+    font-weight: 700;
+    color: var(--color-text);
+    line-height: 1.2;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-8);
 }
 
 .stat-value {
     font-family: var(--font-display);
-    font-size: var(--text-title);
+    font-size: clamp(2rem, 3.8vw, 3rem);
     font-weight: 700;
     color: var(--color-accent);
-    margin-bottom: var(--space-20);
-    line-height: 1.15;
+    line-height: 1.1;
+    margin: 0;
 }
 
 .stat-label {
     font-size: var(--text-body);
     font-weight: 500;
+    color: var(--color-text);
+    line-height: 1.35;
+    max-width: 14ch;
+    margin: 0;
 }
 
 .work-list {
@@ -163,7 +190,13 @@
 @media (max-width: 800px) {
     .stats {
         grid-template-columns: 1fr;
-        gap: var(--space-40);
+        gap: var(--space-32);
+        text-align: center;
+    }
+
+    .stat-impact {
+        justify-content: center;
+        text-align: center;
     }
 
     .hero-role {
