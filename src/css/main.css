@@ -68,6 +68,8 @@ body {
 img {
     max-width: 100%;
     display: block;
+    image-rendering: auto;
+    image-rendering: smooth;
 }
 
 a {
@@ -268,74 +270,125 @@ h3 {
     margin-top: auto;
     background: var(--color-accent);
     color: var(--color-cream);
-    padding: var(--space-60) 0 var(--space-60);
+    padding: var(--space-40) 0;
 }
 
-.footer-brand {
+.footer-container {
     display: flex;
     align-items: center;
-    gap: var(--space-12);
-    margin-bottom: var(--space-32);
+    justify-content: space-between;
+    gap: var(--space-24);
+    flex-wrap: wrap;
 }
 
-.footer-brand p {
+.footer-col-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.footer-brand-title {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-name {
     font-family: var(--font-display);
-    font-size: var(--text-title);
-    font-weight: 700;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
     color: var(--color-cream);
     line-height: 1;
 }
 
-.footer-brand img {
-    width: 48px;
-    height: 48px;
+.footer-illustration {
+    width: 22px;
+    height: 22px;
     object-fit: contain;
+    display: inline-block;
 }
 
-.footer-row {
-    display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: var(--space-16);
-    flex-wrap: wrap;
+.footer-tagline {
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: rgba(254, 253, 251, 0.82);
+    letter-spacing: 0.01em;
 }
 
-.footer-links {
+.footer-heart {
+    font-family: var(--font-display), monospace;
+}
+
+.footer-col-nav {
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    font-size: var(--text-body);
+    gap: clamp(1.25rem, 2.5vw, 2.5rem);
+}
+
+.footer-col-nav a {
+    font-size: 0.95rem;
     font-weight: 500;
-}
-
-.footer-links a {
-    display: inline-flex;
-    align-items: center;
     color: var(--color-cream);
+    opacity: 0.65;
+    transition: opacity var(--transition), color var(--transition);
 }
 
-.footer-links .dotted-link {
-    text-decoration-color: var(--color-cream);
+.footer-col-nav a:hover {
+    opacity: 1;
 }
 
-.copy-email {
-    display: inline-flex;
-    font-size: var(--text-body);
-    font-weight: 500;
+.footer-col-actions {
+    display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 1.5rem;
 }
 
-.copy-email:hover,
-.footer-links a:hover {
-    opacity: 0.85;
-}
-
-.footer-note {
-    font-size: var(--text-body);
+.footer-pill-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 20px;
+    border: 1px solid rgba(254, 253, 251, 0.5);
+    border-radius: 9999px;
+    color: var(--color-cream);
+    font-size: 0.9rem;
     font-weight: 500;
-    margin-left: auto;
+    transition: background var(--transition), border-color var(--transition), opacity var(--transition);
+    white-space: nowrap;
+}
+
+.footer-pill-btn:hover {
+    background: rgba(254, 253, 251, 0.12);
+    border-color: rgba(254, 253, 251, 0.9);
+}
+
+.footer-pill-btn .pill-arrow {
+    display: inline-block;
+    transition: transform var(--transition);
+}
+
+.footer-pill-btn:hover .pill-arrow {
+    transform: translateX(3px);
+}
+
+.footer-social-icons {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.footer-icon-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-cream);
+    opacity: 0.65;
+    transition: opacity var(--transition), transform var(--transition);
+}
+
+.footer-icon-link:hover {
+    opacity: 1;
 }
 
 .copy-toast {
@@ -434,8 +487,41 @@ h3 {
         color: var(--color-accent);
     }
 
-    .footer-note {
-        margin-left: 0;
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: var(--space-24);
+    }
+
+    .footer-col-brand {
+        align-items: center;
+    }
+
+    .footer-col-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--space-20);
+    }
+
+    .footer-col-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: var(--space-16);
+    }
+}
+
+@media (max-width: 480px) {
+    .site-footer {
+        padding: var(--space-32) 0;
+    }
+
+    .footer-col-nav {
+        gap: var(--space-16);
+    }
+
+    .footer-pill-btn {
         width: 100%;
+        justify-content: center;
     }
 }

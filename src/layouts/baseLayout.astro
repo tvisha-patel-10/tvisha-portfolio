@@ -59,9 +59,24 @@ import "../css/main.css";
                         type="button"
                         aria-label="Open menu"
                     >
-                        <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
-                            <path class="line top-line" d="M4 8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-                            <path class="line bottom-line" d="M4 16H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
+                        <svg
+                            width="26"
+                            height="26"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                        >
+                            <path
+                                class="line top-line"
+                                d="M4 8H20"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"></path>
+                            <path
+                                class="line bottom-line"
+                                d="M4 16H20"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"></path>
                         </svg>
                     </button>
                     <nav class="site-nav">
@@ -90,59 +105,101 @@ import "../css/main.css";
             </main>
 
             <footer class="site-footer">
-                <div class="wrap">
-                    <div class="footer-brand">
-                        <p>Tvisha Patel</p>
-                        <img src="/images/computer-image-light.svg" alt="" />
+                <div class="wrap footer-container">
+                    <div class="footer-col-brand">
+                        <div class="footer-brand-title">
+                            <span class="footer-name">TVISHA PATEL</span>
+                            <img
+                                class="footer-illustration"
+                                src="/images/computer-image-light.svg"
+                                alt=""
+                            />
+                        </div>
+                        <p class="footer-tagline">
+                            designed & coded by me <span class="footer-heart"
+                                >{"<3"}</span>
+                        </p>
                     </div>
-                    <div class="footer-row">
-                        <div class="footer-links">
+
+                    <nav class="footer-col-nav" aria-label="Footer navigation">
+                        <a href="/">Work</a>
+                        <a href="/about">About</a>
+                        <a
+                            href="https://drive.google.com/file/d/1U0KnugFrKnuddKyfOS78fIj-DEqXQSOf/view?usp=sharing"
+                            target="_blank"
+                            rel="noopener noreferrer">Resume</a
+                        >
+                        <a
+                            href="mailto:tvishapatel0@gmail.com?subject=Let's chat"
+                            >Contact</a
+                        >
+                    </nav>
+
+                    <div class="footer-col-actions">
+                        <a
+                            class="footer-pill-btn"
+                            href="mailto:tvishapatel0@gmail.com?subject=Let's chat"
+                        >
+                            <span>Let's Chat!</span>
+                            <span class="pill-arrow" aria-hidden="true">→</span>
+                        </a>
+
+                        <div class="footer-social-icons">
                             <a
-                                class="dotted-link"
                                 href="https://www.linkedin.com/in/tvishapatel-10/"
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                aria-label="LinkedIn"
+                                class="footer-icon-link"
                             >
-                                LinkedIn
-                                <span class="icon" aria-hidden="true"
-                                    ><img
-                                        src="/icons/arrow-up-right-light.svg"
-                                        alt=""
-                                    /></span
+                                <svg
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
                                 >
+                                    <path
+                                        d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45c-.89 0-1.61.72-1.61 1.61 0 .88.72 1.6 1.61 1.6.88 0 1.6-.72 1.6-1.6 0-.89-.72-1.61-1.6-1.61Z"
+                                    ></path>
+                                </svg>
                             </a>
-                            <span>/</span>
                             <a
-                                class="dotted-link"
-                                href="mailto:tvishapatel0@gmail.com?subject=Let's chat"
+                                href="https://github.com/tvisha-patel-10"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="GitHub"
+                                class="footer-icon-link"
                             >
-                                Book a time
-                                <span class="icon" aria-hidden="true"
-                                    ><img
-                                        src="/icons/arrow-up-right-light.svg"
-                                        alt=""
-                                    /></span
+                                <svg
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
                                 >
+                                    <path
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"
+                                    ></path>
+                                </svg>
                             </a>
-                            <span>/</span>
-                            <button
-                                class="copy-email"
-                                type="button"
-                                data-copy="tvishapatel0@gmail.com"
-                                aria-label="Copy email address"
+                            <a
+                                href="mailto:tvishapatel0@gmail.com?subject=Let's chat"
+                                aria-label="Send email"
+                                class="footer-icon-link"
                             >
-                                <span class="email-text"
-                                    >tvishapatel0@gmail.com</span
+                                <svg
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
                                 >
-                                <span class="icon" aria-hidden="true"
-                                    ><img src="/icons/copy.svg" alt="" /></span
-                                >
-                            </button>
+                                    <path
+                                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"
+                                    ></path>
+                                </svg>
+                            </a>
                         </div>
-                        <p class="footer-note">
-                            a little corner of the internet i designed and coded
-                            {" <3"}
-                        </p>
                     </div>
                 </div>
             </footer>

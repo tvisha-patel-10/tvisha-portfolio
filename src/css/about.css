@@ -349,9 +349,26 @@
     gap: var(--space-16);
 }
 
-.wild-grid .placeholder {
+.wild-grid .placeholder,
+.wild-square {
     min-height: 220px;
     aspect-ratio: 1;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    background: var(--color-placeholder);
+}
+
+.wild-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: var(--radius-card);
+    image-rendering: auto;
+    image-rendering: smooth;
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .wild-tall {

@@ -294,17 +294,22 @@ import "../css/playground.css";
                     }
                 }
 
+                document.body.style.overflow = "hidden";
+
                 if (modalLoader) modalLoader.style.display = "flex";
-                if (modalIframe) {
-                    modalIframe.src = demoUrl;
-                    modalIframe.onload = () => {
-                        if (modalLoader) modalLoader.style.display = "none";
-                    };
-                }
 
                 modal?.classList.add("is-active");
                 modal?.setAttribute("aria-hidden", "false");
-                document.body.style.overflow = "hidden";
+
+                // Defer loading heavy iframe until after modal entrance completes to allow backdrop blur to render instantaneously
+                setTimeout(() => {
+                    if (modalIframe) {
+                        modalIframe.src = demoUrl;
+                        modalIframe.onload = () => {
+                            if (modalLoader) modalLoader.style.display = "none";
+                        };
+                    }
+                }, 200);
             }
 
             function closeModal() {
