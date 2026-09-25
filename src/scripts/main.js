@@ -7,6 +7,22 @@ if (navToggle && header) {
         const open = header.classList.toggle("is-open");
         navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     });
+
+    // Close when clicking any nav link
+    document.querySelectorAll(".site-nav a").forEach((link) => {
+        link.addEventListener("click", () => {
+            header.classList.remove("is-open");
+            navToggle.setAttribute("aria-label", "Open menu");
+        });
+    });
+
+    // Close when clicking outside header
+    document.addEventListener("click", (e) => {
+        if (!header.contains(e.target)) {
+            header.classList.remove("is-open");
+            navToggle.setAttribute("aria-label", "Open menu");
+        }
+    });
 }
 
 function showToast(message) {

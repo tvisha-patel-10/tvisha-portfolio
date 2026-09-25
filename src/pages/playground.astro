@@ -28,20 +28,34 @@ import "../css/playground.css";
                 </section>
 
                 <section class="playground-grid wrap">
-                    <article class="play-card">
+                    <article
+                        class="play-card"
+                        data-title="Hue Hunt"
+                        data-desc="Fun game testing your color matching skills"
+                        data-demo="https://tvisha-patel-10.github.io/hue-hunt/"
+                        data-github="https://github.com/tvisha-patel-10/hue-hunt"
+                    >
                         <div
                             class="placeholder"
                             role="img"
                             aria-label="Hue Hunt placeholder"
                         >
+                            <span class="launch-pill">Try demo ↗</span>
                         </div>
                         <div class="play-card-copy">
-                            <h2>Hue Hunt</h2>
+                            <div class="card-title-row">
+                                <h2>Hue Hunt</h2>
+                                <div class="code-link">Google Studio</div>
+                            </div>
                             <p>Fun game testing your color matching skills</p>
                         </div>
                     </article>
 
-                    <article class="play-card">
+                    <article
+                        class="play-card"
+                        data-title="Digital name card"
+                        data-desc="Interactive name card to get to know me more!"
+                    >
                         <div
                             class="placeholder"
                             role="img"
@@ -54,7 +68,11 @@ import "../css/playground.css";
                         </div>
                     </article>
 
-                    <article class="play-card">
+                    <article
+                        class="play-card"
+                        data-title="Piano Pal"
+                        data-desc="I used to be in winter percussion as a synth player, so chords were EVERYTHING. I built this to get back into my prime chording times"
+                    >
                         <div
                             class="placeholder"
                             role="img"
@@ -71,7 +89,11 @@ import "../css/playground.css";
                         </div>
                     </article>
 
-                    <article class="play-card">
+                    <article
+                        class="play-card"
+                        data-title="Shower thoughts generator"
+                        data-desc="I’m always having shower thoughts....even out of the shower. Use this to have your next introspective thought"
+                    >
                         <div
                             class="placeholder"
                             role="img"
@@ -88,7 +110,11 @@ import "../css/playground.css";
                         </div>
                     </article>
 
-                    <article class="play-card">
+                    <article
+                        class="play-card"
+                        data-title="Pixel art canvas"
+                        data-desc="Pixel art has the best learning curve to cool art ratio imo, so I made this quick editor to have some fun with!"
+                    >
                         <div
                             class="placeholder"
                             role="img"
@@ -105,7 +131,11 @@ import "../css/playground.css";
                         </div>
                     </article>
 
-                    <article class="play-card">
+                    <article
+                        class="play-card"
+                        data-title="Minecraft build ideas"
+                        data-desc="Sometimes idk what to build next in my Minecraft world...so I made something that will give me ideas"
+                    >
                         <div
                             class="placeholder"
                             role="img"
@@ -137,6 +167,176 @@ import "../css/playground.css";
                 </section>
             </BaseLayout>
         </div>
+
+        <!-- Interactive Experiment Modal -->
+        <div
+            id="demo-modal"
+            class="demo-modal"
+            aria-hidden="true"
+            role="dialog"
+            aria-modal="true"
+        >
+            <div class="demo-modal-backdrop" id="modal-backdrop"></div>
+            <div class="demo-modal-window">
+                <header class="demo-modal-header">
+                    <div class="demo-modal-title">
+                        <h3 id="modal-title">Experiment Title</h3>
+                        <p id="modal-desc">Experiment description</p>
+                    </div>
+                    <div class="demo-modal-actions">
+                        <a
+                            id="modal-open-new"
+                            href="#"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="modal-btn"
+                            title="Open full window"
+                        >
+                            Open full screen ↗
+                        </a>
+                        <a
+                            id="modal-github"
+                            href="#"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="modal-btn"
+                            title="View Source on GitHub"
+                        >
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                                stroke-linecap="round"
+                            >
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                                ></path>
+                            </svg>
+                        </a>
+                        <button
+                            type="button"
+                            class="modal-close-btn"
+                            id="modal-close"
+                            aria-label="Close modal"
+                        >
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2.5"
+                                stroke-linecap="round"
+                            >
+                                <line x1="18" y1="6" x2="6" y2="18"></line>
+                                <line x1="6" y1="6" x2="18" y2="18"></line>
+                            </svg>
+                        </button>
+                    </div>
+                </header>
+                <div class="demo-modal-body">
+                    <div class="modal-loader" id="modal-loader">
+                        <div class="spinner"></div>
+                        <p>Loading experiment...</p>
+                    </div>
+                    <iframe
+                        id="modal-iframe"
+                        src=""
+                        title="Experiment Preview"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+                    ></iframe>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const modal = document.getElementById("demo-modal");
+            const modalIframe = document.getElementById(
+                "modal-iframe",
+            ) as HTMLIFrameElement;
+            const modalTitle = document.getElementById("modal-title");
+            const modalDesc = document.getElementById("modal-desc");
+            const modalOpenNew = document.getElementById(
+                "modal-open-new",
+            ) as HTMLAnchorElement;
+            const modalGithub = document.getElementById(
+                "modal-github",
+            ) as HTMLAnchorElement;
+            const modalClose = document.getElementById("modal-close");
+            const modalBackdrop = document.getElementById("modal-backdrop");
+            const modalLoader = document.getElementById("modal-loader");
+
+            function openModal(card: HTMLElement) {
+                const demoUrl = card.dataset.demo;
+                if (!demoUrl) return; // If card has no live demo URL yet
+
+                const title = card.dataset.title || "Experiment";
+                const desc = card.dataset.desc || "";
+                const githubUrl = card.dataset.github;
+
+                if (modalTitle) modalTitle.textContent = title;
+                if (modalDesc) modalDesc.textContent = desc;
+
+                if (modalOpenNew) {
+                    modalOpenNew.href = demoUrl;
+                    modalOpenNew.style.display = "inline-flex";
+                }
+
+                if (modalGithub) {
+                    if (githubUrl) {
+                        modalGithub.href = githubUrl;
+                        modalGithub.style.display = "inline-flex";
+                    } else {
+                        modalGithub.style.display = "none";
+                    }
+                }
+
+                if (modalLoader) modalLoader.style.display = "flex";
+                if (modalIframe) {
+                    modalIframe.src = demoUrl;
+                    modalIframe.onload = () => {
+                        if (modalLoader) modalLoader.style.display = "none";
+                    };
+                }
+
+                modal?.classList.add("is-active");
+                modal?.setAttribute("aria-hidden", "false");
+                document.body.style.overflow = "hidden";
+            }
+
+            function closeModal() {
+                modal?.classList.remove("is-active");
+                modal?.setAttribute("aria-hidden", "true");
+                document.body.style.overflow = "";
+                if (modalIframe) {
+                    modalIframe.src = ""; // Stop audio/video/canvas execution
+                }
+            }
+
+            // Click play-card to launch
+            document
+                .querySelectorAll(".play-card[data-demo]")
+                .forEach((card) => {
+                    card.addEventListener("click", () =>
+                        openModal(card as HTMLElement),
+                    );
+                });
+
+            modalClose?.addEventListener("click", closeModal);
+            modalBackdrop?.addEventListener("click", closeModal);
+
+            document.addEventListener("keydown", (e) => {
+                if (
+                    e.key === "Escape" &&
+                    modal?.classList.contains("is-active")
+                ) {
+                    closeModal();
+                }
+            });
+        </script>
         <div class="copy-toast" role="status">Email copied</div>
     </body>
 </html>
