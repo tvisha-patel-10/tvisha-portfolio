@@ -3,9 +3,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-bottom: clamp(14rem, 20vw, 18.75rem);
     text-align: center;
-    min-height: 100vh;
+    /* Vertically centered hero with ~120px–175px (15–20%) of the first project card peeking above the fold */
+    min-height: calc(100vh - 122px - clamp(7.5rem, 16vh, 11rem));
+    min-height: calc(100svh - 122px - clamp(7.5rem, 16vh, 11rem));
+    padding-block: clamp(2rem, 5vh, 4rem);
 }
 
 .hero-title {
@@ -61,37 +63,6 @@
     font-size: var(--text-body);
     font-weight: 600;
     margin-left: -4px;
-}
-
-.scroll-cue {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    margin: clamp(3rem, 7vw, 7.5rem) auto var(--space-80);
-    width: 28px;
-    height: 28px;
-    animation: bounce 1.8s ease-in-out infinite;
-}
-
-.scroll-cue img {
-    width: 14px;
-    height: 10px;
-    margin: auto;
-}
-
-@keyframes bounce {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(8px);
-    }
 }
 
 .stats {
@@ -202,5 +173,9 @@
 
     .hero-role {
         font-size: var(--text-body);
+    }
+
+    .work-list {
+        gap: var(--space-32);
     }
 }

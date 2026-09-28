@@ -14,6 +14,57 @@ const {
     skills = [],
     sections = [],
 } = frontmatter;
+
+// All case studies in viewing order
+const allCaseStudies = [
+    {
+        title: "Strawberry.me",
+        slug: "strawberry",
+        role: "Founding Product Designer",
+        tagline: "0→1 design for AI-assisted coaching platform | $20M+ ARR",
+        year: "2024-present",
+        path: "/case-studies/strawberry",
+    },
+    {
+        title: "Strawberry.me AI",
+        slug: "strawberry-ai",
+        role: "Founding Product Designer",
+        tagline:
+            "AI message draft workflow for coaches | 60% → 92% follow-up rate",
+        year: "2025",
+        path: "/case-studies/strawberry-ai",
+    },
+    {
+        title: "BetterHelp",
+        slug: "betterhelp",
+        role: "Product Design Intern",
+        tagline:
+            "Simplifying technical complexity for clients and therapists | 33% efficiency",
+        year: "2023",
+        path: "/case-studies/betterhelp",
+    },
+    {
+        title: "EchoKids",
+        slug: "echokids",
+        role: "Product Design Intern",
+        tagline:
+            "How I increased retention by 200% with a 47% more effective dashboard",
+        year: "2022",
+        path: "/case-studies/echokids",
+    },
+];
+
+// Determine current study and next/prev
+const currentPath = Astro.url.pathname.replace(/\/$/, "");
+const currentIndex = allCaseStudies.findIndex((cs) =>
+    currentPath.endsWith(cs.slug),
+);
+const safeIndex = currentIndex !== -1 ? currentIndex : 0;
+const nextCaseStudy = allCaseStudies[(safeIndex + 1) % allCaseStudies.length];
+const prevCaseStudy =
+    allCaseStudies[
+        (safeIndex - 1 + allCaseStudies.length) % allCaseStudies.length
+    ];
 ---
 
 <!doctype html>
@@ -22,6 +73,7 @@ const {
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{title} | Portfolio</title>
+        <link rel="icon" href="/portfolio-favicon.webp" />
 
         <style is:global>
             /* --- Google Fonts (matches rest of site) --- */
@@ -46,6 +98,10 @@ const {
                 box-sizing: border-box;
                 margin: 0;
                 padding: 0;
+            }
+
+            html {
+                scroll-behavior: smooth;
             }
 
             body {
@@ -292,6 +348,7 @@ const {
                 display: flex;
                 flex-direction: column;
                 gap: 1rem;
+                scroll-margin-top: 3rem;
             }
 
             /* Section label (h4 — "Overview", "Market Research", etc.) */
@@ -321,6 +378,39 @@ const {
             .cs-section p {
                 font-size: 1.125rem;
                 line-height: 1.6;
+            }
+
+            .cs-section ul,
+            .cs-section ol {
+                padding-left: 1.5rem;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                font-size: 1.125rem;
+                line-height: 1.6;
+            }
+
+            .cs-section li {
+                margin: 0;
+            }
+
+            .cs-section a {
+                color: var(--cs-text);
+                text-decoration: underline;
+                text-underline-offset: 3px;
+                transition: opacity 0.2s ease;
+            }
+
+            .cs-section a:hover {
+                opacity: 0.7;
+            }
+
+            .cs-section code {
+                font-family: monospace;
+                background-color: #f3f4f6;
+                padding: 0.15rem 0.4rem;
+                border-radius: 4px;
+                font-size: 0.9em;
             }
 
             /* Section divider */
@@ -508,7 +598,30 @@ const {
             .grid-card {
                 background: #f8f8f8;
                 padding: 1.5rem;
-                border-radius: 8px;
+                border-radius: 4px;
+            }
+
+            .grid-card h3 {
+                font-size: 1.125rem;
+                line-height: 1.4;
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+            }
+
+            .grid-card p {
+                font-size: 1rem;
+                line-height: 1.6;
+                margin-bottom: 0.5rem;
+            }
+
+            .grid-card p:last-child {
+                margin-bottom: 0;
+            }
+
+            .grid-card ul {
+                font-size: 1rem;
+                line-height: 1.6;
+                padding-left: 1.25rem;
             }
 
             /* ================================================
@@ -568,6 +681,274 @@ const {
                 .grid-3 {
                     grid-template-columns: 1fr;
                 }
+            }
+
+            /* ================================================
+               CASE STUDY FOOTER & CTA SECTION
+               ================================================ */
+            .cs-footer {
+                margin-top: 2rem;
+                padding-top: 3.5rem;
+                border-top: 1px solid var(--cs-border);
+                display: flex;
+                flex-direction: column;
+                gap: 2.5rem;
+            }
+
+            .cs-footer-grid {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            @media (min-width: 768px) {
+                .cs-footer-grid {
+                    grid-template-columns: 1.15fr 0.85fr;
+                    gap: 2.5rem;
+                    align-items: stretch;
+                }
+            }
+
+            .cs-footer-connect {
+                background: #fbfbfb;
+                border: 1px solid var(--cs-border);
+                border-radius: 6px;
+                padding: 2.25rem 2rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 1.5rem;
+            }
+
+            .cs-footer-connect-text h3 {
+                font-size: 1.5rem;
+                font-weight: 600;
+                line-height: 1.3;
+                margin-bottom: 0.75rem;
+                letter-spacing: -0.01em;
+            }
+
+            .cs-footer-connect-text p {
+                font-size: 1rem;
+                line-height: 1.6;
+                color: #4b5563;
+                margin: 0;
+            }
+
+            .cs-footer-actions {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 0.875rem;
+                margin-top: 0.5rem;
+            }
+
+            .cs-btn-primary {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                background: #111111;
+                color: #ffffff;
+                font-size: 0.9rem;
+                font-weight: 600;
+                padding: 0.7rem 1.25rem;
+                border-radius: 6px;
+                text-decoration: none;
+                transition:
+                    transform 0.15s ease,
+                    background 0.15s ease;
+            }
+
+            .cs-btn-primary:hover {
+                background: #27272a;
+                transform: translateY(-1px);
+            }
+
+            .cs-btn-copy {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.45rem;
+                background: #ffffff;
+                color: #111111;
+                border: 1px solid var(--cs-border);
+                font-size: 0.9rem;
+                font-weight: 500;
+                padding: 0.65rem 1.1rem;
+                border-radius: 6px;
+                cursor: pointer;
+                transition:
+                    background 0.15s ease,
+                    border-color 0.15s ease;
+                font-family: inherit;
+            }
+
+            .cs-btn-copy:hover {
+                background: #f4f4f5;
+                border-color: #a1a1aa;
+            }
+
+            .cs-btn-copy svg {
+                width: 15px;
+                height: 15px;
+                opacity: 0.7;
+            }
+
+            .cs-social-link {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 38px;
+                height: 38px;
+                border-radius: 6px;
+                border: 1px solid var(--cs-border);
+                background: #ffffff;
+                color: #111111;
+                text-decoration: none;
+                transition:
+                    border-color 0.15s ease,
+                    transform 0.15s ease;
+            }
+
+            .cs-social-link:hover {
+                border-color: #71717a;
+                transform: translateY(-1px);
+            }
+
+            .cs-social-link svg {
+                width: 17px;
+                height: 17px;
+            }
+
+            /* Next Case Study Card */
+            .cs-next-card {
+                background: #ffffff;
+                border: 1px solid var(--cs-border);
+                border-radius: 6px;
+                padding: 2.25rem 2rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                text-decoration: none;
+                color: inherit;
+                transition:
+                    border-color 0.2s ease,
+                    transform 0.2s ease,
+                    box-shadow 0.2s ease;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .cs-next-card:hover {
+                border-color: #111111;
+                transform: translateY(-2px);
+                box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.08);
+            }
+
+            .cs-next-card-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 1.25rem;
+            }
+
+            .cs-next-badge {
+                font-size: 0.75rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+                color: #71717a;
+            }
+
+            .cs-next-arrow {
+                width: 32px;
+                height: 32px;
+                border-radius: 4px;
+                background: #f4f4f5;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.1rem;
+                transition:
+                    background 0.2s ease,
+                    transform 0.2s ease;
+            }
+
+            .cs-next-card:hover .cs-next-arrow {
+                background: #111111;
+                color: #ffffff;
+                transform: translateX(3px);
+            }
+
+            .cs-next-card-body h4 {
+                font-size: 1.35rem;
+                font-weight: 600;
+                line-height: 1.3;
+                margin-bottom: 0.5rem;
+                letter-spacing: -0.01em;
+            }
+
+            .cs-next-card-body p {
+                font-size: 0.95rem;
+                line-height: 1.5;
+                color: #52525b;
+                margin: 0;
+            }
+
+            .cs-next-card-footer {
+                margin-top: 1.5rem;
+                padding-top: 1rem;
+                border-top: 1px dashed var(--cs-border);
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 0.85rem;
+                color: #71717a;
+            }
+
+            /* Bottom quick bar: all projects & back to top */
+            .cs-footer-bottom {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                font-size: 0.875rem;
+                color: #71717a;
+                padding-top: 0.5rem;
+            }
+
+            .cs-footer-bottom a {
+                color: var(--cs-text);
+                text-decoration: none;
+                font-weight: 500;
+                transition: opacity 0.2s ease;
+            }
+
+            .cs-footer-bottom a:hover {
+                opacity: 0.7;
+            }
+
+            /* Copy Toast */
+            .cs-copy-toast {
+                position: fixed;
+                bottom: 24px;
+                right: 24px;
+                z-index: 100;
+                background: rgba(17, 17, 17, 0.92);
+                color: #ffffff;
+                padding: 10px 18px;
+                border-radius: 4px;
+                font-size: 0.85rem;
+                font-weight: 500;
+                opacity: 0;
+                transform: translateY(8px);
+                transition:
+                    opacity 0.2s ease,
+                    transform 0.2s ease;
+                pointer-events: none;
+            }
+
+            .cs-copy-toast.visible {
+                opacity: 1;
+                transform: translateY(0);
             }
         </style>
     </head>
@@ -680,6 +1061,100 @@ const {
 
                     <!-- Content slot (markdown body injected here) -->
                     <slot />
+
+                    <!-- ======== CASE STUDY FOOTER / CTA ======== -->
+                    <footer class="cs-footer">
+                        <div class="cs-footer-grid">
+                            <!-- Left: Thanks for reading & Connect -->
+                            <div class="cs-footer-connect">
+                                <div class="cs-footer-connect-text">
+                                    <h3>Thanks for reading! ✧</h3>
+                                    <p>
+                                        I specialize in 0→1 product design,
+                                        building trust into complex
+                                        workflows—from two-sided marketplaces to
+                                        high-reliability AI features. If you're
+                                        building something ambitious, let's
+                                        connect!
+                                    </p>
+                                </div>
+
+                                <div class="cs-footer-actions">
+                                    <a
+                                        href="mailto:tvishapatel0@gmail.com?subject=Let's chat"
+                                        class="cs-btn-primary"
+                                    >
+                                        <span>Let's Chat</span>
+                                        <span aria-hidden="true">→</span>
+                                    </a>
+
+                                    <a
+                                        href="https://www.linkedin.com/in/tvishapatel-10/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="cs-social-link"
+                                        aria-label="LinkedIn Profile"
+                                    >
+                                        <svg
+                                            viewBox="0 0 24 24"
+                                            fill="currentColor"
+                                        >
+                                            <path
+                                                d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45c-.89 0-1.61.72-1.61 1.61 0 .88.72 1.6 1.61 1.6.88 0 1.6-.72 1.6-1.6 0-.89-.72-1.61-1.6-1.61Z"
+                                            ></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Right: Next Case Study Card -->
+                            <a href={nextCaseStudy.path} class="cs-next-card">
+                                <div>
+                                    <div class="cs-next-card-header">
+                                        <span class="cs-next-badge"
+                                            >Next Case Study</span
+                                        >
+                                        <span
+                                            class="cs-next-arrow"
+                                            aria-hidden="true">→</span
+                                        >
+                                    </div>
+                                    <div class="cs-next-card-body">
+                                        <h4>{nextCaseStudy.title}</h4>
+                                        <p>{nextCaseStudy.tagline}</p>
+                                    </div>
+                                </div>
+
+                                <div class="cs-next-card-footer">
+                                    <span>{nextCaseStudy.role}</span>
+                                    <span>{nextCaseStudy.year}</span>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Footer bottom navigation -->
+                        <div class="cs-footer-bottom">
+                            <a href="/" class="cs-back-home">
+                                ← Back to all work
+                            </a>
+                            <a
+                                href="#"
+                                class="cs-back-top"
+                                onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"
+                            >
+                                Back to top ↑
+                            </a>
+                        </div>
+                    </footer>
+                </div>
+
+                <div
+                    id="csCopyToast"
+                    class="cs-copy-toast"
+                    role="status"
+                    aria-live="polite"
+                >
+                    Email copied to clipboard!
                 </div>
 
                 <!-- ======== RIGHT SPACER ======== -->
@@ -690,40 +1165,130 @@ const {
         <!-- ======== SCROLLSPY JS ======== -->
         <script>
             document.addEventListener("DOMContentLoaded", () => {
-                // Observe all <section> elements inside the content area
-                const sections = document.querySelectorAll(
-                    ".cs-content section",
+                const navLinks = Array.from(
+                    document.querySelectorAll(".cs-nav .nav-link"),
                 );
-                const navLinks = document.querySelectorAll(".cs-nav .nav-link");
 
-                if (sections.length === 0 || navLinks.length === 0) return;
+                if (navLinks.length === 0) return;
 
-                const observerOptions = {
-                    root: null,
-                    rootMargin: "-20% 0px -60% 0px",
-                    threshold: 0,
-                };
+                // Match each nav link to its target element in the document
+                const targets = navLinks
+                    .map((link) => {
+                        const href = link.getAttribute("href");
+                        if (!href || !href.startsWith("#")) return null;
+                        const id = href.slice(1);
+                        const el = document.getElementById(id);
+                        return el ? { link, el } : null;
+                    })
+                    .filter((item) => item !== null);
 
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach((entry) => {
-                        if (entry.isIntersecting) {
-                            const currentId = entry.target.getAttribute("id");
+                if (targets.length === 0) return;
 
-                            navLinks.forEach((link) => {
-                                if (
-                                    link.getAttribute("href") ===
-                                    `#${currentId}`
-                                ) {
-                                    link.classList.add("active");
-                                } else {
-                                    link.classList.remove("active");
-                                }
-                            });
+                function updateActiveLink() {
+                    const scrollPosition = window.scrollY;
+                    const windowHeight = window.innerHeight;
+                    const documentHeight =
+                        document.documentElement.scrollHeight;
+
+                    // If user is at or near the bottom of the page, activate the last section
+                    if (windowHeight + scrollPosition >= documentHeight - 60) {
+                        setActive(targets[targets.length - 1].link);
+                        return;
+                    }
+
+                    // A section is active when its top is at or above the threshold
+                    // (25% down the viewport, or at least 100px)
+                    const threshold = Math.max(100, windowHeight * 0.25);
+
+                    let currentTarget = targets[0];
+                    for (let i = 0; i < targets.length; i++) {
+                        const rect = targets[i].el.getBoundingClientRect();
+                        if (rect.top <= threshold) {
+                            currentTarget = targets[i];
+                        } else {
+                            break;
+                        }
+                    }
+
+                    setActive(currentTarget.link);
+                }
+
+                function setActive(activeLink) {
+                    navLinks.forEach((link) => {
+                        if (link === activeLink) {
+                            link.classList.add("active");
+                        } else {
+                            link.classList.remove("active");
                         }
                     });
-                }, observerOptions);
+                }
 
-                sections.forEach((section) => observer.observe(section));
+                // Initial calculation on page load
+                updateActiveLink();
+
+                // Smooth update on scroll using requestAnimationFrame
+                let ticking = false;
+                window.addEventListener(
+                    "scroll",
+                    () => {
+                        if (!ticking) {
+                            window.requestAnimationFrame(() => {
+                                updateActiveLink();
+                                ticking = false;
+                            });
+                            ticking = true;
+                        }
+                    },
+                    { passive: true },
+                );
+
+                // Update on window resize
+                window.addEventListener("resize", updateActiveLink, {
+                    passive: true,
+                });
+
+                // Instantly update active link on click
+                navLinks.forEach((link) => {
+                    link.addEventListener("click", () => {
+                        setActive(link);
+                    });
+                });
+
+                // Copy email functionality
+                const copyBtn = document.getElementById("csCopyEmailBtn");
+                const copyToast = document.getElementById("csCopyToast");
+                let toastTimer = null;
+
+                if (copyBtn && copyToast) {
+                    copyBtn.addEventListener("click", async () => {
+                        const email =
+                            copyBtn.getAttribute("data-email") ||
+                            "tvishapatel0@gmail.com";
+                        try {
+                            await navigator.clipboard.writeText(email);
+                            copyToast.classList.add("visible");
+                            clearTimeout(toastTimer);
+                            toastTimer = setTimeout(() => {
+                                copyToast.classList.remove("visible");
+                            }, 2200);
+                        } catch (err) {
+                            // Fallback for older browsers
+                            const textarea = document.createElement("textarea");
+                            textarea.value = email;
+                            textarea.style.position = "fixed";
+                            textarea.style.opacity = "0";
+                            document.body.appendChild(textarea);
+                            textarea.select();
+                            document.execCommand("copy");
+                            document.body.removeChild(textarea);
+                            copyToast.classList.add("visible");
+                            clearTimeout(toastTimer);
+                            toastTimer = setTimeout(() => {
+                                copyToast.classList.remove("visible");
+                            }, 2200);
+                        }
+                    });
+                }
             });
         </script>
     </body>

@@ -30,35 +30,52 @@
 }
 
 .play-card .placeholder {
-    height: 203px;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
     position: relative;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #ffffff !important;
     transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.play-card:hover .placeholder {
+.play-card .placeholder img,
+.play-card .placeholder video,
+.play-card-media {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.play-card[data-demo]:hover .placeholder {
     transform: translateY(-4px);
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
 }
 
 .launch-pill {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, calc(-50% + 4px));
+    z-index: 2;
     background: rgba(255, 255, 255, 0.95);
     color: var(--color-accent);
     padding: 8px 16px;
-    border-radius: 999px;
+    border-radius: 4px;
     font-size: 0.875rem;
     font-weight: 600;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transform: translateY(4px);
     opacity: 0.9;
     transition: transform 0.2s ease, opacity 0.2s ease, background 0.2s ease;
+    white-space: nowrap;
 }
 
 .play-card:hover .launch-pill {
-    transform: translateY(0);
+    transform: translate(-50%, -50%);
     opacity: 1;
     background: #ffffff;
 }
@@ -93,7 +110,7 @@
     line-height: 1.4;
 }
 
-.play-card:hover h2 {
+.play-card[data-demo]:hover h2 {
     color: var(--color-accent);
 }
 

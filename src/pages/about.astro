@@ -54,7 +54,7 @@ import "../css/about.css";
                         >
                             <img
                                 src="/images/profilepic.webp"
-                                style="width: 100%; height: 100%; object-fit: cover; border-radius: 16px"
+                                style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px"
                                 alt=""
                             />
                         </div>
@@ -133,8 +133,19 @@ import "../css/about.css";
 
                             <!-- Track Information Block -->
                             <div class="track-info">
-                                <h1 class="track-title">big feelings</h1>
-                                <p class="track-artist">Ariana Grande</p>
+                                <div class="track-title-row">
+                                    <h3 class="track-title">Ariana Grande</h3>
+                                    <div
+                                        class="playing-bars"
+                                        aria-label="Audio playing indicator"
+                                    >
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                <p class="track-artist">big feelings</p>
                             </div>
                         </div>
                     </div>
@@ -219,7 +230,7 @@ import "../css/about.css";
                             aria-label="Art I found in a bookstore"
                         >
                             <img
-                                src="/images/about/cool_museum.webp"
+                                src="/images/about/event_hosting.webp"
                                 alt="Art I found in a bookstore"
                             />
                         </div>
@@ -234,6 +245,7 @@ import "../css/about.css";
             let player: any = null;
 
             const turntable = document.getElementById("turntable");
+            const musicPlayer = document.querySelector(".music-player");
 
             // ==========================================
             // INPUT YOUR YOUTUBE URL OR VIDEO ID HERE
@@ -317,10 +329,12 @@ import "../css/about.css";
 
                 if (isPlaying) {
                     turntable.classList.add("playing");
+                    if (musicPlayer) musicPlayer.classList.add("is-playing");
                     turntable.title = "Pause 'big feelings'";
                     player.playVideo();
                 } else {
                     turntable.classList.remove("playing");
+                    if (musicPlayer) musicPlayer.classList.remove("is-playing");
                     turntable.title = "Play 'big feelings'";
                     player.pauseVideo();
                 }

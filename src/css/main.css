@@ -35,7 +35,7 @@
     --header-pad: clamp(1.25rem, 3.3vw, 2.94rem);
     --content-max: 82.5625rem;
     --header-max: 84.1875rem;
-    --radius-card: 16px;
+    --radius-card: 6px;
     --radius-btn: 4px;
     --transition: 0.25s ease;
 }
@@ -216,6 +216,7 @@ h3 {
     background: var(--color-placeholder);
     border-radius: var(--radius-card);
     width: 100%;
+    overflow: hidden;
 }
 
 .btn {
@@ -350,7 +351,7 @@ h3 {
     gap: 8px;
     padding: 9px 20px;
     border: 1px solid rgba(254, 253, 251, 0.5);
-    border-radius: 9999px;
+    border-radius: 6px;
     color: var(--color-cream);
     font-size: 0.9rem;
     font-weight: 500;
@@ -399,7 +400,7 @@ h3 {
     background: var(--color-text);
     color: var(--color-cream);
     padding: 10px 16px;
-    border-radius: 8px;
+    border-radius: 4px;
     font-size: 0.95rem;
     opacity: 0;
     pointer-events: none;
