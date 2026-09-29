@@ -13,6 +13,7 @@ const {
     team = [],
     skills = [],
     sections = [],
+    passwordProtected = false,
 } = frontmatter;
 
 // All case studies in viewing order
@@ -926,29 +927,150 @@ const prevCaseStudy =
                 opacity: 0.7;
             }
 
-            /* Copy Toast */
-            .cs-copy-toast {
-                position: fixed;
-                bottom: 24px;
-                right: 24px;
-                z-index: 100;
-                background: rgba(17, 17, 17, 0.92);
-                color: #ffffff;
-                padding: 10px 18px;
-                border-radius: 4px;
-                font-size: 0.85rem;
-                font-weight: 500;
-                opacity: 0;
-                transform: translateY(8px);
-                transition:
-                    opacity 0.2s ease,
-                    transform 0.2s ease;
-                pointer-events: none;
+            /* ================================================
+               PASSWORD PROTECTION GATE STYLING
+               ================================================ */
+            .cs-lock-gate {
+                background: #ffffff;
+                border: 1px solid var(--cs-border);
+                border-radius: 8px;
+                padding: clamp(2rem, 5vw, 3.5rem);
+                margin: 2rem 0;
+                text-align: center;
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
             }
 
-            .cs-copy-toast.visible {
-                opacity: 1;
-                transform: translateY(0);
+            .cs-lock-icon {
+                font-size: 2.25rem;
+                margin-bottom: 1rem;
+                display: inline-block;
+            }
+
+            .cs-lock-gate h3 {
+                font-size: 1.5rem;
+                font-weight: 600;
+                margin-bottom: 0.75rem;
+                letter-spacing: -0.01em;
+            }
+
+            .cs-lock-desc {
+                font-size: 1rem;
+                color: #52525b;
+                max-width: 440px;
+                margin: 0 auto 1.75rem;
+                line-height: 1.5;
+            }
+
+            .cs-lock-form {
+                display: flex;
+                flex-direction: column;
+                gap: 0.75rem;
+                max-width: 380px;
+                margin: 0 auto;
+            }
+
+            .cs-lock-input-group {
+                display: flex;
+                gap: 0.5rem;
+            }
+
+            .cs-lock-input {
+                flex: 1;
+                font-family: inherit;
+                font-size: 0.95rem;
+                padding: 0.75rem 1rem;
+                border: 1.5px solid var(--cs-border);
+                border-radius: 6px;
+                outline: none;
+                transition:
+                    border-color 0.2s ease,
+                    box-shadow 0.2s ease;
+                background: #fdfdfd;
+            }
+
+            .cs-lock-input:focus {
+                border-color: #111111;
+                box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+            }
+
+            .cs-lock-btn {
+                font-family: inherit;
+                font-size: 0.95rem;
+                font-weight: 600;
+                padding: 0.75rem 1.25rem;
+                background: #111111;
+                color: #ffffff;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+                transition:
+                    background 0.2s ease,
+                    transform 0.15s ease;
+                white-space: nowrap;
+            }
+
+            .cs-lock-btn:hover {
+                background: #27272a;
+                transform: translateY(-1px);
+            }
+
+            .cs-lock-error {
+                color: #dc2626;
+                font-size: 0.85rem;
+                font-weight: 500;
+                min-height: 1.25rem;
+                margin: 0;
+            }
+
+            .cs-lock-help {
+                margin-top: 1.5rem;
+                font-size: 0.85rem;
+                color: #71717a;
+            }
+
+            .cs-lock-help a {
+                color: var(--cs-text);
+                text-decoration: underline;
+                text-underline-offset: 3px;
+                font-weight: 600;
+            }
+
+            .cs-protected-badge {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.35rem;
+                background: #fef3c7;
+                color: #92400e;
+                font-size: 0.75rem;
+                font-weight: 600;
+                padding: 3px 8px;
+                border-radius: 4px;
+                margin-left: 0.5rem;
+                vertical-align: middle;
+            }
+
+            /* Hide the protected content wrapper by default */
+            .cs-protected-locked {
+                display: none !important;
+            }
+
+            @keyframes lockShake {
+                0%,
+                100% {
+                    transform: translateX(0);
+                }
+                20%,
+                60% {
+                    transform: translateX(-6px);
+                }
+                40%,
+                80% {
+                    transform: translateX(6px);
+                }
+            }
+
+            .cs-shake {
+                animation: lockShake 0.4s ease;
             }
         </style>
     </head>
@@ -973,7 +1095,10 @@ const prevCaseStudy =
 
                     {
                         sections.length > 0 && (
-                            <nav class="cs-nav">
+                            <nav
+                                class={`cs-nav ${passwordProtected ? "cs-protected-locked" : ""}`}
+                                id="csSidebarNav"
+                            >
                                 <ul>
                                     {sections.map(
                                         (s: { id: string; label: string }) => (
@@ -1000,6 +1125,13 @@ const prevCaseStudy =
                         <div class="cs-hero-text">
                             <h4 class="cs-hero-label">
                                 {title}{year && <Fragment> • {year}</Fragment>}
+                                {
+                                    passwordProtected && (
+                                        <span class="cs-protected-badge">
+                                            🔒 Protected
+                                        </span>
+                                    )
+                                }
                             </h4>
                             <h1>{subtitle}</h1>
                         </div>
@@ -1059,8 +1191,66 @@ const prevCaseStudy =
                         }
                     </div>
 
-                    <!-- Content slot (markdown body injected here) -->
-                    <slot />
+                    {
+                        passwordProtected ? (
+                            <Fragment>
+                                <div id="csLockGate" class="cs-lock-gate">
+                                    <div class="cs-lock-icon">🔒</div>
+                                    <h3>Confidential Case Study</h3>
+                                    <p class="cs-lock-desc">
+                                        This project contains sensitive 0→1
+                                        workflows and metrics. Please enter the
+                                        password to view the full case study.
+                                    </p>
+                                    <form
+                                        id="csLockForm"
+                                        class="cs-lock-form"
+                                        onsubmit="return false;"
+                                    >
+                                        <div class="cs-lock-input-group">
+                                            <input
+                                                type="password"
+                                                id="csPasswordInput"
+                                                class="cs-lock-input"
+                                                placeholder="Enter password..."
+                                                autocomplete="current-password"
+                                                required
+                                            />
+                                            <button
+                                                type="submit"
+                                                id="csUnlockBtn"
+                                                class="cs-lock-btn"
+                                            >
+                                                Unlock →
+                                            </button>
+                                        </div>
+                                        <p
+                                            id="csLockError"
+                                            class="cs-lock-error"
+                                            role="alert"
+                                        />
+                                    </form>
+                                    <p class="cs-lock-help">
+                                        Don't have the password?{" "}
+                                        <a href="mailto:tvishapatel0@gmail.com?subject=Password%20Access%20Request:%20Strawberry.me%20AI">
+                                            Email me for access
+                                        </a>
+                                    </p>
+                                </div>
+
+                                <Fragment set:html="<!-- PROTECTED_CONTENT_START -->" />
+                                <div
+                                    id="csProtectedBody"
+                                    class="cs-protected-locked"
+                                >
+                                    <slot />
+                                </div>
+                                <Fragment set:html="<!-- PROTECTED_CONTENT_END -->" />
+                            </Fragment>
+                        ) : (
+                            <slot />
+                        )
+                    }
 
                     <!-- ======== CASE STUDY FOOTER / CTA ======== -->
                     <footer class="cs-footer">
@@ -1135,7 +1325,7 @@ const prevCaseStudy =
                         <!-- Footer bottom navigation -->
                         <div class="cs-footer-bottom">
                             <a href="/" class="cs-back-home">
-                                ← Back to all work
+                                ← Back to homepage
                             </a>
                             <a
                                 href="#"
@@ -1171,20 +1361,33 @@ const prevCaseStudy =
 
                 if (navLinks.length === 0) return;
 
-                // Match each nav link to its target element in the document
-                const targets = navLinks
-                    .map((link) => {
-                        const href = link.getAttribute("href");
-                        if (!href || !href.startsWith("#")) return null;
-                        const id = href.slice(1);
-                        const el = document.getElementById(id);
-                        return el ? { link, el } : null;
-                    })
-                    .filter((item) => item !== null);
+                let targets: Array<{ link: Element; el: HTMLElement }> = [];
 
-                if (targets.length === 0) return;
+                function refreshTargets() {
+                    targets = navLinks
+                        .map((link) => {
+                            const href = link.getAttribute("href");
+                            if (!href || !href.startsWith("#")) return null;
+                            const id = href.slice(1);
+                            const el = document.getElementById(id);
+                            return el ? { link, el } : null;
+                        })
+                        .filter(
+                            (
+                                item,
+                            ): item is { link: Element; el: HTMLElement } =>
+                                item !== null,
+                        );
+                }
+
+                refreshTargets();
 
                 function updateActiveLink() {
+                    if (targets.length === 0) {
+                        refreshTargets();
+                    }
+                    if (targets.length === 0) return;
+
                     const scrollPosition = window.scrollY;
                     const windowHeight = window.innerHeight;
                     const documentHeight =
@@ -1213,7 +1416,7 @@ const prevCaseStudy =
                     setActive(currentTarget.link);
                 }
 
-                function setActive(activeLink) {
+                function setActive(activeLink: Element) {
                     navLinks.forEach((link) => {
                         if (link === activeLink) {
                             link.classList.add("active");
@@ -1288,6 +1491,180 @@ const prevCaseStudy =
                             }, 2200);
                         }
                     });
+                }
+
+                // ================================================
+                // PASSWORD PROTECTION DECRYPTION PIPELINE
+                // ================================================
+                const lockGate = document.getElementById("csLockGate");
+                const lockForm = document.getElementById("csLockForm");
+                const passwordInput = document.getElementById(
+                    "csPasswordInput",
+                ) as HTMLInputElement | null;
+                const lockError = document.getElementById("csLockError");
+                const unlockBtn = document.getElementById("csUnlockBtn");
+                const encryptedPayloadEl =
+                    document.getElementById("csEncryptedPayload");
+                const protectedSlot = document.getElementById(
+                    "csProtectedContentSlot",
+                );
+                const protectedBody =
+                    document.getElementById("csProtectedBody");
+
+                if (lockGate) {
+                    const payloadRaw = encryptedPayloadEl
+                        ? encryptedPayloadEl.getAttribute("data-payload")
+                        : null;
+
+                    async function handleUnlock(password: string) {
+                        // 1. Production Mode: Encrypted Payload exists
+                        if (payloadRaw && protectedSlot) {
+                            try {
+                                const payload = JSON.parse(payloadRaw);
+                                const enc = new TextEncoder();
+                                const passwordKey =
+                                    await window.crypto.subtle.importKey(
+                                        "raw",
+                                        enc.encode(password),
+                                        "PBKDF2",
+                                        false,
+                                        ["deriveKey"],
+                                    );
+
+                                const salt = Uint8Array.from(
+                                    atob(payload.salt),
+                                    (c) => c.charCodeAt(0),
+                                );
+                                const iv = Uint8Array.from(
+                                    atob(payload.iv),
+                                    (c) => c.charCodeAt(0),
+                                );
+                                const tag = Uint8Array.from(
+                                    atob(payload.tag),
+                                    (c) => c.charCodeAt(0),
+                                );
+                                const encryptedData = Uint8Array.from(
+                                    atob(payload.data),
+                                    (c) => c.charCodeAt(0),
+                                );
+
+                                const combined = new Uint8Array(
+                                    encryptedData.length + tag.length,
+                                );
+                                combined.set(encryptedData, 0);
+                                combined.set(tag, encryptedData.length);
+
+                                const aesKey =
+                                    await window.crypto.subtle.deriveKey(
+                                        {
+                                            name: "PBKDF2",
+                                            salt: salt,
+                                            iterations: 100000,
+                                            hash: "SHA-256",
+                                        },
+                                        passwordKey,
+                                        { name: "AES-GCM", length: 256 },
+                                        false,
+                                        ["decrypt"],
+                                    );
+
+                                const decrypted =
+                                    await window.crypto.subtle.decrypt(
+                                        { name: "AES-GCM", iv: iv },
+                                        aesKey,
+                                        combined,
+                                    );
+
+                                const dec = new TextDecoder();
+                                protectedSlot.innerHTML = dec.decode(decrypted);
+                                protectedSlot.style.display = "block";
+                                lockGate.style.display = "none";
+                                const sidebarNav =
+                                    document.getElementById("csSidebarNav");
+                                if (sidebarNav)
+                                    sidebarNav.classList.remove(
+                                        "cs-protected-locked",
+                                    );
+                                sessionStorage.setItem(
+                                    "cs_unlocked_session",
+                                    password,
+                                );
+
+                                setTimeout(() => {
+                                    refreshTargets();
+                                    updateActiveLink();
+                                }, 100);
+
+                                return true;
+                            } catch (err) {
+                                return false;
+                            }
+                        }
+
+                        // 2. Dev Mode Fallback: Content is hidden via cs-protected-locked class
+                        if (protectedBody) {
+                            if (password.toLowerCase() === "peek-a-boo") {
+                                protectedBody.classList.remove(
+                                    "cs-protected-locked",
+                                );
+                                lockGate.style.display = "none";
+                                const sidebarNav =
+                                    document.getElementById("csSidebarNav");
+                                if (sidebarNav)
+                                    sidebarNav.classList.remove(
+                                        "cs-protected-locked",
+                                    );
+                                sessionStorage.setItem(
+                                    "cs_unlocked_session",
+                                    password,
+                                );
+
+                                setTimeout(() => {
+                                    refreshTargets();
+                                    updateActiveLink();
+                                }, 100);
+
+                                return true;
+                            }
+                            return false;
+                        }
+
+                        return false;
+                    }
+
+                    // Check if already unlocked in this browser session
+                    const savedPassword = sessionStorage.getItem(
+                        "cs_unlocked_session",
+                    );
+                    if (savedPassword) {
+                        handleUnlock(savedPassword);
+                    }
+
+                    if (lockForm && passwordInput) {
+                        lockForm.addEventListener("submit", async (e) => {
+                            e.preventDefault();
+                            const pass = passwordInput.value.trim();
+                            if (!pass) return;
+
+                            if (lockError) lockError.textContent = "";
+                            if (unlockBtn)
+                                unlockBtn.textContent = "Unlocking...";
+
+                            const success = await handleUnlock(pass);
+                            if (unlockBtn) unlockBtn.textContent = "Unlock →";
+
+                            if (!success) {
+                                if (lockError)
+                                    lockError.textContent =
+                                        "Incorrect password. Please try again.";
+                                lockGate.classList.remove("cs-shake");
+                                void lockGate.offsetWidth; // Trigger reflow for shake animation
+                                lockGate.classList.add("cs-shake");
+                                passwordInput.focus();
+                                passwordInput.select();
+                            }
+                        });
+                    }
                 }
             });
         </script>

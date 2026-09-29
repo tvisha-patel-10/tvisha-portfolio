@@ -24,6 +24,7 @@ sections:
   - { id: "design-process", label: "Design Iterations & Decisions" }
   - { id: "prototype", label: "Workflow & Prototype" }
   - { id: "impact", label: "Impact & Learnings" }
+passwordProtected: true
 ---
 
 <!-- 1. OVERVIEW SECTION -->
