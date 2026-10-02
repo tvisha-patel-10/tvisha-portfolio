@@ -2,6 +2,8 @@
 layout: ../../layouts/caseStudyLayout.astro
 
 title: "Strawberry.me"
+pageTitle: "Strawberry.me Case Study — Tvisha Patel"
+description: "0→1 product design for an AI-assisted coaching marketplace, scaling platform workflows to $20M+ ARR."
 year: "2024–present"
 subtitle: "0→1 design for AI-assisted coaching platform | $20M+ ARR"
 heroImage: "/images/strawberry/Screenshot_2026-02-04_at_3.27.53_PM.png"

@@ -2,6 +2,8 @@
 layout: ../../layouts/caseStudyLayout.astro
 
 title: "EchoKids"
+pageTitle: "EchoKids Case Study — Tvisha Patel"
+description: "Redesigning teacher and student dashboards to improve platform engagement and increase user retention by 200%."
 year: "2022"
 subtitle: "How I increased retention by 200% and created a 47% more effective dashboard"
 heroImage: "/images/echokids/Dashboard.png"

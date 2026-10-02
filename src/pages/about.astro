@@ -5,592 +5,488 @@ import "../css/main.css";
 import "../css/about.css";
 ---
 
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>About — Tvisha Patel</title>
-        <link rel="icon" type="image/png" href="/portfolio-favicon.webp" />
-    </head>
-
-    <body>
-        <div class="page">
-            <BaseLayout title="About — Tvisha Patel" currentPage="about">
-                <section class="about-hero wrap">
-                    <div class="about-copy">
-                        <h1 class="page-heading">
-                            Welcome to my corner of the internet
-                        </h1>
-                        <p class="lede">
-                            I’m Tvisha, it’s nice to meet you! I'm currently
-                            leading lead design at Strawberry.me, where I get to
-                            help people get the career coaching that literally
-                            changes their life.
-                        </p>
-                        <p class="lede">
-                            When I’m not designing, you can find me spending
-                            hours in Minecraft, getting bullied by my family’s
-                            cat, hosting community events in the Bay, or on the
-                            hunt for the next best food to try.
-                        </p>
-                        <div class="about-actions">
-                            <a
-                                class="btn"
-                                href="https://drive.google.com/file/d/1U0KnugFrKnuddKyfOS78fIj-DEqXQSOf/view?usp=sharing"
-                                target="_blank"
-                                rel="noopener noreferrer">Resume</a
-                            >
-                            <a class="btn" href="mailto:tvishapatel0@gmail.com"
-                                >Email</a
-                            >
-                        </div>
-                    </div>
-                    <div class="about-photo">
-                        <div
-                            class="placeholder about-photo-main"
-                            role="img"
-                            aria-label="Portrait placeholder"
-                        >
-                            <img
-                                src="/images/profilepic.webp"
-                                style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px"
-                                alt=""
-                            />
-                        </div>
-                        <div
-                            class="about-photo-cat"
-                            role="img"
-                            aria-label="Photo of my cat"
-                        >
-                            <img src="/images/king.webp" alt="" />
-                        </div>
-                        <div class="cat-note" aria-hidden="true">
-                            <div class="cat-note-arrows">
-                                <img src="/icons/cat-arrow.svg" alt="" />
-                                <img src="/icons/cat-arrow-head.svg" alt="" />
-                            </div>
-                            <span>bully in question</span>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="facts wrap">
-                    <div>
-                        <h2 class="section-heading">What I’m up to</h2>
-                        <p>
-                            Trying to get to 30 mins straight on the
-                            stair-master at the gym
-                        </p>
-                        <p>Building an app...coming soon 👀</p>
-                    </div>
-                    <div>
-                        <h2 class="section-heading">What I love</h2>
-                        <p>
-                            Sunset pics, c a t, trying new food, hosting
-                            community events
-                        </p>
-                        <p>Using funky stickers in Slack</p>
-                    </div>
-                    <div>
-                        <h2 class="section-heading">Favorite song right now</h2>
-
-                        <div class="music-player">
-                            <!-- The automated injection frame is managed entirely by JavaScript -->
-                            <div id="player-container"></div>
-
-                            <!-- Interactive Turntable Component -->
-                            <div
-                                class="turntable-wrapper"
-                                id="turntable"
-                                title="Play 'petal'"
-                            >
-                                <!-- Tonearm Assembly -->
-                                <div class="tonearm" id="tonearm">
-                                    <div class="tonearm-base"></div>
-                                    <div class="tonearm-stick">
-                                        <div class="needle"></div>
-                                    </div>
-                                </div>
-
-                                <div class="record-disc" id="record">
-                                    <!-- Subtle radial sheen to make it look semi-transparent and clear -->
-                                    <div class="vinyl-body"></div>
-                                    <div class="grooves-overlay"></div>
-                                    <div class="glare-effect"></div>
-
-                                    <!-- Center Label featuring the custom flower artwork sticker -->
-                                    <div class="center-label">
-                                        <img
-                                            src="/images/petals_in_pavement.webp"
-                                            alt="Center Flowers"
-                                            class="flower-sticker"
-                                        />
-                                        <div class="center-hole"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Track Information Block -->
-                            <div class="track-info">
-                                <div class="track-title-row">
-                                    <h3 class="track-title">Ariana Grande</h3>
-                                    <div
-                                        class="playing-bars"
-                                        aria-label="Audio playing indicator"
-                                    >
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </div>
-                                </div>
-                                <p class="track-artist">big feelings</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="wild wrap">
-                    <h2 class="section-heading">Tvisha in the wild</h2>
-                    <div class="wild-grid">
-                        <!-- Card 1 -->
-                        <div
-                            class="wild-card placeholder"
-                            role="button"
-                            tabindex="0"
-                            aria-label="Tvisha with desserts in NYC - Click to flip"
-                        >
-                            <div class="wild-card-inner">
-                                <div class="wild-card-front">
-                                    <img
-                                        src="/images/about/me_w_ny_food.webp"
-                                        alt="Tvisha with desserts in NYC"
-                                    />
-                                    <span class="flip-hint" aria-hidden="true"
-                                        >flip ↺</span
-                                    >
-                                </div>
-                                <div class="wild-card-back">
-                                    <div
-                                        class="wild-card-tape"
-                                        aria-hidden="true"
-                                    >
-                                    </div>
-                                    <h3 class="wild-card-title">
-                                        Dessert hunting in NYC
-                                    </h3>
-                                    <p class="wild-card-blurb">
-                                        Finding the best pastries and desserts
-                                        in the city. I love a good sweet treat
-                                        😋
-                                    </p>
-                                    <span class="wild-card-tag"
-                                        >📍 Manhattan, NY</span
-                                    >
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 2 -->
-                        <div
-                            class="wild-card placeholder"
-                            role="button"
-                            tabindex="0"
-                            aria-label="Art found in a bookstore - Click to flip"
-                        >
-                            <div class="wild-card-inner">
-                                <div class="wild-card-front">
-                                    <img
-                                        src="/images/about/art.webp"
-                                        alt="Art I found in a bookstore"
-                                    />
-                                    <span class="flip-hint" aria-hidden="true"
-                                        >flip ↺</span
-                                    >
-                                </div>
-                                <div class="wild-card-back">
-                                    <div
-                                        class="wild-card-tape"
-                                        aria-hidden="true"
-                                    >
-                                    </div>
-                                    <h3 class="wild-card-title">
-                                        Bookstore Finds
-                                    </h3>
-                                    <p class="wild-card-blurb">
-                                        Stumbled across this art print area
-                                        tucked away between shelves in a corner
-                                        bookstore.
-                                    </p>
-                                    <span class="wild-card-tag"
-                                        >📍 Palo Alto, CA</span
-                                    >
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 3 (Tall) -->
-                        <div
-                            class="wild-card placeholder wild-tall"
-                            role="button"
-                            tabindex="0"
-                            aria-label="Sequoia National Park - Click to flip"
-                        >
-                            <div class="wild-card-inner">
-                                <div class="wild-card-front">
-                                    <img
-                                        src="/images/about/sequoia.webp"
-                                        alt="Walking among giant trees in Sequoia"
-                                    />
-                                    <span class="flip-hint" aria-hidden="true"
-                                        >flip ↺</span
-                                    >
-                                </div>
-                                <div class="wild-card-back">
-                                    <div
-                                        class="wild-card-tape"
-                                        aria-hidden="true"
-                                    >
-                                    </div>
-                                    <h3 class="wild-card-title">
-                                        Touching Grass
-                                    </h3>
-                                    <p class="wild-card-blurb">
-                                        Standing under centuries-old sequoias
-                                        and natural wonders make me feel small
-                                        and appreciative. Nature walks always
-                                        reset my creative batteries.
-                                    </p>
-                                    <span class="wild-card-tag"
-                                        >📍 Sequoia National Park, CA</span
-                                    >
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 4 (Wide) -->
-                        <div
-                            class="wild-card placeholder wild-wide"
-                            role="button"
-                            tabindex="0"
-                            aria-label="Sunset skies - Click to flip"
-                        >
-                            <div class="wild-card-inner">
-                                <div class="wild-card-front">
-                                    <img
-                                        src="/images/about/sunset1.webp"
-                                        alt="Golden hour sunset"
-                                    />
-                                    <span class="flip-hint" aria-hidden="true"
-                                        >flip ↺</span
-                                    >
-                                </div>
-                                <div class="wild-card-back">
-                                    <div
-                                        class="wild-card-tape"
-                                        aria-hidden="true"
-                                    >
-                                    </div>
-                                    <h3 class="wild-card-title">
-                                        Chasing Golden Hour
-                                    </h3>
-                                    <p class="wild-card-blurb">
-                                        I’ll stop whatever I’m doing if the
-                                        evening colors look like this.
-                                    </p>
-                                    <span class="wild-card-tag"
-                                        >📍 Santa Barbara, CA</span
-                                    >
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 5 -->
-                        <div
-                            class="wild-card placeholder"
-                            role="button"
-                            tabindex="0"
-                            aria-label="New York foodie adventures - Click to flip"
-                        >
-                            <div class="wild-card-inner">
-                                <div class="wild-card-front">
-                                    <img
-                                        src="/images/about/ny_food.webp"
-                                        alt="Good eats in NY"
-                                    />
-                                    <span class="flip-hint" aria-hidden="true"
-                                        >flip ↺</span
-                                    >
-                                </div>
-                                <div class="wild-card-back">
-                                    <div
-                                        class="wild-card-tape"
-                                        aria-hidden="true"
-                                    >
-                                    </div>
-                                    <h3 class="wild-card-title">
-                                        Foodie Diary
-                                    </h3>
-                                    <p class="wild-card-blurb">
-                                        My camera roll is roughly 70% food. I'm
-                                        a firm believer in the camera eats first
-                                        philosophy.
-                                    </p>
-                                    <span class="wild-card-tag"
-                                        >📍 Koreatown, NYC, NY</span
-                                    >
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 6 -->
-                        <div
-                            class="wild-card placeholder"
-                            role="button"
-                            tabindex="0"
-                            aria-label="Sunset horizons - Click to flip"
-                        >
-                            <div class="wild-card-inner">
-                                <div class="wild-card-front">
-                                    <img
-                                        src="/images/about/sunset2.webp"
-                                        alt="Soft sunset gradient"
-                                    />
-                                    <span class="flip-hint" aria-hidden="true"
-                                        >flip ↺</span
-                                    >
-                                </div>
-                                <div class="wild-card-back">
-                                    <div
-                                        class="wild-card-tape"
-                                        aria-hidden="true"
-                                    >
-                                    </div>
-                                    <h3 class="wild-card-title">
-                                        Sunsets (again)
-                                    </h3>
-                                    <p class="wild-card-blurb">
-                                        Nature makes the best color palettes.
-                                        This one literally looks like heaven.
-                                    </p>
-                                    <span class="wild-card-tag"
-                                        >📍 Pine Mountain Lake, CA</span
-                                    >
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 7 -->
-                        <div
-                            class="wild-card placeholder"
-                            role="button"
-                            tabindex="0"
-                            aria-label="Minecraft pig build - Click to flip"
-                        >
-                            <div class="wild-card-inner">
-                                <div class="wild-card-front">
-                                    <img
-                                        src="/images/about/minecraft_pig.webp"
-                                        alt="Minecraft pig build"
-                                    />
-                                    <span class="flip-hint" aria-hidden="true"
-                                        >flip ↺</span
-                                    >
-                                </div>
-                                <div class="wild-card-back">
-                                    <div
-                                        class="wild-card-tape"
-                                        aria-hidden="true"
-                                    >
-                                    </div>
-                                    <h3 class="wild-card-title">Minecraft</h3>
-                                    <p class="wild-card-blurb">
-                                        Where my spatial design and pixel art
-                                        dreams run wild. I could spend hours
-                                        building in this game (sorry to this pig
-                                        for traumatizing it with cooked
-                                        porkchop).
-                                    </p>
-                                    <span class="wild-card-tag"
-                                        >📍 The Overworld</span
-                                    >
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Card 8 -->
-                        <div
-                            class="wild-card placeholder"
-                            role="button"
-                            tabindex="0"
-                            aria-label="Community event hosting - Click to flip"
-                        >
-                            <div class="wild-card-inner">
-                                <div class="wild-card-front">
-                                    <img
-                                        src="/images/about/event_hosting.webp"
-                                        alt="Tvisha hosting community events"
-                                    />
-                                    <span class="flip-hint" aria-hidden="true"
-                                        >flip ↺</span
-                                    >
-                                </div>
-                                <div class="wild-card-back">
-                                    <div
-                                        class="wild-card-tape"
-                                        aria-hidden="true"
-                                    >
-                                    </div>
-                                    <h3 class="wild-card-title">
-                                        Community Builder
-                                    </h3>
-                                    <p class="wild-card-blurb">
-                                        Bringing creatives and designers
-                                        together back in college and now in the
-                                        Bay Area fuels so much of what I do.
-                                    </p>
-                                    <span class="wild-card-tag"
-                                        >📍 Santa Barbara, CA</span
-                                    >
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            </BaseLayout>
+<BaseLayout
+    title="About — Tvisha Patel"
+    description="Learn more about Tvisha Patel — product designer, community host, food lover, and gamer based in the Bay Area."
+    currentPage="about"
+>
+    <section class="about-hero wrap">
+        <div class="about-copy">
+            <h1 class="page-heading">Welcome to my corner of the internet</h1>
+            <p class="lede">
+                I’m Tvisha, it’s nice to meet you! I'm currently leading lead
+                design at Strawberry.me, where I get to help people get the
+                career coaching that literally changes their life.
+            </p>
+            <p class="lede">
+                When I’m not designing, you can find me spending hours in
+                Minecraft, getting bullied by my family’s cat, hosting community
+                events in the Bay, or on the hunt for the next best food to try.
+            </p>
+            <div class="about-actions">
+                <a
+                    class="btn"
+                    href="https://drive.google.com/file/d/1U0KnugFrKnuddKyfOS78fIj-DEqXQSOf/view?usp=sharing"
+                    target="_blank"
+                    rel="noopener noreferrer">Resume</a
+                >
+                <a class="btn" href="mailto:tvishapatel0@gmail.com">Email</a>
+            </div>
         </div>
-        <div class="copy-toast" role="status">Email copied</div>
-        <script>
-            // Declare active playback states across global bindings
-            let isPlaying = false;
-            let player: any = null;
+        <div class="about-photo">
+            <div
+                class="placeholder about-photo-main"
+                role="img"
+                aria-label="Portrait placeholder"
+            >
+                <img
+                    src="/images/profilepic.webp"
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px"
+                    alt=""
+                />
+            </div>
+            <div
+                class="about-photo-cat"
+                role="img"
+                aria-label="Photo of my cat"
+            >
+                <img src="/images/king.webp" alt="" />
+            </div>
+            <div class="cat-note" aria-hidden="true">
+                <div class="cat-note-arrows">
+                    <img src="/icons/cat-arrow.svg" alt="" />
+                    <img src="/icons/cat-arrow-head.svg" alt="" />
+                </div>
+                <span>bully in question</span>
+            </div>
+        </div>
+    </section>
 
-            const turntable = document.getElementById("turntable");
-            const musicPlayer = document.querySelector(".music-player");
+    <section class="facts wrap">
+        <div>
+            <h2 class="section-heading">What I’m up to</h2>
+            <p>
+                Trying to get to 30 mins straight on the stair-master at the gym
+            </p>
+            <p>Building something...coming soon 👀</p>
+        </div>
+        <div>
+            <h2 class="section-heading">What I love</h2>
+            <p>Sunset pics, c a t, trying new food, hosting community events</p>
+            <p>Using funky stickers in Slack</p>
+        </div>
+        <div>
+            <h2 class="section-heading">Favorite song right now</h2>
 
-            // ==========================================
-            // INPUT YOUR YOUTUBE URL OR VIDEO ID HERE
-            // ==========================================
-            const youtubeSource = "https://www.youtube.com/watch?v=FXultmvqvyA";
+            <div class="music-player">
+                <!-- The automated injection frame is managed entirely by JavaScript -->
+                <div id="player-container"></div>
 
-            function getYoutubeId(url: string) {
-                const match = url.match(
-                    /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&?]+)/,
-                );
-                return match ? match[1] : null;
+                <!-- Interactive Turntable Component -->
+                <div
+                    class="turntable-wrapper"
+                    id="turntable"
+                    title="Play 'petal'"
+                >
+                    <!-- Tonearm Assembly -->
+                    <div class="tonearm" id="tonearm">
+                        <div class="tonearm-base"></div>
+                        <div class="tonearm-stick">
+                            <div class="needle"></div>
+                        </div>
+                    </div>
+
+                    <div class="record-disc" id="record">
+                        <!-- Subtle radial sheen to make it look semi-transparent and clear -->
+                        <div class="vinyl-body"></div>
+                        <div class="grooves-overlay"></div>
+                        <div class="glare-effect"></div>
+
+                        <!-- Center Label featuring the custom flower artwork sticker -->
+                        <div class="center-label">
+                            <img
+                                src="/images/petals_in_pavement.webp"
+                                alt="Center Flowers"
+                                class="flower-sticker"
+                            />
+                            <div class="center-hole"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Track Information Block -->
+                <div class="track-info">
+                    <div class="track-title-row">
+                        <h3 class="track-title">Ariana Grande</h3>
+                        <div
+                            class="playing-bars"
+                            aria-label="Audio playing indicator"
+                        >
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <p class="track-artist">big feelings</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="wild wrap">
+        <h2 class="section-heading">Tvisha in the wild</h2>
+        <div class="wild-grid">
+            <!-- Card 1 -->
+            <div
+                class="wild-card placeholder"
+                role="button"
+                tabindex="0"
+                aria-label="Tvisha with desserts in NYC - Click to flip"
+            >
+                <div class="wild-card-inner">
+                    <div class="wild-card-front">
+                        <img
+                            src="/images/about/me_w_ny_food.webp"
+                            alt="Tvisha with desserts in NYC"
+                        />
+                        <span class="flip-hint" aria-hidden="true">flip ↺</span>
+                    </div>
+                    <div class="wild-card-back">
+                        <div class="wild-card-tape" aria-hidden="true"></div>
+                        <h3 class="wild-card-title">Dessert hunting in NYC</h3>
+                        <p class="wild-card-blurb">
+                            Finding the best pastries and desserts in the city.
+                            I love a good sweet treat 😋
+                        </p>
+                        <span class="wild-card-tag">📍 Manhattan, NY</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+                class="wild-card placeholder"
+                role="button"
+                tabindex="0"
+                aria-label="Art found in a bookstore - Click to flip"
+            >
+                <div class="wild-card-inner">
+                    <div class="wild-card-front">
+                        <img
+                            src="/images/about/art.webp"
+                            alt="Art I found in a bookstore"
+                        />
+                        <span class="flip-hint" aria-hidden="true">flip ↺</span>
+                    </div>
+                    <div class="wild-card-back">
+                        <div class="wild-card-tape" aria-hidden="true"></div>
+                        <h3 class="wild-card-title">Bookstore Finds</h3>
+                        <p class="wild-card-blurb">
+                            Stumbled across this art print area tucked away
+                            between shelves in a corner bookstore.
+                        </p>
+                        <span class="wild-card-tag">📍 Palo Alto, CA</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 (Tall) -->
+            <div
+                class="wild-card placeholder wild-tall"
+                role="button"
+                tabindex="0"
+                aria-label="Sequoia National Park - Click to flip"
+            >
+                <div class="wild-card-inner">
+                    <div class="wild-card-front">
+                        <img
+                            src="/images/about/sequoia.webp"
+                            alt="Walking among giant trees in Sequoia"
+                        />
+                        <span class="flip-hint" aria-hidden="true">flip ↺</span>
+                    </div>
+                    <div class="wild-card-back">
+                        <div class="wild-card-tape" aria-hidden="true"></div>
+                        <h3 class="wild-card-title">Touching Grass</h3>
+                        <p class="wild-card-blurb">
+                            Standing under centuries-old sequoias and natural
+                            wonders make me feel small and appreciative. Nature
+                            walks always reset my creative batteries.
+                        </p>
+                        <span class="wild-card-tag"
+                            >📍 Sequoia National Park, CA</span
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 (Wide) -->
+            <div
+                class="wild-card placeholder wild-wide"
+                role="button"
+                tabindex="0"
+                aria-label="Sunset skies - Click to flip"
+            >
+                <div class="wild-card-inner">
+                    <div class="wild-card-front">
+                        <img
+                            src="/images/about/sunset1.webp"
+                            alt="Golden hour sunset"
+                        />
+                        <span class="flip-hint" aria-hidden="true">flip ↺</span>
+                    </div>
+                    <div class="wild-card-back">
+                        <div class="wild-card-tape" aria-hidden="true"></div>
+                        <h3 class="wild-card-title">Chasing Golden Hour</h3>
+                        <p class="wild-card-blurb">
+                            I’ll stop whatever I’m doing if the evening colors
+                            look like this.
+                        </p>
+                        <span class="wild-card-tag">📍 Santa Barbara, CA</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div
+                class="wild-card placeholder"
+                role="button"
+                tabindex="0"
+                aria-label="New York foodie adventures - Click to flip"
+            >
+                <div class="wild-card-inner">
+                    <div class="wild-card-front">
+                        <img
+                            src="/images/about/ny_food.webp"
+                            alt="Good eats in NY"
+                        />
+                        <span class="flip-hint" aria-hidden="true">flip ↺</span>
+                    </div>
+                    <div class="wild-card-back">
+                        <div class="wild-card-tape" aria-hidden="true"></div>
+                        <h3 class="wild-card-title">Foodie Diary</h3>
+                        <p class="wild-card-blurb">
+                            My camera roll is roughly 70% food. I'm a firm
+                            believer in the camera eats first philosophy.
+                        </p>
+                        <span class="wild-card-tag">📍 Koreatown, NYC, NY</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div
+                class="wild-card placeholder"
+                role="button"
+                tabindex="0"
+                aria-label="Sunset horizons - Click to flip"
+            >
+                <div class="wild-card-inner">
+                    <div class="wild-card-front">
+                        <img
+                            src="/images/about/sunset2.webp"
+                            alt="Soft sunset gradient"
+                        />
+                        <span class="flip-hint" aria-hidden="true">flip ↺</span>
+                    </div>
+                    <div class="wild-card-back">
+                        <div class="wild-card-tape" aria-hidden="true"></div>
+                        <h3 class="wild-card-title">Sunsets (again)</h3>
+                        <p class="wild-card-blurb">
+                            Nature makes the best color palettes. This one
+                            literally looks like heaven.
+                        </p>
+                        <span class="wild-card-tag"
+                            >📍 Pine Mountain Lake, CA</span
+                        >
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div
+                class="wild-card placeholder"
+                role="button"
+                tabindex="0"
+                aria-label="Minecraft pig build - Click to flip"
+            >
+                <div class="wild-card-inner">
+                    <div class="wild-card-front">
+                        <img
+                            src="/images/about/minecraft_pig.webp"
+                            alt="Minecraft pig build"
+                        />
+                        <span class="flip-hint" aria-hidden="true">flip ↺</span>
+                    </div>
+                    <div class="wild-card-back">
+                        <div class="wild-card-tape" aria-hidden="true"></div>
+                        <h3 class="wild-card-title">Minecraft</h3>
+                        <p class="wild-card-blurb">
+                            Where my spatial design and pixel art dreams run
+                            wild. I could spend hours building in this game
+                            (sorry to this pig for traumatizing it with cooked
+                            porkchop).
+                        </p>
+                        <span class="wild-card-tag">📍 The Overworld</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div
+                class="wild-card placeholder"
+                role="button"
+                tabindex="0"
+                aria-label="Community event hosting - Click to flip"
+            >
+                <div class="wild-card-inner">
+                    <div class="wild-card-front">
+                        <img
+                            src="/images/about/event_hosting.webp"
+                            alt="Tvisha hosting community events"
+                        />
+                        <span class="flip-hint" aria-hidden="true">flip ↺</span>
+                    </div>
+                    <div class="wild-card-back">
+                        <div class="wild-card-tape" aria-hidden="true"></div>
+                        <h3 class="wild-card-title">Community Builder</h3>
+                        <p class="wild-card-blurb">
+                            Bringing creatives and designers together back in
+                            college and now in the Bay Area fuels so much of
+                            what I do.
+                        </p>
+                        <span class="wild-card-tag">📍 Santa Barbara, CA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</BaseLayout>
+<script>
+    // Declare active playback states across global bindings
+    let isPlaying = false;
+    let player: any = null;
+
+    const turntable = document.getElementById("turntable");
+    const musicPlayer = document.querySelector(".music-player");
+
+    // ==========================================
+    // INPUT YOUR YOUTUBE URL OR VIDEO ID HERE
+    // ==========================================
+    const youtubeSource = "https://www.youtube.com/watch?v=FXultmvqvyA";
+
+    function getYoutubeId(url: string) {
+        const match = url.match(
+            /(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([^&?]+)/,
+        );
+        return match ? match[1] : null;
+    }
+
+    const youtubeId = getYoutubeId(youtubeSource);
+
+    // Safely mount and asynchronously load the external YouTube SDK pipeline
+    function loadYoutubeAPI() {
+        if (!youtubeId) return;
+
+        // Check if script is already rendered globally
+        if (!window.hasOwnProperty("YT")) {
+            const tag = document.createElement("script");
+            tag.src = "https://www.youtube.com/iframe_api";
+
+            // FIX: Added explicit [0] index to target the actual script element in the collection
+            const firstScriptTag = document.getElementsByTagName("script")[0];
+            if (firstScriptTag && firstScriptTag.parentNode) {
+                firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+            } else {
+                // Fallback if no script tag exists inside the head structure yet
+                document.head.appendChild(tag);
             }
+        }
 
-            const youtubeId = getYoutubeId(youtubeSource);
-
-            // Safely mount and asynchronously load the external YouTube SDK pipeline
-            function loadYoutubeAPI() {
-                if (!youtubeId) return;
-
-                // Check if script is already rendered globally
-                if (!window.hasOwnProperty("YT")) {
-                    const tag = document.createElement("script");
-                    tag.src = "https://www.youtube.com/iframe_api";
-
-                    // FIX: Added explicit [0] index to target the actual script element in the collection
-                    const firstScriptTag =
-                        document.getElementsByTagName("script")[0];
-                    if (firstScriptTag && firstScriptTag.parentNode) {
-                        firstScriptTag.parentNode.insertBefore(
-                            tag,
-                            firstScriptTag,
-                        );
-                    } else {
-                        // Fallback if no script tag exists inside the head structure yet
-                        document.head.appendChild(tag);
-                    }
-                }
-
-                // Assign global initialization lifecycle hook
-                (window as any).onYouTubeIframeAPIReady = () => {
-                    player = new (window as any).YT.Player("player-container", {
-                        height: "0",
-                        width: "0",
-                        videoId: youtubeId,
-                        playerVars: {
-                            playsinline: 1,
-                            controls: 0,
-                            disablekb: 1,
-                            enablejsapi: 1,
-                        },
-                        events: {
-                            onStateChange: onPlayerStateChange,
-                            onError: (e: any) =>
-                                console.error("YouTube Player Error:", e),
-                        },
-                    });
-                };
-            }
-
-            // Handle cross-window message data notifications automatically
-            function onPlayerStateChange(event: any) {
-                // State 0 indicates the track payload finished playing natively
-                if (event.data === 0) {
-                    setPlaybackState(false);
-                }
-            }
-
-            // Handle synchronized UI mutations smoothly
-            function setPlaybackState(play: boolean) {
-                if (!turntable) return;
-
-                // Fail-safe protection layer: If player isn't fully initialized by the API yet, skip commands
-                if (!player || typeof player.playVideo !== "function") {
-                    console.warn(
-                        "YouTube API is still initializing. Please wait a moment.",
-                    );
-                    return;
-                }
-
-                isPlaying = play;
-
-                if (isPlaying) {
-                    turntable.classList.add("playing");
-                    if (musicPlayer) musicPlayer.classList.add("is-playing");
-                    turntable.title = "Pause 'big feelings'";
-                    player.playVideo();
-                } else {
-                    turntable.classList.remove("playing");
-                    if (musicPlayer) musicPlayer.classList.remove("is-playing");
-                    turntable.title = "Play 'big feelings'";
-                    player.pauseVideo();
-                }
-            }
-
-            // Bind interaction event streams
-            if (turntable) {
-                turntable.addEventListener("click", () => {
-                    setPlaybackState(!isPlaying);
-                });
-
-                // Boot sequence integration
-                loadYoutubeAPI();
-            }
-
-            // ==========================================
-            // POLAROID FLIP CARD INTERACTION (Click/Tap)
-            // ==========================================
-            const wildCards = document.querySelectorAll(".wild-card");
-            wildCards.forEach((card) => {
-                const toggleFlip = () => {
-                    card.classList.toggle("is-flipped");
-                };
-
-                card.addEventListener("click", toggleFlip);
-
-                // Keyboard accessibility (Enter or Space to flip)
-                card.addEventListener("keydown", (e: any) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                        e.preventDefault();
-                        toggleFlip();
-                    }
-                });
+        // Assign global initialization lifecycle hook
+        (window as any).onYouTubeIframeAPIReady = () => {
+            player = new (window as any).YT.Player("player-container", {
+                height: "0",
+                width: "0",
+                videoId: youtubeId,
+                playerVars: {
+                    playsinline: 1,
+                    controls: 0,
+                    disablekb: 1,
+                    enablejsapi: 1,
+                },
+                events: {
+                    onStateChange: onPlayerStateChange,
+                    onError: (e: any) =>
+                        console.error("YouTube Player Error:", e),
+                },
             });
-        </script>
-    </body>
-</html>
+        };
+    }
+
+    // Handle cross-window message data notifications automatically
+    function onPlayerStateChange(event: any) {
+        // State 0 indicates the track payload finished playing natively
+        if (event.data === 0) {
+            setPlaybackState(false);
+        }
+    }
+
+    // Handle synchronized UI mutations smoothly
+    function setPlaybackState(play: boolean) {
+        if (!turntable) return;
+
+        // Fail-safe protection layer: If player isn't fully initialized by the API yet, skip commands
+        if (!player || typeof player.playVideo !== "function") {
+            console.warn(
+                "YouTube API is still initializing. Please wait a moment.",
+            );
+            return;
+        }
+
+        isPlaying = play;
+
+        if (isPlaying) {
+            turntable.classList.add("playing");
+            if (musicPlayer) musicPlayer.classList.add("is-playing");
+            turntable.title = "Pause 'big feelings'";
+            player.playVideo();
+        } else {
+            turntable.classList.remove("playing");
+            if (musicPlayer) musicPlayer.classList.remove("is-playing");
+            turntable.title = "Play 'big feelings'";
+            player.pauseVideo();
+        }
+    }
+
+    // Bind interaction event streams
+    if (turntable) {
+        turntable.addEventListener("click", () => {
+            setPlaybackState(!isPlaying);
+        });
+
+        // Boot sequence integration
+        loadYoutubeAPI();
+    }
+
+    // ==========================================
+    // POLAROID FLIP CARD INTERACTION (Click/Tap)
+    // ==========================================
+    const wildCards = document.querySelectorAll(".wild-card");
+    wildCards.forEach((card) => {
+        const toggleFlip = () => {
+            card.classList.toggle("is-flipped");
+        };
+
+        card.addEventListener("click", toggleFlip);
+
+        // Keyboard accessibility (Enter or Space to flip)
+        card.addEventListener("keydown", (e: any) => {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                toggleFlip();
+            }
+        });
+    });
+</script>

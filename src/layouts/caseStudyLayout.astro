@@ -14,7 +14,15 @@ const {
     skills = [],
     sections = [],
     passwordProtected = false,
+    description = "",
 } = frontmatter;
+
+// Fallback SEO description and title
+const pageTitle = frontmatter.pageTitle || `${title} — Tvisha Patel`;
+const metaDescription =
+    description ||
+    subtitle ||
+    `${title} case study by Tvisha Patel, Product Designer.`;
 
 // All case studies in viewing order
 const allCaseStudies = [
@@ -73,7 +81,8 @@ const prevCaseStudy =
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{title} | Portfolio</title>
+        <title>{pageTitle}</title>
+        <meta name="description" content={metaDescription} />
         <link rel="icon" href="/portfolio-favicon.webp" />
 
         <style is:global>
