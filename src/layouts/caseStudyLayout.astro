@@ -76,8 +76,15 @@ const prevCaseStudy =
         (safeIndex - 1 + allCaseStudies.length) % allCaseStudies.length
     ];
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://tvishapatel.com");
-const ogImage = heroPoster || (heroImage && !heroImage.endsWith(".mp4") && !heroImage.endsWith(".webm") ? heroImage : "/images/og-image.png");
+const canonicalURL = new URL(
+    Astro.url.pathname,
+    Astro.site || "https://tvishapatel.com",
+);
+const ogImage =
+    heroPoster ||
+    (heroImage && !heroImage.endsWith(".mp4") && !heroImage.endsWith(".webm")
+        ? heroImage
+        : "/images/og-image.png");
 const imageURL = new URL(ogImage, Astro.site || "https://tvishapatel.com");
 ---
 
@@ -323,8 +330,9 @@ const imageURL = new URL(ogImage, Astro.site || "https://tvishapatel.com");
             /* Hero image */
             .cs-hero-image {
                 width: 100%;
-                aspect-ratio: 16 / 9;
+                aspect-ratio: 2640 / 1338;
                 border: 1px solid var(--cs-border);
+                border-radius: 6px;
                 overflow: hidden;
             }
 
@@ -663,7 +671,6 @@ const imageURL = new URL(ogImage, Astro.site || "https://tvishapatel.com");
                 width: 100%;
                 height: auto;
                 border-radius: 0;
-                margin: 1rem 0;
             }
 
             .figma-container {
@@ -1102,6 +1109,34 @@ const imageURL = new URL(ogImage, Astro.site || "https://tvishapatel.com");
             .cs-shake {
                 animation: lockShake 0.4s ease;
             }
+
+            /* Copy toast notification */
+            .cs-copy-toast {
+                position: fixed;
+                right: 24px;
+                bottom: 24px;
+                z-index: 999;
+                padding: 10px 16px;
+                border-radius: 4px;
+                background: rgba(17, 17, 17, 0.92);
+                color: #ffffff;
+                font-size: 0.85rem;
+                line-height: 1;
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(8px);
+                transition:
+                    opacity 0.2s ease,
+                    transform 0.2s ease,
+                    visibility 0.2s ease;
+                pointer-events: none;
+            }
+
+            .cs-copy-toast.visible {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
         </style>
     </head>
 
@@ -1169,9 +1204,27 @@ const imageURL = new URL(ogImage, Astro.site || "https://tvishapatel.com");
                         {
                             heroImage && (
                                 <div class="cs-hero-image">
-                                    {heroImage.endsWith(".mp4") || heroImage.endsWith(".webm") ? (
-                                        <video autoplay loop muted playsinline poster={heroPoster || undefined}>
-                                            <source src={heroImage} type={heroImage.endsWith(".webm") ? "video/webm" : "video/mp4"} />
+                                    {heroImage.endsWith(".mp4") ||
+                                    heroImage.endsWith(".webm") ? (
+                                        <video
+                                            autoplay
+                                            loop
+                                            muted
+                                            playsinline
+                                            poster={
+                                                heroPoster
+                                                    ? encodeURI(heroPoster)
+                                                    : undefined
+                                            }
+                                        >
+                                            <source
+                                                src={encodeURI(heroImage)}
+                                                type={
+                                                    heroImage.endsWith(".webm")
+                                                        ? "video/webm"
+                                                        : "video/mp4"
+                                                }
+                                            />
                                         </video>
                                     ) : (
                                         <img
