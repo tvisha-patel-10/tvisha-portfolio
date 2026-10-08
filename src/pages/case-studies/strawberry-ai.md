@@ -6,7 +6,7 @@ pageTitle: "Strawberry.me AI Drafts Case Study — Tvisha Patel"
 description: "Designing an AI draft messaging workflow for 800+ coaches that increased follow-up rates from 60% to 92%."
 year: "2025"
 subtitle: "AI message draft workflow for coaches | 60% → 92% follow-up rate"
-heroImage: "/images/strawberry-ai/hero-mockup.png"
+heroImage: "/images/strawberry-ai/strawberryai_cover.mp4"
 role: "Founding Product Designer"
 timeline: "8-Day Sprint (7 Days Spec + Build, 1 Day UAT)"
 team:

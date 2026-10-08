@@ -8,6 +8,7 @@ const {
     year = "",
     subtitle = "",
     heroImage = "",
+    heroPoster = "",
     role = "",
     timeline = "",
     team = [],
@@ -74,6 +75,10 @@ const prevCaseStudy =
     allCaseStudies[
         (safeIndex - 1 + allCaseStudies.length) % allCaseStudies.length
     ];
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://tvishapatel.com");
+const ogImage = heroPoster || (heroImage && !heroImage.endsWith(".mp4") && !heroImage.endsWith(".webm") ? heroImage : "/images/og-image.png");
+const imageURL = new URL(ogImage, Astro.site || "https://tvishapatel.com");
 ---
 
 <!doctype html>
@@ -83,7 +88,22 @@ const prevCaseStudy =
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{pageTitle}</title>
         <meta name="description" content={metaDescription} />
+        <link rel="canonical" href={canonicalURL} />
         <link rel="icon" href="/portfolio-favicon.webp" />
+
+        <!-- Open Graph / Facebook / LinkedIn -->
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={canonicalURL} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={metaDescription} />
+        <meta property="og:image" content={imageURL} />
+
+        <!-- Twitter / X -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={canonicalURL} />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={metaDescription} />
+        <meta name="twitter:image" content={imageURL} />
 
         <style is:global>
             /* --- Google Fonts (matches rest of site) --- */
@@ -308,7 +328,8 @@ const prevCaseStudy =
                 overflow: hidden;
             }
 
-            .cs-hero-image img {
+            .cs-hero-image img,
+            .cs-hero-image video {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
@@ -1148,11 +1169,17 @@ const prevCaseStudy =
                         {
                             heroImage && (
                                 <div class="cs-hero-image">
-                                    <img
-                                        src={heroImage}
-                                        alt={`Project thumbnail for ${title}`}
-                                        loading="eager"
-                                    />
+                                    {heroImage.endsWith(".mp4") || heroImage.endsWith(".webm") ? (
+                                        <video autoplay loop muted playsinline poster={heroPoster || undefined}>
+                                            <source src={heroImage} type={heroImage.endsWith(".webm") ? "video/webm" : "video/mp4"} />
+                                        </video>
+                                    ) : (
+                                        <img
+                                            src={heroImage}
+                                            alt={`Project thumbnail for ${title}`}
+                                            loading="eager"
+                                        />
+                                    )}
                                 </div>
                             )
                         }

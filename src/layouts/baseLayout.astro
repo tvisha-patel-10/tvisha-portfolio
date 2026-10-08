@@ -3,13 +3,18 @@ interface Props {
     title: string;
     description?: string;
     currentPage?: "home" | "about" | "playground";
+    image?: string;
 }
 
 const {
     title,
     description = "Tvisha Patel — Founding Product Designer specializing in 0→1 workflows, AI-assisted products, and systems design.",
     currentPage = "home",
+    image = "/images/og-image.png",
 } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://tvishapatel.com");
+const imageURL = new URL(image, Astro.site || "https://tvishapatel.com");
 
 import "../css/main.css";
 ---
@@ -21,7 +26,22 @@ import "../css/main.css";
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{title}</title>
         <meta name="description" content={description} />
+        <link rel="canonical" href={canonicalURL} />
         <link rel="icon" href="/portfolio-favicon.webp" />
+
+        <!-- Open Graph / Facebook / LinkedIn -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalURL} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={imageURL} />
+
+        <!-- Twitter / X -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={canonicalURL} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={imageURL} />
 
         <style>
             .copy-toast {

@@ -4,10 +4,11 @@
     justify-content: center;
     align-items: center;
     text-align: center;
-    /* Vertically centered hero with ~120px–175px (15–20%) of the first project card peeking above the fold */
-    min-height: calc(100vh - 122px - clamp(7.5rem, 16vh, 11rem));
-    min-height: calc(100svh - 122px - clamp(7.5rem, 16vh, 11rem));
-    padding-block: clamp(2rem, 5vh, 4rem);
+    /* Centered with the screen height while allowing a clean peek of the cards at the bottom */
+    min-height: calc(100vh - 122px - 60px);
+    min-height: calc(100svh - 122px - 60px);
+    padding-top: clamp(1rem, 2vh, 2rem);
+    padding-bottom: clamp(4rem, 8vh, 6.5rem);
 }
 
 .hero-title {
@@ -16,7 +17,7 @@
     color: var(--color-accent);
     line-height: 1;
     letter-spacing: -0.02em;
-    margin-bottom: clamp(1.5rem, 3vw, 2.75rem);
+    margin-bottom: clamp(1rem, 2.5vw, 2rem);
 }
 
 .hero-tagline {
@@ -115,61 +116,108 @@
 }
 
 .work-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-60);
-    padding-bottom: var(--space-80);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(1.75rem, 3.5vw, 3rem);
+    row-gap: clamp(3rem, 5.5vw, 4.75rem);
+    padding-bottom: var(--space-120);
+    align-items: start;
+    scroll-margin-top: 2rem;
 }
 
 .work-card {
     display: flex;
     flex-direction: column;
-    gap: var(--space-20);
+    gap: clamp(0.85rem, 1.4vw, 1.15rem);
     color: inherit;
+    text-decoration: none;
+}
+
+.work-card .placeholder {
+    aspect-ratio: 2640 / 1338;
+    width: 100%;
+    border-radius: 8px;
+    background: #f4f3f0;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+        box-shadow 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+        border-color 0.3s ease;
+}
+
+.work-card:hover .placeholder {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 36px -12px rgba(40, 20, 10, 0.12);
+    border-color: rgba(161, 57, 0, 0.2);
+}
+
+/* Inset frame variant for high-contrast/white UI covers like BetterHelp */
+.work-card .placeholder-inset {
+    background: #f7f6f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.work-card .placeholder-inset .inset-frame {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px -4px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    background: #ffffff;
+}
+
+.work-card .placeholder-inset .inset-frame video,
+.work-card .placeholder-inset .inset-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .work-card-copy {
     display: flex;
     flex-direction: column;
-    gap: var(--space-12);
-}
-
-.work-card h2 {
-    font-size: var(--text-title);
-    font-weight: 700;
-    line-height: 1.15;
+    gap: 0.35rem;
 }
 
 .work-card p {
-    font-size: var(--text-body);
+    font-size: clamp(0.95rem, 1.2vw, 1.125rem);
     font-weight: 500;
+    line-height: 1.4;
+    color: var(--color-text);
+    margin: 0;
+    transition: color 0.2s ease;
 }
 
-.work-card .placeholder {
-    aspect-ratio: 1321 / 669;
-    min-height: 220px;
-    transition: transform var(--transition);
-}
-
-.work-card:hover .placeholder {
-    transform: translateY(-4px);
-}
-
-.work-card:hover h2 {
+.work-card:hover p:first-child {
     color: var(--color-accent);
+}
+
+.work-card .eyebrow {
+    font-family: var(--font-body);
+    font-size: clamp(0.8rem, 0.95vw, 0.9rem);
+    font-weight: 500;
+    color: var(--color-accent);
+    line-height: 1.25;
+    opacity: 0.9;
 }
 
 .work-card-lock {
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
-    font-size: 0.725rem;
+    font-size: 0.65rem;
     font-weight: 600;
     color: #854d0e;
     background: #fef3c7;
-    padding: 2px 7px;
+    padding: 1px 6px;
     border-radius: 9999px;
-    margin-left: 0.45rem;
+    margin-left: 0.35rem;
     vertical-align: middle;
     letter-spacing: 0.01em;
 }
@@ -191,6 +239,7 @@
     }
 
     .work-list {
-        gap: var(--space-32);
+        grid-template-columns: 1fr;
+        gap: var(--space-40);
     }
 }

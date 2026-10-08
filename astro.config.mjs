@@ -5,6 +5,7 @@ import passwordProtect from './src/scripts/password-protect-plugin.js';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://tvishapatel.com',
   integrations: [
     mdx(),
     passwordProtect({

@@ -3,10 +3,11 @@ layout: ../../layouts/caseStudyLayout.astro
 
 title: "BetterHelp"
 pageTitle: "BetterHelp Case Study — Tvisha Patel"
-description: "Simplifying technical onboarding and video session testing for therapy clients and providers, boosting test efficiency by 33%."
+description: "How I redesigned BetterHelp's client experience into a 33%+ more streamlined flow, cutting friction and improving call efficiency."
 year: "2023"
 subtitle: "Simplifying technical complexity for clients and therapists | 33% efficiency improvement"
-heroImage: "/images/betterhelp/Video_Session_Test_Landing_Page_final 3.png"
+heroImage: "/images/betterhelp/betterhelp_cover.mp4"
+heroPoster: "/images/betterhelp/Video_Session_Test_Landing_Page_final 3.png"
 role: "Product Design Intern"
 timeline: "June – September 2023 (3 Months)"
 team:
