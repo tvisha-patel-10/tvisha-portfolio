@@ -3,13 +3,13 @@ layout: ../../layouts/caseStudyLayout.astro
 
 title: "BetterHelp"
 pageTitle: "BetterHelp Case Study — Tvisha Patel"
-description: "How I redesigned BetterHelp's client experience into a 33%+ more streamlined flow, cutting friction and improving call efficiency."
+description: "How I redesigned BetterHelp's pre-session video test into a one-page, 33% shorter flow so clients and therapists can check only what they need to."
 year: "2023"
-subtitle: "Simplifying technical complexity for clients and therapists | 33% efficiency improvement"
+subtitle: "Simplifying technical complexity for clients and therapists | 33% more streamlined flow"
 heroImage: "/images/betterhelp/betterhelp_cover.mp4"
 heroPoster: "/images/betterhelp/Video_Session_Test_Landing_Page_final 3.png"
 role: "Product Design Intern"
-timeline: "June – September 2023 (3 Months)"
+timeline: "June – September 2023"
 team:
   - "1 Product Design Intern (me)"
   - "1 Senior Product Designer"
@@ -23,44 +23,45 @@ skills:
   - "Usability & Systems Design"
 sections:
   - { id: "overview", label: "Overview" }
+  - { id: "before-after", label: "Before & After" }
   - { id: "discovery", label: "Discovery & Research" }
   - { id: "iterations", label: "Design Iterations" }
-  - { id: "prototype", label: "Interactive Prototype" }
+  - { id: "prototype", label: "Final UI & Prototype" }
   - { id: "reflection", label: "Reflection" }
 ---
 
 <!-- 1. OVERVIEW SECTION -->
 <section id="overview" class="cs-section">
   <h4 class="section-label">Overview</h4>
-  <h2>Simplifying pre-call device testing for over 2 million clients and therapists</h2>
+  <h2>Simplifying pre-call device testing for over 5 million clients and therapists</h2>
   <p>
-    BetterHelp is the largest online therapy platform globally and offers accessible and affordable mental healthcare, enabling individuals to address life's obstacles. During my internship, I was tasked with multiple projects that were put into sprint, handed off to engineering, and shipped across BetterHelp products for over 2 million active users.
+    BetterHelp is the largest online therapy platform with over 5 million users. During my internship, I redesigned the <strong>video session test</strong>: the page clients and therapists use to check their camera, microphone, speaker, and connection minutes before a live session.
   </p>
   <p>
-    This case study focuses on my end-to-end redesign of BetterHelp’s video session test. This critical feature allows clients and therapists to verify their camera, microphone, speaker, and network connection before live sessions to prevent technical disruptions.
+    I owned the redesign from audit to final UI. My senior designer reviewed my work weekly, and I partnered directly with engineering, data, and our UX writer. The redesign shipped to production in October 2023.
   </p>
 
   <div class="callout">
-    <h3>Impact: Designed a 33% more streamlined user flow by eliminating unnecessary steps and friction, increasing call efficiency by minimizing session time lost to technical issues.</h3>
+    <h3>Impact: Cut the device test from 4 sequential pages to a single tabbed page, reducing the clicks needed to complete a full test by 33%, so users can check only what’s broken right before a session.</h3>
   </div>
 
   <div class="grid-2">
     <div class="grid-card">
       <h3>The Problem</h3>
       <p>
-        Because this feature is visited right before a live therapy session, speed and clarity are paramount. Users need to test their hardware effortlessly without adding stress before a call.
+        Users open this page minutes before a therapy session, often already anxious. The old test forced them through <strong>camera → microphone → speaker → network</strong> in a fixed order. Someone with only a network issue had to click through three unrelated steps to reach it.
       </p>
       <p>
-        <strong>How might we redesign the video session test to maximize efficiency and provide users with complete agency during the process?</strong>
+        Data showed that ~40% of visits were repeat visits within 10 minutes of a scheduled session, a sign users were getting stuck or frustrated and retrying.
       </p>
     </div>
     <div class="grid-card">
-      <h3>The Solution & Approach</h3>
+      <h3>The Goal</h3>
       <p>
-        The legacy test was rigidly sequential, forcing users through every step in order with outdated UI. We redesigned it into a flexible, free-flowing model where users can test any component in any order.
+        <strong>How might we redesign the video session test so users can fix the one thing that’s broken quickly, with full control over the process?</strong>
       </p>
       <p>
-        We modernized the visual language to match BetterHelp’s global design system, revamped troubleshooting copy with our UX writer, and partnered across data, engineering, and product management to target high-impact usability gaps.
+        My approach: replace the rigid sequence with a single page where any device can be tested in any order, and rewrite the troubleshooting help so it reflects today’s browsers and apps.
       </p>
     </div>
   </div>
@@ -68,142 +69,18 @@ sections:
   <div class="section-divider"></div>
 </section>
 
-<!-- 2. DISCOVERY & RESEARCH SECTION -->
-<section id="discovery" class="cs-section">
-  <h4 class="section-label">Discovery & Research</h4>
-  <h2>Gaining understanding across engineering, data, and competitors</h2>
+<!-- 2. BEFORE & AFTER -->
+<section id="before-after" class="cs-section">
+  <h4 class="section-label">Before & After</h4>
+  <h2>From a 4-step sequence to one flexible page</h2>
   <p>
-    Before starting the design process, I focused on understanding the company’s product strategy, underlying technical architecture, and real user behavior around pre-call anxiety.
+    The two biggest shifts: the test structure, and the help experience that appears when something goes wrong.
   </p>
 
-  <div class="grid-3">
-    <div class="grid-card">
-      <h3>Engineering Feasibility</h3>
-      <p>
-        Collaborated with video session developers to understand technical constraints, browser permissions limitations, and coding implications early in the design cycle.
-      </p>
-    </div>
-    <div class="grid-card">
-      <h3>Data & Analytics</h3>
-      <p>
-        Gathered quantitative metrics from the data team on feature traffic, repeat visit patterns, and drop-off rates right before scheduled appointment times.
-      </p>
-    </div>
-    <div class="grid-card">
-      <h3>Project Management</h3>
-      <p>
-        Aligned with PMs on adjacent video calling roadmap initiatives to identify mutual dependencies and ensure smooth sprint integration.
-      </p>
-    </div>
-  </div>
-
-  <h3>Competitive Analysis</h3>
-  <p>
-    I audited device testing flows across major calling and video conferencing platforms to benchmark industry standards, identify BetterHelp’s relative strengths, and uncover opportunities for agency and flexibility.
-  </p>
-
-  <div class="grid-2">
-    <div class="full-width-media">
-      <img
-        src="/images/betterhelp/Screen_Shot_2023-10-16_at_1.37.14_AM.png"
-        alt="Competitive Analysis: Calling platform device check comparison 1"
-        loading="lazy"
-      />
-    </div>
-    <div class="full-width-media">
-      <img
-        src="/images/betterhelp/Screen_Shot_2023-10-16_at_1.38.37_AM.png"
-        alt="Competitive Analysis: Calling platform device check comparison 2"
-        loading="lazy"
-      />
-    </div>
-  </div>
-
-  <div class="grid-2">
-    <div class="full-width-media">
-      <img
-        src="/images/betterhelp/Screen_Shot_2023-10-16_at_1.38.11_AM.png"
-        alt="Competitive Analysis: Calling platform device check comparison 3"
-        loading="lazy"
-      />
-    </div>
-    <div class="full-width-media">
-      <img
-        src="/images/betterhelp/Screen_Shot_2023-10-16_at_1.39.10_AM.png"
-        alt="Competitive Analysis: Calling platform device check comparison 4"
-        loading="lazy"
-      />
-    </div>
-  </div>
-
-  <h3>Insights from the Previous Design</h3>
-  <div class="grid-3">
-    <div class="grid-card">
-      <h3>What Was Broken</h3>
-      <p>
-        The legacy test had a rigid sequential flow: testing network required clicking through camera and audio checks first. Outdated styling clashed with the modern app, and the help section offered wordy, obsolete advice.
-      </p>
-    </div>
-    <div class="grid-card">
-      <h3>How We Addressed It</h3>
-      <p>
-        Replaced the linear wizard with an open hub allowing non-sequential testing, modernized the component language to match brand tokens, and completely rewritten help documentation.
-      </p>
-    </div>
-    <div class="grid-card">
-      <h3>Why It Matters</h3>
-      <p>
-        Empowering clients and therapists to test only what they need reduces pre-session stress, cuts session time lost to technical troubleshooting, and increases repeat platform trust.
-      </p>
-    </div>
-  </div>
-
-  <div class="grid-2">
-    <div class="full-width-media">
-      <img
-        src="/images/betterhelp/Screen_Shot_2023-07-12_at_11.55.png"
-        alt="Previous Camera Step Design"
-        loading="lazy"
-      />
-      <p style="font-size: 0.875rem; opacity: 0.6; margin-top: 0.5rem;">Previous Camera Step Design</p>
-    </div>
-    <div class="full-width-media">
-      <img
-        src="/images/betterhelp/Screen_Shot_2023-07-12_at_11.56.png"
-        alt="Previous Help Section Design and Content"
-        loading="lazy"
-      />
-      <p style="font-size: 0.875rem; opacity: 0.6; margin-top: 0.5rem;">Previous Help Section Design & Content</p>
-    </div>
-  </div>
-
-  <h3>Final Strategy</h3>
-  <div class="grid-3">
-    <div class="grid-card">
-      <h3>Effective User Flow</h3>
-      <p>
-        Give users total autonomy to select and test hardware independently, eliminating sequential barriers and reducing task completion time.
-      </p>
-    </div>
-    <div class="grid-card">
-      <h3>Modern UI</h3>
-      <p>
-        Implement clean visual hierarchy, consistent spacing, and modern design tokens that blend harmoniously with BetterHelp's core brand identity.
-      </p>
-    </div>
-    <div class="grid-card">
-      <h3>UX Writing</h3>
-      <p>
-        Restructure troubleshooting content into scannable, actionable guidance that assists users rapidly if a technical hurdle arises.
-      </p>
-    </div>
-  </div>
-
-  <h3>Major Architectural & Visual Shifts</h3>
   <div class="full-width-media">
     <img
       src="/images/betterhelp/Frame_987496.png"
-      alt="Major Structure Changes Overview"
+      alt="Before and after: sequential 4-step test vs. single tabbed page"
       loading="lazy"
     />
   </div>
@@ -211,28 +88,28 @@ sections:
   <div class="full-width-media">
     <img
       src="/images/betterhelp/Frame_987497.png"
-      alt="Detailed Structure Comparison"
+      alt="Before and after: legacy help section vs. redesigned slide-in help"
       loading="lazy"
     />
   </div>
 
   <div class="grid-3">
     <div class="grid-card">
-      <h3>Structural Organization</h3>
+      <h3>Structure</h3>
       <p>
-        Eliminated mandatory sequential steps. Added a prominent “Exit video session test” action at all stages, giving users immediate exit agency and cutting frustration.
+        Replaced the sequential steps with tabs, so users jump straight to the device they need. Added an “Exit video session test” action at every stage so no one feels trapped.
       </p>
     </div>
     <div class="grid-card">
-      <h3>Brand & Visual Consistency</h3>
+      <h3>Help Experience</h3>
       <p>
-        Adopted BetterHelp's standardized button treatments, typography, colors, and left-aligned text hierarchy, ensuring the feature feels native to the ecosystem.
+        Moved help into a dedicated slide-in view that encourages users to reload after changing settings. I worked with our UX writer to cut outdated references (Skype, PhotoBooth, Google Hangouts) and visually highlight exact browser permission settings.
       </p>
     </div>
     <div class="grid-card">
-      <h3>Refined Help Experience</h3>
+      <h3>Visual Consistency</h3>
       <p>
-        Collaborated closely with our UX writer to condense text, generalize guidance across all major browsers, and highlight exact browser permission settings visually.
+        Adopted BetterHelp’s standard buttons, typography, colors, and left-aligned hierarchy so the feature feels native to the rest of the product.
       </p>
     </div>
   </div>
@@ -240,42 +117,133 @@ sections:
   <div class="section-divider"></div>
 </section>
 
-<!-- 3. DESIGN ITERATIONS SECTION -->
-<section id="iterations" class="cs-section">
-  <h4 class="section-label">Design Iterations</h4>
-  <h2>Exploring layout fidelity, technical feasibility, and final UI</h2>
+<!-- 3. DISCOVERY & RESEARCH SECTION -->
+<section id="discovery" class="cs-section">
+  <h4 class="section-label">Discovery & Research</h4>
+  <h2>Gaining understanding across engineering, data, and competitors</h2>
+  <p>
+    I went directly to the teams who owned each piece of the problem:
+  </p>
 
-  <div class="callout">
-    <h3>Technical Feasibility Pivot</h3>
-    <p>
-      Early iterations (V1 and V2) explored dynamic dropdowns with real-time feedback meters (such as live microphone soundwave bars). After consulting engineering and PM leadership, implementing dynamic real-time meters was deemed disproportionately high effort for sprint prioritization. This feedback steered our direction toward a streamlined, highly feasible, and equally intuitive V3 structure.
-    </p>
+  <div class="grid-3">
+    <div class="grid-card">
+      <h3>Engineering</h3>
+      <p>
+        Met with the video session developers early to understand browser permission limits and what was realistic to build in one sprint.
+      </p>
+    </div>
+    <div class="grid-card">
+      <h3>Data</h3>
+      <p>
+        Pulled traffic, repeat-visit, and drop-off data from the data team. The biggest drop-off happened at step 2 (microphone), and most repeat visits came within 10 minutes of a session.
+      </p>
+    </div>
+    <div class="grid-card">
+      <h3>Users</h3>
+      <p>
+        We didn’t have bandwidth for formal usability testing within the sprint, so I reviewed recent support tickets about audio/video issues to understand what was actually breaking for users.
+      </p>
+    </div>
   </div>
 
-  <h3>Version 1 (V1)</h3>
+  <h3>Insights from the Previous Design</h3>
+  <div class="grid-2">
+    <div class="full-width-media">
+      <img
+        src="/images/betterhelp/Screen_Shot_2023-07-12_at_11.55.png"
+        alt="Previous Camera Step Design"
+        loading="lazy"
+      />
+      <p style="font-size: 0.875rem; opacity: 0.6; margin-top: 0.5rem;">Previous camera step: one device per page, fixed order</p>
+    </div>
+    <div class="full-width-media">
+      <img
+        src="/images/betterhelp/Screen_Shot_2023-07-12_at_11.56.png"
+        alt="Previous Help Section Design and Content"
+        loading="lazy"
+      />
+      <p style="font-size: 0.875rem; opacity: 0.6; margin-top: 0.5rem;">Previous help section: dense, outdated advice</p>
+    </div>
+  </div>
+
+  <h3>Competitive Analysis</h3>
   <p>
-    Initial exploration testing collapsible device cards with dynamic real-time feedback meters.
+    I audited pre-call checks across Microsoft Teams, Whereby, Zoom, and Google Meet. Here’s what shaped the design:
+  </p>
+
+  <div class="grid-2">
+    <div class="full-width-media">
+      <img
+        src="/images/betterhelp/Screen_Shot_2023-10-16_at_1.37.14_AM.png"
+        alt="Microsoft Teams pre-join device settings"
+        loading="lazy"
+      />
+      <p style="font-size: 0.875rem; opacity: 0.6; margin-top: 0.5rem;"><strong>Teams:</strong> camera preview and audio options on one pre-join screen. Takeaway: one page, all devices visible.</p>
+    </div>
+    <div class="full-width-media">
+      <img
+        src="/images/betterhelp/Screen_Shot_2023-10-16_at_1.38.37_AM.png"
+        alt="Whereby device settings"
+        loading="lazy"
+      />
+      <p style="font-size: 0.875rem; opacity: 0.6; margin-top: 0.5rem;"><strong>Whereby:</strong> camera, mic, and speaker in one compact card. Takeaway: users shouldn’t navigate to another separate page to test a device.</p>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="full-width-media">
+      <img
+        src="/images/betterhelp/Screen_Shot_2023-10-16_at_1.38.11_AM.png"
+        alt="Zoom guided speaker and microphone test"
+        loading="lazy"
+      />
+      <p style="font-size: 0.875rem; opacity: 0.6; margin-top: 0.5rem;"><strong>Zoom:</strong> clear yes/no prompts (“Do you hear a ringtone?”), but still forced in order. Takeaway: keep the simple confirmation, drop the forced sequence.</p>
+    </div>
+    <div class="full-width-media">
+      <img
+        src="/images/betterhelp/Screen_Shot_2023-10-16_at_1.39.10_AM.png"
+        alt="Google Meet pre-call device check"
+        loading="lazy"
+      />
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+</section>
+
+<!-- 4. DESIGN ITERATIONS SECTION -->
+<section id="iterations" class="cs-section">
+  <h4 class="section-label">Design Iterations</h4>
+  <h2>Testing three layouts</h2>
+
+  <h3>Version 1</h3>
+  <p>
+    <strong>Tried:</strong> A single preview window with device dropdown pills underneath and instructions tucked into a tooltip.
+    <strong>Learned:</strong> It gave users control over what to test, but hiding the instructions made them too easy to miss.
+    <strong>Dropped because:</strong> Dynamic device dropdowns were high dev lift to build, and the important copy was too hidden in a tooltip.
   </p>
   <div class="grid-2">
     <div class="full-width-media">
       <img
         src="/images/betterhelp/Scroll_v2.png"
-        alt="Iteration V1 Scroll Screen"
+        alt="Iteration V1 Screen"
         loading="lazy"
       />
     </div>
     <div class="full-width-media">
       <img
         src="/images/betterhelp/Frame_987498.png"
-        alt="Iteration V1 Layout Breakdown"
+        alt="Iteration V1 Evaluation"
         loading="lazy"
       />
     </div>
   </div>
 
-  <h3>Version 2 (V2)</h3>
+  <h3>Version 2</h3>
   <p>
-    Refining the landing hub layout, testing dedicated status badges, and experimenting with alternate exit pathways.
+    <strong>Tried:</strong> Equal-sized device tiles acting as dropdowns, with instructions visible on the page.
+    <strong>Learned:</strong> Visible instructions can fit without crowding the layout.
+    <strong>Dropped because:</strong> It still relied on dynamic dropdowns which was too high of a dev lift.
   </p>
   <div class="grid-2">
     <div class="full-width-media">
@@ -288,66 +256,53 @@ sections:
     <div class="full-width-media">
       <img
         src="/images/betterhelp/Frame_987499.png"
-        alt="Iteration V2 Architecture"
+        alt="Iteration V2 Evaluation"
         loading="lazy"
       />
     </div>
   </div>
 
-  <h3>Version 3 (V3)</h3>
+  <div class="callout">
+    <h3>The Tradeoff: Dynamic Dropdowns vs. Shipping This Sprint</h3>
+    <p>
+      V1 and V2 both depended on dynamic dropdowns with real-time feedback meters (like a live microphone soundwave). When engineering flagged these as too costly for the sprint, I pushed for V3’s simpler tab structure instead.
+    </p>
+    <p>
+      <strong>What we gave up:</strong> real-time audio feedback. <strong>How I adjusted:</strong> each tab has a clear “Confirm it’s working” / “I need help” choice, and the step pages have clear feedback on if their device is working (camera view, microphone playback, speaker sound play, network auto-check).
+    </p>
+  </div>
+
+  <h3>Version 3</h3>
   <p>
-    Streamlined layout optimized for engineering velocity and user clarity, removing complex live meters in favor of crisp status triggers.
+    <strong>Tried:</strong> Tab navigation across Camera, Microphone, Speaker, and Connection, with simple confirm/help actions.
+    <strong>Kept because:</strong> It was cheap to build, preserved user choice over what to test, and left instructions visible.
   </p>
   <div class="grid-2">
     <div class="full-width-media">
       <img
         src="/images/betterhelp/Video_Session_Test_Landing_Page_final.png"
-        alt="Iteration V3 Landing Page Final"
+        alt="Iteration V3 Landing Page"
         loading="lazy"
       />
     </div>
     <div class="full-width-media">
       <img
         src="/images/betterhelp/Frame_987500.png"
-        alt="Iteration V3 Architecture Details"
+        alt="Iteration V3 Evaluation"
         loading="lazy"
       />
     </div>
   </div>
 
-  <h3>Final Wireframe Synthesis</h3>
-  <div class="grid-3">
-    <div class="grid-card">
-      <h3>What</h3>
-      <p>
-        Combines the strongest usability traits of previous iterations while eliminating unnecessary cognitive overhead and complex dependencies.
-      </p>
-    </div>
-    <div class="grid-card">
-      <h3>How</h3>
-      <p>
-        Allows selective testing of camera, microphone, speaker, and connection with instant exit controls and clear visual indicators.
-      </p>
-    </div>
-    <div class="grid-card">
-      <h3>Why</h3>
-      <p>
-        Drastically reduces time-to-test and pre-call anxiety, achieving a 33% more streamlined user flow for over 2 million clients and therapists.
-      </p>
-    </div>
-  </div>
+  <div class="section-divider"></div>
+</section>
 
-  <div class="full-width-media">
-    <img
-      src="/images/betterhelp/Video_Session_Test_Landing_Page_final 1.png"
-      alt="Final Wireframe Synthesis Screen"
-      loading="lazy"
-    />
-  </div>
-
-  <h3>Implementing BetterHelp’s Brand Identity</h3>
+<!-- 5. FINAL UI & PROTOTYPE SECTION -->
+<section id="prototype" class="cs-section">
+  <h4 class="section-label">Final UI & Prototype</h4>
+  <h2>Applying BetterHelp’s brand to the final design</h2>
   <p>
-    Applying official brand typography, colors, button styles, and elevation guidelines to our wireframes produced the high-fidelity final interface.
+    Applying official brand typography, colors, button styles, and elevation guidelines to the V3 wireframe produced the final and modernized interface.
   </p>
 
   <div class="grid-2">
@@ -357,27 +312,21 @@ sections:
         alt="Wireframe State"
         loading="lazy"
       />
-      <p style="font-size: 0.875rem; opacity: 0.6; margin-top: 0.5rem;">Wireframe State</p>
+      <p style="font-size: 0.875rem; opacity: 0.6; margin-top: 0.5rem;">Chosen Wireframe (V3)</p>
     </div>
     <div class="full-width-media">
       <img
         src="/images/betterhelp/Video_Session_Test_Landing_Page_final 3.png"
-        alt="High-Fidelity Production UI"
+        alt="High-Fidelity Final UI"
         loading="lazy"
       />
-      <p style="font-size: 0.875rem; opacity: 0.6; margin-top: 0.5rem;">High-Fidelity Production UI</p>
+      <p style="font-size: 0.875rem; opacity: 0.6; margin-top: 0.5rem;">High-fidelity final UI</p>
     </div>
   </div>
 
-  <div class="section-divider"></div>
-</section>
-
-<!-- 4. INTERACTIVE PROTOTYPE SECTION -->
-<section id="prototype" class="cs-section">
-  <h4 class="section-label">Interactive Prototype</h4>
-  <h2>Explore the live prototype</h2>
+  <h3>Explore the Prototype</h3>
   <p>
-    Interact with the embedded Figma prototype below to test the redesigned device selection, streamlined camera/mic workflows, and updated troubleshooting states.
+    Explore the embedded Figma prototype below to test the device tabs, camera and microphone flows, and troubleshooting states.
   </p>
 
   <div class="figma-container">
@@ -400,31 +349,29 @@ sections:
   <div class="section-divider"></div>
 </section>
 
-<!-- 5. REFLECTION SECTION -->
+<!-- 6. REFLECTION SECTION -->
 <section id="reflection" class="cs-section">
   <h4 class="section-label">Reflection</h4>
   <h2>Key takeaways & lessons learned</h2>
-  <p>
-    Working with BetterHelp was an incredible experience where I learned how to cross-functionally communicate with other teams and design for business needs at global scale.
-  </p>
 
   <div class="grid-3">
     <div class="grid-card">
-      <h3>1. Navigating a Large Organization</h3>
+      <h3>1. Going Beyond the Brief</h3>
       <p>
-        Learned corporate communication rhythms and calendar etiquette across Google Calendar and Slack. Became comfortable proactively reaching out to data analysts, PMs, and engineers for critical insights, and introduced new animation tools to fellow designers to optimize developer handoff.
+        I introduced Jitter to the design team to create more detailed animation and interaction handoffs, which other designers adopted for their own projects.
       </p>
     </div>
     <div class="grid-card">
-      <h3>2. Quick Adjustment & Constraints</h3>
+      <h3>2. Designing Within Constraints</h3>
       <p>
-        Designed within technical constraints and company limits highlighted by leadership. Adapting our direction from heavy dynamic dropdowns to a pragmatic V3 structure taught me how to embrace constraints gracefully without compromising design quality or user delight.
+        Losing dynamic dropdowns caused a big pivot, but it forced a better question: what’s the simplest signal that tells a user “you’re good to go”? Finding that answer, rather than fighting the constraint to follow familiar standards, is what got V3 shipped.
       </p>
     </div>
     <div class="grid-card">
-      <h3>3. Time Management & Velocity</h3>
+      <h3>3. Speed With Craft</h3>
       <p>
-        Juggled multiple simultaneous design projects tracked in JIRA for sprint reviews. Learned how to balance rapid execution velocity with deep craft, leveraging design systems to ensure consistency across features.
+        I juggled multiple design projects tracked in JIRA for sprint reviews, and leaned on cross-functional collaborators and the growing design system at BetterHelp to move fast without sacrificing quality.
       </p>
     </div>
+  </div>
 </section>

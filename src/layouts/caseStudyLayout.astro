@@ -31,7 +31,7 @@ const allCaseStudies = [
         title: "Strawberry.me",
         slug: "strawberry",
         role: "Founding Product Designer",
-        tagline: "0→1 design for AI-assisted coaching platform | $20M+ ARR",
+        tagline: "0→1 design for AI-assisted coaching platform | $30M+ ARR",
         year: "2024-present",
         path: "/case-studies/strawberry",
     },
@@ -49,7 +49,7 @@ const allCaseStudies = [
         slug: "betterhelp",
         role: "Product Design Intern",
         tagline:
-            "Simplifying technical complexity for clients and therapists | 33% efficiency",
+            "Simplifying technical complexity for clients and therapists | 33% more streamlined flow",
         year: "2023",
         path: "/case-studies/betterhelp",
     },
@@ -692,6 +692,18 @@ const imageURL = new URL(ogImage, Astro.site || "https://tvishapatel.com");
             }
 
             /* ================================================
+               PLACEHOLDER HIGHLIGHT
+               Wrap unverified copy in <span class="todo">…</span>.
+               Remove the class once the value is confirmed.
+               ================================================ */
+            .todo {
+                background: #fff3a3;
+                outline: 1px dashed #d4b200;
+                padding: 0 0.15em;
+                border-radius: 2px;
+            }
+
+            /* ================================================
                MOBILE RESPONSIVE OVERRIDES
                ================================================ */
             @media (max-width: 767px) {
@@ -1211,11 +1223,6 @@ const imageURL = new URL(ogImage, Astro.site || "https://tvishapatel.com");
                                             loop
                                             muted
                                             playsinline
-                                            poster={
-                                                heroPoster
-                                                    ? encodeURI(heroPoster)
-                                                    : undefined
-                                            }
                                         >
                                             <source
                                                 src={encodeURI(heroImage)}
