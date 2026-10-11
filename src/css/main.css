@@ -169,7 +169,7 @@ h3 {
 .site-nav {
     display: flex;
     align-items: center;
-    gap: clamp(2rem, 4vw, 3.5remx);
+    gap: clamp(2rem, 4vw, 3.5rem);
 }
 
 .site-nav a {
