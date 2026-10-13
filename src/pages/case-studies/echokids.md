@@ -272,13 +272,26 @@ sections:
         loading="lazy"
       />
     </div>
-    <div class="full-width-media">
-      <img
-        src="/images/echokids/Frame_1088_(1).png"
-        alt="Iteration V1 Evaluation"
-        loading="lazy"
-      />
-    </div>
+    <ul class="eval-list">
+      <li class="eval-item">
+        <span class="eval-icon eval-con" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </span>
+        <span>lack of icons in navigation, designed more like a home page</span>
+      </li>
+      <li class="eval-item">
+        <span class="eval-icon eval-pro" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </span>
+        <span>navigation easily accessible</span>
+      </li>
+      <li class="eval-item">
+        <span class="eval-icon eval-pro" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </span>
+        <span>space to add more information/quick links on the side</span>
+      </li>
+    </ul>
   </div>
 
   <h3>Version 2</h3>
@@ -294,13 +307,26 @@ sections:
         loading="lazy"
       />
     </div>
-    <div class="full-width-media">
-      <img
-        src="/images/echokids/Frame_1089.png"
-        alt="Iteration V2 Evaluation"
-        loading="lazy"
-      />
-    </div>
+    <ul class="eval-list">
+      <li class="eval-item">
+        <span class="eval-icon eval-con" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </span>
+        <span>navigation not easily or quickly accessible</span>
+      </li>
+      <li class="eval-item">
+        <span class="eval-icon eval-con" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </span>
+        <span>too much white space on the top left of screen</span>
+      </li>
+      <li class="eval-item">
+        <span class="eval-icon eval-pro" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </span>
+        <span>space to add more information/quick links on the side</span>
+      </li>
+    </ul>
   </div>
 
   <h3>Version 3</h3>
@@ -316,13 +342,26 @@ sections:
         loading="lazy"
       />
     </div>
-    <div class="full-width-media">
-      <img
-        src="/images/echokids/Frame_1090.png"
-        alt="Iteration V3 Evaluation"
-        loading="lazy"
-      />
-    </div>
+    <ul class="eval-list">
+      <li class="eval-item">
+        <span class="eval-icon eval-con" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </span>
+        <span>less information/quick links present on the screen</span>
+      </li>
+      <li class="eval-item">
+        <span class="eval-icon eval-pro" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </span>
+        <span>navigation very easily/quickly accessible</span>
+      </li>
+      <li class="eval-item">
+        <span class="eval-icon eval-pro" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </span>
+        <span>effective usage of space on the top of the dashboard; appropriate for the navigation to take up this much space since it will be used often and quickly</span>
+      </li>
+    </ul>
   </div>
 
   <h3>Final Wireframe</h3>
@@ -337,13 +376,26 @@ sections:
         loading="lazy"
       />
     </div>
-    <div class="full-width-media">
-      <img
-        src="/images/echokids/Frame_1091.png"
-        alt="Final Wireframe Evaluation"
-        loading="lazy"
-      />
-    </div>
+    <ul class="eval-list">
+      <li class="eval-item">
+        <span class="eval-icon eval-pro" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </span>
+        <span>added breakdown section at bottom of page to solve lack of information drawback</span>
+      </li>
+      <li class="eval-item">
+        <span class="eval-icon eval-pro" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </span>
+        <span>navigation very easily/quickly accessible</span>
+      </li>
+      <li class="eval-item">
+        <span class="eval-icon eval-pro" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </span>
+        <span>effective usage of space on the top of the dashboard; appropriate for the navigation to take up this much space since it will be used often and quickly</span>
+      </li>
+    </ul>
   </div>
 
   <div class="section-divider"></div>

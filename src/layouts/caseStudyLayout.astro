@@ -614,6 +614,54 @@ const imageURL = new URL(ogImage, Astro.site || "https://tvishapatel.com");
                 margin: 1.5rem 0;
             }
 
+            .eval-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 1.25rem;
+                align-self: center;
+            }
+
+            .eval-item {
+                display: flex;
+                align-items: flex-start;
+                gap: 0.875rem;
+                font-size: 1.05rem;
+                line-height: 1.5;
+                color: var(--cs-text);
+            }
+
+            .eval-icon {
+                flex-shrink: 0;
+                width: 22px;
+                height: 22px;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 1px;
+            }
+
+            .eval-icon svg {
+                width: 20px;
+                height: 20px;
+                stroke-width: 2.25;
+            }
+
+            .eval-icon.eval-con {
+                color: #e5534b;
+            }
+
+            .eval-icon.eval-pro {
+                color: #38a169;
+            }
+
+            .eval-icon.eval-neutral {
+                color: #e2941b;
+            }
+
             .grid-3 {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);

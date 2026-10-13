@@ -230,13 +230,26 @@ sections:
         loading="lazy"
       />
     </div>
-    <div class="full-width-media">
-      <img
-        src="/images/betterhelp/Frame_987498.png"
-        alt="Iteration V1 Evaluation"
-        loading="lazy"
-      />
-    </div>
+    <ul class="eval-list">
+      <li class="eval-item">
+        <span class="eval-icon eval-con" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </span>
+        <span>technically difficult/consuming to have dynamic drop downs</span>
+      </li>
+      <li class="eval-item">
+        <span class="eval-icon eval-pro" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </span>
+        <span>give user more agency to chose what device to test</span>
+      </li>
+      <li class="eval-item">
+        <span class="eval-icon eval-neutral" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+        </span>
+        <span>less writing on page with copy within a tool tip; however copy is too hidden now</span>
+      </li>
+    </ul>
   </div>
 
   <h3>Version 2</h3>
@@ -253,13 +266,32 @@ sections:
         loading="lazy"
       />
     </div>
-    <div class="full-width-media">
-      <img
-        src="/images/betterhelp/Frame_987499.png"
-        alt="Iteration V2 Evaluation"
-        loading="lazy"
-      />
-    </div>
+    <ul class="eval-list">
+      <li class="eval-item">
+        <span class="eval-icon eval-con" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </span>
+        <span>technically difficult/consuming to have dynamic drop downs</span>
+      </li>
+      <li class="eval-item">
+        <span class="eval-icon eval-pro" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </span>
+        <span>instructions does not take up too much space and visible</span>
+      </li>
+      <li class="eval-item">
+        <span class="eval-icon eval-pro" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </span>
+        <span>give user more agency to chose what device to test</span>
+      </li>
+      <li class="eval-item">
+        <span class="eval-icon eval-pro" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </span>
+        <span>cleaner design with equal sized squares as drop downs</span>
+      </li>
+    </ul>
   </div>
 
   <div class="callout">
@@ -285,13 +317,26 @@ sections:
         loading="lazy"
       />
     </div>
-    <div class="full-width-media">
-      <img
-        src="/images/betterhelp/Frame_987500.png"
-        alt="Iteration V3 Evaluation"
-        loading="lazy"
-      />
-    </div>
+    <ul class="eval-list">
+      <li class="eval-item">
+        <span class="eval-icon eval-pro" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </span>
+        <span>technically efficient and less dev effort</span>
+      </li>
+      <li class="eval-item">
+        <span class="eval-icon eval-pro" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </span>
+        <span>give user more agency to chose what device to test</span>
+      </li>
+      <li class="eval-item">
+        <span class="eval-icon eval-pro" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </span>
+        <span>clean and modern design with visible instructions</span>
+      </li>
+    </ul>
   </div>
 
   <div class="section-divider"></div>
