@@ -246,10 +246,17 @@ h3 {
 }
 
 .dotted-link {
+    color: var(--color-accent);
     text-decoration: underline;
     text-decoration-style: dotted;
+    text-decoration-color: var(--color-accent);
     text-decoration-thickness: 12.5%;
     text-underline-offset: 0.18em;
+    transition: opacity var(--transition);
+}
+
+.dotted-link:hover {
+    opacity: 0.75;
 }
 
 .icon {

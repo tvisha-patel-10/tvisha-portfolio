@@ -63,10 +63,10 @@ import "../css/home.css";
 					loop
 					muted
 					playsinline
-					poster="/images/strawberry/Screenshot_2026-02-27_at_10.13.59_PM.png"
+					preload="auto"
 				>
 					<source
-						src="/images/strawberry/strawberry%200-1.mp4"
+						src="/images/strawberry/strawberry_gen_cover.mp4"
 						type="video/mp4"
 					/>
 				</video>
@@ -86,9 +86,9 @@ import "../css/home.css";
 				role="img"
 				aria-label="Strawberry.me case study image placeholder"
 			>
-				<video autoplay loop muted playsinline>
+				<video autoplay loop muted playsinline preload="auto">
 					<source
-						src="/images/strawberry-ai/strawberryai_cover.mp4"
+						src="/images/strawberry-ai/strawberry_ai_cover.mp4"
 						type="video/mp4"
 					/>
 				</video>
@@ -111,7 +111,7 @@ import "../css/home.css";
 						loop
 						muted
 						playsinline
-						poster="/images/betterhelp/Video_Session_Test_Landing_Page_final 3.png"
+						preload="auto"
 					>
 						<source
 							src="/images/betterhelp/betterhelp_cover.mp4"
@@ -140,7 +140,7 @@ import "../css/home.css";
 					loop
 					muted
 					playsinline
-					poster="/images/echokids/Dashboard.png"
+					preload="auto"
 				>
 					<source
 						src="/images/echokids/echokids_cover.mp4"
@@ -157,4 +157,30 @@ import "../css/home.css";
 			</div>
 		</a>
 	</section>
+
+	<script>
+		// Ensure muted autoplay videos start playing reliably across Safari / iOS / Chrome
+		document.addEventListener("DOMContentLoaded", () => {
+			const videos = document.querySelectorAll<HTMLVideoElement>(".work-card video");
+			videos.forEach((video) => {
+				video.muted = true;
+				video.defaultMuted = true;
+				const tryPlay = () => {
+					const promise = video.play();
+					if (promise !== undefined) {
+						promise.catch(() => {
+							// Autoplay was prevented or postponed by browser power saving
+						});
+					}
+				};
+
+				if (video.readyState >= 2) {
+					tryPlay();
+				} else {
+					video.addEventListener("canplay", tryPlay, { once: true });
+					video.addEventListener("loadeddata", tryPlay, { once: true });
+				}
+			});
+		});
+	</script>
 </BaseLayout>

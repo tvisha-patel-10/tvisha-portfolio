@@ -7,7 +7,7 @@ description: "I redesigned EchoKids' mentor dashboard and brand system, increasi
 year: "2022"
 subtitle: "How I increased retention by 200% and created a 47% more effective dashboard"
 heroImage: "/images/echokids/echokids_cover.mp4"
-heroPoster: "/images/echokids/Dashboard.png"
+heroPoster: "/images/echokids/echokids_cover_poster.webp"
 role: "Product Design Intern"
 timeline: "June – August 2022"
 team:
@@ -25,6 +25,7 @@ sections:
   - { id: "structure", label: "Before & After" }
   - { id: "iterations", label: "Design Iterations" }
   - { id: "final", label: "Final UI & Brand" }
+  - { id: "impact", label: "Impact & Outcomes" }
   - { id: "reflection", label: "Reflection" }
 ---
 
@@ -81,9 +82,8 @@ sections:
       href="https://docs.google.com/presentation/d/1UfDD2b-VZKHimDe5TZtJXrvmlPWaPgiCuzwc19EN9l8/edit?usp=sharing"
       target="_blank"
       rel="noopener noreferrer"
-    >
-      View Heuristic Evaluation Slide Deck ↗
-    </a>
+      class="external-link"
+    >View Heuristic Evaluation Slide Deck<svg class="external-arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 1.5h7v7M10.5 1.5L2 10" /></svg></a>
   </p>
 
   <h3>Aligning With the CEO</h3>
@@ -129,9 +129,8 @@ sections:
     <p class="impact-label">User research: Hidden menus and unclear feedback confused mentors</p>
     <div class="impact-canvas">
       <img
-        src="/images/echokids/Screen Shot 2022-08-27 at 8.24.27 PM.png"
+        src="/images/echokids/mentor_interviews_affinity_map.webp"
         alt="Mentor interview notes: pain points and good points"
-        loading="lazy"
       />
     </div>
   </div>
@@ -197,12 +196,25 @@ sections:
 
   <div class="impact-holder size-a theme-echokids">
     <p class="impact-label">Shift: Hidden navigation → Persistent sidebar with modular cards</p>
-    <div class="impact-canvas">
-      <img
-        src="/images/echokids/Frame 1086 (1).png"
-        alt="Before and after: legacy dashboard vs. redesigned dashboard with sidebar navigation"
-        loading="lazy"
-      />
+    <div class="impact-split">
+      <div class="impact-slot">
+        <span class="slot-badge">Before</span>
+        <div class="impact-canvas">
+          <img
+            src="/images/echokids/legacy_dashboard_view.webp"
+            alt="Legacy EchoKids mentor dashboard with hidden navigation"
+          />
+        </div>
+      </div>
+      <div class="impact-slot">
+        <span class="slot-badge">After</span>
+        <div class="impact-canvas">
+          <img
+            src="/images/echokids/redesigned_dashboard_final.webp"
+            alt="After: Redesigned EchoKids mentor dashboard with persistent sidebar and modular cards"
+          />
+        </div>   
+      </div>
     </div>
   </div>
 
@@ -230,12 +242,25 @@ sections:
   <h3>Closer Look at the Upcoming Lesson Card</h3>
   <div class="impact-holder size-a theme-echokids">
     <p class="impact-label">Component zoom: Added explicit headers and instant save feedback</p>
-    <div class="impact-canvas">
-      <img
-        src="/images/echokids/Screen Shot 2022-09-03 at 2.51.17 AM.png"
-        alt="Before and after: upcoming lesson card"
-        loading="lazy"
-      />
+    <div class="impact-split">
+      <div class="impact-slot">
+        <span class="slot-badge">Before</span>
+        <div class="impact-canvas">
+          <img
+            src="/images/echokids/lesson_card_before.webp"
+            alt="Before: Legacy upcoming lesson card without clear headings or feedback"
+          />
+        </div> 
+      </div>
+      <div class="impact-slot">
+        <span class="slot-badge">After</span>
+        <div class="impact-canvas">
+          <img
+            src="/images/echokids/lesson_card_after.webp"
+            alt="After: Redesigned lesson card with clear headers, save status, and organized actions"
+          />
+        </div> 
+      </div>
     </div>
   </div>
 
@@ -278,9 +303,8 @@ sections:
       <p class="impact-label">V1 layout: Top navigation without icons read like a landing page</p>
       <div class="impact-canvas">
         <img
-          src="/images/echokids/MacBook_Pro_14__-_5_(2).png"
+          src="/images/echokids/heuristic_wireframe_audit.webp"
           alt="Iteration V1 Screen"
-          loading="lazy"
         />
       </div>
     </div>
@@ -316,9 +340,8 @@ sections:
       <p class="impact-label">V2 layout: Hamburger menu created friction and awkward whitespace</p>
       <div class="impact-canvas">
         <img
-          src="/images/echokids/MacBook_Pro_14__-_4.png"
+          src="/images/echokids/layout_iteration_1.webp"
           alt="Iteration V2 Screen"
-          loading="lazy"
         />
       </div>
     </div>
@@ -354,9 +377,8 @@ sections:
       <p class="impact-label">V3 layout: Persistent vertical sidebar fixed discoverability</p>
       <div class="impact-canvas">
         <img
-          src="/images/echokids/MacBook_Pro_14__-_2.png"
+          src="/images/echokids/layout_iteration_2.webp"
           alt="Iteration V3 Screen"
-          loading="lazy"
         />
       </div>
     </div>
@@ -391,9 +413,8 @@ sections:
       <p class="impact-label">Final wireframe: Added earnings breakdown to reclaim lost page width</p>
       <div class="impact-canvas">
         <img
-          src="/images/echokids/MacBook_Pro_14__-_6_(3).png"
+          src="/images/echokids/layout_iteration_3.webp"
           alt="Final Wireframe Screen"
-          loading="lazy"
         />
       </div>
     </div>
@@ -435,9 +456,8 @@ sections:
     <p class="impact-label">Design system: High-contrast color hierarchy, type, and components</p>
     <div class="impact-canvas">
       <img
-        src="/images/echokids/Frame_1.png"
+        src="/images/echokids/design_system_components.webp"
         alt="EchoKids Design System and Color System"
-        loading="lazy"
       />
     </div>
   </div>
@@ -450,9 +470,8 @@ sections:
     <p class="impact-label">Shipped dashboard: 200% retention boost with scannable mentor hubs</p>
     <div class="impact-canvas">
       <img
-        src="/images/echokids/Dashboard.png"
+        src="/images/echokids/redesigned_dashboard_final.webp"
         alt="High-Fidelity Final Dashboard"
-        loading="lazy"
       />
     </div>
   </div>
@@ -474,15 +493,43 @@ sections:
       href="https://www.figma.com/proto/wo1jbicqeWG7i1J0XElc76/Tvisha---EchoKids-Redesign-(Copy)?node-id=277%3A87&scaling=scale-down&page-id=0%3A1&starting-point-node-id=7%3A2"
       target="_blank"
       rel="noopener noreferrer"
-    >
-      Open Prototype in Figma full screen ↗
-    </a>
+      class="external-link"
+    >Open Prototype in Figma full screen<svg class="external-arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 1.5h7v7M10.5 1.5L2 10" /></svg></a>
   </p>
 
   <div class="section-divider"></div>
 </section>
 
-<!-- 7. REFLECTION SECTION -->
+<!-- 7. IMPACT & OUTCOMES SECTION -->
+<section id="impact" class="cs-section">
+  <h4 class="section-label">Impact & Outcomes</h4>
+  <h2>Measurable results shipped across mobile and desktop</h2>
+  <p>
+    Measured over the 6 weeks following production launch across EchoKids' mentor community:
+  </p>
+
+  <div class="grid-3">
+    <div class="stat-card">
+      <p class="stat-card-value">+200%</p>
+      <p class="stat-card-label">Weekly Returning Mentors</p>
+      <p class="stat-card-subtext">Active weekly mentor engagement grew from 15 to 45 mentors.</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-card-value">-47%</p>
+      <p class="stat-card-label">Time to Find a Tool</p>
+      <p class="stat-card-subtext">Drastic drop in navigation friction thanks to the persistent sidebar.</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-card-value">0→1</p>
+      <p class="stat-card-label">Design System Shipped</p>
+      <p class="stat-card-subtext">Unified brand refresh and reusable component library adopted across app and web.</p>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+</section>
+
+<!-- 8. REFLECTION SECTION -->
 <section id="reflection" class="cs-section">
   <h4 class="section-label">Reflection</h4>
   <h2>Key takeaways & lessons learned</h2>

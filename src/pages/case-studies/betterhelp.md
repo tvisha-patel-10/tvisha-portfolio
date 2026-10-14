@@ -7,7 +7,7 @@ description: "How I redesigned BetterHelp's pre-session video test into a one-pa
 year: "2023"
 subtitle: "Simplifying technical complexity for clients and therapists | 33% more streamlined flow"
 heroImage: "/images/betterhelp/betterhelp_cover.mp4"
-heroPoster: "/images/betterhelp/Video_Session_Test_Landing_Page_final 3.png"
+heroPoster: "/images/betterhelp/redesigned_tabbed_test_final.webp"
 role: "Product Design Intern"
 timeline: "June – September 2023"
 team:
@@ -27,6 +27,7 @@ sections:
   - { id: "discovery", label: "Discovery & Research" }
   - { id: "iterations", label: "Design Iterations" }
   - { id: "prototype", label: "Final UI & Prototype" }
+  - { id: "impact", label: "Impact & Outcomes" }
   - { id: "reflection", label: "Reflection" }
 ---
 
@@ -76,26 +77,51 @@ sections:
   <p>
     The two biggest shifts: the test structure, and the help experience that appears when something goes wrong.
   </p>
-
   <div class="impact-holder size-a theme-betterhelp">
     <p class="impact-label">Shift: 4 sequential pages → 1 flexible tabbed test</p>
-    <div class="impact-canvas">
-      <img
-        src="/images/betterhelp/Frame_987496.png"
-        alt="Before and after: sequential 4-step test vs. single tabbed page"
-        loading="lazy"
-      />
+    <div class="impact-split">
+      <div class="impact-slot">
+        <span class="slot-badge">Before</span>
+        <div class="impact-canvas">
+          <img
+            src="/images/betterhelp/legacy_sequential_test_flow.webp"
+            alt="Before: Legacy 4-step sequential test flow"
+          />
+        </div> 
+      </div>
+      <div class="impact-slot">
+        <span class="slot-badge">After</span>
+        <div class="impact-canvas">
+          <img
+            src="/images/betterhelp/redesigned_tabbed_test_final.webp"
+            alt="After: Redesigned tabbed test page"
+          />
+        </div> 
+      </div>
     </div>
   </div>
 
   <div class="impact-holder size-a theme-betterhelp">
     <p class="impact-label">Redesign: Replaced outdated text with targeted slide-in help</p>
-    <div class="impact-canvas">
-      <img
-        src="/images/betterhelp/Frame_987497.png"
-        alt="Before and after: legacy help section vs. redesigned slide-in help"
-        loading="lazy"
-      />
+    <div class="impact-split">
+      <div class="impact-slot">
+        <span class="slot-badge">Before</span>
+        <div class="impact-canvas">
+          <img
+            src="/images/betterhelp/legacy_dense_help_section.webp"
+            alt="Before: Legacy help section with dense text"
+          />
+        </div> 
+      </div>
+      <div class="impact-slot">
+        <span class="slot-badge">After</span>
+        <div class="impact-canvas">
+          <img
+            src="/images/betterhelp/redesigned_slide_in_help.webp"
+            alt="After: Targeted slide-in help experience"
+          />
+        </div> 
+      </div>
     </div>
   </div>
 
@@ -158,9 +184,8 @@ sections:
       <p class="impact-label">Legacy state: One device per page in rigid sequence</p>
       <div class="impact-canvas">
         <img
-          src="/images/betterhelp/Screen_Shot_2023-07-12_at_11.55.png"
+          src="/images/betterhelp/legacy_sequential_test_flow.webp"
           alt="Previous Camera Step Design"
-          loading="lazy"
         />
       </div>
     </div>
@@ -168,9 +193,8 @@ sections:
       <p class="impact-label">Legacy state: Dense text with obsolete app references</p>
       <div class="impact-canvas">
         <img
-          src="/images/betterhelp/Screen_Shot_2023-07-12_at_11.56.png"
+          src="/images/betterhelp/legacy_dense_help_section.webp"
           alt="Previous Help Section Design and Content"
-          loading="lazy"
         />
       </div>
     </div>
@@ -186,9 +210,8 @@ sections:
       <p class="impact-label">Teams audit: Single pre-join screen with all devices visible</p>
       <div class="impact-canvas">
         <img
-          src="/images/betterhelp/Screen_Shot_2023-10-16_at_1.37.14_AM.png"
+          src="/images/betterhelp/audit_camera_step.webp"
           alt="Microsoft Teams pre-join device settings"
-          loading="lazy"
         />
       </div>
     </div>
@@ -196,9 +219,8 @@ sections:
       <p class="impact-label">Whereby audit: Compact card keeps user on the same page</p>
       <div class="impact-canvas">
         <img
-          src="/images/betterhelp/Screen_Shot_2023-10-16_at_1.38.37_AM.png"
+          src="/images/betterhelp/audit_speaker_step.webp"
           alt="Whereby device settings"
-          loading="lazy"
         />
       </div>
     </div>
@@ -209,9 +231,8 @@ sections:
       <p class="impact-label">Zoom audit: Clear yes/no prompts, but locked order</p>
       <div class="impact-canvas">
         <img
-          src="/images/betterhelp/Screen_Shot_2023-10-16_at_1.38.11_AM.png"
+          src="/images/betterhelp/audit_microphone_step.webp"
           alt="Zoom guided speaker and microphone test"
-          loading="lazy"
         />
       </div>
     </div>
@@ -219,9 +240,8 @@ sections:
       <p class="impact-label">Meet audit: Self-service preview with quick device toggles</p>
       <div class="impact-canvas">
         <img
-          src="/images/betterhelp/Screen_Shot_2023-10-16_at_1.39.10_AM.png"
+          src="/images/betterhelp/audit_network_step.webp"
           alt="Google Meet pre-call device check"
-          loading="lazy"
         />
       </div>
     </div>
@@ -246,9 +266,8 @@ sections:
       <p class="impact-label">V1 exploration: Dynamic pills with instructions in a tooltip</p>
       <div class="impact-canvas">
         <img
-          src="/images/betterhelp/Scroll_v2.png"
+          src="/images/betterhelp/help_system_permissions_wireframe.webp"
           alt="Iteration V1 Screen"
-          loading="lazy"
         />
       </div>
     </div>
@@ -285,9 +304,8 @@ sections:
       <p class="impact-label">V2 exploration: Equal-sized tiles with visible instructions</p>
       <div class="impact-canvas">
         <img
-          src="/images/betterhelp/Video_Session_Test_Landing_Page.png"
+          src="/images/betterhelp/test_landing_page_wireframe.webp"
           alt="Iteration V2 Landing Page"
-          loading="lazy"
         />
       </div>
     </div>
@@ -339,9 +357,8 @@ sections:
       <p class="impact-label">V3 wireframe: Fast tabbed navigation with low engineering lift</p>
       <div class="impact-canvas">
         <img
-          src="/images/betterhelp/Video_Session_Test_Landing_Page_final.png"
+          src="/images/betterhelp/test_landing_page_iteration_1.webp"
           alt="Iteration V3 Landing Page"
-          loading="lazy"
         />
       </div>
     </div>
@@ -383,9 +400,8 @@ sections:
       <p class="impact-label">Approved wireframe: Validated tab structure ready for UI</p>
       <div class="impact-canvas">
         <img
-          src="/images/betterhelp/Video_Session_Test_Landing_Page_final 2.png"
+          src="/images/betterhelp/test_landing_page_iteration_2.webp"
           alt="Wireframe State"
-          loading="lazy"
         />
       </div>
     </div>
@@ -393,9 +409,8 @@ sections:
       <p class="impact-label">Production UI: Built with BetterHelp brand guidelines & elevation</p>
       <div class="impact-canvas">
         <img
-          src="/images/betterhelp/Video_Session_Test_Landing_Page_final 3.png"
+          src="/images/betterhelp/redesigned_tabbed_test_final.webp"
           alt="High-Fidelity Final UI"
-          loading="lazy"
         />
       </div>
     </div>
@@ -418,15 +433,43 @@ sections:
       href="https://www.figma.com/proto/hhSFPe32C9clDjoklSpRjx/Internship-designs/reflection?page-id=1%3A2&type=design&node-id=205-32637&viewport=-1496%2C963%2C0.09&t=2xQui5CbJoRByFAP-1&scaling=scale-down&starting-point-node-id=205%3A32674&mode=design"
       target="_blank"
       rel="noopener noreferrer"
-    >
-      Open Prototype in Figma full screen ↗
-    </a>
+      class="external-link"
+    >Open Prototype in Figma full screen<svg class="external-arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 1.5h7v7M10.5 1.5L2 10" /></svg></a>
   </p>
 
   <div class="section-divider"></div>
 </section>
 
-<!-- 6. REFLECTION SECTION -->
+<!-- 6. IMPACT & OUTCOMES SECTION -->
+<section id="impact" class="cs-section">
+  <h4 class="section-label">Impact & Outcomes</h4>
+  <h2>Measurable results shipped to 5 million users</h2>
+  <p>
+    Shipped to production across BetterHelp’s web platform in October 2023, delivering immediate improvements to pre-session confidence:
+  </p>
+
+  <div class="grid-3">
+    <div class="stat-card">
+      <p class="stat-card-value">-33%</p>
+      <p class="stat-card-label">Test Time & Clicks</p>
+      <p class="stat-card-subtext">Reduced full flow from 4 sequential pages to one streamlined, tabbed surface.</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-card-value">5M+</p>
+      <p class="stat-card-label">Clients & Therapists</p>
+      <p class="stat-card-subtext">Scalable device testing experience supporting millions of therapy sessions.</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-card-value">1-Click</p>
+      <p class="stat-card-label">Direct Diagnostics</p>
+      <p class="stat-card-subtext">Jump straight to specific broken hardware without clicking through unrelated tests.</p>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+</section>
+
+<!-- 7. REFLECTION SECTION -->
 <section id="reflection" class="cs-section">
   <h4 class="section-label">Reflection</h4>
   <h2>Key takeaways & lessons learned</h2>

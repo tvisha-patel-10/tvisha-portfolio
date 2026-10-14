@@ -6,7 +6,7 @@ pageTitle: "Strawberry.me AI Message Drafts Case Study — Tvisha Patel"
 description: "Designing an AI draft messaging workflow for 800+ coaches that increased follow-up rates from 60% to 92%."
 year: "2025"
 subtitle: "AI message draft workflow for coaches | 60% → 92% follow-up rate"
-heroImage: "/images/strawberry-ai/strawberryai_cover.mp4"
+heroImage: "/images/strawberry-ai/strawberry_ai_cover.mp4"
 role: "Founding Product Designer"
 timeline: "8-Day Sprint (7 Days Spec + Build, 1 Day UAT)"
 team:
@@ -63,13 +63,14 @@ passwordProtected: true
   </div>
 
   <div class="impact-holder size-a theme-strawberry-ai">
-    <p class="impact-label">Hero: 1-click contextual AI drafts embedded in coach workflows</p>
+    <p class="impact-label">1-click AI drafts embedded in coach workflows</p>
     <div class="impact-canvas">
-      <img
-        src="/images/strawberry-ai/hero-mockup.png"
-        alt="Strawberry.me AI Message Draft Generator Laptop Mockup"
-        loading="lazy"
-      />
+      <video autoplay loop muted playsinline>
+        <source
+          src="/images/strawberry-ai/generation_prototype.mp4"
+          type="video/mp4"
+        />
+      </video>
     </div>
   </div>
 
@@ -153,6 +154,16 @@ passwordProtected: true
     I studied four products to see how they handle synthesis and user confidence, then made a call on each pattern:
   </p>
 
+  <div class="impact-holder size-a theme-strawberry-ai">
+    <p class="impact-label">Audit: Why standard rerolls and opaque AI generation failed coach trust</p>
+    <div class="impact-canvas">
+      <img
+        src="/images/strawberry-ai/competitive_audit.webp"
+        alt="Competitive Analysis of AI Generation and Source Attribution Patterns"
+      />
+    </div>
+  </div>
+
   <div class="grid-2">
     <div class="grid-card">
       <h3>Borrowed: Source Citations</h3>
@@ -177,17 +188,6 @@ passwordProtected: true
       <p>
         One-click rerolls are standard across these tools. For coaches clearing a queue, this could turn a 30-second task into a slot machine with them rolling for the perfect one, taking out the human voice from the loop.
       </p>
-    </div>
-  </div>
-
-  <div class="impact-holder size-a theme-strawberry-ai">
-    <p class="impact-label">Audit: Why standard rerolls and opaque AI generation failed coach trust</p>
-    <div class="impact-canvas">
-      <img
-        src="/images/strawberry-ai/competitive-analysis.png"
-        alt="Competitive Analysis of AI Generation and Source Attribution Patterns"
-        loading="lazy"
-      />
     </div>
   </div>
 
@@ -230,9 +230,8 @@ passwordProtected: true
         <p class="impact-label">V1: Numbered footnote badges (broke on editing)</p>
         <div class="impact-canvas">
           <img
-            src="/images/strawberry-ai/source-attribution-v1.png"
+            src="/images/strawberry-ai/source_attribution_v1.webp"
             alt="V1: Inline Badges"
-            loading="lazy"
           />
         </div>
       </div>
@@ -247,9 +246,8 @@ passwordProtected: true
         <p class="impact-label">V2: Collapsible toggle (skipped by coaches)</p>
         <div class="impact-canvas">
           <img
-            src="/images/strawberry-ai/source-attribution-v2.png"
+            src="/images/strawberry-ai/source_attribution_v2.webp"
             alt="V2: Collapsible Toggle"
-            loading="lazy"
           />
         </div>
       </div>
@@ -264,9 +262,8 @@ passwordProtected: true
         <p class="impact-label">V3: Interactive source pills with hover context</p>
         <div class="impact-canvas">
           <img
-            src="/images/strawberry-ai/source-attribution-v3.png"
+            src="/images/strawberry-ai/source_attribution_v3.webp"
             alt="V3: Interactive Source Pills"
-            loading="lazy"
           />
         </div>
       </div>
@@ -359,9 +356,8 @@ passwordProtected: true
     <p class="impact-label">Systems alignment: Product KPIs, prompt schemas, and feedback loops</p>
     <div class="impact-canvas">
       <img
-        src="/images/strawberry-ai/collaboration-diagram.png"
+        src="/images/strawberry-ai/system_alignment_diagram.webp"
         alt="Cross-Functional Collaboration Diagram"
-        loading="lazy"
       />
     </div>
   </div>
@@ -378,15 +374,24 @@ passwordProtected: true
   </p>
 
   <div class="impact-holder size-a theme-strawberry-ai">
-    <p class="impact-label">Final interface: Fast manual editing with zero hallucination risk</p>
     <div class="impact-canvas">
-      <img
-        src="/images/strawberry-ai/prototype-screen.png"
-        alt="Full Coach Chat and AI Message Draft Interface"
-        loading="lazy"
-      />
+      <video autoplay loop muted playsinline>
+        <source
+          src="/images/strawberry-ai/generation_prototype.mp4"
+          type="video/mp4"
+        />
+      </video>
     </div>
   </div>
+
+  <p>
+    <a
+      href="https://www.figma.com/make/Mu4VVa1zfIwMj7YDtZQNyv/Prototype-message-draft-flow?fullscreen=1&t=gda4FhTBfRQrYa5a-1"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="external-link"
+    >Open Prototype in Figma full screen<svg class="external-arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 1.5h7v7M10.5 1.5L2 10" /></svg></a>
+  </p>
 
   <div class="section-divider"></div>
 </section>
@@ -396,21 +401,27 @@ passwordProtected: true
   <h4 class="section-label">Impact & Learnings</h4>
   <h2>Outcomes and learnings</h2>
   <p>
-    Follow-up rate climbed from 60% to 92%, beating the 80% target, and second charge rate increased 15% relatively. This was A/B tested and measured over the 4 weeks after launch. The feature was featured as a product demo in Strawberry.me’s $21M funding round.
+    Measured over an A/B test in the 4 weeks post-launch across 800+ active coaches:
   </p>
 
-  <h3>How Coaches Actually Used the Drafts</h3>
-  <div class="impact-holder size-a theme-strawberry-ai">
-    <p class="impact-label">Impact: 92% follow-up rate and +15% second-charge retention</p>
-    <div class="impact-canvas">
-      <img
-        src="/images/strawberry-ai/impact-metrics.png"
-        alt="Impact and Post-Launch Measurement Dashboard"
-        loading="lazy"
-      />
+  <div class="grid-3">
+    <div class="stat-card">
+      <p class="stat-card-value">92%</p>
+      <p class="stat-card-label">Coach Follow-Up Rate</p>
+      <p class="stat-card-subtext">Climbed from 60% baseline (beating 80% target)</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-card-value">+15%</p>
+      <p class="stat-card-label">Client Retention</p>
+      <p class="stat-card-subtext">Relative increase in 2nd-charge membership renewals</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-card-value">$21M</p>
+      <p class="stat-card-label">Funding Demo</p>
+      <p class="stat-card-subtext">Featured product demo in Strawberry.me's Series A round</p>
     </div>
   </div>
-
+  
   <div class="callout">
     <h3>“This is hands-down my most-used and most-loved feature on the platform. It takes the dread out of admin work and lets me focus on coaching.”</h3>
     <p style="font-size: 0.95rem; opacity: 0.7; margin-top: 0.5rem;">— Career coach, 2+ years on Strawberry.me</p>

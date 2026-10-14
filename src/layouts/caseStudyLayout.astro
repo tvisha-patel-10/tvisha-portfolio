@@ -84,7 +84,7 @@ const ogImage =
     heroPoster ||
     (heroImage && !heroImage.endsWith(".mp4") && !heroImage.endsWith(".webm")
         ? heroImage
-        : "/images/og-image.png");
+        : "/images/og-image.webp");
 const imageURL = new URL(ogImage, Astro.site || "https://tvishapatel.com");
 ---
 
@@ -403,7 +403,7 @@ const imageURL = new URL(ogImage, Astro.site || "https://tvishapatel.com");
                 font-size: 2rem;
                 line-height: 1.3;
                 font-weight: 600;
-                margin-bottom: -0.5rem;
+                margin-bottom: 0.25rem;
             }
 
             /* Sub-heading (h3) */
@@ -411,6 +411,11 @@ const imageURL = new URL(ogImage, Astro.site || "https://tvishapatel.com");
                 font-size: 1.25rem;
                 line-height: 1.4;
                 font-weight: 600;
+                margin-top: 1.75rem;
+            }
+
+            .cs-section h2 + h3 {
+                margin-top: 0.75rem;
             }
 
             /* Body text */
@@ -434,14 +439,46 @@ const imageURL = new URL(ogImage, Astro.site || "https://tvishapatel.com");
             }
 
             .cs-section a {
-                color: var(--cs-text);
+                color: #a13900;
                 text-decoration: underline;
-                text-underline-offset: 3px;
+                text-decoration-style: dotted;
+                text-decoration-color: #a13900;
+                text-decoration-thickness: 12.5%;
+                text-underline-offset: 0.18em;
                 transition: opacity 0.2s ease;
             }
 
             .cs-section a:hover {
-                opacity: 0.7;
+                opacity: 0.75;
+            }
+
+            .cs-section a.external-link {
+                display: inline-inline;
+                align-items: baseline;
+                gap: 0.3em;
+                text-decoration: underline;
+                text-decoration-style: dotted;
+                text-decoration-color: #a13900;
+                text-decoration-thickness: 12.5%;
+                text-underline-offset: 0.18em;
+            }
+
+            .cs-section a .external-arrow {
+                display: inline-block;
+                width: 0.85em;
+                height: 0.85em;
+                margin-left: 0.3em;
+                vertical-align: -0.05em;
+                stroke: currentColor;
+                stroke-width: 2.2;
+                fill: none;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                transition: transform 0.2s ease;
+            }
+
+            .cs-section a:hover .external-arrow {
+                transform: translate(1.5px, -1.5px);
             }
 
             .cs-section code {
@@ -562,10 +599,25 @@ const imageURL = new URL(ogImage, Astro.site || "https://tvishapatel.com");
                 border-left: 2px solid var(--cs-callout-border);
             }
 
+            .callout > :first-child {
+                margin-top: 0;
+            }
+
+            .callout > :last-child {
+                margin-bottom: 0;
+            }
+
             .callout h3 {
                 font-size: 1.125rem;
                 line-height: 1.4;
                 font-weight: 600;
+                margin-top: 0;
+            }
+
+            .callout p {
+                font-size: 1.125rem;
+                line-height: 1.6;
+                margin-top: 0.5rem;
             }
 
             /* ================================================
@@ -715,6 +767,66 @@ const imageURL = new URL(ogImage, Astro.site || "https://tvishapatel.com");
                 margin: 0;
             }
 
+            /* 2-Slot Side-by-Side Comparison Layout */
+            .impact-split {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+                width: 100%;
+            }
+
+            @media (min-width: 768px) {
+                .impact-split {
+                    grid-template-columns: 1fr 1fr;
+                }
+            }
+
+            .impact-slot {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                width: 100%;
+                min-width: 0;
+            }
+
+            .slot-badge {
+                font-family: var(--cs-font);
+                font-size: 0.8rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+                color: var(--holder-text, #2a2a2a);
+                opacity: 0.8;
+                padding-left: 0.15rem;
+            }
+
+            .impact-canvas.placeholder-slot {
+                min-height: 240px;
+                border: 2px dashed var(--holder-border, rgba(0, 0, 0, 0.18));
+                background: rgba(255, 255, 255, 0.65);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+                padding: 2rem 1.5rem;
+                text-align: center;
+                box-sizing: border-box;
+            }
+
+            .placeholder-slot .slot-hint {
+                font-size: 0.95rem;
+                font-weight: 500;
+                color: var(--holder-text, #444);
+                opacity: 0.85;
+            }
+
+            .placeholder-slot .slot-subtext {
+                font-size: 0.8rem;
+                color: var(--holder-text, #666);
+                opacity: 0.6;
+            }
+
             /* Theme classes */
             .theme-betterhelp,
             .impact-holder.theme-betterhelp {
@@ -813,6 +925,42 @@ const imageURL = new URL(ogImage, Astro.site || "https://tvishapatel.com");
                 padding-left: 1.25rem;
             }
 
+            /* Visual Impact Metric Cards */
+            .stat-card {
+                background: #f8f8f8;
+                border: 1px solid rgba(0, 0, 0, 0.06);
+                border-radius: 8px;
+                padding: clamp(1.25rem, 2.5vw, 1.75rem);
+                display: flex;
+                flex-direction: column;
+                gap: 0.35rem;
+            }
+
+            .stat-card-value {
+                font-family: var(--cs-font-display);
+                font-size: clamp(2rem, 3.5vw, 2.75rem);
+                font-weight: 700;
+                line-height: 1.1;
+                color: #a13900;
+                margin: 0;
+            }
+
+            .stat-card-label {
+                font-family: var(--cs-font);
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: var(--cs-text);
+                margin: 0;
+                line-height: 1.35;
+            }
+
+            .stat-card-subtext {
+                font-size: 0.925rem;
+                color: var(--cs-text-muted);
+                line-height: 1.45;
+                margin: 0;
+            }
+
             /* ================================================
                IMAGES & FIGMA EMBEDS (global resets)
                ================================================ */
@@ -893,6 +1041,7 @@ const imageURL = new URL(ogImage, Astro.site || "https://tvishapatel.com");
                 display: flex;
                 flex-direction: column;
                 gap: 2.5rem;
+                min-height: 80vh;
             }
 
             .cs-footer-grid {
@@ -1240,9 +1389,12 @@ const imageURL = new URL(ogImage, Astro.site || "https://tvishapatel.com");
             }
 
             .cs-lock-help a {
-                color: var(--cs-text);
+                color: #a13900;
                 text-decoration: underline;
-                text-underline-offset: 3px;
+                text-decoration-style: dotted;
+                text-decoration-color: #a13900;
+                text-decoration-thickness: 12.5%;
+                text-underline-offset: 0.18em;
                 font-weight: 600;
             }
 
@@ -1373,7 +1525,13 @@ const imageURL = new URL(ogImage, Astro.site || "https://tvishapatel.com");
                                 <div class="cs-hero-image">
                                     {heroImage.endsWith(".mp4") ||
                                     heroImage.endsWith(".webm") ? (
-                                        <video autoplay loop muted playsinline>
+                                        <video
+                                            autoplay
+                                            loop
+                                            muted
+                                            playsinline
+                                            poster={heroPoster || undefined}
+                                        >
                                             <source
                                                 src={encodeURI(heroImage)}
                                                 type={
@@ -1717,10 +1875,28 @@ const imageURL = new URL(ogImage, Astro.site || "https://tvishapatel.com");
                     passive: true,
                 });
 
-                // Instantly update active link on click
+                // Sidebar navigation click
                 navLinks.forEach((link) => {
-                    link.addEventListener("click", () => {
+                    link.addEventListener("click", (e) => {
+                        const href = link.getAttribute("href");
+                        if (!href || !href.startsWith("#")) return;
+                        const targetId = href.slice(1);
+                        const targetEl = document.getElementById(targetId);
+                        if (!targetEl) return;
+
+                        e.preventDefault();
                         setActive(link);
+
+                        if (history.pushState) {
+                            history.pushState(null, "", href);
+                        } else {
+                            window.location.hash = href;
+                        }
+
+                        targetEl.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start",
+                        });
                     });
                 });
 

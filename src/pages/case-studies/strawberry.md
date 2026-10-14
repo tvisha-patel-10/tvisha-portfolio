@@ -6,8 +6,8 @@ pageTitle: "Strawberry.me 0→1 Founding Design Case Study — Tvisha Patel"
 description: "Founding product design for a dual-sided coaching marketplace scaling to $30M+ ARR: 0→1 design system, 40+ shipped features, and +20% conversion lift."
 year: "2024–present"
 subtitle: "0→1 Founding Design for a Dual-Sided Marketplace | $30+ ARR"
-heroImage: "/images/strawberry/strawberry 0-1.mp4"
-heroPoster: "/images/strawberry/Screenshot_2026-02-27_at_10.13.59_PM.png"
+heroImage: "/images/strawberry/strawberry_gen_cover.mp4"
+heroPoster: "/images/strawberry/growth_experiment_homepage.webp"
 role: "Founding Product Designer"
 timeline: "June 2024 – Present"
 team:
@@ -112,9 +112,8 @@ sections:
       <p class="impact-label">Homepage V1: Abstract value prop with passive imagery</p>
       <div class="impact-canvas">
         <img
-          src="/images/strawberry/773437e4-4dde-4daf-83e9-ab17a1d0ad3f.png"
+          src="/images/strawberry/matching_intake_flow.webp"
           alt="Strawberry.me Homepage V1"
-          loading="lazy"
         />
       </div>
     </div>
@@ -124,7 +123,6 @@ sections:
         <img
           src="/images/strawberry/strawberry_homepagev2.webp"
           alt="Strawberry.me Homepage V2"
-          loading="lazy"
         />
       </div>
     </div>
@@ -149,9 +147,8 @@ sections:
     <p class="impact-label">Client onboarding: Transparent AI consent checkpoints that built trust</p>
     <div class="impact-canvas">
       <img
-        src="/images/strawberry/image.png"
+        src="/images/strawberry/booking_checkout_flow.webp"
         alt="AI-Assisted Onboarding and Trust Flow"
-        loading="lazy"
       />
     </div>
   </div>
@@ -164,16 +161,15 @@ sections:
     <p class="impact-label">Coach workstation: Consolidated timelines, history, and smart reminder cues</p>
     <div class="impact-canvas">
       <img
-        src="/images/strawberry/Screenshot_2026-02-27_at_10.13.59_PM.png"
+        src="/images/strawberry/growth_experiment_homepage.webp"
         alt="Coach-Side Client Details Screen"
-        loading="lazy"
       />
     </div>
   </div>
 
   <div class="callout">
     <h3>Deep dive on the AI messaging workflow:
-    <a href="/case-studies/strawberry-ai">Read the Case Study ↗</a></h3>
+    <a href="/case-studies/strawberry-ai" class="external-link">Read the Case Study<svg class="external-arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 1.5h7v7M10.5 1.5L2 10" /></svg></a></h3>
   </div>
 
   <h3>3. Interactive Goals Board (Milestone and Goal Tracking Tool)</h3>
@@ -184,9 +180,8 @@ sections:
     <p class="impact-label">Goals board: Collaborative drag-and-drop Kanban driving retention</p>
     <div class="impact-canvas">
       <img
-        src="/images/strawberry/Screenshot_2026-02-04_at_3.25.58_PM.png"
+        src="/images/strawberry/goals_kanban_board.webp"
         alt="Interactive Goals Board Kanban Layout"
-        loading="lazy"
       />
     </div>
   </div>
@@ -200,20 +195,20 @@ sections:
   <h2>Measurable impact on platform growth and user engagement</h2>
 
   <div class="grid-3">
-    <div class="grid-card">
-      <h3>1,000+</h3>
-      <p><strong>Active Coaches</strong></p>
-      <p>Designed workflows, scheduling tools, and client management features supporting an active network of professional coaches.</p>
+    <div class="stat-card">
+      <p class="stat-card-value">1,000+</p>
+      <p class="stat-card-label">Active Coaches</p>
+      <p class="stat-card-subtext">Workflows, scheduling tools, and client management features supporting an active coaching network.</p>
     </div>
-    <div class="grid-card">
-      <h3>169,000+</h3>
-      <p><strong>Clients Matched</strong></p>
-      <p>Optimized intake funnels, matching algorithms, and onboarding experiences that successfully paired clients with coaches.</p>
+    <div class="stat-card">
+      <p class="stat-card-value">169K+</p>
+      <p class="stat-card-label">Clients Matched</p>
+      <p class="stat-card-subtext">Optimized intake funnels, matching algorithms, and onboarding experiences pairing clients with coaches.</p>
     </div>
-    <div class="grid-card">
-      <h3>$30M+</h3>
-      <p><strong>Platform ARR</strong></p>
-      <p>Foundational design across onboarding, paywalls, and retention helped scale the marketplace to this milestone.</p>
+    <div class="stat-card">
+      <p class="stat-card-value">$30M+</p>
+      <p class="stat-card-label">Platform ARR</p>
+      <p class="stat-card-subtext">Foundational design across onboarding, paywalls, and retention helping scale the marketplace.</p>
     </div>
   </div>
 
