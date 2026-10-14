@@ -125,12 +125,15 @@ sections:
   <p>
     I interviewed 8 mentors across two cohorts: first-time mentors navigating EchoKids for the first time, and seasoned mentors with ongoing students. I captured both what frustrated them and what they didn’t want to lose.
   </p>
-  <div class="full-width-media">
-    <img
-      src="/images/echokids/Screen Shot 2022-08-27 at 8.24.27 PM.png"
-      alt="Mentor interview notes: pain points and good points"
-      loading="lazy"
-    />
+  <div class="impact-holder size-a theme-echokids">
+    <p class="impact-label">User research: Hidden menus and unclear feedback confused mentors</p>
+    <div class="impact-canvas">
+      <img
+        src="/images/echokids/Screen Shot 2022-08-27 at 8.24.27 PM.png"
+        alt="Mentor interview notes: pain points and good points"
+        loading="lazy"
+      />
+    </div>
   </div>
 
   <h3>What I Learned</h3>
@@ -192,12 +195,15 @@ sections:
   <h4 class="section-label">Before & After</h4>
   <h2>Transforming navigation and introducing modular compartments</h2>
 
-  <div class="full-width-media">
-    <img
-      src="/images/echokids/Frame 1086 (1).png"
-      alt="Before and after: legacy dashboard vs. redesigned dashboard with sidebar navigation"
-      loading="lazy"
-    />
+  <div class="impact-holder size-a theme-echokids">
+    <p class="impact-label">Shift: Hidden navigation → Persistent sidebar with modular cards</p>
+    <div class="impact-canvas">
+      <img
+        src="/images/echokids/Frame 1086 (1).png"
+        alt="Before and after: legacy dashboard vs. redesigned dashboard with sidebar navigation"
+        loading="lazy"
+      />
+    </div>
   </div>
 
   <div class="grid-3">
@@ -222,12 +228,15 @@ sections:
   </div>
 
   <h3>Closer Look at the Upcoming Lesson Card</h3>
-  <div class="full-width-media">
-    <img
-      src="/images/echokids/Screen Shot 2022-09-03 at 2.51.17 AM.png"
-      alt="Before and after: upcoming lesson card"
-      loading="lazy"
-    />
+  <div class="impact-holder size-a theme-echokids">
+    <p class="impact-label">Component zoom: Added explicit headers and instant save feedback</p>
+    <div class="impact-canvas">
+      <img
+        src="/images/echokids/Screen Shot 2022-09-03 at 2.51.17 AM.png"
+        alt="Before and after: upcoming lesson card"
+        loading="lazy"
+      />
+    </div>
   </div>
 
   <div class="grid-3">
@@ -265,12 +274,15 @@ sections:
     <strong>Learned:</strong> Navigation was accessible and there was room for quick links, but without icons the layout read more like a marketing homepage than a tool.
   </p>
   <div class="grid-2">
-    <div class="full-width-media">
-      <img
-        src="/images/echokids/MacBook_Pro_14__-_5_(2).png"
-        alt="Iteration V1 Screen"
-        loading="lazy"
-      />
+    <div class="impact-holder size-b theme-echokids">
+      <p class="impact-label">V1 layout: Top navigation without icons read like a landing page</p>
+      <div class="impact-canvas">
+        <img
+          src="/images/echokids/MacBook_Pro_14__-_5_(2).png"
+          alt="Iteration V1 Screen"
+          loading="lazy"
+        />
+      </div>
     </div>
     <ul class="eval-list">
       <li class="eval-item">
@@ -300,12 +312,15 @@ sections:
     <strong>Learned:</strong> Navigation became harder to reach as a hamburger menu, and the layout left too much empty space in the top left.
   </p>
   <div class="grid-2">
-    <div class="full-width-media">
-      <img
-        src="/images/echokids/MacBook_Pro_14__-_4.png"
-        alt="Iteration V2 Screen"
-        loading="lazy"
-      />
+    <div class="impact-holder size-b theme-echokids">
+      <p class="impact-label">V2 layout: Hamburger menu created friction and awkward whitespace</p>
+      <div class="impact-canvas">
+        <img
+          src="/images/echokids/MacBook_Pro_14__-_4.png"
+          alt="Iteration V2 Screen"
+          loading="lazy"
+        />
+      </div>
     </div>
     <ul class="eval-list">
       <li class="eval-item">
@@ -335,12 +350,15 @@ sections:
     <strong>Learned:</strong> Navigation was finally fast to reach and the top of the page was used well, but the narrower content area left less room for quick links and information.
   </p>
   <div class="grid-2">
-    <div class="full-width-media">
-      <img
-        src="/images/echokids/MacBook_Pro_14__-_2.png"
-        alt="Iteration V3 Screen"
-        loading="lazy"
-      />
+    <div class="impact-holder size-b theme-echokids">
+      <p class="impact-label">V3 layout: Persistent vertical sidebar fixed discoverability</p>
+      <div class="impact-canvas">
+        <img
+          src="/images/echokids/MacBook_Pro_14__-_2.png"
+          alt="Iteration V3 Screen"
+          loading="lazy"
+        />
+      </div>
     </div>
     <ul class="eval-list">
       <li class="eval-item">
@@ -369,12 +387,15 @@ sections:
     I committed to V3’s sidebar and solved its one drawback by adding an Earning Breakdown section at the bottom of the page, bringing back the information that the narrower page space had pushed out.
   </p>
   <div class="grid-2">
-    <div class="full-width-media">
-      <img
-        src="/images/echokids/MacBook_Pro_14__-_6_(3).png"
-        alt="Final Wireframe Screen"
-        loading="lazy"
-      />
+    <div class="impact-holder size-b theme-echokids">
+      <p class="impact-label">Final wireframe: Added earnings breakdown to reclaim lost page width</p>
+      <div class="impact-canvas">
+        <img
+          src="/images/echokids/MacBook_Pro_14__-_6_(3).png"
+          alt="Final Wireframe Screen"
+          loading="lazy"
+        />
+      </div>
     </div>
     <ul class="eval-list">
       <li class="eval-item">
@@ -410,24 +431,30 @@ sections:
   <p>
     I built a refreshed design system covering color, typography, and core components to give EchoKids a consistent identity across every digital touchpoint.
   </p>
-  <div class="full-width-media">
-    <img
-      src="/images/echokids/Frame_1.png"
-      alt="EchoKids Design System and Color System"
-      loading="lazy"
-    />
+  <div class="impact-holder size-a theme-echokids">
+    <p class="impact-label">Design system: High-contrast color hierarchy, type, and components</p>
+    <div class="impact-canvas">
+      <img
+        src="/images/echokids/Frame_1.png"
+        alt="EchoKids Design System and Color System"
+        loading="lazy"
+      />
+    </div>
   </div>
 
   <h3>Final Dashboard</h3>
   <p>
     Applying the brand system to the final wireframe produced the production-ready interface.
   </p>
-  <div class="full-width-media">
-    <img
-      src="/images/echokids/Dashboard.png"
-      alt="High-Fidelity Final Dashboard"
-      loading="lazy"
-    />
+  <div class="impact-holder size-a theme-echokids">
+    <p class="impact-label">Shipped dashboard: 200% retention boost with scannable mentor hubs</p>
+    <div class="impact-canvas">
+      <img
+        src="/images/echokids/Dashboard.png"
+        alt="High-Fidelity Final Dashboard"
+        loading="lazy"
+      />
+    </div>
   </div>
 
   <h3>Explore the Prototype</h3>

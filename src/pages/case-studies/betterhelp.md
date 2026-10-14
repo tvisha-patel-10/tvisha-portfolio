@@ -77,20 +77,26 @@ sections:
     The two biggest shifts: the test structure, and the help experience that appears when something goes wrong.
   </p>
 
-  <div class="full-width-media">
-    <img
-      src="/images/betterhelp/Frame_987496.png"
-      alt="Before and after: sequential 4-step test vs. single tabbed page"
-      loading="lazy"
-    />
+  <div class="impact-holder size-a theme-betterhelp">
+    <p class="impact-label">Shift: 4 sequential pages → 1 flexible tabbed test</p>
+    <div class="impact-canvas">
+      <img
+        src="/images/betterhelp/Frame_987496.png"
+        alt="Before and after: sequential 4-step test vs. single tabbed page"
+        loading="lazy"
+      />
+    </div>
   </div>
 
-  <div class="full-width-media">
-    <img
-      src="/images/betterhelp/Frame_987497.png"
-      alt="Before and after: legacy help section vs. redesigned slide-in help"
-      loading="lazy"
-    />
+  <div class="impact-holder size-a theme-betterhelp">
+    <p class="impact-label">Redesign: Replaced outdated text with targeted slide-in help</p>
+    <div class="impact-canvas">
+      <img
+        src="/images/betterhelp/Frame_987497.png"
+        alt="Before and after: legacy help section vs. redesigned slide-in help"
+        loading="lazy"
+      />
+    </div>
   </div>
 
   <div class="grid-3">
@@ -148,21 +154,25 @@ sections:
 
   <h3>Insights from the Previous Design</h3>
   <div class="grid-2">
-    <div class="full-width-media">
-      <img
-        src="/images/betterhelp/Screen_Shot_2023-07-12_at_11.55.png"
-        alt="Previous Camera Step Design"
-        loading="lazy"
-      />
-      <p style="font-size: 0.875rem; opacity: 0.6; margin-top: 0.5rem;">Previous camera step: one device per page, fixed order</p>
+    <div class="impact-holder size-b theme-betterhelp">
+      <p class="impact-label">Legacy state: One device per page in rigid sequence</p>
+      <div class="impact-canvas">
+        <img
+          src="/images/betterhelp/Screen_Shot_2023-07-12_at_11.55.png"
+          alt="Previous Camera Step Design"
+          loading="lazy"
+        />
+      </div>
     </div>
-    <div class="full-width-media">
-      <img
-        src="/images/betterhelp/Screen_Shot_2023-07-12_at_11.56.png"
-        alt="Previous Help Section Design and Content"
-        loading="lazy"
-      />
-      <p style="font-size: 0.875rem; opacity: 0.6; margin-top: 0.5rem;">Previous help section: dense, outdated advice</p>
+    <div class="impact-holder size-b theme-betterhelp">
+      <p class="impact-label">Legacy state: Dense text with obsolete app references</p>
+      <div class="impact-canvas">
+        <img
+          src="/images/betterhelp/Screen_Shot_2023-07-12_at_11.56.png"
+          alt="Previous Help Section Design and Content"
+          loading="lazy"
+        />
+      </div>
     </div>
   </div>
 
@@ -172,39 +182,48 @@ sections:
   </p>
 
   <div class="grid-2">
-    <div class="full-width-media">
-      <img
-        src="/images/betterhelp/Screen_Shot_2023-10-16_at_1.37.14_AM.png"
-        alt="Microsoft Teams pre-join device settings"
-        loading="lazy"
-      />
-      <p style="font-size: 0.875rem; opacity: 0.6; margin-top: 0.5rem;"><strong>Teams:</strong> camera preview and audio options on one pre-join screen. Takeaway: one page, all devices visible.</p>
+    <div class="impact-holder size-b theme-betterhelp">
+      <p class="impact-label">Teams audit: Single pre-join screen with all devices visible</p>
+      <div class="impact-canvas">
+        <img
+          src="/images/betterhelp/Screen_Shot_2023-10-16_at_1.37.14_AM.png"
+          alt="Microsoft Teams pre-join device settings"
+          loading="lazy"
+        />
+      </div>
     </div>
-    <div class="full-width-media">
-      <img
-        src="/images/betterhelp/Screen_Shot_2023-10-16_at_1.38.37_AM.png"
-        alt="Whereby device settings"
-        loading="lazy"
-      />
-      <p style="font-size: 0.875rem; opacity: 0.6; margin-top: 0.5rem;"><strong>Whereby:</strong> camera, mic, and speaker in one compact card. Takeaway: users shouldn’t navigate to another separate page to test a device.</p>
+    <div class="impact-holder size-b theme-betterhelp">
+      <p class="impact-label">Whereby audit: Compact card keeps user on the same page</p>
+      <div class="impact-canvas">
+        <img
+          src="/images/betterhelp/Screen_Shot_2023-10-16_at_1.38.37_AM.png"
+          alt="Whereby device settings"
+          loading="lazy"
+        />
+      </div>
     </div>
   </div>
 
   <div class="grid-2">
-    <div class="full-width-media">
-      <img
-        src="/images/betterhelp/Screen_Shot_2023-10-16_at_1.38.11_AM.png"
-        alt="Zoom guided speaker and microphone test"
-        loading="lazy"
-      />
-      <p style="font-size: 0.875rem; opacity: 0.6; margin-top: 0.5rem;"><strong>Zoom:</strong> clear yes/no prompts (“Do you hear a ringtone?”), but still forced in order. Takeaway: keep the simple confirmation, drop the forced sequence.</p>
+    <div class="impact-holder size-b theme-betterhelp">
+      <p class="impact-label">Zoom audit: Clear yes/no prompts, but locked order</p>
+      <div class="impact-canvas">
+        <img
+          src="/images/betterhelp/Screen_Shot_2023-10-16_at_1.38.11_AM.png"
+          alt="Zoom guided speaker and microphone test"
+          loading="lazy"
+        />
+      </div>
     </div>
-    <div class="full-width-media">
-      <img
-        src="/images/betterhelp/Screen_Shot_2023-10-16_at_1.39.10_AM.png"
-        alt="Google Meet pre-call device check"
-        loading="lazy"
-      />
+    <div class="impact-holder size-b theme-betterhelp">
+      <p class="impact-label">Meet audit: Self-service preview with quick device toggles</p>
+      <div class="impact-canvas">
+        <img
+          src="/images/betterhelp/Screen_Shot_2023-10-16_at_1.39.10_AM.png"
+          alt="Google Meet pre-call device check"
+          loading="lazy"
+        />
+      </div>
     </div>
   </div>
 
@@ -223,12 +242,15 @@ sections:
     <strong>Dropped because:</strong> Dynamic device dropdowns were high dev lift to build, and the important copy was too hidden in a tooltip.
   </p>
   <div class="grid-2">
-    <div class="full-width-media">
-      <img
-        src="/images/betterhelp/Scroll_v2.png"
-        alt="Iteration V1 Screen"
-        loading="lazy"
-      />
+    <div class="impact-holder size-b theme-betterhelp">
+      <p class="impact-label">V1 exploration: Dynamic pills with instructions in a tooltip</p>
+      <div class="impact-canvas">
+        <img
+          src="/images/betterhelp/Scroll_v2.png"
+          alt="Iteration V1 Screen"
+          loading="lazy"
+        />
+      </div>
     </div>
     <ul class="eval-list">
       <li class="eval-item">
@@ -259,12 +281,15 @@ sections:
     <strong>Dropped because:</strong> It still relied on dynamic dropdowns which was too high of a dev lift.
   </p>
   <div class="grid-2">
-    <div class="full-width-media">
-      <img
-        src="/images/betterhelp/Video_Session_Test_Landing_Page.png"
-        alt="Iteration V2 Landing Page"
-        loading="lazy"
-      />
+    <div class="impact-holder size-b theme-betterhelp">
+      <p class="impact-label">V2 exploration: Equal-sized tiles with visible instructions</p>
+      <div class="impact-canvas">
+        <img
+          src="/images/betterhelp/Video_Session_Test_Landing_Page.png"
+          alt="Iteration V2 Landing Page"
+          loading="lazy"
+        />
+      </div>
     </div>
     <ul class="eval-list">
       <li class="eval-item">
@@ -310,12 +335,15 @@ sections:
     <strong>Kept because:</strong> It was cheap to build, preserved user choice over what to test, and left instructions visible.
   </p>
   <div class="grid-2">
-    <div class="full-width-media">
-      <img
-        src="/images/betterhelp/Video_Session_Test_Landing_Page_final.png"
-        alt="Iteration V3 Landing Page"
-        loading="lazy"
-      />
+    <div class="impact-holder size-b theme-betterhelp">
+      <p class="impact-label">V3 wireframe: Fast tabbed navigation with low engineering lift</p>
+      <div class="impact-canvas">
+        <img
+          src="/images/betterhelp/Video_Session_Test_Landing_Page_final.png"
+          alt="Iteration V3 Landing Page"
+          loading="lazy"
+        />
+      </div>
     </div>
     <ul class="eval-list">
       <li class="eval-item">
@@ -351,21 +379,25 @@ sections:
   </p>
 
   <div class="grid-2">
-    <div class="full-width-media">
-      <img
-        src="/images/betterhelp/Video_Session_Test_Landing_Page_final 2.png"
-        alt="Wireframe State"
-        loading="lazy"
-      />
-      <p style="font-size: 0.875rem; opacity: 0.6; margin-top: 0.5rem;">Chosen Wireframe (V3)</p>
+    <div class="impact-holder size-b theme-betterhelp">
+      <p class="impact-label">Approved wireframe: Validated tab structure ready for UI</p>
+      <div class="impact-canvas">
+        <img
+          src="/images/betterhelp/Video_Session_Test_Landing_Page_final 2.png"
+          alt="Wireframe State"
+          loading="lazy"
+        />
+      </div>
     </div>
-    <div class="full-width-media">
-      <img
-        src="/images/betterhelp/Video_Session_Test_Landing_Page_final 3.png"
-        alt="High-Fidelity Final UI"
-        loading="lazy"
-      />
-      <p style="font-size: 0.875rem; opacity: 0.6; margin-top: 0.5rem;">High-fidelity final UI</p>
+    <div class="impact-holder size-b theme-betterhelp">
+      <p class="impact-label">Production UI: Built with BetterHelp brand guidelines & elevation</p>
+      <div class="impact-canvas">
+        <img
+          src="/images/betterhelp/Video_Session_Test_Landing_Page_final 3.png"
+          alt="High-Fidelity Final UI"
+          loading="lazy"
+        />
+      </div>
     </div>
   </div>
 

@@ -108,21 +108,25 @@ sections:
   </div>
 
   <div class="grid-2">
-    <div class="full-width-media">
-      <img
-        src="/images/strawberry/773437e4-4dde-4daf-83e9-ab17a1d0ad3f.png"
-        alt="Strawberry.me Homepage V1"
-        loading="lazy"
-      />
-      <p style="font-size: 0.875rem; opacity: 0.6; margin-top: 0.5rem;">Homepage V1: abstract value prop, passive coach photos</p>
+    <div class="impact-holder size-b theme-strawberry">
+      <p class="impact-label">Homepage V1: Abstract value prop with passive imagery</p>
+      <div class="impact-canvas">
+        <img
+          src="/images/strawberry/773437e4-4dde-4daf-83e9-ab17a1d0ad3f.png"
+          alt="Strawberry.me Homepage V1"
+          loading="lazy"
+        />
+      </div>
     </div>
-    <div class="full-width-media">
-      <img
-        src="/images/strawberry/strawberry_homepagev2.webp"
-        alt="Strawberry.me Homepage V2"
-        loading="lazy"
-      />
-      <p style="font-size: 0.875rem; opacity: 0.6; margin-top: 0.5rem;">Homepage V2 (Redesign): sections directly answering user questions and stronger brand identity</p>
+    <div class="impact-holder size-b theme-strawberry">
+      <p class="impact-label">Homepage V2: Concrete proof points, FAQs, and clearer CTA</p>
+      <div class="impact-canvas">
+        <img
+          src="/images/strawberry/strawberry_homepagev2.webp"
+          alt="Strawberry.me Homepage V2"
+          loading="lazy"
+        />
+      </div>
     </div>
   </div>
 
@@ -141,24 +145,30 @@ sections:
   <p>
     Strawberry leverages AI models to make the coaching experience better and more personalized. However, coaching can be sensitive. Clients feared their sensitive vulnerabilities would be harvested or sold. I designed transparent onboarding and consent checkpoints explaining our de-identification, aggregation, and data privacy models upfront, boosting onboarding completion.
   </p>
-  <div class="full-width-media">
-    <img
-      src="/images/strawberry/image.png"
-      alt="AI-Assisted Onboarding and Trust Flow"
-      loading="lazy"
-    />
+  <div class="impact-holder size-a theme-strawberry">
+    <p class="impact-label">Client onboarding: Transparent AI consent checkpoints that built trust</p>
+    <div class="impact-canvas">
+      <img
+        src="/images/strawberry/image.png"
+        alt="AI-Assisted Onboarding and Trust Flow"
+        loading="lazy"
+      />
+    </div>
   </div>
 
   <h3>2. Coach Workstation & Smart Reminders</h3>
   <p>
     For coaches managing dozens of active clients, I redesigned the Client Details Command Center: consolidating timelines, action items, session history, and automated reminder cues into a single view.
   </p>
-  <div class="full-width-media">
-    <img
-      src="/images/strawberry/Screenshot_2026-02-27_at_10.13.59_PM.png"
-      alt="Coach-Side Client Details Screen"
-      loading="lazy"
-    />
+  <div class="impact-holder size-a theme-strawberry">
+    <p class="impact-label">Coach workstation: Consolidated timelines, history, and smart reminder cues</p>
+    <div class="impact-canvas">
+      <img
+        src="/images/strawberry/Screenshot_2026-02-27_at_10.13.59_PM.png"
+        alt="Coach-Side Client Details Screen"
+        loading="lazy"
+      />
+    </div>
   </div>
 
   <div class="callout">
@@ -170,12 +180,15 @@ sections:
   <p>
     To turn coaching into a tangible, ongoing habit, I designed a drag-and-drop Kanban Goals Board. Clients and coaches collaboratively break down broad life goals (e.g., <em>“Improve Sleep Schedule”</em>) into concrete weekly action items, driving long-term platform retention.
   </p>
-  <div class="full-width-media">
-    <img
-      src="/images/strawberry/Screenshot_2026-02-04_at_3.25.58_PM.png"
-      alt="Interactive Goals Board Kanban Layout"
-      loading="lazy"
-    />
+  <div class="impact-holder size-a theme-strawberry">
+    <p class="impact-label">Goals board: Collaborative drag-and-drop Kanban driving retention</p>
+    <div class="impact-canvas">
+      <img
+        src="/images/strawberry/Screenshot_2026-02-04_at_3.25.58_PM.png"
+        alt="Interactive Goals Board Kanban Layout"
+        loading="lazy"
+      />
+    </div>
   </div>
 
   <div class="section-divider"></div>

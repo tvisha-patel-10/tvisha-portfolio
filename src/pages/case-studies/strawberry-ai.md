@@ -62,12 +62,15 @@ passwordProtected: true
     </div>
   </div>
 
-  <div class="full-width-media">
-    <img
-      src="/images/strawberry-ai/hero-mockup.png"
-      alt="Strawberry.me AI Message Draft Generator Laptop Mockup"
-      loading="lazy"
-    />
+  <div class="impact-holder size-a theme-strawberry-ai">
+    <p class="impact-label">Hero: 1-click contextual AI drafts embedded in coach workflows</p>
+    <div class="impact-canvas">
+      <img
+        src="/images/strawberry-ai/hero-mockup.png"
+        alt="Strawberry.me AI Message Draft Generator Laptop Mockup"
+        loading="lazy"
+      />
+    </div>
   </div>
 
   <div class="section-divider"></div>
@@ -177,12 +180,15 @@ passwordProtected: true
     </div>
   </div>
 
-  <div class="full-width-media">
-    <img
-      src="/images/strawberry-ai/competitive-analysis.png"
-      alt="Competitive Analysis of AI Generation and Source Attribution Patterns"
-      loading="lazy"
-    />
+  <div class="impact-holder size-a theme-strawberry-ai">
+    <p class="impact-label">Audit: Why standard rerolls and opaque AI generation failed coach trust</p>
+    <div class="impact-canvas">
+      <img
+        src="/images/strawberry-ai/competitive-analysis.png"
+        alt="Competitive Analysis of AI Generation and Source Attribution Patterns"
+        loading="lazy"
+      />
+    </div>
   </div>
 
   <h3>Target Success Metrics (KPIs)</h3>
@@ -220,12 +226,16 @@ passwordProtected: true
 
   <div class="grid-3">
     <div>
-      <img
-        src="/images/strawberry-ai/source-attribution-v1.png"
-        alt="V1: Inline Badges"
-        loading="lazy"
-        style="width: 100%; height: auto; border: 1px solid var(--cs-border); border-radius: 4px; margin-bottom: 1rem;"
-      />
+      <div class="impact-holder size-b theme-strawberry-ai" style="margin-bottom: 1rem;">
+        <p class="impact-label">V1: Numbered footnote badges (broke on editing)</p>
+        <div class="impact-canvas">
+          <img
+            src="/images/strawberry-ai/source-attribution-v1.png"
+            alt="V1: Inline Badges"
+            loading="lazy"
+          />
+        </div>
+      </div>
       <h3>V1: Inline Badges</h3>
       <p>Numbered footnote badges placed directly inside the editable message body.</p>
       <p style="color: #ef4444; font-size: 0.9rem;">
@@ -233,12 +243,16 @@ passwordProtected: true
       </p>
     </div>
     <div>
-      <img
-        src="/images/strawberry-ai/source-attribution-v2.png"
-        alt="V2: Collapsible Toggle"
-        loading="lazy"
-        style="width: 100%; height: auto; border: 1px solid var(--cs-border); border-radius: 4px; margin-bottom: 1rem;"
-      />
+      <div class="impact-holder size-b theme-strawberry-ai" style="margin-bottom: 1rem;">
+        <p class="impact-label">V2: Collapsible toggle (skipped by coaches)</p>
+        <div class="impact-canvas">
+          <img
+            src="/images/strawberry-ai/source-attribution-v2.png"
+            alt="V2: Collapsible Toggle"
+            loading="lazy"
+          />
+        </div>
+      </div>
       <h3>V2: Collapsible Toggle</h3>
       <p>A dropdown toggle above the draft container.</p>
       <p style="color: #ef4444; font-size: 0.9rem;">
@@ -246,12 +260,16 @@ passwordProtected: true
       </p>
     </div>
     <div>
-      <img
-        src="/images/strawberry-ai/source-attribution-v3.png"
-        alt="V3: Interactive Source Pills"
-        loading="lazy"
-        style="width: 100%; height: auto; border: 1px solid var(--cs-border); border-radius: 4px; margin-bottom: 1rem;"
-      />
+      <div class="impact-holder size-b theme-strawberry-ai" style="margin-bottom: 1rem;">
+        <p class="impact-label">V3: Interactive source pills with hover context</p>
+        <div class="impact-canvas">
+          <img
+            src="/images/strawberry-ai/source-attribution-v3.png"
+            alt="V3: Interactive Source Pills"
+            loading="lazy"
+          />
+        </div>
+      </div>
       <h3>V3: Interactive Source Pills</h3>
       <p>Distinct metadata pills with paragraph hover highlighting.</p>
       <p style="color: #10b981; font-size: 0.9rem;">
@@ -337,12 +355,15 @@ passwordProtected: true
     <li><strong>AI Tooling (Claude & Cursor):</strong> I used Claude and Cursor to draft technical specs, define edge-case states, and build a working interactive prototype, cutting dev handoff time.</li>
   </ul>
 
-  <div class="full-width-media">
-    <img
-      src="/images/strawberry-ai/collaboration-diagram.png"
-      alt="Cross-Functional Collaboration Diagram"
-      loading="lazy"
-    />
+  <div class="impact-holder size-a theme-strawberry-ai">
+    <p class="impact-label">Systems alignment: Product KPIs, prompt schemas, and feedback loops</p>
+    <div class="impact-canvas">
+      <img
+        src="/images/strawberry-ai/collaboration-diagram.png"
+        alt="Cross-Functional Collaboration Diagram"
+        loading="lazy"
+      />
+    </div>
   </div>
 
   <div class="section-divider"></div>
@@ -356,12 +377,15 @@ passwordProtected: true
     The final experience embeds contextual AI generation directly into the coach’s daily client management workflow:
   </p>
 
-  <div class="full-width-media">
-    <img
-      src="/images/strawberry-ai/prototype-screen.png"
-      alt="Full Coach Chat and AI Message Draft Interface"
-      loading="lazy"
-    />
+  <div class="impact-holder size-a theme-strawberry-ai">
+    <p class="impact-label">Final interface: Fast manual editing with zero hallucination risk</p>
+    <div class="impact-canvas">
+      <img
+        src="/images/strawberry-ai/prototype-screen.png"
+        alt="Full Coach Chat and AI Message Draft Interface"
+        loading="lazy"
+      />
+    </div>
   </div>
 
   <div class="section-divider"></div>
@@ -376,12 +400,15 @@ passwordProtected: true
   </p>
 
   <h3>How Coaches Actually Used the Drafts</h3>
-  <div class="full-width-media">
-    <img
-      src="/images/strawberry-ai/impact-metrics.png"
-      alt="Impact and Post-Launch Measurement Dashboard"
-      loading="lazy"
-    />
+  <div class="impact-holder size-a theme-strawberry-ai">
+    <p class="impact-label">Impact: 92% follow-up rate and +15% second-charge retention</p>
+    <div class="impact-canvas">
+      <img
+        src="/images/strawberry-ai/impact-metrics.png"
+        alt="Impact and Post-Launch Measurement Dashboard"
+        loading="lazy"
+      />
+    </div>
   </div>
 
   <div class="callout">
