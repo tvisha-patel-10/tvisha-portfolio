@@ -610,12 +610,18 @@
 
     .cat-note {
         right: auto;
-        left: clamp(125px, 40%, 180px);
-        bottom: 5%;
+        left: clamp(60px, 18%, 95px);
+        bottom: clamp(17%, 20vw, 23%);
     }
 
     .cat-note span {
-        font-size: clamp(1.15rem, 3.8vw, 1.45rem);
+        font-size: clamp(1.05rem, 3.4vw, 1.35rem);
+    }
+
+    .cat-note-arrows {
+        transform: scale(0.85);
+        transform-origin: right center;
+        margin-right: 4px;
     }
 }
 
