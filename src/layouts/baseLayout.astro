@@ -20,6 +20,7 @@ const canonicalURL = new URL(
 const imageURL = new URL(image, Astro.site || "https://tvishapatel.com");
 
 import "../css/main.css";
+import CustomCursor from "../components/CustomCursor.astro";
 ---
 
 <!doctype html>
@@ -31,6 +32,10 @@ import "../css/main.css";
         <meta name="description" content={description} />
         <link rel="canonical" href={canonicalURL} />
         <link rel="icon" href="/portfolio-favicon.webp" />
+
+        <!-- Font Preconnect for Faster First Paint -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
         <!-- Open Graph / Facebook / LinkedIn -->
         <meta property="og:type" content="website" />
@@ -45,35 +50,6 @@ import "../css/main.css";
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={imageURL} />
-
-        <style>
-            .copy-toast {
-                position: fixed;
-                right: 24px;
-                bottom: 24px;
-                z-index: 50;
-                padding: 10px 16px;
-                width: fit-content;
-                border-radius: 4px;
-                background: rgba(17, 17, 17, 0.92);
-                color: white;
-                font-size: 0.85rem;
-                line-height: 1;
-                opacity: 0;
-                visibility: hidden;
-                transform: translateY(8px);
-                transition:
-                    opacity 0.2s ease,
-                    transform 0.2s ease,
-                    visibility 0.2s ease;
-            }
-
-            .copy-toast.visible {
-                opacity: 1;
-                visibility: visible;
-                transform: translateY(0);
-            }
-        </style>
     </head>
 
     <body>
@@ -154,113 +130,79 @@ import "../css/main.css";
                     <nav class="footer-col-nav" aria-label="Footer navigation">
                         <a href="/">Work</a>
                         <a href="/about">About</a>
-                        <a
-                            href="mailto:tvishapatel0@gmail.com?subject=Let's chat"
-                            >Contact</a
+                        <button
+                            type="button"
+                            class="footer-nav-btn copy-email"
+                            data-copy="tvishapatel0@gmail.com"
+                            aria-label="Copy email address"
                         >
+                            Contact
+                        </button>
                     </nav>
 
-                    <div class="footer-col-actions">
+                    <div class="footer-social-icons">
                         <a
-                            class="footer-pill-btn"
-                            href="mailto:tvishapatel0@gmail.com?subject=Let's chat"
+                            href="https://www.linkedin.com/in/tvishapatel-10/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="LinkedIn"
+                            class="footer-icon-link"
                         >
-                            <span>Let's Chat!</span>
-                            <span class="pill-arrow" aria-hidden="true">→</span>
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                            >
+                                <path
+                                    d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45c-.89 0-1.61.72-1.61 1.61 0 .88.72 1.6 1.61 1.6.88 0 1.6-.72 1.6-1.6 0-.89-.72-1.61-1.6-1.61Z"
+                                ></path>
+                            </svg>
                         </a>
-
-                        <div class="footer-social-icons">
-                            <a
-                                href="https://www.linkedin.com/in/tvishapatel-10/"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="LinkedIn"
-                                class="footer-icon-link"
+                        <a
+                            href="https://github.com/tvisha-patel-10"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="GitHub"
+                            class="footer-icon-link"
+                        >
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
                             >
-                                <svg
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                >
-                                    <path
-                                        d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45c-.89 0-1.61.72-1.61 1.61 0 .88.72 1.6 1.61 1.6.88 0 1.6-.72 1.6-1.6 0-.89-.72-1.61-1.6-1.61Z"
-                                    ></path>
-                                </svg>
-                            </a>
-                            <a
-                                href="https://github.com/tvisha-patel-10"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="GitHub"
-                                class="footer-icon-link"
+                                <path
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"
+                                ></path>
+                            </svg>
+                        </a>
+                        <button
+                            type="button"
+                            class="footer-icon-link copy-email"
+                            data-copy="tvishapatel0@gmail.com"
+                            aria-label="Copy email address"
+                        >
+                            <svg
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
                             >
-                                <svg
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                >
-                                    <path
-                                        fill-rule="evenodd"
-                                        clip-rule="evenodd"
-                                        d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2Z"
-                                    ></path>
-                                </svg>
-                            </a>
-                            <a
-                                href="mailto:tvishapatel0@gmail.com?subject=Let's chat"
-                                aria-label="Send email"
-                                class="footer-icon-link"
-                            >
-                                <svg
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 24 24"
-                                    fill="currentColor"
-                                >
-                                    <path
-                                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"
-                                    ></path>
-                                </svg>
-                            </a>
-                        </div>
+                                <path
+                                    d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"
+                                ></path>
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </footer>
         </div>
-        <div class="copy-toast" role="status">Email copied</div>
     </body>
-    <script>
-        import "../scripts/main.js";
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const buttons = document.querySelectorAll(".copy-email");
-            const toast = document.querySelector(".copy-toast");
-
-            buttons.forEach((button) => {
-                button.addEventListener("click", async () => {
-                    const text = (button as HTMLButtonElement).dataset.copy;
-
-                    if (!text) return;
-
-                    try {
-                        await navigator.clipboard.writeText(text);
-
-                        if (toast) {
-                            toast.textContent = "Email copied";
-                            toast.classList.add("visible");
-                            setTimeout(
-                                () => toast.classList.remove("visible"),
-                                2000,
-                            );
-                        }
-                    } catch (error) {
-                        console.error("Copy failed:", error);
-                    }
-                });
-            });
-        });
-    </script>
+    <CustomCursor />
 </html>
+<script>
+    import "../scripts/main.js";
+</script>

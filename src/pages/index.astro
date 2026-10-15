@@ -86,7 +86,7 @@ import "../css/home.css";
 				role="img"
 				aria-label="Strawberry.me case study image placeholder"
 			>
-				<video autoplay loop muted playsinline preload="auto">
+				<video autoplay loop muted playsinline preload="metadata">
 					<source
 						src="/images/strawberry-ai/strawberry_ai_cover.mp4"
 						type="video/mp4"
@@ -111,7 +111,7 @@ import "../css/home.css";
 						loop
 						muted
 						playsinline
-						preload="auto"
+						preload="metadata"
 					>
 						<source
 							src="/images/betterhelp/betterhelp_cover.mp4"
@@ -140,7 +140,7 @@ import "../css/home.css";
 					loop
 					muted
 					playsinline
-					preload="auto"
+					preload="metadata"
 				>
 					<source
 						src="/images/echokids/echokids_cover.mp4"
@@ -159,28 +159,38 @@ import "../css/home.css";
 	</section>
 
 	<script>
-		// Ensure muted autoplay videos start playing reliably across Safari / iOS / Chrome
+		// Viewport-aware autoplay: saves CPU/GPU and smoothly plays videos as they enter view
 		document.addEventListener("DOMContentLoaded", () => {
 			const videos = document.querySelectorAll<HTMLVideoElement>(".work-card video");
-			videos.forEach((video) => {
-				video.muted = true;
-				video.defaultMuted = true;
-				const tryPlay = () => {
-					const promise = video.play();
-					if (promise !== undefined) {
-						promise.catch(() => {
-							// Autoplay was prevented or postponed by browser power saving
+			
+			if ("IntersectionObserver" in window) {
+				const observer = new IntersectionObserver(
+					(entries) => {
+						entries.forEach((entry) => {
+							const video = entry.target as HTMLVideoElement;
+							if (entry.isIntersecting) {
+								video.play().catch(() => {});
+							} else {
+								video.pause();
+							}
 						});
-					}
-				};
+					},
+					{ threshold: 0.15, rootMargin: "100px 0px" }
+				);
 
-				if (video.readyState >= 2) {
-					tryPlay();
-				} else {
-					video.addEventListener("canplay", tryPlay, { once: true });
-					video.addEventListener("loadeddata", tryPlay, { once: true });
-				}
-			});
+				videos.forEach((video) => {
+					video.muted = true;
+					video.defaultMuted = true;
+					observer.observe(video);
+				});
+			} else {
+				// Fallback
+				videos.forEach((video) => {
+					video.muted = true;
+					video.defaultMuted = true;
+					video.play().catch(() => {});
+				});
+			}
 		});
 	</script>
 </BaseLayout>

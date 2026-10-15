@@ -221,6 +221,10 @@
     align-items: center;
 }
 
+.btn-text-short {
+    display: none;
+}
+
 .modal-btn:hover {
     background: rgba(0, 0, 0, 0.04);
     color: var(--color-accent);
@@ -301,10 +305,47 @@
     }
 
     .demo-modal-header {
-        padding: 0.75rem 1rem;
+        padding: 0.65rem 0.85rem;
+        gap: 0.5rem;
+    }
+
+    .demo-modal-title {
+        min-width: 0;
+        flex: 1;
+    }
+
+    .demo-modal-title h3 {
+        font-size: 1.1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     .demo-modal-title p {
         display: none;
+    }
+
+    .demo-modal-actions {
+        flex-shrink: 0;
+        gap: 0.35rem;
+    }
+
+    .btn-text-full {
+        display: none;
+    }
+
+    .btn-text-short {
+        display: inline;
+    }
+
+    .modal-btn {
+        padding: 5px 8px;
+        font-size: 0.78rem;
+    }
+
+    .modal-close-btn {
+        width: 32px;
+        height: 32px;
+        margin-left: 0;
     }
 }

@@ -85,6 +85,16 @@ button {
     color: inherit;
 }
 
+:focus {
+    outline: none;
+}
+
+:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: var(--radius-btn);
+}
+
 .page {
     flex: 1;
     display: flex;
@@ -342,15 +352,22 @@ h3 {
     gap: clamp(1.25rem, 2.5vw, 2.5rem);
 }
 
-.footer-col-nav a {
+.footer-col-nav a,
+.footer-col-nav button {
     font-size: 0.95rem;
     font-weight: 500;
     color: var(--color-cream);
     opacity: 0.65;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    cursor: pointer;
     transition: opacity var(--transition), color var(--transition);
 }
 
-.footer-col-nav a:hover {
+.footer-col-nav a:hover,
+.footer-col-nav button:hover {
     opacity: 1;
 }
 
@@ -407,26 +424,7 @@ h3 {
     opacity: 1;
 }
 
-.copy-toast {
-    position: fixed;
-    bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%) translateY(12px);
-    background: var(--color-text);
-    color: var(--color-cream);
-    padding: 10px 16px;
-    border-radius: 4px;
-    font-size: 0.95rem;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    z-index: 20;
-}
 
-.copy-toast.is-visible {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-}
 
 .coming-soon {
     padding: var(--space-80) 0 var(--space-120);

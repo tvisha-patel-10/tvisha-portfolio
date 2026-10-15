@@ -190,7 +190,7 @@ sections:
       </div>
     </div>
     <div class="impact-holder size-b theme-betterhelp">
-      <p class="impact-label">Legacy state: Dense text with obsolete app references</p>
+      <p class="impact-label">Legacy state: Dense text with outdated app references</p>
       <div class="impact-canvas">
         <img
           src="/images/betterhelp/legacy_dense_help_section.webp"

@@ -136,7 +136,7 @@
 .work-card .placeholder {
     aspect-ratio: 2640 / 1338;
     width: 100%;
-    border-radius: 8px;
+    border-radius: var(--radius-card);
     background: #f4f3f0;
     overflow: hidden;
     position: relative;
@@ -226,6 +226,7 @@
     .stats {
         grid-template-columns: 1fr;
         gap: var(--space-32);
+        margin-bottom: var(--space-48);
         text-align: center;
     }
 

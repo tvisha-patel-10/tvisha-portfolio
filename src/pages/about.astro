@@ -30,7 +30,14 @@ import "../css/about.css";
                     target="_blank"
                     rel="noopener noreferrer">LinkedIn</a
                 >
-                <a class="btn" href="mailto:tvishapatel0@gmail.com">Email</a>
+                <button
+                    type="button"
+                    class="btn copy-email"
+                    data-copy="tvishapatel0@gmail.com"
+                    aria-label="Copy email address"
+                >
+                    Email
+                </button>
             </div>
         </div>
         <div class="about-photo">
@@ -42,7 +49,10 @@ import "../css/about.css";
                 <img
                     src="/images/profilepic.webp"
                     style="width: 100%; height: 100%; object-fit: cover; border-radius: 6px"
-                    alt=""
+                    alt="Portrait of Tvisha Patel"
+                    loading="eager"
+                    fetchpriority="high"
+                    decoding="async"
                 />
             </div>
             <div
@@ -50,7 +60,12 @@ import "../css/about.css";
                 role="img"
                 aria-label="Photo of my cat"
             >
-                <img src="/images/king.webp" alt="" />
+                <img
+                    src="/images/king.webp"
+                    alt="King the cat looking at the camera"
+                    loading="eager"
+                    decoding="async"
+                />
             </div>
             <div class="cat-note" aria-hidden="true">
                 <div class="cat-note-arrows">
@@ -136,6 +151,7 @@ import "../css/about.css";
 
     <section class="wild wrap">
         <h2 class="section-heading">Tvisha in the wild</h2>
+        <p class="wild-subheading">(tap photo to flip ↺)</p>
         <div class="wild-grid">
             <!-- Card 1 -->
             <div
@@ -149,8 +165,10 @@ import "../css/about.css";
                         <img
                             src="/images/about/me_w_ny_food.webp"
                             alt="Tvisha with desserts in NYC"
+                            loading="lazy"
+                            decoding="async"
                         />
-                        <span class="flip-hint" aria-hidden="true">flip ↺</span>
+                        <span class="wild-flip-badge" aria-hidden="true">↺</span>
                     </div>
                     <div class="wild-card-back">
                         <div class="wild-card-tape" aria-hidden="true"></div>
@@ -176,8 +194,10 @@ import "../css/about.css";
                         <img
                             src="/images/about/art.webp"
                             alt="Art I found in a bookstore"
+                            loading="lazy"
+                            decoding="async"
                         />
-                        <span class="flip-hint" aria-hidden="true">flip ↺</span>
+                        <span class="wild-flip-badge" aria-hidden="true">↺</span>
                     </div>
                     <div class="wild-card-back">
                         <div class="wild-card-tape" aria-hidden="true"></div>
@@ -203,8 +223,10 @@ import "../css/about.css";
                         <img
                             src="/images/about/sequoia.webp"
                             alt="Walking among giant trees in Sequoia"
+                            loading="lazy"
+                            decoding="async"
                         />
-                        <span class="flip-hint" aria-hidden="true">flip ↺</span>
+                        <span class="wild-flip-badge" aria-hidden="true">↺</span>
                     </div>
                     <div class="wild-card-back">
                         <div class="wild-card-tape" aria-hidden="true"></div>
@@ -233,8 +255,10 @@ import "../css/about.css";
                         <img
                             src="/images/about/sunset1.webp"
                             alt="Golden hour sunset"
+                            loading="lazy"
+                            decoding="async"
                         />
-                        <span class="flip-hint" aria-hidden="true">flip ↺</span>
+                        <span class="wild-flip-badge" aria-hidden="true">↺</span>
                     </div>
                     <div class="wild-card-back">
                         <div class="wild-card-tape" aria-hidden="true"></div>
@@ -260,8 +284,10 @@ import "../css/about.css";
                         <img
                             src="/images/about/ny_food.webp"
                             alt="Good eats in NY"
+                            loading="lazy"
+                            decoding="async"
                         />
-                        <span class="flip-hint" aria-hidden="true">flip ↺</span>
+                        <span class="wild-flip-badge" aria-hidden="true">↺</span>
                     </div>
                     <div class="wild-card-back">
                         <div class="wild-card-tape" aria-hidden="true"></div>
@@ -287,8 +313,10 @@ import "../css/about.css";
                         <img
                             src="/images/about/sunset2.webp"
                             alt="Soft sunset gradient"
+                            loading="lazy"
+                            decoding="async"
                         />
-                        <span class="flip-hint" aria-hidden="true">flip ↺</span>
+                        <span class="wild-flip-badge" aria-hidden="true">↺</span>
                     </div>
                     <div class="wild-card-back">
                         <div class="wild-card-tape" aria-hidden="true"></div>
@@ -316,8 +344,10 @@ import "../css/about.css";
                         <img
                             src="/images/about/minecraft_pig.webp"
                             alt="Minecraft pig build"
+                            loading="lazy"
+                            decoding="async"
                         />
-                        <span class="flip-hint" aria-hidden="true">flip ↺</span>
+                        <span class="wild-flip-badge" aria-hidden="true">↺</span>
                     </div>
                     <div class="wild-card-back">
                         <div class="wild-card-tape" aria-hidden="true"></div>
@@ -345,8 +375,10 @@ import "../css/about.css";
                         <img
                             src="/images/about/event_hosting.webp"
                             alt="Tvisha hosting community events"
+                            loading="lazy"
+                            decoding="async"
                         />
-                        <span class="flip-hint" aria-hidden="true">flip ↺</span>
+                        <span class="wild-flip-badge" aria-hidden="true">↺</span>
                     </div>
                     <div class="wild-card-back">
                         <div class="wild-card-tape" aria-hidden="true"></div>

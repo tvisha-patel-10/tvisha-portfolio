@@ -1,6 +1,5 @@
 const header = document.querySelector(".site-header");
 const navToggle = document.querySelector(".nav-toggle");
-const toast = document.querySelector(".copy-toast");
 
 if (navToggle && header) {
     navToggle.addEventListener("click", () => {
@@ -25,24 +24,22 @@ if (navToggle && header) {
     });
 }
 
-function showToast(message) {
-    if (!toast) return;
-    toast.textContent = message;
-    toast.classList.add("is-visible");
-    window.clearTimeout(showToast.timer);
-    showToast.timer = window.setTimeout(() => {
-        toast.classList.remove("is-visible");
-    }, 1800);
-}
-
 document.querySelectorAll("[data-copy]").forEach((button) => {
     button.addEventListener("click", async () => {
         const value = button.getAttribute("data-copy");
+        if (!value) return;
         try {
             await navigator.clipboard.writeText(value);
-            showToast("Email copied");
         } catch (error) {
-            showToast("Couldn’t copy — tvishapatel0@gmail.com");
+            // Fallback for older browsers
+            const ta = document.createElement("textarea");
+            ta.value = value;
+            ta.style.position = "fixed";
+            ta.style.opacity = "0";
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand("copy");
+            document.body.removeChild(ta);
         }
     });
 });

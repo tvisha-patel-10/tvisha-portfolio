@@ -26,7 +26,7 @@ import "../css/playground.css";
             >
                 <img
                     src="/images/coming-soon.gif"
-                    alt="Piano Pal coming soon"
+                    alt="Something special coming soon"
                     class="play-card-media"
                     loading="lazy"
                 />
@@ -48,7 +48,7 @@ import "../css/playground.css";
             >
                 <img
                     src="/images/coming-soon.gif"
-                    alt="Piano Pal coming soon"
+                    alt="Pixel art canvas coming soon"
                     class="play-card-media"
                     loading="lazy"
                 />
@@ -120,7 +120,7 @@ import "../css/playground.css";
                     aria-label="Piano Pal cover"
                 >
                     <source
-                        src="public/images/playground/pianopal_cover.mp4"
+                        src="/images/playground/pianopal_cover.mp4"
                         type="video/mp4"
                     />
                 </video>
@@ -278,7 +278,8 @@ import "../css/playground.css";
                     class="modal-btn"
                     title="Open full window"
                 >
-                    Open full screen ↗
+                    <span class="btn-text-full">Open full screen ↗</span>
+                    <span class="btn-text-short">Full screen ↗</span>
                 </a>
                 <a
                     id="modal-github"
@@ -381,6 +382,7 @@ import "../css/playground.css";
         }
 
         document.body.style.overflow = "hidden";
+        document.body.classList.add("modal-open");
 
         if (modalLoader) modalLoader.style.display = "flex";
 
@@ -402,6 +404,7 @@ import "../css/playground.css";
         modal?.classList.remove("is-active");
         modal?.setAttribute("aria-hidden", "true");
         document.body.style.overflow = "";
+        document.body.classList.remove("modal-open");
         if (modalIframe) {
             modalIframe.src = ""; // Stop audio/video/canvas execution
         }

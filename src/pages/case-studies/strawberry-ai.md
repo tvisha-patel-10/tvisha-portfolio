@@ -353,7 +353,6 @@ passwordProtected: true
   </ul>
 
   <div class="impact-holder size-a theme-strawberry-ai">
-    <p class="impact-label">Systems alignment: Product KPIs, prompt schemas, and feedback loops</p>
     <div class="impact-canvas">
       <img
         src="/images/strawberry-ai/system_alignment_diagram.webp"

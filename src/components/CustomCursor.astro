@@ -1,0 +1,679 @@
+---
+// src/components/CustomCursor.astro
+// Custom terracotta OS pointer arrow + clicking hand for links + morphing cursor-replacing action pills
+---
+
+<div class="custom-cursor-root" id="customCursorRoot" aria-hidden="true">
+    <!-- Classic OS Pointer with stem/tail in terracotta -->
+    <div class="custom-cursor-arrow" id="customCursorArrow">
+        <div class="custom-cursor-arrow-inner">
+            <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    d="M2 2V18L6 14L9.5 21L12.5 19.5L9 12.5L14.5 12.5L2 2Z"
+                    fill="#a13900"
+                    stroke="#fefdfb"
+                    stroke-width="1.5"
+                    stroke-linejoin="round"
+                    stroke-linecap="round"></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Classic OS Pointing Hand in terracotta for clickable items without a pill -->
+    <div class="custom-cursor-hand" id="customCursorHand">
+        <div class="custom-cursor-hand-inner">
+            <svg
+                width="18"
+                height="22"
+                viewBox="0 0 17 21"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <!-- Slender hand silhouette in terracotta -->
+                <path
+                    d="M3.8 3.2C3.8 2.2 4.5 1.5 5.5 1.5C6.5 1.5 7.2 2.2 7.2 3.2V5.2C7.2 4.5 7.8 3.9 8.5 3.9C9.2 3.9 9.8 4.5 9.8 5.2V6.5C9.8 5.9 10.4 5.5 11.1 5.5C11.8 5.5 12.4 6 12.4 6.8V8.2C12.4 7.7 13 7.3 13.7 7.3C14.4 7.3 15 7.9 15 8.6V13C15 15.5 13.5 17.5 11 17.5H7.5C5.8 17.5 4.5 16.5 3.5 15L1.2 12.5C0.5 11.8 0.5 10.6 1.2 9.9C1.9 9.2 3.1 9.2 3.8 9.9L3.8 3.2Z"
+                    fill="#a13900"
+                    stroke="#fefdfb"
+                    stroke-width="1.25"
+                    stroke-linejoin="round"
+                ></path>
+                <!-- Finger separation creases in crisp cream -->
+                <path
+                    d="M7.2 5.5V11.5"
+                    stroke="#fefdfb"
+                    stroke-width="1.2"
+                    stroke-linecap="round"
+                ></path>
+                <path
+                    d="M9.8 6.5V11.5"
+                    stroke="#fefdfb"
+                    stroke-width="1.2"
+                    stroke-linecap="round"
+                ></path>
+                <path
+                    d="M12.4 8V12"
+                    stroke="#fefdfb"
+                    stroke-width="1.2"
+                    stroke-linecap="round"
+                ></path>
+                <path
+                    d="M3.8 9.9C4.2 10.8 4.7 11.5 5.3 12.0"
+                    stroke="#fefdfb"
+                    stroke-width="1.2"
+                    stroke-linecap="round"
+                ></path>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Action Pill that seamlessly replaces the cursor on hover -->
+    <div class="custom-cursor-pill-wrap" id="customCursorPillWrap">
+        <div class="custom-cursor-pill" id="customCursorPill">
+            <span class="custom-cursor-pill-text" id="customCursorPillText"
+            ></span>
+        </div>
+    </div>
+</div>
+
+<style is:global>
+    /* Hide native cursors on desktop when hover and fine pointer are available */
+    @media (pointer: fine) and (hover: hover) {
+        html,
+        body,
+        a,
+        button,
+        [role="button"],
+        .work-card,
+        .play-card,
+        .wild-card,
+        .turntable-wrapper,
+        .nav-toggle,
+        .footer-icon-link {
+            cursor: none !important;
+        }
+
+        /* Preserve native cursor on text fields */
+        input:not([type="button"]):not([type="submit"]):not([type="reset"]),
+        textarea,
+        select,
+        [contenteditable="true"] {
+            cursor: text !important;
+        }
+
+        /* Restore native cursor inside interactive demo modal so users can play games without mouse lag */
+        body.modal-open,
+        body.modal-open * {
+            cursor: auto !important;
+        }
+
+        body.modal-open .custom-cursor-root {
+            display: none !important;
+        }
+    }
+
+    /* Completely hide custom cursor on touch/mobile devices */
+    @media (pointer: coarse), (hover: none) {
+        .custom-cursor-root {
+            display: none !important;
+        }
+    }
+
+    .custom-cursor-root {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 999999;
+        overflow: hidden;
+    }
+
+    /* --- Classic OS Arrow --- */
+    .custom-cursor-arrow {
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        will-change: transform;
+        opacity: 0;
+        transition: opacity 0.15s ease;
+    }
+
+    .custom-cursor-arrow.is-visible {
+        opacity: 1;
+    }
+
+    /* When a pill or clicking hand is active, arrow smoothly shrinks & fades into its tip */
+    .custom-cursor-arrow.is-replaced .custom-cursor-arrow-inner {
+        opacity: 0 !important;
+        transform: scale(0.3) !important;
+    }
+
+    .custom-cursor-arrow-inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.25));
+        transform-origin: 2px 2px;
+        transition:
+            transform 0.15s cubic-bezier(0.16, 1, 0.3, 1),
+            opacity 0.15s ease;
+    }
+
+    .custom-cursor-arrow.is-down .custom-cursor-arrow-inner {
+        transform: scale(0.85);
+    }
+
+    .custom-cursor-arrow.is-hidden .custom-cursor-arrow-inner {
+        opacity: 0;
+        transform: scale(0.4);
+    }
+
+    /* --- Classic OS Pointing Hand --- */
+    .custom-cursor-hand {
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        will-change: transform;
+        opacity: 0;
+        transition: opacity 0.15s ease;
+    }
+
+    .custom-cursor-hand.is-visible {
+        opacity: 1;
+    }
+
+    .custom-cursor-hand-inner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.25));
+        transform-origin: 5.5px 1.5px;
+        opacity: 0;
+        transform: scale(0.3);
+        transition:
+            transform 0.15s cubic-bezier(0.16, 1, 0.3, 1),
+            opacity 0.15s ease;
+    }
+
+    .custom-cursor-hand.is-active .custom-cursor-hand-inner {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .custom-cursor-hand.is-down .custom-cursor-hand-inner {
+        transform: scale(0.86);
+    }
+
+    .custom-cursor-hand.is-hidden .custom-cursor-hand-inner {
+        opacity: 0;
+        transform: scale(0.4);
+    }
+
+    /* --- Morphing Action Pill Container --- */
+    .custom-cursor-pill-wrap {
+        position: fixed;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        will-change: transform;
+        opacity: 0;
+        transition: opacity 0.18s ease;
+    }
+
+    .custom-cursor-pill-wrap.is-visible {
+        opacity: 1;
+    }
+
+    .custom-cursor-pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        padding: 7px 16px;
+        background: rgba(38, 34, 34, 0.94);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        color: #fefdfb;
+        border-radius: 9999px;
+        font-family: var(--font-body, "Figtree", sans-serif);
+        font-size: 0.8125rem;
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: 0.02em;
+        white-space: nowrap;
+        box-shadow:
+            0 4px 20px rgba(0, 0, 0, 0.22),
+            0 0 0 1px rgba(255, 255, 255, 0.15);
+        opacity: 0;
+        transform: scale(0.6);
+        transform-origin: center center;
+        transition:
+            opacity 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+            transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+            background-color 0.22s ease,
+            box-shadow 0.22s ease,
+            color 0.22s ease;
+    }
+
+    .custom-cursor-pill.pill-active {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    .custom-cursor-pill.is-down {
+        transform: scale(0.92);
+    }
+
+    .custom-cursor-pill.is-copied {
+        background: #a13900;
+        color: #ffffff;
+        box-shadow:
+            0 4px 24px rgba(161, 57, 0, 0.45),
+            0 0 0 1px rgba(255, 255, 255, 0.25);
+        animation: pillPulse 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes pillPulse {
+        0% {
+            transform: scale(0.92);
+        }
+        50% {
+            transform: scale(1.08);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    /* Motion accessibility */
+    @media (prefers-reduced-motion: reduce) {
+        .custom-cursor-arrow-inner,
+        .custom-cursor-hand-inner,
+        .custom-cursor-pill {
+            transition: none !important;
+            animation: none !important;
+        }
+    }
+</style>
+
+<script>
+    (function initCustomCursor() {
+        // Exit immediately on touch/non-hover devices
+        if (
+            window.matchMedia("(pointer: coarse)").matches ||
+            !window.matchMedia("(hover: hover)").matches
+        ) {
+            return;
+        }
+
+        const arrow = document.getElementById("customCursorArrow");
+        const hand = document.getElementById("customCursorHand");
+        const pillWrap = document.getElementById("customCursorPillWrap");
+        const pill = document.getElementById("customCursorPill");
+        const pillText = document.getElementById("customCursorPillText");
+
+        if (!arrow || !hand || !pillWrap || !pill || !pillText) return;
+
+        let mouseX = -200;
+        let mouseY = -200;
+        let pillX = -200;
+        let pillY = -200;
+        let isVisible = false;
+        let isTextActive = false;
+        let isHandActive = false;
+        let isCopiedLocked = false;
+        let copiedTimeout: any = null;
+        let rafId: number | null = null;
+        let currentTarget: Element | null = null;
+
+        const prefersReducedMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)",
+        ).matches;
+
+        function setPillText(text: string | null) {
+            if (isCopiedLocked) return;
+
+            if (text) {
+                pillText.textContent = text;
+                pill.classList.add("pill-active");
+                pillWrap.classList.add("is-visible");
+                arrow.classList.add("is-replaced");
+                hand.classList.remove("is-active");
+                isTextActive = true;
+                isHandActive = false;
+            } else {
+                pill.classList.remove("pill-active");
+                pillWrap.classList.remove("is-visible");
+                isTextActive = false;
+                if (!isHandActive) {
+                    arrow.classList.remove("is-replaced");
+                }
+            }
+        }
+
+        function setHandActive(active: boolean) {
+            if (isCopiedLocked || isTextActive) return;
+
+            isHandActive = active;
+            if (active) {
+                hand.classList.add("is-active");
+                arrow.classList.add("is-replaced");
+            } else {
+                hand.classList.remove("is-active");
+                arrow.classList.remove("is-replaced");
+            }
+        }
+
+        function triggerCopiedFeedback() {
+            if (!pillText || !pill) return;
+            isCopiedLocked = true;
+            clearTimeout(copiedTimeout);
+
+            pillText.textContent = "Copied! ✓";
+            pill.classList.add("pill-active", "is-copied");
+            pillWrap.classList.add("is-visible");
+            arrow.classList.add("is-replaced");
+            hand.classList.remove("is-active");
+            isTextActive = true;
+            isHandActive = false;
+
+            copiedTimeout = setTimeout(() => {
+                isCopiedLocked = false;
+                pill.classList.remove("is-copied");
+                // Refresh current hover target
+                const hoveredEl = document.elementFromPoint(mouseX, mouseY);
+                if (hoveredEl) {
+                    inspectHoverTarget(hoveredEl);
+                } else {
+                    setPillText(null);
+                    setHandActive(false);
+                }
+            }, 1800);
+        }
+
+        function inspectHoverTarget(target: Element | null) {
+            currentTarget = target;
+            if (isCopiedLocked) return;
+
+            if (!target) {
+                arrow.classList.remove("is-hidden", "is-replaced");
+                hand.classList.remove("is-active", "is-hidden");
+                setPillText(null);
+                setHandActive(false);
+                return;
+            }
+
+            // Text input fields: hide custom cursor and restore standard text cursor
+            if (
+                target.closest(
+                    'input:not([type="button"]):not([type="submit"]):not([type="reset"]), textarea, select, [contenteditable="true"]',
+                )
+            ) {
+                arrow.classList.add("is-hidden");
+                hand.classList.add("is-hidden");
+                setPillText(null);
+                setHandActive(false);
+                return;
+            }
+
+            arrow.classList.remove("is-hidden");
+            hand.classList.remove("is-hidden");
+
+            // Explicit custom pill data attribute
+            const explicitPillEl = target.closest("[data-cursor-pill]");
+            if (explicitPillEl) {
+                const label = explicitPillEl.getAttribute("data-cursor-pill");
+                if (label) {
+                    setPillText(label);
+                    return;
+                }
+            }
+
+            // Copy email buttons (footer mail icon, about page copy, case studies)
+            const copyEl = target.closest(
+                "[data-copy], .copy-email, #csCopyEmailBtn",
+            );
+            if (copyEl) {
+                setPillText("Copy Email 📋");
+                return;
+            }
+
+            // Turntable / Vinyl Record Player on About page
+            const turntableEl = target.closest(
+                "#turntable, .turntable-wrapper, .music-player",
+            );
+            if (turntableEl) {
+                const isPlaying =
+                    turntableEl.classList.contains("playing") ||
+                    turntableEl.querySelector(".turntable-wrapper.playing") !==
+                        null ||
+                    document.querySelector(".music-player.is-playing") !== null;
+                setPillText(isPlaying ? "Pause ⏸" : "Play Track ♫");
+                return;
+            }
+
+            // Polaroid Flip Cards on About page ("Tvisha in the wild")
+            const wildCardEl = target.closest(".wild-card");
+            if (wildCardEl) {
+                const isFlipped = wildCardEl.classList.contains("is-flipped");
+                setPillText(isFlipped ? "Flip back ↺" : "Flip ↺");
+                return;
+            }
+
+            // Case study cards & links
+            const caseStudyEl = target.closest(
+                '.work-card, .cs-card, a[href*="/case-studies/"]',
+            );
+            if (caseStudyEl) {
+                setPillText("View Case Study ↗");
+                return;
+            }
+
+            // Playground cards
+            const playCardEl = target.closest(".play-card");
+            if (playCardEl) {
+                const isComingSoon =
+                    playCardEl.textContent
+                        ?.toLowerCase()
+                        .includes("coming soon") ||
+                    playCardEl.querySelector('img[src*="coming-soon"]');
+                if (isComingSoon) {
+                    setPillText("Coming Soon ✦");
+                } else {
+                    setPillText("Explore ↗");
+                }
+                return;
+            }
+
+            // External links (Strawberry.me, LinkedIn, GitHub, etc.)
+            const linkEl = target.closest("a");
+            if (linkEl) {
+                const href = linkEl.getAttribute("href") || "";
+                const isExternal =
+                    linkEl.getAttribute("target") === "_blank" ||
+                    linkEl.getAttribute("rel")?.includes("external") ||
+                    (href.startsWith("http") &&
+                        !href.includes("tvishapatel.com"));
+
+                if (isExternal) {
+                    setPillText("Visit ↗");
+                    return;
+                }
+
+                // Standard internal link: switch to terracotta pointing hand
+                setPillText(null);
+                setHandActive(true);
+                return;
+            }
+
+            // Standard buttons & interactive elements (nav toggle, case study nav links, back buttons)
+            const btnEl = target.closest(
+                'button, [role="button"], .nav-toggle, .cs-nav .nav-link, .cs-back-home, .cs-back-top',
+            );
+            if (btnEl) {
+                setPillText(null);
+                setHandActive(true);
+                return;
+            }
+
+            // Neutral ground: restore classic terracotta arrow
+            setPillText(null);
+            setHandActive(false);
+        }
+
+        // Global click handler integration
+        document.addEventListener("click", async (e) => {
+            const target = e.target as Element | null;
+            if (!target) return;
+
+            // Copy feedback
+            const copyEl = target.closest(
+                "[data-copy], .copy-email, #csCopyEmailBtn",
+            );
+            if (copyEl) {
+                const textToCopy =
+                    copyEl.getAttribute("data-copy") ||
+                    copyEl.getAttribute("data-email") ||
+                    "tvishapatel0@gmail.com";
+
+                try {
+                    await navigator.clipboard.writeText(textToCopy);
+                } catch {
+                    const ta = document.createElement("textarea");
+                    ta.value = textToCopy;
+                    ta.style.position = "fixed";
+                    ta.style.opacity = "0";
+                    document.body.appendChild(ta);
+                    ta.select();
+                    document.execCommand("copy");
+                    document.body.removeChild(ta);
+                }
+
+                triggerCopiedFeedback();
+                return;
+            }
+
+            // Turntable click: quick state update
+            const turntableEl = target.closest(
+                "#turntable, .turntable-wrapper, .music-player",
+            );
+            if (turntableEl) {
+                setTimeout(() => {
+                    if (currentTarget) inspectHoverTarget(currentTarget);
+                }, 50);
+                return;
+            }
+
+            // Flip card click: quick state update
+            const wildCardEl = target.closest(".wild-card");
+            if (wildCardEl) {
+                setTimeout(() => {
+                    if (currentTarget) inspectHoverTarget(currentTarget);
+                }, 50);
+                return;
+            }
+        });
+
+        // Mouse movement
+        window.addEventListener(
+            "mousemove",
+            (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+
+                if (!isVisible) {
+                    isVisible = true;
+                    arrow.classList.add("is-visible");
+                    hand.classList.add("is-visible");
+                    pillX = mouseX;
+                    pillY = mouseY;
+                }
+
+                inspectHoverTarget(e.target as Element | null);
+            },
+            { passive: true },
+        );
+
+        window.addEventListener("mousedown", () => {
+            arrow.classList.add("is-down");
+            hand.classList.add("is-down");
+            pill.classList.add("is-down");
+        });
+
+        window.addEventListener("mouseup", () => {
+            arrow.classList.remove("is-down");
+            hand.classList.remove("is-down");
+            pill.classList.remove("is-down");
+        });
+
+        document.documentElement.addEventListener("mouseleave", () => {
+            isVisible = false;
+            arrow.classList.remove("is-visible");
+            hand.classList.remove("is-visible");
+            pillWrap.classList.remove("is-visible");
+            setPillText(null);
+            setHandActive(false);
+        });
+
+        document.documentElement.addEventListener("mouseenter", () => {
+            isVisible = true;
+            arrow.classList.add("is-visible");
+            hand.classList.add("is-visible");
+        });
+
+        // Render loop for butter-smooth movement and responsive screen clamping
+        function render() {
+            // Anchor OS arrow tip exactly at coordinate (mouseX - 2, mouseY - 2)
+            arrow.style.transform = `translate3d(${mouseX - 2}px, ${mouseY - 2}px, 0)`;
+
+            // Anchor OS pointing hand tip exactly at coordinate (mouseX - 5.5, mouseY - 1.5)
+            hand.style.transform = `translate3d(${mouseX - 5.5}px, ${mouseY - 1.5}px, 0)`;
+
+            // When pill is active, it replaces the cursor centered directly under the pointer
+            const pWidth = pill.offsetWidth || 110;
+            const pHeight = pill.offsetHeight || 34;
+
+            // Ideal position: centered on pointer
+            let idealX = mouseX - pWidth / 2;
+            let idealY = mouseY - pHeight / 2;
+
+            // Responsive Viewport Clamping:
+            const margin = 14;
+            const minX = margin;
+            const maxX = Math.max(margin, window.innerWidth - pWidth - margin);
+            const minY = margin;
+            const maxY = Math.max(
+                margin,
+                window.innerHeight - pHeight - margin,
+            );
+
+            const clampedX = Math.max(minX, Math.min(maxX, idealX));
+            const clampedY = Math.max(minY, Math.min(maxY, idealY));
+
+            if (prefersReducedMotion || !isTextActive) {
+                // When not active, keep pill locked to mouse so it opens instantly on hover without trailing from an old location
+                pillX = clampedX;
+                pillY = clampedY;
+            } else {
+                // High-responsiveness tracking when replacing cursor
+                pillX += (clampedX - pillX) * 0.45;
+                pillY += (clampedY - pillY) * 0.45;
+            }
+
+            pillWrap.style.transform = `translate3d(${pillX}px, ${pillY}px, 0)`;
+
+            rafId = requestAnimationFrame(render);
+        }
+
+        rafId = requestAnimationFrame(render);
+    })();
+</script>
