@@ -1655,7 +1655,11 @@ import CustomCursor from "../components/CustomCursor.astro";
                                     </form>
                                     <p class="cs-lock-help">
                                         Don't have the password?{" "}
-                                        <a href="mailto:tvishapatel0@gmail.com?subject=Password%20Access%20Request:%20Strawberry.me%20AI">
+                                        <a
+                                            href="mailto:tvishapatel0@gmail.com?subject=Password%20Access%20Request:%20Strawberry.me%20AI"
+                                            data-umami-event="Password Request Click"
+                                            data-umami-event-location="lock-screen"
+                                        >
                                             Email me for access
                                         </a>
                                     </p>
@@ -1698,6 +1702,8 @@ import CustomCursor from "../components/CustomCursor.astro";
                                         class="cs-btn-primary copy-email"
                                         data-copy="tvishapatel0@gmail.com"
                                         aria-label="Copy email address"
+                                        data-umami-event="Copy Email Click"
+                                        data-umami-event-location="case-study-footer"
                                     >
                                         <span>Let's Talk</span>
                                         <span aria-hidden="true">→</span>
@@ -1709,6 +1715,8 @@ import CustomCursor from "../components/CustomCursor.astro";
                                         rel="noopener noreferrer"
                                         class="cs-social-link"
                                         aria-label="LinkedIn Profile"
+                                        data-umami-event="LinkedIn Outbound Click"
+                                        data-umami-event-location="case-study-footer"
                                     >
                                         <svg
                                             viewBox="0 0 24 24"

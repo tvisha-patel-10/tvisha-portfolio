@@ -50,6 +50,13 @@ import CustomCursor from "../components/CustomCursor.astro";
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={imageURL} />
+
+        <!-- Umami Analytics -->
+        <script
+            defer
+            src="https://cloud.umami.is/script.js"
+            data-website-id="55d823f4-6760-4e86-bcbc-23e88becd9ae"
+        ></script>
     </head>
 
     <body>
@@ -135,6 +142,8 @@ import CustomCursor from "../components/CustomCursor.astro";
                             class="footer-nav-btn copy-email"
                             data-copy="tvishapatel0@gmail.com"
                             aria-label="Copy email address"
+                            data-umami-event="Copy Email Click"
+                            data-umami-event-location="footer-nav"
                         >
                             Contact
                         </button>
@@ -147,6 +156,8 @@ import CustomCursor from "../components/CustomCursor.astro";
                             rel="noopener noreferrer"
                             aria-label="LinkedIn"
                             class="footer-icon-link"
+                            data-umami-event="LinkedIn Outbound Click"
+                            data-umami-event-location="footer"
                         >
                             <svg
                                 width="20"
@@ -165,6 +176,8 @@ import CustomCursor from "../components/CustomCursor.astro";
                             rel="noopener noreferrer"
                             aria-label="GitHub"
                             class="footer-icon-link"
+                            data-umami-event="GitHub Outbound Click"
+                            data-umami-event-location="footer"
                         >
                             <svg
                                 width="20"
@@ -184,6 +197,8 @@ import CustomCursor from "../components/CustomCursor.astro";
                             class="footer-icon-link copy-email"
                             data-copy="tvishapatel0@gmail.com"
                             aria-label="Copy email address"
+                            data-umami-event="Copy Email Click"
+                            data-umami-event-location="footer-icon"
                         >
                             <svg
                                 width="20"
