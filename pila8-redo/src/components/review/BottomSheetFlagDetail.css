@@ -1,0 +1,130 @@
+.bottom-sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 1500;
+  backdrop-filter: blur(2px);
+  animation: fadeIn var(--duration-fast) var(--ease-standard);
+}
+
+.bottom-sheet-card {
+  width: 100%;
+  max-width: 640px;
+  background-color: var(--surface);
+  border-radius: var(--r-lg) var(--r-lg) 0 0;
+  box-shadow: 0 -10px 25px rgba(0, 0, 0, 0.15);
+  padding: var(--s4) var(--s5) calc(var(--s6) + env(safe-area-inset-bottom, 0px));
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  max-height: 80vh;
+  overflow-y: auto;
+  animation: slideUp var(--duration-normal) var(--ease-standard);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.sheet-drag-handle {
+  width: 36px;
+  height: 4px;
+  background-color: var(--border);
+  border-radius: 2px;
+  align-self: center;
+  margin-bottom: var(--s1);
+}
+
+.sheet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sheet-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.sheet-bucket {
+  font-weight: 700;
+  color: var(--brand-strong);
+  text-transform: uppercase;
+}
+
+.sheet-close-btn {
+  background: none;
+  border: none;
+  font-size: var(--fs-md);
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: var(--s1);
+  min-width: 36px;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sheet-title {
+  font-size: var(--fs-lg);
+  margin: 0;
+  color: var(--text);
+}
+
+.sheet-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-base);
+}
+
+.sheet-reason strong,
+.sheet-goal strong {
+  display: block;
+  font-size: var(--fs-xs);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+}
+
+.sheet-reason p,
+.sheet-goal p {
+  margin: 0;
+}
+
+.sheet-goal {
+  background-color: var(--brand-tint);
+  border-left: 3px solid var(--brand);
+  padding: var(--s3);
+  border-radius: 0 var(--r-sm) var(--r-sm) 0;
+}
+
+.sheet-goal strong {
+  color: var(--brand-strong);
+}
+
+.sheet-partner-note {
+  font-style: italic;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.sheet-actions {
+  display: flex;
+  gap: var(--s3);
+  margin-top: var(--s3);
+}
+
+.sheet-actions button {
+  flex: 1;
+  height: 48px;
+}

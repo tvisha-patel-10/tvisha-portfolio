@@ -1,0 +1,226 @@
+.device-check-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: calc(100vh - 120px);
+  padding: var(--s4);
+}
+
+.back-nav-btn {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  cursor: pointer;
+  margin-bottom: var(--s4);
+}
+
+.back-nav-btn:hover {
+  text-decoration: underline;
+}
+
+.device-check-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: var(--s8) var(--s8);
+  max-width: 680px;
+  width: 100%;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s4);
+}
+
+.device-title {
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.device-subtitle {
+  font-size: var(--fs-sm);
+  color: var(--text);
+  font-weight: 500;
+  margin: 0;
+}
+
+.device-guideline {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  line-height: var(--lh-base);
+  margin-bottom: var(--s2);
+}
+
+.hardware-box {
+  background-color: #FAFAF9;
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  padding: var(--s4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+}
+
+.hardware-label {
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.hardware-row {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+}
+
+.device-select {
+  flex: 1;
+  height: 42px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  padding: 0 var(--s3);
+  font-size: var(--fs-sm);
+}
+
+.status-pill {
+  font-size: var(--fs-xs);
+  padding: 6px 12px;
+  border-radius: var(--r-sm);
+  background-color: #E5E7EB;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.active-pill {
+  background-color: var(--good-tint);
+  color: var(--good);
+  font-weight: 600;
+}
+
+.test-speaker-btn {
+  height: 42px;
+  padding: 0 var(--s4);
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.test-speaker-btn:hover {
+  background-color: var(--bg);
+}
+
+.simulated-mic-meter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+}
+
+.mic-status-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-sm);
+  padding: var(--s2) var(--s3);
+  margin-top: var(--s1);
+  gap: var(--s3);
+}
+
+.banner-left {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  flex-wrap: wrap;
+}
+
+.meter-label {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.meter-wave {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.dot {
+  width: 4px;
+  background-color: var(--brand);
+  border-radius: 2px;
+  animation: meterWave 1.2s infinite ease-in-out;
+}
+
+.dot-1 { height: 6px; animation-delay: 0.1s; }
+.dot-2 { height: 10px; animation-delay: 0.2s; }
+.dot-3 { height: 16px; animation-delay: 0.3s; }
+.dot-4 { height: 20px; animation-delay: 0.4s; }
+.dot-5 { height: 14px; animation-delay: 0.2s; }
+.dot-6 { height: 8px; animation-delay: 0.5s; }
+
+@keyframes meterWave {
+  0%, 100% { transform: scaleY(0.4); opacity: 0.5; }
+  50% { transform: scaleY(1.2); opacity: 1; }
+}
+
+.join-lobby-btn {
+  width: 100%;
+  height: 48px;
+  font-size: var(--fs-md);
+  margin-top: var(--s2);
+}
+
+.terms-footnote {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  text-align: center;
+  margin: 0;
+}
+
+.terms-footnote a {
+  color: var(--brand-strong);
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .device-check-card {
+    padding: var(--s5) var(--s4);
+  }
+
+  .hardware-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--s2);
+  }
+
+  .device-select {
+    width: 100%;
+  }
+
+  .test-speaker-btn {
+    width: 100%;
+  }
+
+  .mic-status-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--s2);
+  }
+
+  .simulated-mic-meter {
+    align-self: center;
+  }
+}

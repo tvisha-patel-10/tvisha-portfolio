@@ -1,0 +1,132 @@
+:root {
+  /* color */
+  --bg: #F7F7F5;
+  --surface: #FFFFFF;
+  --border: #E5E2DC;
+  --text: #1F2937;
+  --text-muted: #4B5563;
+  --brand: #C25410;        /* 4.6:1 on white/surface, 4.6:1 with white text */
+  --brand-strong: #9A3412; /* 6.8:1 on surface, 6.2:1 on brand-tint */
+  --brand-tint: #FEF3E2;
+  --good: #166534;         /* 6.9:1 on surface, 6.3:1 on good-tint */
+  --good-tint: #E8F5EC;
+  --warn: #9A3412;         /* 6.8:1 on surface, 6.2:1 on warn-tint */
+  --warn-tint: #FEF3E2;
+  --bad: #B91C1C;          /* 6.5:1 on surface, 5.7:1 on bad-tint */
+  --bad-tint: #FDECEC;
+  --focus: #1D4ED8;
+
+  /* lanes */
+  --lane-you: #E8742A;
+  --lane-partner: #6B7280;
+
+  /* type */
+  --font: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --fs-xs: 12px;
+  --fs-sm: 14px;
+  --fs-md: 16px;
+  --fs-lg: 20px;
+  --fs-xl: 28px;
+  --lh-tight: 1.25;
+  --lh-base: 1.5;
+
+  /* shape + space (4pt scale) */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s5: 20px;
+  --s6: 24px;
+  --s8: 32px;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  /* transitions */
+  --duration-fast: 150ms;
+  --duration-normal: 200ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* Minimal reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font);
+  font-size: 16px;
+  color: var(--text);
+  background-color: var(--bg);
+  line-height: var(--lh-base);
+  -webkit-text-size-adjust: 100%;
+  overflow-x: clip;
+  max-width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 320px;
+  max-width: 100%;
+  overflow-x: clip;
+  color: var(--text);
+  background-color: var(--bg);
+  font-size: var(--fs-md);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Accessible focus styling */
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* Typography defaults */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text);
+  line-height: var(--lh-tight);
+  font-weight: 600;
+}
+
+h1 { font-size: var(--fs-xl); }
+h2 { font-size: var(--fs-lg); }
+h3 { font-size: var(--fs-md); }
+
+p, span, li {
+  font-size: var(--fs-md);
+}
+
+/* Minimum interactive target size rule per WCAG 2.2 AA / SPEC §10 */
+button, a, input, select {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Screen reader only utility class per WCAG */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+

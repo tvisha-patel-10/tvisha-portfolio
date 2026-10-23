@@ -1665,14 +1665,14 @@ import CustomCursor from "../components/CustomCursor.astro";
                                     </p>
                                 </div>
 
-                                <Fragment set:html="<!-- PROTECTED_CONTENT_START -->" />
                                 <div
                                     id="csProtectedBody"
                                     class="cs-protected-locked"
                                 >
+                                    <Fragment set:html="<!-- PROTECTED_CONTENT_START -->" />
                                     <slot />
+                                    <Fragment set:html="<!-- PROTECTED_CONTENT_END -->" />
                                 </div>
-                                <Fragment set:html="<!-- PROTECTED_CONTENT_END -->" />
                             </Fragment>
                         ) : (
                             <slot />
@@ -1944,7 +1944,7 @@ import CustomCursor from "../components/CustomCursor.astro";
                         ? encryptedPayloadEl.getAttribute("data-payload")
                         : null;
 
-                    async function handleUnlock(password: string) {
+                    async function handleUnlock(password: string, shouldScrollToTop: boolean = false) {
                         // 1. Production Mode: Encrypted Payload exists
                         if (payloadRaw && protectedSlot) {
                             try {
@@ -2006,6 +2006,17 @@ import CustomCursor from "../components/CustomCursor.astro";
                                 const dec = new TextDecoder();
                                 protectedSlot.innerHTML = dec.decode(decrypted);
                                 protectedSlot.style.display = "block";
+                                if (protectedBody) {
+                                    protectedBody.classList.remove(
+                                        "cs-protected-locked",
+                                    );
+                                    protectedBody.style.display = "block";
+                                }
+                                const innerBody = protectedSlot.querySelector("#csProtectedBody");
+                                if (innerBody) {
+                                    innerBody.classList.remove("cs-protected-locked");
+                                    (innerBody as HTMLElement).style.display = "block";
+                                }
                                 lockGate.style.display = "none";
                                 const sidebarNav =
                                     document.getElementById("csSidebarNav");
@@ -2018,10 +2029,17 @@ import CustomCursor from "../components/CustomCursor.astro";
                                     password,
                                 );
 
+                                if (shouldScrollToTop) {
+                                    window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+                                }
+
                                 setTimeout(() => {
+                                    if (shouldScrollToTop) {
+                                        window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+                                    }
                                     refreshTargets();
                                     updateActiveLink();
-                                }, 100);
+                                }, 50);
 
                                 return true;
                             } catch (err) {
@@ -2047,10 +2065,17 @@ import CustomCursor from "../components/CustomCursor.astro";
                                     password,
                                 );
 
+                                if (shouldScrollToTop) {
+                                    window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+                                }
+
                                 setTimeout(() => {
+                                    if (shouldScrollToTop) {
+                                        window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
+                                    }
                                     refreshTargets();
                                     updateActiveLink();
-                                }, 100);
+                                }, 50);
 
                                 return true;
                             }
@@ -2065,7 +2090,7 @@ import CustomCursor from "../components/CustomCursor.astro";
                         "cs_unlocked_session",
                     );
                     if (savedPassword) {
-                        handleUnlock(savedPassword);
+                        handleUnlock(savedPassword, false);
                     }
 
                     if (lockForm && passwordInput) {
@@ -2078,7 +2103,7 @@ import CustomCursor from "../components/CustomCursor.astro";
                             if (unlockBtn)
                                 unlockBtn.textContent = "Unlocking...";
 
-                            const success = await handleUnlock(pass);
+                            const success = await handleUnlock(pass, true);
                             if (unlockBtn) unlockBtn.textContent = "Unlock →";
 
                             if (!success) {

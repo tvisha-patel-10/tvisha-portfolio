@@ -1,0 +1,94 @@
+.review-screen-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s6);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: var(--s6);
+  align-items: start;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.review-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s6);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.timeline-placeholder-card {
+  background-color: var(--surface);
+  border: 1px dashed var(--border);
+  border-radius: var(--r-md);
+  padding: var(--s8) var(--s6);
+  text-align: center;
+}
+
+.placeholder-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--s2);
+}
+
+.placeholder-tag {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: var(--bg);
+  color: var(--text-muted);
+  padding: 4px 10px;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--border);
+}
+
+.placeholder-banner p {
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  margin: 0;
+}
+
+.review-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s6);
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1023px) {
+  .review-screen-layout {
+    gap: var(--s4);
+  }
+
+  .review-grid {
+    grid-template-columns: 1fr;
+    gap: var(--s4);
+  }
+
+  /* Single column order per SPEC §12: status card, flag list, timeline, transcript */
+  .review-right-col {
+    order: 1;
+    gap: var(--s4);
+  }
+  .review-left-col {
+    order: 2;
+    gap: var(--s4);
+  }
+}

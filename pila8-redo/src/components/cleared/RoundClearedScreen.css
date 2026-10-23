@@ -1,0 +1,216 @@
+.round-cleared-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s6);
+  width: 100%;
+}
+
+.cleared-hero-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: var(--s8) var(--s6);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  position: relative;
+  overflow: hidden;
+}
+
+.cleared-hero-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background-color: var(--good);
+}
+
+.cleared-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  padding: var(--s1) var(--s3);
+  background-color: var(--good-tint);
+  color: var(--good);
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: var(--fs-md);
+  align-self: flex-start;
+  border: 1px solid rgba(21, 128, 61, 0.2);
+}
+
+.cleared-title {
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  color: var(--text);
+  margin: var(--s1) 0 0 0;
+  outline: none;
+}
+
+.cleared-subtitle {
+  font-size: var(--fs-lg);
+  color: var(--text);
+  font-weight: 500;
+  margin: 0;
+}
+
+.cleared-standing-line {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+  padding-top: var(--s3);
+  margin-top: var(--s2);
+}
+
+/* Carry Forward Card */
+.carry-forward-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: var(--s6);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s4);
+}
+
+.carry-header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s3);
+}
+
+.carry-icon {
+  font-size: 24px;
+}
+
+.carry-eyebrow {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: var(--brand-strong);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+}
+
+.carry-title {
+  font-size: var(--fs-lg);
+  margin: 2px 0 0 0;
+  color: var(--text);
+}
+
+.carry-tips-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+}
+
+.carry-tip-bubble {
+  background: linear-gradient(180deg, #FEF3E2 0%, #FFFDF9 100%);
+  border: 1px solid #FED7AA;
+  border-left: 4px solid var(--brand);
+  border-radius: var(--r-sm);
+  padding: var(--s4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s1);
+}
+
+.tip-moment-tag {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--brand-strong);
+}
+
+.tip-content-text {
+  font-size: var(--fs-md);
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+  font-style: italic;
+}
+
+/* Review Changed */
+.review-changed-card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: var(--s5);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+}
+
+.review-changed-card h4 {
+  margin: 0;
+  font-size: var(--fs-md);
+}
+
+.changed-chips-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s2);
+}
+
+.changed-moment-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  background-color: #F3F4F6;
+  border: 1px solid var(--border);
+  padding: 4px 10px;
+  border-radius: var(--r-sm);
+  font-size: var(--fs-xs);
+  flex-wrap: wrap;
+}
+
+.changed-badge-before {
+  background-color: var(--warn-tint);
+  color: var(--brand-strong);
+  border: 1px solid rgba(180, 83, 9, 0.2);
+  padding: 1px 6px;
+  border-radius: 9999px;
+  font-weight: 700;
+}
+
+.changed-badge {
+  background-color: var(--good);
+  color: #fff;
+  padding: 1px 6px;
+  border-radius: 9999px;
+  font-weight: 700;
+}
+
+.changed-title {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.changed-owner {
+  color: var(--text-muted);
+}
+
+.no-changes-text {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* Action Bar */
+.cleared-actions-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--s4);
+  flex-wrap: wrap;
+  margin-top: var(--s2);
+}
+
+.btn-round2 {
+  padding: var(--s3) var(--s6);
+  font-size: var(--fs-md);
+}

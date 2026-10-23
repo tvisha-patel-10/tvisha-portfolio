@@ -1,0 +1,126 @@
+.synced-transcript-container {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.transcript-header {
+  padding: var(--s3) var(--s4);
+  background-color: #FAFAF9;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.transcript-title {
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.transcript-note {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.transcript-turns-list {
+  display: flex;
+  flex-direction: column;
+  max-height: 480px;
+  overflow-y: auto;
+  padding: var(--s2);
+  gap: var(--s2);
+}
+
+.transcript-turn-item {
+  padding: var(--s3) var(--s4);
+  border-radius: var(--r-sm);
+  border: 1px solid transparent;
+  background-color: var(--surface);
+  cursor: pointer;
+  transition: all var(--duration-fast);
+  outline: none;
+}
+
+.transcript-turn-item:hover {
+  background-color: var(--bg);
+}
+
+.transcript-turn-item:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: -2px;
+}
+
+/* Active turn (playhead is currently within timestamp) */
+.transcript-turn-item.turn-active {
+  background-color: var(--brand-tint);
+  border-color: var(--brand);
+}
+
+/* Range highlighted when user selects a flag row or marker */
+.transcript-turn-item.turn-range-highlight {
+  border-left: 4px solid var(--brand-strong);
+  background-color: #FEF8EE;
+}
+
+/* Tool Event turns */
+.transcript-turn-item.turn-tool {
+  background-color: #EFF6FF;
+  border-style: dashed;
+  border-color: #BFDBFE;
+}
+
+.turn-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  margin-bottom: var(--s1);
+}
+
+.turn-timestamp {
+  font-family: monospace;
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+}
+
+.turn-speaker-pill {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 1px 6px;
+  border-radius: var(--r-sm);
+  background-color: var(--bg);
+  color: var(--text-muted);
+}
+
+.turn-active .turn-speaker-pill {
+  background-color: var(--brand);
+  color: #fff;
+}
+
+.now-playing-indicator {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--brand);
+  animation: pulsePlay 1s infinite alternate;
+}
+
+@keyframes pulsePlay {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}
+
+.turn-body-text {
+  font-size: var(--fs-sm);
+  line-height: var(--lh-base);
+  color: var(--text);
+  margin: 0;
+}

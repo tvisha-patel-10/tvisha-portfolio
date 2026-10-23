@@ -1,0 +1,97 @@
+.status-card {
+  background-color: var(--surface);
+  border-radius: var(--r-md);
+  border: 1px solid var(--border);
+  padding: var(--s6);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s3);
+  position: relative;
+  overflow: hidden;
+}
+
+.status-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+}
+
+.status-looks-good::before {
+  background-color: var(--good);
+}
+
+.status-likely-flagged::before {
+  background-color: var(--warn);
+}
+
+.status-likely-fail::before {
+  background-color: var(--bad);
+}
+
+.status-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.status-badge-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s2);
+  padding: var(--s1) var(--s3);
+  border-radius: 9999px;
+  font-weight: 700;
+  font-size: var(--fs-md);
+}
+
+.status-looks-good .status-badge-wrapper {
+  background-color: var(--good-tint);
+  color: var(--good);
+  border: 1px solid rgba(21, 128, 61, 0.2);
+}
+
+.status-likely-flagged .status-badge-wrapper {
+  background-color: var(--warn-tint);
+  color: var(--brand-strong);
+  border: 1px solid rgba(180, 83, 9, 0.2);
+}
+
+.status-likely-fail .status-badge-wrapper {
+  background-color: var(--bad-tint);
+  color: var(--bad);
+  border: 1px solid rgba(185, 28, 28, 0.2);
+}
+
+.status-icon {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.status-summary {
+  font-size: var(--fs-lg);
+  color: var(--text);
+  font-weight: 500;
+  line-height: var(--lh-base);
+  margin: 0;
+}
+
+.status-standing-line {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  margin: 0;
+  border-top: 1px solid var(--border);
+  padding-top: var(--s3);
+}
+
+@media (max-width: 640px) {
+  .status-card {
+    padding: var(--s4);
+  }
+  .status-summary {
+    font-size: var(--fs-md);
+  }
+}

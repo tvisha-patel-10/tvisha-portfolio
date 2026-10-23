@@ -1,0 +1,59 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: var(--s4);
+  backdrop-filter: blur(2px);
+  animation: modalFadeIn var(--duration-fast) var(--ease-standard);
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-card {
+  background-color: var(--surface);
+  border-radius: var(--r-md);
+  padding: var(--s6);
+  max-width: 460px;
+  width: 100%;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s4);
+}
+
+.modal-card h3 {
+  font-size: var(--fs-lg);
+  color: var(--text);
+  margin: 0;
+}
+
+.modal-card p {
+  font-size: var(--fs-md);
+  color: var(--text-muted);
+  line-height: var(--lh-base);
+  margin: 0;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--s3);
+  margin-top: var(--s2);
+}
+
+@media (max-width: 480px) {
+  .modal-actions {
+    flex-direction: column-reverse;
+  }
+  .modal-actions button {
+    width: 100%;
+  }
+}
