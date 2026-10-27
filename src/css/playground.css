@@ -14,14 +14,14 @@
 .playground-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-40);
+    gap: var(--space-60);
     padding-bottom: var(--space-80);
 }
 
 .play-card {
     display: flex;
     flex-direction: column;
-    gap: var(--space-20);
+    gap: var(--space-16);
     color: inherit;
 }
 
@@ -67,7 +67,8 @@
     display: none;
 }
 
-@media (hover: none), (max-width: 768px) {
+@media (hover: none),
+(max-width: 768px) {
     .launch-pill {
         display: inline-flex;
         align-items: center;
