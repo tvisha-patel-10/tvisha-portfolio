@@ -107,7 +107,7 @@ sections:
     </div>
   </div>
 
-  <div class="grid-2">
+  <div class="grid-2 comparison-grid">
     <div class="impact-holder size-b theme-strawberry">
       <p class="impact-label">Homepage V1: Vague pitch with passive imagery</p>
       <div class="impact-canvas">
@@ -119,12 +119,23 @@ sections:
     </div>
     <div class="impact-holder size-b theme-strawberry">
       <p class="impact-label">Homepage V2: Social proof, stronger branding, and a clear CTA</p>
-      <div class="impact-canvas">
+      <div class="impact-canvas expandable-canvas" id="strawberry-v2-canvas">
         <img
           src="/images/strawberry/strawberry_homepagev2.webp"
           alt="Strawberry.me Homepage V2"
         />
       </div>
+      <button
+        type="button"
+        class="expand-btn"
+        aria-expanded="false"
+        aria-controls="strawberry-v2-canvas"
+      >
+        <span class="expand-btn-text">See full page</span>
+        <svg class="expand-btn-icon" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="3.5 6 8 10.5 12.5 6"></polyline>
+        </svg>
+      </button>
     </div>
   </div>
 
@@ -220,14 +231,16 @@ sections:
   <h4 class="section-label">Reflection</h4>
   <h2>Being the only designer, and what fast growth taught me</h2>
 
-  <div class="grid-2">
-  <div class="grid-card">
+  <div class="reflection-grid grid-2">
+    <div class="reflection-item">
+      <span class="reflection-num">01</span>
       <h3>Design Moves the Business</h3>
       <p>
         I worked closely with engineers and ran A/B tests, and some of our changes brought in +$120K in revenue. That taught me good design is about business results as much as how things look.
       </p>
     </div>
-    <div class="grid-card">
+    <div class="reflection-item">
+      <span class="reflection-num">02</span>
       <h3>Building Systems That Grow With You</h3>
       <p>
         I learned how to set up tokens, patterns, and components without slowing delivery. Doing it early is a big reason our small team shipped so many features without piling up design debt.

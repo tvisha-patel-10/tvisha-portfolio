@@ -474,21 +474,24 @@ sections:
   <h4 class="section-label">Reflection</h4>
   <h2>What I took away</h2>
 
-  <div class="grid-3">
-    <div class="grid-card">
-      <h3>1. Going Beyond the Brief</h3>
+  <div class="reflection-grid grid-3">
+    <div class="reflection-item">
+      <span class="reflection-num">01</span>
+      <h3>Going Beyond the Brief</h3>
       <p>
         I introduced Jitter to the design team to create more detailed animation and interaction handoffs, which other designers adopted for their own projects.
       </p>
     </div>
-    <div class="grid-card">
-      <h3>2. Designing Within Constraints</h3>
+    <div class="reflection-item">
+      <span class="reflection-num">02</span>
+      <h3>Designing Within Constraints</h3>
       <p>
         Losing dynamic dropdowns caused a big pivot, but it forced a better question: what’s the simplest signal that tells a user “you’re good to go”? Finding that answer, instead of fighting the constraint to copy familiar patterns, is what got V3 shipped.
       </p>
     </div>
-    <div class="grid-card">
-      <h3>3. Speed With Craft</h3>
+    <div class="reflection-item">
+      <span class="reflection-num">03</span>
+      <h3>Speed With Craft</h3>
       <p>
         I juggled multiple design projects tracked in JIRA for sprint reviews, and leaned on cross-functional collaborators and the growing design system at BetterHelp to move fast without sacrificing quality.
       </p>

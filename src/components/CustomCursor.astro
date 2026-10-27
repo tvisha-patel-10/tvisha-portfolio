@@ -81,15 +81,9 @@
     @media (pointer: fine) and (hover: hover) {
         html,
         body,
-        a,
-        button,
-        [role="button"],
-        .work-card,
-        .play-card,
-        .wild-card,
-        .turntable-wrapper,
-        .nav-toggle,
-        .footer-icon-link {
+        *,
+        *::before,
+        *::after {
             cursor: none !important;
         }
 
@@ -433,12 +427,23 @@
                 }
             }
 
-            // Copy email buttons (footer mail icon, about page copy, case studies)
+            // Copy buttons (footer mail icon, about page copy, case studies, design tokens)
             const copyEl = target.closest(
                 "[data-copy], .copy-email, #csCopyEmailBtn",
             );
             if (copyEl) {
-                setPillText("Copy Email");
+                const pillAttr = copyEl.getAttribute("data-cursor-pill");
+                if (pillAttr) {
+                    setPillText(pillAttr);
+                } else if (
+                    copyEl.classList.contains("copy-email") ||
+                    copyEl.id === "csCopyEmailBtn" ||
+                    (copyEl.getAttribute("data-copy") || "").includes("@")
+                ) {
+                    setPillText("Copy Email");
+                } else {
+                    setPillText("Copy HEX");
+                }
                 return;
             }
 

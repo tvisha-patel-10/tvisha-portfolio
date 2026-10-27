@@ -57,7 +57,8 @@
     background: transparent;
 }
 
-.play-card[data-demo]:hover .placeholder {
+.play-card[data-demo]:hover .placeholder,
+.play-card[href]:hover .placeholder {
     transform: translateY(-4px);
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
 }
@@ -121,7 +122,8 @@
     line-height: 1.4;
 }
 
-.play-card[data-demo]:hover h2 {
+.play-card[data-demo]:hover h2,
+.play-card[href]:hover h2 {
     color: var(--color-accent);
 }
 

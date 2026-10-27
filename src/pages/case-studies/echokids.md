@@ -534,21 +534,24 @@ sections:
   <h4 class="section-label">Reflection</h4>
   <h2>What I took away</h2>
 
-  <div class="grid-3">
-    <div class="grid-card">
-      <h3>1. Owning It End to End</h3>
+  <div class="reflection-grid grid-3">
+    <div class="reflection-item">
+      <span class="reflection-num">01</span>
+      <h3>Owning It End to End</h3>
       <p>
         As the only designer, there was no one to hand decisions off to. I learned to set my own direction, from the research plan to the design system pitch, and defend it to the CEO with evidence.
       </p>
     </div>
-    <div class="grid-card">
-      <h3>2. Knowing What Not to Change</h3>
+    <div class="reflection-item">
+      <span class="reflection-num">02</span>
+      <h3>Knowing What Not to Change</h3>
       <p>
         The calendar constraint taught me that a redesign doesn't mean I can change everything. Keeping what mentors already liked and working around technical limits let me put my effort where it counted.
       </p>
     </div>
-    <div class="grid-card">
-      <h3>3. Shipping to Real Users</h3>
+    <div class="reflection-item">
+      <span class="reflection-num">03</span>
+      <h3>Shipping to Real Users</h3>
       <p>
         This was my first project shipped to production. Seeing weekly returning mentors triple, and hearing mentors say the dashboard finally made sense, showed me the value of design and how it can make someone’s everyday workflow easier.
       </p>

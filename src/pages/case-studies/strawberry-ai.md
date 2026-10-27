@@ -427,21 +427,24 @@ passwordProtected: true
   </div>
 
   <h3>What I’d Carry Into Future Projects</h3>
-  <div class="grid-3">
-    <div class="grid-card">
-      <h3>1. Trust Matters More Than Draft Quality</h3>
+  <div class="learnings-grid grid-3">
+    <div class="reflection-item">
+      <span class="reflection-num">01</span>
+      <h3>Trust Matters More Than Draft Quality</h3>
       <p>
         A faster workflow doesn’t help if people can’t tell whether they can trust what the AI wrote. Showing where the information came from is what earns that trust.
       </p>
     </div>
-    <div class="grid-card">
-      <h3>2. A Human in Charge, by Design</h3>
+    <div class="reflection-item">
+      <span class="reflection-num">02</span>
+      <h3>A Human in Charge, by Design</h3>
       <p>
         AI shouldn’t run on its own in products that are about people. Good AI design cuts the busywork and leaves the final say to the person.
       </p>
     </div>
-    <div class="grid-card">
-      <h3>3. What’s Next: Tone and Style Control</h3>
+    <div class="reflection-item">
+      <span class="reflection-num">03</span>
+      <h3>What’s Next: Tone and Style Control</h3>
       <p>
         The next evolution is adaptive personalization: letting the AI learn each coach’s distinctive tone, greeting habits, and vocabulary over time.
       </p>

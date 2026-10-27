@@ -1,0 +1,913 @@
+/* ================================================
+   DESIGN SYSTEM PAGE STYLES
+   Exact 1:1 match with caseStudyLayout.astro
+   ================================================ */
+
+/* --- Google Fonts (exact match with caseStudyLayout.astro) --- */
+@import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Geom:ital,wght@0,300..900;1,300..900&family=Gloria+Hallelujah&display=swap");
+
+/* --- DESIGN TOKENS (exact match with caseStudyLayout.astro) --- */
+:root {
+    --cs-bg: #ffffff;
+    --cs-text: #1a1a1a;
+    --cs-text-muted: #71717a;
+    --cs-border: rgba(0, 0, 0, 0.1);
+    --cs-accent: #a13900;
+    --cs-callout-border: #b0b0b0;
+    --cs-font-display: "Geom", sans-serif;
+    --cs-font: "Figtree", sans-serif;
+    --cs-font-hand: "Gloria Hallelujah", cursive;
+
+    /* Theme colors for playground swatches & cards */
+    --color-bg: #fefdfb;
+    --color-text: #3b3636;
+    --color-accent: #a13900;
+    --color-cream: #fefdfb;
+    --radius-btn: 4px;
+    --radius-card: 4px;
+    --transition: 0.2s ease;
+}
+
+/* --- RESET (exact match with caseStudyLayout.astro) --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--cs-font);
+    background-color: var(--cs-bg);
+    color: var(--cs-text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--cs-font-display);
+}
+
+/* ================================================
+   MASTER 3-COLUMN GRID (exact case study layout)
+   sidebar (auto) | content (auto) | spacer (1fr)
+   ================================================ */
+.cs-page {
+    min-height: 100vh;
+    padding: 0 1.5rem;
+}
+
+.cs-grid {
+    display: grid;
+    max-width: 1800px;
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+    gap: 0;
+}
+
+@media (min-width: 768px) {
+    .cs-grid {
+        grid-template-columns: auto auto 1fr;
+        gap: 2rem;
+    }
+}
+
+/* ================================================
+   STICKY SIDEBAR (exact match to caseStudyLayout.astro)
+   ================================================ */
+.cs-sidebar {
+    padding: 3rem 0 0;
+    min-width: 160px;
+}
+
+@media (min-width: 768px) {
+    .cs-sidebar {
+        position: sticky;
+        top: 0;
+        height: fit-content;
+        padding: 3rem 0;
+    }
+}
+
+/* Back link (exact match to caseStudyLayout.astro) */
+.cs-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--cs-text);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+}
+
+.cs-back:hover {
+    opacity: 1;
+}
+
+.cs-back svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Scrollspy navigation (exact match to caseStudyLayout.astro) */
+.cs-nav {
+    margin-top: 2rem;
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .cs-nav {
+        display: block;
+    }
+}
+
+.cs-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.cs-nav a {
+    color: var(--cs-text);
+    text-decoration: none;
+    font-size: 0.875rem;
+    opacity: 0.5;
+    transition:
+        color 0.2s ease,
+        opacity 0.2s ease;
+    cursor: pointer;
+    text-align: left;
+}
+
+.cs-nav a:hover {
+    opacity: 1;
+    color: var(--cs-text);
+}
+
+.cs-nav a.active {
+    opacity: 1;
+    color: var(--cs-text);
+}
+
+/* Right spacer (empty, for visual balance) */
+.cs-spacer {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .cs-spacer {
+        display: block;
+        padding: 3rem 0;
+    }
+}
+
+/* ================================================
+   MAIN CONTENT COLUMN (exact case study layout)
+   ================================================ */
+.cs-content {
+    width: 100%;
+    max-width: 896px;
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+@media (min-width: 768px) {
+    .cs-content {
+        gap: 6rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .cs-content {
+        max-width: 1024px;
+    }
+}
+
+/* Section Shared Layout (exact match to caseStudyLayout.astro) */
+.cs-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    scroll-margin-top: 3rem;
+}
+
+/* Section label (h4 — Figtree uppercase hierarchy) */
+.section-label {
+    font-family: var(--cs-font) !important;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--cs-accent);
+    margin-bottom: 0.25rem;
+}
+
+/* Section heading (h2) */
+.cs-section h2 {
+    font-size: 2rem;
+    line-height: 1.3;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.cs-section h1 {
+    font-size: 2.25rem;
+    line-height: 1.15;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.25rem;
+}
+
+/* Sub-heading (h3) */
+.cs-section h3 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+    font-weight: 600;
+    margin-top: 1.75rem;
+}
+
+.cs-section h2 + h3 {
+    margin-top: 0.75rem;
+}
+
+/* Body text */
+.cs-section p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--cs-text);
+}
+
+.cs-hero-lede {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--cs-text);
+    opacity: 0.88;
+}
+
+/* Section divider (exact match to caseStudyLayout.astro) */
+.section-divider {
+    height: 1px;
+    width: 100%;
+    background-color: var(--cs-border);
+    margin: 4rem 0 2rem;
+}
+
+/* Implementation Copy & Compliance */
+.ds-implementation {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.ds-implementation-text {
+    font-size: 1.05rem !important;
+    line-height: 1.6;
+    color: var(--cs-text);
+    opacity: 0.88;
+}
+
+.ds-compliance-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--cs-text);
+    padding: 6px 12px;
+    background: rgba(161, 57, 0, 0.05);
+    border: 1px solid rgba(161, 57, 0, 0.16);
+    border-radius: var(--radius-btn);
+    width: fit-content;
+    margin-top: 2px;
+}
+
+.ds-check-icon {
+    width: 15px;
+    height: 15px;
+    color: var(--cs-accent);
+    flex-shrink: 0;
+}
+
+/* ------------------------------------------------
+   INTERACTIVE PLAYGROUND WRAPPER / TRY IT OUT
+   ------------------------------------------------ */
+.ds-playground-card {
+    border: 1px solid rgba(161, 57, 0, 0.22);
+    background: #ffffff;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+    margin: 1.25rem 0;
+}
+
+.ds-playground-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+    background: rgba(161, 57, 0, 0.04);
+    border-bottom: 1px solid rgba(161, 57, 0, 0.1);
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.ds-playground-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--cs-font);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--cs-accent);
+}
+
+.ds-playground-badge .live-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--cs-accent);
+    box-shadow: 0 0 0 3px rgba(161, 57, 0, 0.15);
+}
+
+.ds-playground-hint {
+    font-family: var(--cs-font);
+    font-size: 0.75rem;
+    color: var(--cs-text);
+    opacity: 0.7;
+    font-weight: 500;
+}
+
+.ds-playground-body {
+    padding: 1.25rem;
+}
+
+/* ------------------------------------------------
+   01 / PALETTE (COLORS)
+   ------------------------------------------------ */
+.ds-color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.ds-color-card {
+    background: var(--color-bg);
+    border: 1px solid rgba(59, 54, 54, 0.12);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.ds-color-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+.ds-color-swatch {
+    height: 72px;
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid rgba(59, 54, 54, 0.08);
+}
+
+.ds-color-info {
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.ds-color-name-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.ds-color-name {
+    font-family: var(--cs-font-display);
+    font-weight: 700;
+    font-size: 0.9375rem;
+}
+
+.ds-color-hex {
+    font-family: monospace;
+    font-size: 0.8125rem;
+    color: var(--cs-accent);
+    font-weight: 600;
+}
+
+.ds-color-var {
+    font-family: monospace;
+    font-size: 0.6875rem;
+    color: rgba(59, 54, 54, 0.65);
+}
+
+.ds-color-usage {
+    font-size: 0.8125rem !important;
+    color: var(--cs-text);
+    margin-top: 4px;
+    line-height: 1.35;
+    opacity: 0.85;
+}
+
+/* Callout Note (SVG Icon, No Emojis) */
+.ds-callout {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding: 1rem;
+    border-radius: var(--radius-card);
+    background: rgba(161, 57, 0, 0.04);
+    border: 1px solid rgba(161, 57, 0, 0.16);
+    margin-top: 0.5rem;
+}
+
+.ds-callout-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--cs-accent);
+}
+
+.ds-callout-text h4 {
+    font-family: var(--cs-font);
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+    color: var(--cs-accent);
+}
+
+.ds-callout-text p {
+    font-size: 0.8125rem !important;
+    line-height: 1.45;
+    color: var(--cs-text);
+    opacity: 0.9;
+}
+
+/* ------------------------------------------------
+   02 / TYPOGRAPHY
+   ------------------------------------------------ */
+.ds-type-voices {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.ds-type-voice-card {
+    border: 1px solid rgba(59, 54, 54, 0.12);
+    border-radius: var(--radius-card);
+    padding: 1rem;
+    background: var(--color-bg);
+}
+
+.ds-type-voice-badge {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--cs-accent);
+    margin-bottom: 6px;
+}
+
+.ds-type-sample {
+    margin-bottom: 0.75rem;
+    line-height: 1.15;
+    word-break: break-word;
+}
+
+.ds-type-sample.geom {
+    font-family: var(--cs-font-display);
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+.ds-type-sample.figtree {
+    font-family: var(--cs-font);
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.ds-type-sample.gloria {
+    font-family: var(--cs-font-hand);
+    font-size: 1.35rem;
+    color: var(--cs-accent);
+}
+
+.ds-type-voice-role {
+    font-size: 0.8125rem !important;
+    color: var(--cs-text);
+    line-height: 1.45;
+    opacity: 0.85;
+}
+
+/* Type Tester Controls inside Playground Card */
+.ds-type-tester-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.ds-type-tester-input {
+    border-radius: var(--radius-btn);
+    min-width: 200px;
+    font-family: var(--cs-font);
+    background: var(--color-bg);
+    color: var(--cs-text);
+    border: 1px solid rgba(59, 54, 54, 0.18);
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 0.875rem;
+}
+
+.ds-type-tester-input:focus {
+    border-color: var(--cs-accent);
+    outline: none;
+}
+
+.ds-type-tester-font-tabs {
+    display: flex;
+    gap: 4px;
+}
+
+.ds-font-btn {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: var(--radius-btn);
+    background: rgba(59, 54, 54, 0.05);
+    color: var(--cs-text);
+    border: none;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.ds-font-btn.is-active,
+.ds-font-btn:hover {
+    background: var(--cs-accent);
+    color: #ffffff;
+}
+
+.ds-type-preview-box {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: var(--color-bg);
+    border-radius: var(--radius-btn);
+    border: 1px solid rgba(59, 54, 54, 0.12);
+}
+
+.ds-type-preview-text {
+    font-size: clamp(1.35rem, 2.5vw, 1.875rem) !important;
+    text-align: center;
+    line-height: 1.25;
+    word-break: break-word;
+}
+
+/* Fluid Scale Table */
+.ds-scale-table-wrap {
+    overflow-x: auto;
+    border: 1px solid rgba(59, 54, 54, 0.1);
+    border-radius: var(--radius-card);
+    margin-top: 0.5rem;
+}
+
+.ds-scale-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.8125rem;
+    text-align: left;
+}
+
+.ds-scale-table th {
+    padding: 8px 12px;
+    background: rgba(59, 54, 54, 0.03);
+    font-weight: 700;
+    border-bottom: 1px solid rgba(59, 54, 54, 0.08);
+}
+
+.ds-scale-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(59, 54, 54, 0.05);
+    vertical-align: middle;
+}
+
+.ds-scale-table tr:last-child td {
+    border-bottom: none;
+}
+
+.ds-scale-table code {
+    font-family: monospace;
+    background: #f3f4f6;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+/* ------------------------------------------------
+   03 / SPACING & RADII
+   ------------------------------------------------ */
+.ds-space-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 0.5rem;
+}
+
+.ds-space-row {
+    display: grid;
+    grid-template-columns: 120px 60px 1fr;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.8125rem;
+}
+
+.ds-space-token {
+    font-family: monospace;
+    font-weight: 600;
+    color: var(--cs-accent);
+}
+
+.ds-space-val {
+    color: rgba(59, 54, 54, 0.65);
+}
+
+.ds-space-visual {
+    height: 10px;
+    background: rgba(161, 57, 0, 0.3);
+    border-radius: 2px;
+    min-width: 4px;
+}
+
+.ds-radii-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 360px;
+    margin-top: 1rem;
+}
+
+.ds-radius-card {
+    border: 1px solid rgba(59, 54, 54, 0.1);
+    padding: 1rem;
+    border-radius: var(--radius-card);
+    background: var(--color-bg);
+}
+
+.ds-radius-box {
+    height: 56px;
+    background: rgba(161, 57, 0, 0.06);
+    border: 1.5px solid var(--cs-accent);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: monospace;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    color: var(--cs-accent);
+}
+
+.ds-radius-card h4 {
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+/* ------------------------------------------------
+   04 / COMPONENTS
+   ------------------------------------------------ */
+.ds-components-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.ds-component-box {
+    border: 1px solid rgba(59, 54, 54, 0.12);
+    border-radius: var(--radius-card);
+    background: var(--color-bg);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.ds-component-stage {
+    min-height: 100px;
+    padding: 1rem;
+    background: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(59, 54, 54, 0.08);
+}
+
+.ds-component-info {
+    padding: 0.75rem;
+}
+
+.ds-component-title {
+    font-size: 0.875rem;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.ds-component-desc {
+    font-size: 0.8125rem !important;
+    color: var(--cs-text);
+    line-height: 1.4;
+    opacity: 0.85;
+}
+
+.ds-pill-preview {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 14px;
+    background: #fefdfb;
+    border: 1px solid rgba(59, 54, 54, 0.18);
+    border-radius: 9999px;
+    color: var(--cs-accent);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.btn-sample {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 10px 20px;
+    background: var(--cs-accent);
+    color: #fefdfb;
+    border: none;
+    border-radius: 4px;
+    font-family: var(--cs-font);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background var(--transition);
+}
+
+.btn-sample:hover {
+    background: #8a3000;
+}
+
+.link-sample-dotted {
+    color: var(--cs-accent);
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: var(--cs-accent);
+    text-decoration-thickness: 12.5%;
+    text-underline-offset: 0.18em;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+.link-sample-dotted:hover {
+    opacity: 0.75;
+}
+
+.link-sample-external {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+    color: var(--cs-accent);
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: var(--cs-accent);
+    text-decoration-thickness: 12.5%;
+    text-underline-offset: 0.18em;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    transition: opacity 0.2s ease;
+}
+
+.link-sample-external:hover {
+    opacity: 0.75;
+}
+
+.link-sample-external .external-arrow {
+    display: inline-block;
+    width: 0.85em;
+    height: 0.85em;
+    margin-left: 0.2em;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: transform 0.2s ease;
+}
+
+.link-sample-external:hover .external-arrow {
+    transform: translate(1.5px, -1.5px);
+}
+
+/* ------------------------------------------------
+   05 / CURSOR PLAYGROUND (SOLID BORDERS, ICONS ONLY)
+   ------------------------------------------------ */
+.ds-cursor-playground {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.75rem;
+}
+
+.ds-cursor-target {
+    border: 1px solid rgba(59, 54, 54, 0.14);
+    border-radius: var(--radius-card);
+    padding: 1rem;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: var(--color-bg);
+    transition: all var(--transition);
+    cursor: pointer;
+}
+
+.ds-cursor-target:hover {
+    border-color: var(--cs-accent);
+    background: rgba(161, 57, 0, 0.03);
+}
+
+.ds-target-icon {
+    width: 28px;
+    height: 28px;
+    color: var(--cs-accent);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.18));
+}
+
+.ds-cursor-label {
+    font-weight: 700;
+    font-size: 0.875rem;
+    margin-bottom: 2px;
+}
+
+.ds-cursor-sub {
+    font-size: 0.75rem;
+    color: rgba(59, 54, 54, 0.7);
+    line-height: 1.35;
+}
+
+/* ================================================
+   MOBILE RESPONSIVE OVERRIDES (exact match to caseStudyLayout.astro)
+   ================================================ */
+@media (max-width: 767px) {
+    .cs-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .cs-sidebar {
+        position: static;
+        width: 100%;
+        height: auto;
+        padding: 3rem 0 0;
+    }
+
+    .cs-content {
+        padding: 2rem 0;
+        gap: 2rem;
+    }
+
+    .section-divider {
+        margin: 1.75rem 0 0.85rem;
+    }
+}
