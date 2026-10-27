@@ -5,7 +5,7 @@ title: "Strawberry.me"
 pageTitle: "Strawberry.me AI Message Drafts Case Study — Tvisha Patel"
 description: "Designing an AI draft messaging workflow for 800+ coaches that increased follow-up rates from 60% to 92%."
 year: "2025"
-subtitle: "AI message draft workflow for coaches | 60% → 92% follow-up rate"
+subtitle: "AI-drafted messages for coaches | Follow-ups up from 60% to 92%"
 heroImage: "/images/strawberry-ai/strawberry_ai_cover.mp4"
 role: "Founding Product Designer"
 timeline: "8-Day Sprint (7 Days Spec + Build, 1 Day UAT)"
@@ -16,7 +16,7 @@ team:
   - "Data / AI Team"
 skills:
   - "AI Workflow Design"
-  - "Human-in-the-Loop AI"
+  - "AI With a Human in the loop"
   - "Rapid Prototyping (Cursor & Claude)"
   - "Product Strategy & Hypothesis Testing"
 sections:
@@ -25,7 +25,7 @@ sections:
   - { id: "discovery", label: "Research & Pivot" }
   - { id: "design-process", label: "Decisions & Tradeoffs" }
   - { id: "prototype", label: "Workflow & Prototype" }
-  - { id: "impact", label: "Impact & Learnings" }
+  - { id: "impact", label: "Impact & Outcomes" }
 passwordProtected: true
 ---
 
@@ -37,11 +37,11 @@ passwordProtected: true
     Strawberry.me is a high-growth coaching marketplace connecting clients with vetted coaches for career and personal coaching ($30M+ ARR).
   </p>
   <p>
-    As the founding product designer, I was handed an open-ended brief from leadership: <strong>“Embed AI into the coaching workflow. Figure out where.”</strong> With investor meetings 14 days away and no existing feature to redesign, I chose the problem, led the research, and designed and prototyped the solution in an 8-day sprint (7 days spec + build, 1 day UAT).
+    As the founding product designer, I was handed an open-ended brief from leadership: <strong>“Embed AI into the coaching workflow. Figure out where.”</strong> With investor meetings 14 days away and no existing feature to redesign, I picked the problem, ran the research, and designed and prototyped the solution in an 8-day sprint (7 days spec + build, 1 day UAT).
   </p>
 
   <div class="callout">
-    <h3>Impact: Increased coach follow-up rates from 60% to 92% across 800 coaches and drove a +15% lift in client retention (2nd charge rate). The feature was later featured in Strawberry.me’s $21M funding round.</h3>
+    <h3>Impact: Increased coach follow-up rates from 60% to 92% across 800 coaches and lifted client retention by 15% (2nd charge rate). The feature was later featured in Strawberry.me’s $21M Series A.</h3>
   </div>
 
   <div class="grid-3">
@@ -63,7 +63,7 @@ passwordProtected: true
   </div>
 
   <div class="impact-holder size-a theme-strawberry-ai">
-    <p class="impact-label">1-click AI drafts embedded in coach workflows</p>
+    <p class="impact-label">One-click AI drafts inside the coach’s workflow</p>
     <div class="impact-canvas">
       <video autoplay loop muted playsinline>
         <source
@@ -80,12 +80,12 @@ passwordProtected: true
 <!-- 2. FINDING THE PROBLEM -->
 <section id="problem" class="cs-section">
   <h4 class="section-label">Finding the Problem</h4>
-  <h2>Connecting coach calls to platform retention data</h2>
+  <h2>Pairing what coaches told me with what the data showed</h2>
   <p>
     The brief from leadership was completely open-ended: <em>“Embed AI into the coaching workflow. Figure out where.”</em> Rather than jumping straight into brainstorming AI features, I anchored the search in what I was already hearing from our users.
   </p>
   <p>
-    In my regular weekly calls with platform coaches, a recurring frustration kept coming up: the overload of repetitive work between calls. Coaches loved coaching, but struggled taking the time to dig through past session notes, completed exercises, and drafting routine check-ins.
+    In my regular weekly calls with platform coaches, a recurring frustration kept coming up: the overload of repetitive work between calls. Coaches loved coaching, but struggled to find time to dig through past session notes and exercises and write routine check-ins.
   </p>
 
   <div class="callout">
@@ -94,18 +94,18 @@ passwordProtected: true
   </div>
 
   <p>
-    To see if this qualitative friction could have a business impact, I looked at our platform metrics. The data revealed an affirming pattern: <strong>top-performing coaches with the highest client retention were consistently sending weekly follow-ups</strong>. However, across all 800 coaches, only ~60% were following up consistently.
+    To see if this qualitative friction could have a business impact, I looked at our platform metrics. The data backed it up: <strong>top-performing coaches with the highest client retention were consistently sending weekly follow-ups</strong>. However, across all 800 coaches, only ~60% were following up consistently.
   </p>
 
   <div class="grid-2">
     <div class="grid-card">
-      <h3>Qualitative Signal (Coach Calls)</h3>
+      <h3>What Coaches Told Me</h3>
       <p>
         Coaches repeatedly voiced fatigue over repetitive follow-up tasks that required effort to re-read past notes and create tailored check-ins for many active clients.
       </p>
     </div>
     <div class="grid-card">
-      <h3>Quantitative Validation (Platform Data)</h3>
+      <h3>What the Data Showed</h3>
       <p>
         Data I queried for with Claude code proved consistent follow-ups directly correlated with client retention (2nd subscription charges), yet ~40% of follow-ups were missed due to admin overload.
       </p>
@@ -126,7 +126,7 @@ passwordProtected: true
 
   <div class="grid-2">
     <div class="grid-card">
-      <h3>Original Hypothesis</h3>
+      <h3>My First Idea</h3>
       <p>
         The initial assumption was that coaches needed a standalone AI messaging assistant where coaches type custom prompts to compose messages from scratch.
       </p>
@@ -146,7 +146,7 @@ passwordProtected: true
   </div>
 
   <div class="callout">
-    <h3>Core Hypothesis: If surfacing AI drafts directly inside the reminder workflow reduces the friction of following up, then coaches will follow up more consistently, improving client retention as a result.</h3>
+    <h3>The Hypothesis: If surfacing AI drafts directly inside the reminder workflow reduces the friction of following up, then coaches will follow up more consistently, improving client retention as a result.</h3>
   </div>
 
   <h3>What I Took (and Didn’t Take) From Existing AI Tools</h3>
@@ -155,11 +155,11 @@ passwordProtected: true
   </p>
 
   <div class="impact-holder size-a theme-strawberry-ai">
-    <p class="impact-label">Audit: Why standard rerolls and opaque AI generation failed coach trust</p>
+    <p class="impact-label">Audit: Why rerolls and unexplained AI drafts didn’t earn coaches’ trust</p>
     <div class="impact-canvas">
       <img
         src="/images/strawberry-ai/competitive_audit.webp"
-        alt="Competitive Analysis of AI Generation and Source Attribution Patterns"
+        alt="Screenshots of Google AI Overview, Claude, Intercom Fin, and Notion AI"
       />
     </div>
   </div>
@@ -186,12 +186,12 @@ passwordProtected: true
     <div class="grid-card">
       <h3>Rejected: Regenerate Loops</h3>
       <p>
-        One-click rerolls are standard across these tools. For coaches clearing a queue, this could turn a 30-second task into a slot machine with them rolling for the perfect one, taking out the human voice from the loop.
+        One-click regeneration is standard across these tools. For coaches clearing a queue, this could turn a 30-second task into a slot machine, with coaches rerolling until they got the perfect draft, taking the human voice out of the process.
       </p>
     </div>
   </div>
 
-  <h3>Target Success Metrics (KPIs)</h3>
+  <h3>Goals (KPIs)</h3>
   <div class="grid-4">
     <div class="grid-card">
       <h3>Follow-Up Rate</h3>
@@ -202,11 +202,11 @@ passwordProtected: true
       <p>Increase second+ subscription charge rate.</p>
     </div>
     <div class="grid-card">
-      <h3>Coach Authenticity</h3>
+      <h3>Coach’s Own Voice</h3>
       <p>Preserve the coach’s voice and keep the human in the loop. Measured by draft edit rate and thumbs-down feedback.</p>
     </div>
     <div class="grid-card">
-      <h3>Speed to Market</h3>
+      <h3>Speed</h3>
       <p>Design, build, and test within the 14-day window before investor meetings.</p>
     </div>
   </div>
@@ -217,7 +217,7 @@ passwordProtected: true
 <!-- 4. DECISIONS & TRADEOFFS -->
 <section id="design-process" class="cs-section">
   <h4 class="section-label">Decisions & Tradeoffs</h4>
-  <h2>Iterating on source transparency and making the hard calls</h2>
+  <h2>Showing where AI info comes from, and the hard calls I made</h2>
 
   <h3>The Evolution of Source Attribution</h3>
   <p>
@@ -259,7 +259,7 @@ passwordProtected: true
     </div>
     <div>
       <div class="impact-holder size-b theme-strawberry-ai" style="margin-bottom: 1rem;">
-        <p class="impact-label">V3: Interactive source pills with hover context</p>
+        <p class="impact-label">V3: Source pills that show more on hover</p>
         <div class="impact-canvas">
           <img
             src="/images/strawberry-ai/source_attribution_v3.webp"
@@ -275,28 +275,28 @@ passwordProtected: true
     </div>
   </div>
 
-  <h3>Key Decisions I Made</h3>
+  <h3>Decisions I Made</h3>
   <div class="grid-2">
     <div class="grid-card">
-      <h3>1. Drafts Work With Reminders</h3>
+      <h3>1. Drafts Live Inside Reminders</h3>
       <p>
-        Every overdue or upcoming reminder gets a one-click draft. Theres no extra work to write a prompt or feed an AI info, the system understands what info is needed to complete the reminder and pulls it for the coach.
+        Every overdue or upcoming reminder gets a one-click draft. There’s no extra work to write a prompt or feed an AI info, the system understands what info is needed to complete the reminder and pulls it for the coach.
       </p>
     </div>
     <div class="grid-card">
-      <h3>2. Binary Thumbs Up/Down Over Star Ratings</h3>
+      <h3>2. Thumbs Up/Down Instead of Star Ratings</h3>
       <p>
         Star ratings slow coaches down. A binary thumbs up/down achieved 75%+ rating completion, giving our data team clean training signals.
       </p>
     </div>
     <div class="grid-card">
-      <h3>3. Intentionally Omitting a ‘Regenerate’ Button</h3>
+      <h3>3. No ‘Regenerate’ Button, on Purpose</h3>
       <p>
         The AI delivers a strong draft, and the interface pushes coaches to make quick personal edits or dismiss it. This keeps their voice in every message to keep that authenticity and keeps the queue moving.
       </p>
     </div>
     <div class="grid-card">
-      <h3>4. Transparent Source Attribution</h3>
+      <h3>4. Showing Where Info Comes From</h3>
       <p>
         Explicitly referencing client information lets coaches catch hallucinations before sending, and builds trust with what the AI brings in.
       </p>
@@ -328,9 +328,9 @@ passwordProtected: true
   <h3>Designing for When the AI Is Wrong</h3>
   <div class="grid-2">
     <div class="grid-card">
-      <h3>Thin or Missing Context</h3>
+      <h3>Little or No Background</h3>
       <p>
-        For new clients with no session notes, the draft falls back to a short, generic check-in that they coach can edit manually, instead of hallucinating details.
+        For new clients with no session notes, the draft falls back to a short, generic check-in that the coach can edit, so the AI doesn’t make up details.
       </p>
     </div>
     <div class="grid-card">
@@ -341,7 +341,7 @@ passwordProtected: true
     </div>
   </div>
 
-  <h3>Cross-Functional Collaboration</h3>
+  <h3>Who I Worked With</h3>
   <p>
     As the only designer, I owned the experience end to end and coordinated product, engineering, and data science:
   </p>
@@ -356,7 +356,7 @@ passwordProtected: true
     <div class="impact-canvas">
       <img
         src="/images/strawberry-ai/system_alignment_diagram.webp"
-        alt="Cross-Functional Collaboration Diagram"
+        alt="Diagram of who I worked with: PM, engineering, and data science"
       />
     </div>
   </div>
@@ -367,9 +367,9 @@ passwordProtected: true
 <!-- 5. WORKFLOW & PROTOTYPE SECTION -->
 <section id="prototype" class="cs-section">
   <h4 class="section-label">Workflow & Prototype</h4>
-  <h2>The end-to-end coach drafting experience</h2>
+  <h2>The full drafting experience for coaches</h2>
   <p>
-    The final experience embeds contextual AI generation directly into the coach’s daily client management workflow:
+    The final experience puts AI drafts that use each client’s history right inside the coach’s daily workflow:
   </p>
 
   <div class="impact-holder size-a theme-strawberry-ai">
@@ -397,8 +397,8 @@ passwordProtected: true
 
 <!-- 6. IMPACT & LEARNINGS SECTION -->
 <section id="impact" class="cs-section">
-  <h4 class="section-label">Impact & Learnings</h4>
-  <h2>Outcomes and learnings</h2>
+  <h4 class="section-label">Impact & Outcomes</h4>
+  <h2>What happened and what I learned</h2>
   <p>
     Measured over an A/B test in the 4 weeks post-launch across 800+ active coaches:
   </p>
@@ -407,17 +407,17 @@ passwordProtected: true
     <div class="stat-card">
       <p class="stat-card-value">92%</p>
       <p class="stat-card-label">Coach Follow-Up Rate</p>
-      <p class="stat-card-subtext">Climbed from 60% baseline (beating 80% target)</p>
+      <p class="stat-card-subtext">Up from 60%, beating our 80% target</p>
     </div>
     <div class="stat-card">
       <p class="stat-card-value">+15%</p>
       <p class="stat-card-label">Client Retention</p>
-      <p class="stat-card-subtext">Relative increase in 2nd-charge membership renewals</p>
+      <p class="stat-card-subtext">Relative increase in 2nd-charge renewals</p>
     </div>
     <div class="stat-card">
       <p class="stat-card-value">$21M</p>
       <p class="stat-card-label">Funding Demo</p>
-      <p class="stat-card-subtext">Featured product demo in Strawberry.me's Series A round</p>
+      <p class="stat-card-subtext">Featured in product demo for Strawberry.me’s $21M Series A</p>
     </div>
   </div>
   
@@ -426,22 +426,22 @@ passwordProtected: true
     <p style="font-size: 0.95rem; opacity: 0.7; margin-top: 0.5rem;">— Career coach, 2+ years on Strawberry.me</p>
   </div>
 
-  <h3>Key Design Principles Learned</h3>
+  <h3>What I’d Carry Into Future Projects</h3>
   <div class="grid-3">
     <div class="grid-card">
-      <h3>1. Trust > Generation Quality</h3>
+      <h3>1. Trust Matters More Than Draft Quality</h3>
       <p>
-        Faster workflows don't matter if users can’t verify or trust what was generated. Transparent source attribution and clear provenance are the foundation of user trust in AI interfaces.
+        A faster workflow doesn’t help if people can’t tell whether they can trust what the AI wrote. Showing where the information came from is what earns that trust.
       </p>
     </div>
     <div class="grid-card">
-      <h3>2. Human in the Loop, by Design</h3>
+      <h3>2. A Human in Charge, by Design</h3>
       <p>
-        Generative AI shouldn’t operate autonomously in human-centric products. Designing for AI means stripping away administrative friction while keeping editorial authority firmly in human hands.
+        AI shouldn’t run on its own in products that are about people. Good AI design cuts the busywork and leaves the final say to the person.
       </p>
     </div>
     <div class="grid-card">
-      <h3>3. What’s Next: Tone & Style Control</h3>
+      <h3>3. What’s Next: Tone and Style Control</h3>
       <p>
         The next evolution is adaptive personalization: letting the AI learn each coach’s distinctive tone, greeting habits, and vocabulary over time.
       </p>

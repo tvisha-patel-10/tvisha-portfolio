@@ -5,7 +5,7 @@ title: "BetterHelp"
 pageTitle: "BetterHelp Case Study — Tvisha Patel"
 description: "How I redesigned BetterHelp's pre-session video test into a one-page, 33% shorter flow so clients and therapists can check only what they need to."
 year: "2023"
-subtitle: "Simplifying technical complexity for clients and therapists | 33% more streamlined flow"
+subtitle: "Making video testing simpler for clients and therapists | 33% fewer clicks"
 heroImage: "/images/betterhelp/betterhelp_cover.mp4"
 heroPoster: "/images/betterhelp/redesigned_tabbed_test_final.webp"
 role: "Product Design Intern"
@@ -18,13 +18,13 @@ team:
   - "1 UX Writer"
 skills:
   - "Prototyping"
-  - "Simplifying Technical Complexity"
+  - "Simplifying Technical Setup"
   - "Technical User Flows"
   - "Usability & Systems Design"
 sections:
   - { id: "overview", label: "Overview" }
   - { id: "before-after", label: "Before & After" }
-  - { id: "discovery", label: "Discovery & Research" }
+  - { id: "discovery", label: "Research" }
   - { id: "iterations", label: "Design Iterations" }
   - { id: "prototype", label: "Final UI & Prototype" }
   - { id: "impact", label: "Impact & Outcomes" }
@@ -34,7 +34,7 @@ sections:
 <!-- 1. OVERVIEW SECTION -->
 <section id="overview" class="cs-section">
   <h4 class="section-label">Overview</h4>
-  <h2>Simplifying pre-call device testing for over 5 million clients and therapists</h2>
+  <h2>Making the pre-call device test simpler for over 5 million clients and therapists</h2>
   <p>
     BetterHelp is the largest online therapy platform with over 5 million users. During my internship, I redesigned the <strong>video session test</strong>: the page clients and therapists use to check their camera, microphone, speaker, and connection minutes before a live session.
   </p>
@@ -43,7 +43,7 @@ sections:
   </p>
 
   <div class="callout">
-    <h3>Impact: Cut the device test from 4 sequential pages to a single tabbed page, reducing the clicks needed to complete a full test by 33%, so users can check only what’s broken right before a session.</h3>
+    <h3>Impact: Cut the device test from 4 pages to a single tabbed page, which cut the clicks for a full test by 33%. Now people can check just what’s broken right before a session.</h3>
   </div>
 
   <div class="grid-2">
@@ -62,7 +62,7 @@ sections:
         <strong>How might we redesign the video session test so users can fix the one thing that’s broken quickly, with full control over the process?</strong>
       </p>
       <p>
-        My approach: replace the rigid sequence with a single page where any device can be tested in any order, and rewrite the troubleshooting help so it reflects today’s browsers and apps.
+        My approach: swap the fixed sequence for one page where you can test any device in any order, and update the troubleshooting help copy to be relevant and helpful.
       </p>
     </div>
   </div>
@@ -78,7 +78,7 @@ sections:
     The two biggest shifts: the test structure, and the help experience that appears when something goes wrong.
   </p>
   <div class="impact-holder size-a theme-betterhelp">
-    <p class="impact-label">Shift: 4 sequential pages → 1 flexible tabbed test</p>
+    <p class="impact-label">4 pages in a row → 1 page with tabs</p>
     <div class="impact-split">
       <div class="impact-slot">
         <span class="slot-badge">Before</span>
@@ -102,7 +102,7 @@ sections:
   </div>
 
   <div class="impact-holder size-a theme-betterhelp">
-    <p class="impact-label">Redesign: Replaced outdated text with targeted slide-in help</p>
+    <p class="impact-label">Redesign: Swapped dense, outdated text for a slide-in help panel</p>
     <div class="impact-split">
       <div class="impact-slot">
         <span class="slot-badge">Before</span>
@@ -151,8 +151,8 @@ sections:
 
 <!-- 3. DISCOVERY & RESEARCH SECTION -->
 <section id="discovery" class="cs-section">
-  <h4 class="section-label">Discovery & Research</h4>
-  <h2>Gaining understanding across engineering, data, and competitors</h2>
+  <h4 class="section-label">Research</h4>
+  <h2>What I learned from engineering, data, and competitors</h2>
   <p>
     I went directly to the teams who owned each piece of the problem:
   </p>
@@ -181,20 +181,20 @@ sections:
   <h3>Insights from the Previous Design</h3>
   <div class="grid-2">
     <div class="impact-holder size-b theme-betterhelp">
-      <p class="impact-label">Legacy state: One device per page in rigid sequence</p>
+      <p class="impact-label">Old version: One device per page, in a fixed order</p>
       <div class="impact-canvas">
         <img
           src="/images/betterhelp/legacy_sequential_test_flow.webp"
-          alt="Previous Camera Step Design"
+          alt="Old camera test step"
         />
       </div>
     </div>
     <div class="impact-holder size-b theme-betterhelp">
-      <p class="impact-label">Legacy state: Dense text with outdated app references</p>
+      <p class="impact-label">Old version: Dense text that mentioned outdated apps</p>
       <div class="impact-canvas">
         <img
           src="/images/betterhelp/legacy_dense_help_section.webp"
-          alt="Previous Help Section Design and Content"
+          alt="Old help section with dense text"
         />
       </div>
     </div>
@@ -207,7 +207,7 @@ sections:
 
   <div class="grid-2">
     <div class="impact-holder size-b theme-betterhelp">
-      <p class="impact-label">Teams audit: Single pre-join screen with all devices visible</p>
+      <p class="impact-label">Teams: One pre-join screen showing every device</p>
       <div class="impact-canvas">
         <img
           src="/images/betterhelp/audit_camera_step.webp"
@@ -216,7 +216,7 @@ sections:
       </div>
     </div>
     <div class="impact-holder size-b theme-betterhelp">
-      <p class="impact-label">Whereby audit: Compact card keeps user on the same page</p>
+      <p class="impact-label">Whereby: A small card that keeps you on the same page</p>
       <div class="impact-canvas">
         <img
           src="/images/betterhelp/audit_speaker_step.webp"
@@ -228,7 +228,7 @@ sections:
 
   <div class="grid-2">
     <div class="impact-holder size-b theme-betterhelp">
-      <p class="impact-label">Zoom audit: Clear yes/no prompts, but locked order</p>
+      <p class="impact-label">Zoom: Clear yes/no prompts, but a fixed order</p>
       <div class="impact-canvas">
         <img
           src="/images/betterhelp/audit_microphone_step.webp"
@@ -237,7 +237,7 @@ sections:
       </div>
     </div>
     <div class="impact-holder size-b theme-betterhelp">
-      <p class="impact-label">Meet audit: Self-service preview with quick device toggles</p>
+      <p class="impact-label">Meet: A preview you can check yourself, with quick device switches</p>
       <div class="impact-canvas">
         <img
           src="/images/betterhelp/audit_network_step.webp"
@@ -263,11 +263,11 @@ sections:
   </p>
   <div class="grid-2">
     <div class="impact-holder size-b theme-betterhelp">
-      <p class="impact-label">V1 exploration: Dynamic pills with instructions in a tooltip</p>
+      <p class="impact-label">V1: Device pills with instructions in a tooltip</p>
       <div class="impact-canvas">
         <img
           src="/images/betterhelp/help_system_permissions_wireframe.webp"
-          alt="Iteration V1 Screen"
+          alt="V1: device pills with instructions in a tooltip"
         />
       </div>
     </div>
@@ -282,7 +282,7 @@ sections:
         <span class="eval-icon eval-pro" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
         </span>
-        <span>give user more agency to chose what device to test</span>
+        <span>give user more agency to choose what device to test</span>
       </li>
       <li class="eval-item">
         <span class="eval-icon eval-neutral" aria-hidden="true">
@@ -301,11 +301,11 @@ sections:
   </p>
   <div class="grid-2">
     <div class="impact-holder size-b theme-betterhelp">
-      <p class="impact-label">V2 exploration: Equal-sized tiles with visible instructions</p>
+      <p class="impact-label">V2: Equal-sized tiles with instructions on the page</p>
       <div class="impact-canvas">
         <img
           src="/images/betterhelp/test_landing_page_wireframe.webp"
-          alt="Iteration V2 Landing Page"
+          alt="V2: equal-sized device tiles with visible instructions"
         />
       </div>
     </div>
@@ -326,7 +326,7 @@ sections:
         <span class="eval-icon eval-pro" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
         </span>
-        <span>give user more agency to chose what device to test</span>
+        <span>give user more agency to choose what device to test</span>
       </li>
       <li class="eval-item">
         <span class="eval-icon eval-pro" aria-hidden="true">
@@ -338,12 +338,12 @@ sections:
   </div>
 
   <div class="callout">
-    <h3>The Tradeoff: Dynamic Dropdowns vs. Shipping This Sprint</h3>
+    <h3>The Tradeoff: Dynamic Dropdowns or Shipping This Sprint</h3>
     <p>
-      V1 and V2 both depended on dynamic dropdowns with real-time feedback meters (like a live microphone soundwave). When engineering flagged these as too costly for the sprint, I pushed for V3’s simpler tab structure instead.
+      V1 and V2 both depended on dynamic dropdowns with real-time feedback meters (like a live microphone soundwave). Engineering said these were too high of a lift to build in one sprint, so I pushed for V3’s simpler tabs instead.
     </p>
     <p>
-      <strong>What we gave up:</strong> real-time audio feedback. <strong>How I adjusted:</strong> each tab has a clear “Confirm it’s working” / “I need help” choice, and the step pages have clear feedback on if their device is working (camera view, microphone playback, speaker sound play, network auto-check).
+      <strong>What we gave up:</strong> real-time audio feedback. <strong>How I adjusted:</strong> each tab has a clear “Confirm it’s working” / “I need help” choice, and each step shows upfront whether the device is working (camera view, microphone playback, speaker sound play, network auto-check).
     </p>
   </div>
 
@@ -354,11 +354,11 @@ sections:
   </p>
   <div class="grid-2">
     <div class="impact-holder size-b theme-betterhelp">
-      <p class="impact-label">V3 wireframe: Fast tabbed navigation with low engineering lift</p>
+      <p class="impact-label">V3 wireframe: Simple tabs that were quick to build</p>
       <div class="impact-canvas">
         <img
           src="/images/betterhelp/test_landing_page_iteration_1.webp"
-          alt="Iteration V3 Landing Page"
+          alt="V3: tabbed device test with Camera, Microphone, Speaker, and Connection tabs"
         />
       </div>
     </div>
@@ -373,7 +373,7 @@ sections:
         <span class="eval-icon eval-pro" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
         </span>
-        <span>give user more agency to chose what device to test</span>
+        <span>give user more agency to choose what device to test</span>
       </li>
       <li class="eval-item">
         <span class="eval-icon eval-pro" aria-hidden="true">
@@ -397,20 +397,20 @@ sections:
 
   <div class="grid-2">
     <div class="impact-holder size-b theme-betterhelp">
-      <p class="impact-label">Approved wireframe: Validated tab structure ready for UI</p>
+      <p class="impact-label">Approved wireframe</p>
       <div class="impact-canvas">
         <img
           src="/images/betterhelp/test_landing_page_iteration_2.webp"
-          alt="Wireframe State"
+          alt="Approved V3 wireframe with device tabs"
         />
       </div>
     </div>
     <div class="impact-holder size-b theme-betterhelp">
-      <p class="impact-label">Production UI: Built with BetterHelp brand guidelines & elevation</p>
+      <p class="impact-label">Final UI: Built with BetterHelp’s brand guidelines</p>
       <div class="impact-canvas">
         <img
           src="/images/betterhelp/redesigned_tabbed_test_final.webp"
-          alt="High-Fidelity Final UI"
+          alt="Final BetterHelp video test page with tabs"
         />
       </div>
     </div>
@@ -443,26 +443,26 @@ sections:
 <!-- 6. IMPACT & OUTCOMES SECTION -->
 <section id="impact" class="cs-section">
   <h4 class="section-label">Impact & Outcomes</h4>
-  <h2>Measurable results shipped to 5 million users</h2>
+  <h2>What changed for 5 million users</h2>
   <p>
-    Shipped to production across BetterHelp’s web platform in October 2023, delivering immediate improvements to pre-session confidence:
+    Shipped to production across BetterHelp’s web platform in October 2023, and people felt more ready before their sessions:
   </p>
 
   <div class="grid-3">
     <div class="stat-card">
       <p class="stat-card-value">-33%</p>
-      <p class="stat-card-label">Test Time & Clicks</p>
-      <p class="stat-card-subtext">Reduced full flow from 4 sequential pages to one streamlined, tabbed surface.</p>
+      <p class="stat-card-label">Fewer Clicks</p>
+      <p class="stat-card-subtext">Cut the full test from 4 pages to one page with tabs.</p>
     </div>
     <div class="stat-card">
       <p class="stat-card-value">5M+</p>
       <p class="stat-card-label">Clients & Therapists</p>
-      <p class="stat-card-subtext">Scalable device testing experience supporting millions of therapy sessions.</p>
+      <p class="stat-card-subtext">Works for millions of therapy sessions.</p>
     </div>
     <div class="stat-card">
       <p class="stat-card-value">1-Click</p>
-      <p class="stat-card-label">Direct Diagnostics</p>
-      <p class="stat-card-subtext">Jump straight to specific broken hardware without clicking through unrelated tests.</p>
+      <p class="stat-card-label">Fix the Right Thing</p>
+      <p class="stat-card-subtext">Go straight to the broken device without clicking through tests you don’t need.</p>
     </div>
   </div>
 
@@ -472,7 +472,7 @@ sections:
 <!-- 7. REFLECTION SECTION -->
 <section id="reflection" class="cs-section">
   <h4 class="section-label">Reflection</h4>
-  <h2>Key takeaways & lessons learned</h2>
+  <h2>What I took away</h2>
 
   <div class="grid-3">
     <div class="grid-card">
@@ -484,7 +484,7 @@ sections:
     <div class="grid-card">
       <h3>2. Designing Within Constraints</h3>
       <p>
-        Losing dynamic dropdowns caused a big pivot, but it forced a better question: what’s the simplest signal that tells a user “you’re good to go”? Finding that answer, rather than fighting the constraint to follow familiar standards, is what got V3 shipped.
+        Losing dynamic dropdowns caused a big pivot, but it forced a better question: what’s the simplest signal that tells a user “you’re good to go”? Finding that answer, instead of fighting the constraint to copy familiar patterns, is what got V3 shipped.
       </p>
     </div>
     <div class="grid-card">

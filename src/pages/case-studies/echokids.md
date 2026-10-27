@@ -5,7 +5,7 @@ title: "EchoKids"
 pageTitle: "EchoKids Case Study — Tvisha Patel"
 description: "I redesigned EchoKids' mentor dashboard and brand system, increasing weekly returning mentors by 200%."
 year: "2022"
-subtitle: "How I increased retention by 200% and created a 47% more effective dashboard"
+subtitle: "How I tripled weekly returning mentors and helped them find tools 47% faster"
 heroImage: "/images/echokids/echokids_cover.mp4"
 heroPoster: "/images/echokids/echokids_cover_poster.webp"
 role: "Product Design Intern"
@@ -20,7 +20,7 @@ skills:
   - "Brand & Design Systems"
 sections:
   - { id: "overview", label: "Overview" }
-  - { id: "discovery", label: "Discovery & Research" }
+  - { id: "discovery", label: "Research" }
   - { id: "constraints", label: "Constraints & Decisions" }
   - { id: "structure", label: "Before & After" }
   - { id: "iterations", label: "Design Iterations" }
@@ -32,7 +32,7 @@ sections:
 <!-- 1. OVERVIEW SECTION -->
 <section id="overview" class="cs-section">
   <h4 class="section-label">Overview</h4>
-  <h2>Redesigning the mentor dashboard to drive retention and streamline user flow</h2>
+  <h2>Redesigning the mentor dashboard so mentors keep coming back and find things faster</h2>
   <p>
     EchoKids is a NYC-based music education company that connects musicians as mentors with children aged 0–18 for private and group lessons.
   </p>
@@ -41,7 +41,7 @@ sections:
   </p>
 
   <div class="callout">
-    <h3>Impact: Weekly returning mentors grew from 15 to 45 in the 6 weeks after launch (+200%), and the time to find a tool on the dashboard dropped by 47%.</h3>
+    <h3>Impact: Weekly returning mentors tripled (+200%, from 15 to 45 active mentors) in the 6 weeks after launch, and the time to find a tool on the dashboard dropped by 47%.</h3>
   </div>
 
   <div class="grid-2">
@@ -70,8 +70,8 @@ sections:
 
 <!-- 2. DISCOVERY & RESEARCH SECTION -->
 <section id="discovery" class="cs-section">
-  <h4 class="section-label">Discovery & Research</h4>
-  <h2>Gaining understanding through heuristics, stakeholders, and mentors</h2>
+  <h4 class="section-label">Research</h4>
+  <h2>What I learned from a heuristic review, the CEO, and mentors</h2>
 
   <h3>Heuristic Evaluation</h3>
   <p>
@@ -105,10 +105,10 @@ sections:
     </div>
   </div>
 
-  <h3>Key Performance Indicators (KPIs)</h3>
+  <h3>Goals We Tracked (KPIs)</h3>
   <div class="grid-3">
     <div class="grid-card">
-      <h3>User Retention</h3>
+      <h3>Mentors Returning</h3>
       <p>The primary metric was to increase the number of mentors returning to the dashboard each week.</p>
     </div>
     <div class="grid-card">
@@ -175,7 +175,7 @@ sections:
     <div class="grid-card">
       <h3>Discoverability Over Screen Space</h3>
       <p>
-        A new persistent sidebar would cost horizontal space, but mentors couldn’t find the old hidden menu at all. I chose discoverability, and recovered the lost space by moving important sections to the dashboard inself to be more accessbile.
+        A new persistent sidebar would cost horizontal space, but mentors couldn’t find the old hidden menu at all. I chose discoverability, and won the space back by putting the important sections right on the dashboard, where they’re easier to find.
       </p>
     </div>
     <div class="grid-card">
@@ -192,10 +192,10 @@ sections:
 <!-- 4. BEFORE & AFTER -->
 <section id="structure" class="cs-section">
   <h4 class="section-label">Before & After</h4>
-  <h2>Transforming navigation and introducing modular compartments</h2>
+  <h2>A new sidebar and a dashboard split into clear sections</h2>
 
   <div class="impact-holder size-a theme-echokids">
-    <p class="impact-label">Shift: Hidden navigation → Persistent sidebar with modular cards</p>
+    <p class="impact-label">Hidden menu → an always-visible sidebar and clear sections</p>
     <div class="impact-split">
       <div class="impact-slot">
         <span class="slot-badge">Before</span>
@@ -220,19 +220,19 @@ sections:
 
   <div class="grid-3">
     <div class="grid-card">
-      <h3>Static Sidebar Navigation</h3>
+      <h3>Always-Visible Sidebar</h3>
       <p>
         Replaced the hidden hamburger menu with a persistent sidebar that puts the most-used destinations front and center.
       </p>
     </div>
     <div class="grid-card">
-      <h3>Structural Compartments</h3>
+      <h3>Clear Sections</h3>
       <p>
         Split the page into distinct, headed sections (Upcoming Lesson, Calendar, Action Items, Earning Breakdown) so mentors can scan for what they need instead of having to read everything.
       </p>
     </div>
     <div class="grid-card">
-      <h3>Disciplined Color</h3>
+      <h3>Intentional Colors</h3>
       <p>
         Restricted the palette so color signals meaning: orange for the active navigation tab, dark blue for CTAs, white section cards on a light blue background.
       </p>
@@ -241,7 +241,7 @@ sections:
 
   <h3>Closer Look at the Upcoming Lesson Card</h3>
   <div class="impact-holder size-a theme-echokids">
-    <p class="impact-label">Component zoom: Added explicit headers and instant save feedback</p>
+    <p class="impact-label">Close-up: Clear headings and information hierarchy</p>
     <div class="impact-split">
       <div class="impact-slot">
         <span class="slot-badge">Before</span>
@@ -266,19 +266,19 @@ sections:
 
   <div class="grid-3">
     <div class="grid-card">
-      <h3>Adding Headers</h3>
+      <h3>Clear Headings</h3>
       <p>
         Mentors struggled to see where each section started and ended. Explicit headings mark clear zones and make the dashboard far more scannable.
       </p>
     </div>
     <div class="grid-card">
-      <h3>Information Order</h3>
+      <h3>Better Order of Information</h3>
       <p>
         Student name and lesson date moved to the top center for quick scanning. I added a “Quick View Previous Lesson” button that mentors asked for in interviews, so they can review past notes without leaving the page.
       </p>
     </div>
     <div class="grid-card">
-      <h3>Clear Interaction Feedback</h3>
+      <h3>Clear Feedback</h3>
       <p>
         Notes fields now show a “Saved” confirmation, and every pop-up has a visible Cancel and close button, addressing the two feedback issues mentors raised.
       </p>
@@ -291,7 +291,7 @@ sections:
 <!-- 5. DESIGN ITERATIONS -->
 <section id="iterations" class="cs-section">
   <h4 class="section-label">Design Iterations</h4>
-  <h2>Iterating through dashboard layouts (V1 to V3)</h2>
+  <h2>Three layout iterations, V1 to V3</h2>
 
   <h3>Version 1</h3>
   <p>
@@ -304,7 +304,7 @@ sections:
       <div class="impact-canvas">
         <img
           src="/images/echokids/heuristic_wireframe_audit.webp"
-          alt="Iteration V1 Screen"
+          alt="V1 dashboard with top navigation and no icons"
         />
       </div>
     </div>
@@ -337,11 +337,11 @@ sections:
   </p>
   <div class="grid-2">
     <div class="impact-holder size-b theme-echokids">
-      <p class="impact-label">V2 layout: Hamburger menu created friction and awkward whitespace</p>
+      <p class="impact-label">V2 layout: The hamburger menu had bad discoverability and left awkward empty space</p>
       <div class="impact-canvas">
         <img
           src="/images/echokids/layout_iteration_1.webp"
-          alt="Iteration V2 Screen"
+          alt="V2 dashboard with a hamburger menu"
         />
       </div>
     </div>
@@ -374,11 +374,11 @@ sections:
   </p>
   <div class="grid-2">
     <div class="impact-holder size-b theme-echokids">
-      <p class="impact-label">V3 layout: Persistent vertical sidebar fixed discoverability</p>
+      <p class="impact-label">V3 layout: An always-visible sidebar made navigation easy to find</p>
       <div class="impact-canvas">
         <img
           src="/images/echokids/layout_iteration_2.webp"
-          alt="Iteration V3 Screen"
+          alt="V3 dashboard with a persistent vertical sidebar"
         />
       </div>
     </div>
@@ -410,11 +410,11 @@ sections:
   </p>
   <div class="grid-2">
     <div class="impact-holder size-b theme-echokids">
-      <p class="impact-label">Final wireframe: Added earnings breakdown to reclaim lost page width</p>
+      <p class="impact-label">Final wireframe: Earnings breakdown added for easy access to make up for the narrower page</p>
       <div class="impact-canvas">
         <img
           src="/images/echokids/layout_iteration_3.webp"
-          alt="Final Wireframe Screen"
+          alt="Final wireframe with earnings breakdown section"
         />
       </div>
     </div>
@@ -446,14 +446,14 @@ sections:
 <!-- 6. FINAL UI & BRAND -->
 <section id="final" class="cs-section">
   <h4 class="section-label">Final UI & Brand</h4>
-  <h2>Establishing the design system and delivering high-fidelity screens</h2>
+  <h2>Building the design system and final screens</h2>
 
   <h3>Design System</h3>
   <p>
     I built a refreshed design system covering color, typography, and core components to give EchoKids a consistent identity across every digital touchpoint.
   </p>
   <div class="impact-holder size-a theme-echokids">
-    <p class="impact-label">Design system: High-contrast color hierarchy, type, and components</p>
+    <p class="impact-label">Design system: Colors, type, and components</p>
     <div class="impact-canvas">
       <img
         src="/images/echokids/design_system_components.webp"
@@ -467,18 +467,18 @@ sections:
     Applying the brand system to the final wireframe produced the production-ready interface.
   </p>
   <div class="impact-holder size-a theme-echokids">
-    <p class="impact-label">Shipped dashboard: 200% retention boost with scannable mentor hubs</p>
+    <p class="impact-label">Final dashboard: 3× more weekly returning mentors</p>
     <div class="impact-canvas">
       <img
         src="/images/echokids/redesigned_dashboard_final.webp"
-        alt="High-Fidelity Final Dashboard"
+        alt="Final EchoKids mentor dashboard"
       />
     </div>
   </div>
 
   <h3>Explore the Prototype</h3>
   <p>
-    Explore with the embedded Figma prototype below to test the navigation flow, compartment structure, and mentor lesson views.
+    Explore with the embedded Figma prototype below to test the navigation flow, section layout, and mentor lesson views.
   </p>
 
   <div class="figma-container">
@@ -503,7 +503,7 @@ sections:
 <!-- 7. IMPACT & OUTCOMES SECTION -->
 <section id="impact" class="cs-section">
   <h4 class="section-label">Impact & Outcomes</h4>
-  <h2>Measurable results shipped across mobile and desktop</h2>
+  <h2>Results on mobile and desktop</h2>
   <p>
     Measured over the 6 weeks following production launch across EchoKids' mentor community:
   </p>
@@ -512,17 +512,17 @@ sections:
     <div class="stat-card">
       <p class="stat-card-value">+200%</p>
       <p class="stat-card-label">Weekly Returning Mentors</p>
-      <p class="stat-card-subtext">Active weekly mentor engagement grew from 15 to 45 mentors.</p>
+      <p class="stat-card-subtext">Tripled, from 15 to 45 mentors a week.</p>
     </div>
     <div class="stat-card">
       <p class="stat-card-value">-47%</p>
       <p class="stat-card-label">Time to Find a Tool</p>
-      <p class="stat-card-subtext">Drastic drop in navigation friction thanks to the persistent sidebar.</p>
+      <p class="stat-card-subtext">Mentors find the tool they need much faster, thanks to the persistent sidebar.</p>
     </div>
     <div class="stat-card">
       <p class="stat-card-value">0→1</p>
       <p class="stat-card-label">Design System Shipped</p>
-      <p class="stat-card-subtext">Unified brand refresh and reusable component library adopted across app and web.</p>
+      <p class="stat-card-subtext">A new brand and a reusable component library, now used across the app and website.</p>
     </div>
   </div>
 
@@ -532,11 +532,11 @@ sections:
 <!-- 8. REFLECTION SECTION -->
 <section id="reflection" class="cs-section">
   <h4 class="section-label">Reflection</h4>
-  <h2>Key takeaways & lessons learned</h2>
+  <h2>What I took away</h2>
 
   <div class="grid-3">
     <div class="grid-card">
-      <h3>1. Owning the Whole Problem</h3>
+      <h3>1. Owning It End to End</h3>
       <p>
         As the only designer, there was no one to hand decisions off to. I learned to set my own direction, from the research plan to the design system pitch, and defend it to the CEO with evidence.
       </p>
@@ -544,13 +544,13 @@ sections:
     <div class="grid-card">
       <h3>2. Knowing What Not to Change</h3>
       <p>
-        The calendar constraint taught me that a redesign isn’t about changing everything. Keeping what mentors already valued and working around technical contraints let me focus effort where it mattered.
+        The calendar constraint taught me that a redesign doesn't mean I can change everything. Keeping what mentors already liked and working around technical limits let me put my effort where it counted.
       </p>
     </div>
     <div class="grid-card">
       <h3>3. Shipping to Real Users</h3>
       <p>
-        This was my first project shipped to production. Seeing weekly returning mentors triple, and hearing mentors say the dashboard finally made sense, showed me how design can truly impact people’s daily work.
+        This was my first project shipped to production. Seeing weekly returning mentors triple, and hearing mentors say the dashboard finally made sense, showed me the value of design and how it can make someone’s everyday workflow easier.
       </p>
     </div>
   </div>
