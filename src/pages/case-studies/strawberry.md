@@ -36,11 +36,11 @@ sections:
     Strawberry.me is a venture-backed coaching marketplace that connects clients with vetted coaches for career and personal growth.
   </p>
   <p>
-    I'm the first and only product designer on a team of 21, so I design both the client and coach experiences from the sign-up flow to the tools coaches use every day.
+    I joined in June 2024, two months before launch, as the first and only product designer. I design both the client and coach experiences, from the sign-up flow to the tools coaches use every day.
   </p>
 
   <div class="callout">
-    <h3>The 0→1 Challenge: This startup was growing fast, and I wasn't designing just one feature at a time. I was building the product, the brand, and the design system from scratch, all without slowing engineers down.</h3>
+    <h3>The 0→1 Challenge: When I joined, there was no finished product, brand, or design system yet. I wasn't designing one feature at a time. I was building all three from scratch, without slowing engineers down.</h3>
   </div>
 
   <div class="grid-2">
@@ -53,7 +53,7 @@ sections:
     <div class="grid-card">
       <h3>My Approach</h3>
       <p>
-        I didn't want to slow the team down, so I took on more than design. I built a design system with tokens from day one, addressed big problem spots from sign-up to retention, and wrote HTML, CSS, and TypeScript myself so engineers could ship features faster.
+        I didn't want to slow the team down, so I took on more than design. I built a design system with tokens from day one, addressed the biggest problem spots from sign-up to retention, and wrote HTML, CSS, and TypeScript myself so engineers could ship features faster.
       </p>
     </div>
   </div>
