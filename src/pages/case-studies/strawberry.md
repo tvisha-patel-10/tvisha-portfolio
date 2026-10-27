@@ -3,7 +3,7 @@ layout: ../../layouts/caseStudyLayout.astro
 
 title: "Strawberry.me"
 pageTitle: "Strawberry.me 0→1 Founding Design Case Study — Tvisha Patel"
-description: "I am the founding designer at a coaching marketplace that grew to $30M+ ARR. I built the design system from scratch and shipped 40+ features."
+description: "As Strawberry’s sole founding designer, I tackled 0→1 platform velocity, built the design system from scratch, and shipped 40+ features scaling to $30M+ ARR."
 year: "2024–present"
 subtitle: "Founding designer at a two-sided coaching marketplace | $30M+ ARR"
 heroImage: "/images/strawberry/strawberry_gen_cover.mp4"
@@ -33,14 +33,29 @@ sections:
   <h4 class="section-label">Overview</h4>
   <h2>Leading design at a two-sided coaching platform as it grew from 0 to $30M+ ARR</h2>
   <p>
-    Strawberry.me is a fast-growing, VC-backed coaching marketplace connecting clients with vetted professional coaches for career acceleration and personal development.
+    Strawberry.me is a venture-backed coaching marketplace that connects clients with vetted coaches for career and personal growth.
   </p>
   <p>
-    I was the only product designer on a team of 21, so I designed for both clients and coaches. I built our design system from scratch, designed 40+ features that shipped, and wrote HTML, CSS, and TypeScript myself when engineers were stretched thin. I also pitched in as a PM and marketer when needed.
+    I'm the first and only product designer on a team of 21, so I design both the client and coach experiences from the sign-up flow to the tools coaches use every day.
   </p>
 
   <div class="callout">
-    <h3>Impact: I led design as the company grew past $30M ARR, and built our design system and brand identity. Along the way I also worked as a PM, coder, and marketer.</h3>
+    <h3>The 0→1 Challenge: This startup was growing fast, and I wasn't designing just one feature at a time. I was building the product, the brand, and the design system from scratch, all without slowing engineers down.</h3>
+  </div>
+
+  <div class="grid-2">
+    <div class="grid-card">
+      <h3>The Core Problem</h3>
+      <p>
+        Early-stage startups often have to pick: move fast and pile up design debt, or move slowly and miss chances to grow. Strawberry.me needed to bring in clients quickly, earn their trust with private coaching data, and make coaches' day-to-day work easier.
+      </p>
+    </div>
+    <div class="grid-card">
+      <h3>My Approach</h3>
+      <p>
+        I didn't want to slow the team down, so I took on more than design. I built a design system with tokens from day one, addressed big problem spots from sign-up to retention, and wrote HTML, CSS, and TypeScript myself so engineers could ship features faster.
+      </p>
+    </div>
   </div>
 
   <div class="section-divider"></div>
@@ -51,7 +66,7 @@ sections:
   <h4 class="section-label">My Role</h4>
   <h2>Moving fast at a startup: owning product, systems, and code</h2>
   <p>
-    With only one designer, I couldn’t be the thing slowing the team down. Here’s how I worked to move fast without cutting corners:
+    With only one designer, I couldn’t be the thing slowing the team down. Here's how I work to move fast without cutting corners:
   </p>
 
   <div class="grid-3">
@@ -132,9 +147,7 @@ sections:
         aria-controls="strawberry-v2-canvas"
       >
         <span class="expand-btn-text">See full page</span>
-        <svg class="expand-btn-icon" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <polyline points="3.5 6 8 10.5 12.5 6"></polyline>
-        </svg>
+        <svg class="expand-btn-icon" viewBox="0 0 16 16" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3.5 6 8 10.5 12.5 6"></polyline></svg>
       </button>
     </div>
   </div>
@@ -152,7 +165,7 @@ sections:
 
   <h3>1. Building Trust in AI During Onboarding</h3>
   <p>
-    Strawberry uses AI to make coaching more personal. But coaching can get sensitive, and clients worried their private details would be collected or sold. So I designed onboarding and consent steps that explain upfront how we anonymize and combine data and protect their privacy. More people finished onboarding as a result.
+    Strawberry.me uses AI to make coaching more personal. But coaching can get sensitive, and clients worried their private details would be collected or sold. So I designed onboarding and consent steps that explain upfront how we anonymize and combine data and protect their privacy. More people finished onboarding as a result.
   </p>
   <div class="impact-holder size-a theme-strawberry">
     <p class="impact-label">Client onboarding: Clear AI consent steps that built trust</p>
@@ -166,7 +179,7 @@ sections:
 
   <h3>2. Coach Dashboard & Smart Reminders</h3>
   <p>
-    For coaches managing dozens of active clients, I redesigned the Client Details Command Center: consolidating timelines, action items, session history, and automated reminder cues into a single view.
+    For coaches managing dozens of active clients, I redesigned the client detail page: consolidating timelines, action items, session history, and automated reminder cues into a single view.
   </p>
   <div class="impact-holder size-a theme-strawberry">
     <p class="impact-label">Coach dashboard: Timelines, history, and reminders in one place</p>
@@ -185,7 +198,7 @@ sections:
 
   <h3>3. Goals Board (for Tracking Milestones)</h3>
   <p>
-    To turn coaching into a tangible, ongoing habit, I designed a drag-and-drop Kanban Goals Board. Clients and coaches collaboratively break down broad life goals (e.g., <em>“Improve Sleep Schedule”</em>) into small weekly action items. It also gave people a reason to stay in coaching.
+    To turn coaching into a tangible, ongoing habit, I designed a drag-and-drop Kanban Goals Board. Clients and coaches break down broad life goals (e.g., <em>“Improve Sleep Schedule”</em>) into small weekly action items, giving people a reason to stay in coaching.
   </p>
   <div class="impact-holder size-a theme-strawberry">
     <p class="impact-label">Goals board: A shared drag-and-drop board</p>
