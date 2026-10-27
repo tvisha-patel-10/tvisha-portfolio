@@ -1,15 +1,15 @@
-# Tvisha Patel — Portfolio
+# Tvisha Patel's Portfolio
 
 my little corner of the internet, built to showcase what i'm up to and my product design work
 
-🔗 **Live site:** coming soon<!-- update once domain is live -->
+🔗 **Live site:** [tvishapatel.com](tvishapatel.com)
 
 ## Tech Stack
 
 - Astro
 - TypeScript
 - HTML / CSS
-- Deployed via GitHub and Netlify
+- Deployed via GitHub and Cloudflare
 
 ## About
 
