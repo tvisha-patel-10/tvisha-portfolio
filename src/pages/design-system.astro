@@ -1,5 +1,6 @@
 ---
 import CustomCursor from "../components/CustomCursor.astro";
+import SiteFooter from "../components/SiteFooter.astro";
 import "../css/design-system.css";
 
 const canonicalURL = new URL(
@@ -951,6 +952,9 @@ const imageURL = new URL(
             </main>
         </div>
 
+        <!-- ======== SITE-WIDE FOOTER ======== -->
+        <SiteFooter />
+
         <CustomCursor />
 
         <!-- ======== SCROLLSPY & INTERACTION SCRIPT ======== -->
@@ -1030,6 +1034,27 @@ const imageURL = new URL(
                     passive: true,
                 });
                 updateActiveLink();
+
+                // Copy email functionality
+                document.querySelectorAll(".copy-email, [data-copy]").forEach((btn) => {
+                    btn.addEventListener("click", async () => {
+                        const email =
+                            btn.getAttribute("data-copy") ||
+                            "tvishapatel0@gmail.com";
+                        try {
+                            await navigator.clipboard.writeText(email);
+                        } catch (err) {
+                            const textarea = document.createElement("textarea");
+                            textarea.value = email;
+                            textarea.style.position = "fixed";
+                            textarea.style.opacity = "0";
+                            document.body.appendChild(textarea);
+                            textarea.select();
+                            document.execCommand("copy");
+                            document.body.removeChild(textarea);
+                        }
+                    });
+                });
             });
 
             // Live Type Tester Script

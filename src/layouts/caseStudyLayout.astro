@@ -89,6 +89,7 @@ const ogImage =
 const imageURL = new URL(ogImage, Astro.site || "https://tvishapatel.com");
 
 import CustomCursor from "../components/CustomCursor.astro";
+import SiteFooter from "../components/SiteFooter.astro";
 ---
 
 <!doctype html>
@@ -153,6 +154,9 @@ import CustomCursor from "../components/CustomCursor.astro";
                 background-color: var(--cs-bg);
                 color: var(--cs-text);
                 line-height: 1.6;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
             }
 
             h1,
@@ -167,7 +171,7 @@ import CustomCursor from "../components/CustomCursor.astro";
                sidebar (auto) | content (auto) | spacer (1fr)
                ================================================ */
             .cs-page {
-                min-height: 100vh;
+                flex: 1;
                 padding: 0 1.5rem;
             }
 
@@ -1268,7 +1272,7 @@ import CustomCursor from "../components/CustomCursor.astro";
                 display: flex;
                 flex-direction: column;
                 gap: 2.5rem;
-                min-height: 80vh;
+                margin-bottom: 3.5rem;
             }
 
             .cs-footer-grid {
@@ -1505,6 +1509,7 @@ import CustomCursor from "../components/CustomCursor.astro";
             .cs-footer-bottom a:hover {
                 opacity: 0.7;
             }
+
 
             /* ================================================
                PASSWORD PROTECTION GATE STYLING
@@ -1985,6 +1990,9 @@ import CustomCursor from "../components/CustomCursor.astro";
             </main>
         </div>
 
+        <!-- ======== SITE-WIDE FOOTER ======== -->
+        <SiteFooter />
+
         <!-- ======== SCROLLSPY JS ======== -->
         <script>
             document.addEventListener("DOMContentLoaded", () => {
@@ -2109,11 +2117,11 @@ import CustomCursor from "../components/CustomCursor.astro";
                 });
 
                 // Copy email functionality
-                const copyBtn = document.getElementById("csCopyEmailBtn");
-                if (copyBtn) {
-                    copyBtn.addEventListener("click", async () => {
+                document.querySelectorAll(".copy-email, [data-copy]").forEach((btn) => {
+                    btn.addEventListener("click", async () => {
                         const email =
-                            copyBtn.getAttribute("data-email") ||
+                            btn.getAttribute("data-copy") ||
+                            btn.getAttribute("data-email") ||
                             "tvishapatel0@gmail.com";
                         try {
                             await navigator.clipboard.writeText(email);
@@ -2128,7 +2136,7 @@ import CustomCursor from "../components/CustomCursor.astro";
                             document.body.removeChild(textarea);
                         }
                     });
-                }
+                });
 
                 // Expandable comparison canvases
                 document.querySelectorAll(".expand-btn").forEach((btn) => {

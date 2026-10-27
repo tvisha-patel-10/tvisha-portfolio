@@ -894,3 +894,16 @@ h4 {
         margin: 1.75rem 0 0.85rem;
     }
 }
+
+/* ================================================
+   SITE-WIDE FOOTER (Matches rest of site)
+   ================================================ */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.cs-page {
+    flex: 1;
+}
