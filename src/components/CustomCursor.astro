@@ -515,9 +515,9 @@
                 return;
             }
 
-            // Standard buttons & interactive elements (nav toggle, case study nav links, back buttons)
+            // Standard buttons & interactive elements (nav toggle, case study nav links, back buttons, interactive demo links)
             const btnEl = target.closest(
-                'button, [role="button"], .nav-toggle, .cs-nav .nav-link, .cs-back-home, .cs-back-top',
+                'button, [role="button"], .nav-toggle, .cs-nav .nav-link, .cs-back-home, .cs-back-top, [data-cursor-hand]',
             );
             if (btnEl) {
                 setPillText(null);

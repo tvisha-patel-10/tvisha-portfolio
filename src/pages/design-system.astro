@@ -83,7 +83,7 @@ const imageURL = new URL(
                                 >
                             </li>
                             <li>
-                                <a href="#colors" class="nav-link">Palette</a>
+                                <a href="#colors" class="nav-link">Colors</a>
                             </li>
                             <li>
                                 <a href="#typography" class="nav-link"
@@ -91,14 +91,16 @@ const imageURL = new URL(
                                 >
                             </li>
                             <li>
-                                <a href="#spacing" class="nav-link">Layout</a>
+                                <a href="#spacing" class="nav-link">Spacing</a>
                             </li>
                             <li>
-                                <a href="#components" class="nav-link">Atoms</a>
+                                <a href="#components" class="nav-link"
+                                    >Building Blocks</a
+                                >
                             </li>
                             <li>
                                 <a href="#cursor" class="nav-link"
-                                    >Micro-Interactions</a
+                                    >Little Details</a
                                 >
                             </li>
                         </ul>
@@ -163,7 +165,7 @@ const imageURL = new URL(
 
                     <!-- 01. COLOR PALETTE -->
                     <section id="colors" class="cs-section">
-                        <h4 class="section-label">Palette</h4>
+                        <h4 class="section-label">Colors</h4>
                         <h2>Colors & Contrast</h2>
                         <p>
                             Warm cream as the canvas, soft charcoal for reading,
@@ -437,8 +439,7 @@ const imageURL = new URL(
                         <div class="ds-playground-card">
                             <div class="ds-playground-header">
                                 <div class="ds-playground-badge">
-                                    <span class="live-dot"></span>
-                                    <span>Interactive Playground</span>
+                                    <span>Interactive Area</span>
                                 </div>
                                 <span class="ds-playground-hint"
                                     >Type below & switch font tabs</span
@@ -565,8 +566,8 @@ const imageURL = new URL(
 
                     <!-- 03. SPACING & RADII -->
                     <section id="spacing" class="cs-section">
-                        <h4 class="section-label">Layout</h4>
-                        <h2>Spacing Rhythm</h2>
+                        <h4 class="section-label">Spacing</h4>
+                        <h2>Spacing & Rhythm</h2>
                         <p>
                             Everything snaps to a 4px/8px scale, so spacing
                             stays consistent from phone to desktop.
@@ -671,7 +672,7 @@ const imageURL = new URL(
 
                     <!-- 04. COMPONENTS -->
                     <section id="components" class="cs-section">
-                        <h4 class="section-label">Atoms</h4>
+                        <h4 class="section-label">Building Blocks</h4>
                         <h2>Core Components</h2>
                         <p>The small building blocks I reuse on every page.</p>
 
@@ -701,10 +702,20 @@ const imageURL = new URL(
                                     class="ds-component-stage"
                                     style="flex-direction: column; align-items: flex-start; gap: 12px;"
                                 >
-                                    <span class="link-sample-dotted">
+                                    <span
+                                        class="link-sample-dotted"
+                                        role="link"
+                                        tabindex="0"
+                                        data-cursor-hand
+                                    >
                                         Case study reference
                                     </span>
-                                    <span class="link-sample-external">
+                                    <span
+                                        class="link-sample-external"
+                                        role="link"
+                                        tabindex="0"
+                                        data-cursor-hand
+                                    >
                                         Open live prototype
                                         <svg
                                             class="external-arrow"
@@ -760,20 +771,19 @@ const imageURL = new URL(
 
                     <!-- 05. CURSOR & MICRO-INTERACTIONS -->
                     <section id="cursor" class="cs-section">
-                        <h4 class="section-label">Micro-Interactions</h4>
-                        <h2>The Cursor & Tactile Details</h2>
+                        <h4 class="section-label">Little Details</h4>
+                        <h2>The Cursor & Interaction Details</h2>
                         <p>
-                            Tiny details make a site feel alive. My custom
-                            cursor changes shape depending on what you're about
-                            to click.
+                            These are the tiny details designed to make the site
+                            feel alive. My custom cursor changes shape depending
+                            on what you're about to click.
                         </p>
 
                         <!-- Interactive Cursor Playground (Solid Borders) -->
                         <div class="ds-playground-card">
                             <div class="ds-playground-header">
                                 <div class="ds-playground-badge">
-                                    <span class="live-dot"></span>
-                                    <span>Interactive Playground</span>
+                                    <span>Interactive Area</span>
                                 </div>
                                 <span class="ds-playground-hint"
                                     >Hover each card to see the cursor morph</span
