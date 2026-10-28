@@ -104,6 +104,11 @@ const imageURL = new URL(
                                     >Little Details</a
                                 >
                             </li>
+                            <li>
+                                <a href="#personal-touches" class="nav-link"
+                                    >Personal Touches</a
+                                >
+                            </li>
                         </ul>
                     </nav>
                 </aside>
@@ -131,12 +136,6 @@ const imageURL = new URL(
 
                         <!-- Implementation Copy & Compliance -->
                         <div class="ds-implementation">
-                            <h4
-                                class="section-label"
-                                style="font-size: 0.875rem;"
-                            >
-                                Implementation
-                            </h4>
                             <p class="ds-implementation-text">
                                 Built from scratch with Astro and CSS, with
                                 accessible contrast baked in:
@@ -945,6 +944,265 @@ const imageURL = new URL(
                             </div>
                         </div>
                     </section>
+
+                    <div class="section-divider"></div>
+
+                    <!-- 06 / PERSONAL TOUCHES SECTION -->
+                    <section id="personal-touches" class="cs-section">
+                        <h4 class="section-label">Personal Touches</h4>
+                        <h2>Fun Details</h2>
+                        <p class="cs-section-intro">
+                            This design system gives the site structure, but my
+                            personal touches give it warmth and personality. To
+                            keep mine playful and feeling like me, I added silly
+                            text, personal favorites, and fun facts (especially
+                            on the About page).
+                        </p>
+
+                        <!-- Interactive Personal Touches Playground -->
+                        <div class="ds-playground-card">
+                            <div class="ds-playground-header">
+                                <div class="ds-playground-badge">
+                                    <span>Interactive Area</span>
+                                </div>
+                                <span class="ds-playground-hint"
+                                    >Hover and click each card to explore</span
+                                >
+                            </div>
+                            <div class="ds-playground-body">
+                                <div class="ds-personal-playground">
+                                    <!-- Target 1: Interactive Turntable -->
+                                    <div
+                                        class="ds-personal-target"
+                                        id="dsTurntableTrigger"
+                                        role="button"
+                                        tabindex="0"
+                                        data-cursor-pill="Click to Spin ♫"
+                                        aria-label="Interactive turntable (click to spin & play audio)"
+                                    >
+                                        <div class="ds-personal-stage">
+                                            <div class="ds-vinyl-showcase">
+                                                <div class="ds-mini-turntable">
+                                                    <div
+                                                        class="ds-mini-tonearm"
+                                                    >
+                                                        <div
+                                                            class="ds-mini-tonearm-base"
+                                                        >
+                                                        </div>
+                                                        <div
+                                                            class="ds-mini-tonearm-stick"
+                                                        >
+                                                            <div
+                                                                class="ds-mini-needle"
+                                                            >
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ds-mini-disc">
+                                                        <div
+                                                            class="ds-mini-vinyl-body"
+                                                        >
+                                                        </div>
+                                                        <div
+                                                            class="ds-mini-grooves"
+                                                        >
+                                                        </div>
+                                                        <div
+                                                            class="ds-mini-glare"
+                                                        >
+                                                        </div>
+                                                        <div
+                                                            class="ds-mini-label"
+                                                        >
+                                                            <img
+                                                                src="/images/petals_in_pavement.webp"
+                                                                alt="Daisy artwork sticker"
+                                                                class="ds-mini-flower"
+                                                                loading="lazy"
+                                                            />
+                                                            <div
+                                                                class="ds-mini-hole"
+                                                            >
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="ds-mini-track">
+                                                    <div
+                                                        class="ds-mini-track-row"
+                                                    >
+                                                        <span
+                                                            class="ds-mini-artist"
+                                                            >Ariana Grande</span
+                                                        >
+                                                        <div
+                                                            class="ds-mini-bars"
+                                                            aria-label="Audio equalizer"
+                                                        >
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                            <span></span>
+                                                        </div>
+                                                    </div>
+                                                    <span class="ds-mini-song"
+                                                        >big feelings</span
+                                                    >
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ds-personal-meta">
+                                            <span class="ds-cursor-label"
+                                                >Interactive Vinyl</span
+                                            >
+                                            <span class="ds-cursor-sub"
+                                                >Click to spin & play the track</span
+                                            >
+                                        </div>
+                                    </div>
+
+                                    <!-- Target 2: Cat & Handwritten Notes -->
+                                    <div
+                                        class="ds-personal-target"
+                                        data-cursor-pill="King the cat 🐾"
+                                        tabindex="0"
+                                        role="region"
+                                        aria-label="Handwritten note annotation preview"
+                                    >
+                                        <div class="ds-personal-stage">
+                                            <div class="ds-cat-showcase">
+                                                <div class="ds-cat-photo-frame">
+                                                    <img
+                                                        src="/images/king.webp"
+                                                        alt="King the cat looking directly at the camera"
+                                                        class="ds-cat-img"
+                                                        loading="lazy"
+                                                    />
+                                                </div>
+                                                <div
+                                                    class="ds-cat-note-group"
+                                                    aria-hidden="true"
+                                                >
+                                                    <svg
+                                                        class="ds-cat-arrow-svg"
+                                                        width="48"
+                                                        height="18"
+                                                        viewBox="0 0 48 18"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <path
+                                                            d="M9 3L2 9L9 15"
+                                                            stroke="#A13900"
+                                                            stroke-width="2.5"
+                                                            stroke-linecap="round"
+                                                            stroke-linejoin="round"
+                                                        ></path>
+                                                        <path
+                                                            d="M2.5 9C18 7 32 11.5 46 9"
+                                                            stroke="#A13900"
+                                                            stroke-width="2.5"
+                                                            stroke-linecap="round"
+                                                        ></path>
+                                                    </svg>
+                                                    <span
+                                                        class="ds-cat-note-label"
+                                                        >cute cat</span
+                                                    >
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ds-personal-meta">
+                                            <span class="ds-cursor-label"
+                                                >Handwritten Notes</span
+                                            >
+                                            <span class="ds-cursor-sub"
+                                                >Fun drawn arrow and handwriting
+                                                font</span
+                                            >
+                                        </div>
+                                    </div>
+
+                                    <!-- Target 3: Washi-Tape Lined Notepad Flip Card -->
+                                    <div
+                                        class="ds-personal-target"
+                                        id="dsFlipTrigger"
+                                        role="button"
+                                        tabindex="0"
+                                        data-cursor-pill="Click to Flip ↺"
+                                        aria-label="Interactive polaroid flip card (click to flip)"
+                                    >
+                                        <div class="ds-personal-stage">
+                                            <div
+                                                class="ds-mini-flip-card"
+                                                id="dsMiniFlipCard"
+                                            >
+                                                <div class="ds-mini-flip-inner">
+                                                    <!-- Front: Photo -->
+                                                    <div
+                                                        class="ds-mini-flip-front"
+                                                    >
+                                                        <img
+                                                            src="/images/about/me_w_ny_food.webp"
+                                                            alt="Tvisha with desserts in NYC"
+                                                            loading="lazy"
+                                                        />
+                                                        <span
+                                                            class="ds-mini-flip-hint"
+                                                            >tap to flip ↺</span
+                                                        >
+                                                    </div>
+                                                    <!-- Back: Lined Notepad with Washi Tape -->
+                                                    <div
+                                                        class="ds-mini-flip-back"
+                                                    >
+                                                        <div
+                                                            class="ds-mini-washi-tape"
+                                                            aria-hidden="true"
+                                                        >
+                                                        </div>
+                                                        <span
+                                                            class="ds-mini-note-title"
+                                                            >Dessert hunting</span
+                                                        >
+                                                        <p
+                                                            class="ds-mini-note-text"
+                                                        >
+                                                            I love finding the
+                                                            best pastries in the
+                                                            city
+                                                        </p>
+                                                        <span
+                                                            class="ds-mini-note-tag"
+                                                            >📍 Manhattan, NY</span
+                                                        >
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="ds-personal-meta">
+                                            <span class="ds-cursor-label"
+                                                >Notepad Flip Card</span
+                                            >
+                                            <span class="ds-cursor-sub"
+                                                >Click to flip to a note pad
+                                                with washi tape</span
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Hidden container for YouTube audio player -->
+                        <div
+                            id="ds-player-container"
+                            aria-hidden="true"
+                            style="position: fixed; top: -9999px; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none;"
+                        >
+                        </div>
+                    </section>
                 </div>
 
                 <!-- ======== RIGHT SPACER (EXACT 1:1 MATCH TO CASE STUDY) ======== -->
@@ -1036,25 +1294,28 @@ const imageURL = new URL(
                 updateActiveLink();
 
                 // Copy email functionality
-                document.querySelectorAll(".copy-email, [data-copy]").forEach((btn) => {
-                    btn.addEventListener("click", async () => {
-                        const email =
-                            btn.getAttribute("data-copy") ||
-                            "tvishapatel0@gmail.com";
-                        try {
-                            await navigator.clipboard.writeText(email);
-                        } catch (err) {
-                            const textarea = document.createElement("textarea");
-                            textarea.value = email;
-                            textarea.style.position = "fixed";
-                            textarea.style.opacity = "0";
-                            document.body.appendChild(textarea);
-                            textarea.select();
-                            document.execCommand("copy");
-                            document.body.removeChild(textarea);
-                        }
+                document
+                    .querySelectorAll(".copy-email, [data-copy]")
+                    .forEach((btn) => {
+                        btn.addEventListener("click", async () => {
+                            const email =
+                                btn.getAttribute("data-copy") ||
+                                "tvishapatel0@gmail.com";
+                            try {
+                                await navigator.clipboard.writeText(email);
+                            } catch (err) {
+                                const textarea =
+                                    document.createElement("textarea");
+                                textarea.value = email;
+                                textarea.style.position = "fixed";
+                                textarea.style.opacity = "0";
+                                document.body.appendChild(textarea);
+                                textarea.select();
+                                document.execCommand("copy");
+                                document.body.removeChild(textarea);
+                            }
+                        });
                     });
-                });
             });
 
             // Live Type Tester Script
@@ -1094,6 +1355,183 @@ const imageURL = new URL(
                     }
                 });
             });
+
+            // Mini Turntable Interactive Audio & Preview
+            const turntableTrigger =
+                document.getElementById("dsTurntableTrigger");
+            let dsPlayer: any = null;
+            let isAudioPlaying = false;
+            let isPlayerReady = false;
+            let pendingPlay = false;
+
+            function loadYouTubeSDK() {
+                if ((window as any).YT && (window as any).YT.Player) {
+                    initTurntableAudio();
+                    return;
+                }
+
+                const prevReady = (window as any).onYouTubeIframeAPIReady;
+                (window as any).onYouTubeIframeAPIReady = () => {
+                    if (typeof prevReady === "function") prevReady();
+                    initTurntableAudio();
+                };
+
+                if (
+                    !document.querySelector(
+                        'script[src*="youtube.com/iframe_api"]',
+                    )
+                ) {
+                    const tag = document.createElement("script");
+                    tag.src = "https://www.youtube.com/iframe_api";
+                    const firstScriptTag =
+                        document.getElementsByTagName("script")[0];
+                    if (firstScriptTag && firstScriptTag.parentNode) {
+                        firstScriptTag.parentNode.insertBefore(
+                            tag,
+                            firstScriptTag,
+                        );
+                    } else {
+                        document.head.appendChild(tag);
+                    }
+                }
+            }
+
+            function initTurntableAudio() {
+                if (!document.getElementById("ds-player-container")) return;
+                try {
+                    dsPlayer = new (window as any).YT.Player(
+                        "ds-player-container",
+                        {
+                            height: "0",
+                            width: "0",
+                            videoId: "FXultmvqvyA",
+                            playerVars: {
+                                playsinline: 1,
+                                controls: 0,
+                                disablekb: 1,
+                                enablejsapi: 1,
+                            },
+                            events: {
+                                onReady: () => {
+                                    isPlayerReady = true;
+                                    if (pendingPlay) {
+                                        pendingPlay = false;
+                                        if (
+                                            dsPlayer &&
+                                            typeof dsPlayer.playVideo ===
+                                                "function"
+                                        ) {
+                                            dsPlayer.playVideo();
+                                        }
+                                    }
+                                },
+                                onStateChange: (event: any) => {
+                                    if (event.data === 0) {
+                                        // Track ended natively
+                                        setTurntablePlayback(false);
+                                    }
+                                },
+                                onError: (e: any) => {
+                                    console.warn("Turntable audio note:", e);
+                                },
+                            },
+                        },
+                    );
+                } catch (err) {
+                    console.warn("Could not init YouTube player", err);
+                }
+            }
+
+            function setTurntablePlayback(play: boolean) {
+                isAudioPlaying = play;
+                if (!turntableTrigger) return;
+
+                if (isAudioPlaying) {
+                    turntableTrigger.classList.add("is-playing");
+                    turntableTrigger.setAttribute(
+                        "data-cursor-pill",
+                        "Pause ⏸",
+                    );
+                    if (
+                        isPlayerReady &&
+                        dsPlayer &&
+                        typeof dsPlayer.playVideo === "function"
+                    ) {
+                        dsPlayer.playVideo();
+                    } else {
+                        pendingPlay = true;
+                        loadYouTubeSDK();
+                    }
+                } else {
+                    turntableTrigger.classList.remove("is-playing");
+                    turntableTrigger.setAttribute(
+                        "data-cursor-pill",
+                        "Click to Spin ♫",
+                    );
+                    pendingPlay = false;
+                    if (
+                        isPlayerReady &&
+                        dsPlayer &&
+                        typeof dsPlayer.pauseVideo === "function"
+                    ) {
+                        dsPlayer.pauseVideo();
+                    }
+                }
+
+                const activeCursorText = document.querySelector(
+                    ".custom-cursor-pill-text",
+                );
+                if (activeCursorText && turntableTrigger.matches(":hover")) {
+                    activeCursorText.textContent = isAudioPlaying
+                        ? "Pause ⏸"
+                        : "Click to Spin ♫";
+                }
+            }
+
+            if (turntableTrigger) {
+                loadYouTubeSDK();
+
+                turntableTrigger.addEventListener("click", () => {
+                    setTurntablePlayback(!isAudioPlaying);
+                });
+
+                turntableTrigger.addEventListener(
+                    "keydown",
+                    (e: KeyboardEvent) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                            e.preventDefault();
+                            setTurntablePlayback(!isAudioPlaying);
+                        }
+                    },
+                );
+            }
+
+            // Mini Polaroid Flip Card Interaction
+            const flipTrigger = document.getElementById("dsFlipTrigger");
+            const flipCard = document.getElementById("dsMiniFlipCard");
+            if (flipTrigger && flipCard) {
+                const toggleCardFlip = () => {
+                    const isFlipped = flipCard.classList.toggle("is-flipped");
+                    const pillText = isFlipped
+                        ? "Flip Back ↺"
+                        : "Click to Flip ↺";
+                    flipTrigger.setAttribute("data-cursor-pill", pillText);
+                    const activeCursorText = document.querySelector(
+                        ".custom-cursor-pill-text",
+                    );
+                    if (activeCursorText && flipTrigger.matches(":hover")) {
+                        activeCursorText.textContent = pillText;
+                    }
+                };
+
+                flipTrigger.addEventListener("click", toggleCardFlip);
+                flipTrigger.addEventListener("keydown", (e: KeyboardEvent) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        toggleCardFlip();
+                    }
+                });
+            }
         </script>
     </body>
 </html>

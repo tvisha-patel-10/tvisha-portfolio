@@ -37,6 +37,26 @@
     padding: 0;
 }
 
+::-moz-selection {
+    background-color: #a13900 !important;
+    color: #fefdfb !important;
+}
+
+::selection {
+    background-color: #a13900 !important;
+    color: #fefdfb !important;
+}
+
+*::-moz-selection {
+    background-color: #a13900 !important;
+    color: #fefdfb !important;
+}
+
+*::selection {
+    background-color: #a13900 !important;
+    color: #fefdfb !important;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -867,6 +887,482 @@ h4 {
     font-size: 0.75rem;
     color: rgba(59, 54, 54, 0.7);
     line-height: 1.35;
+}
+
+/* ------------------------------------------------
+   06 / PERSONAL TOUCHES PLAYGROUND
+   ------------------------------------------------ */
+.ds-personal-playground {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 0.875rem;
+}
+
+.ds-personal-target {
+    border: 1px solid rgba(59, 54, 54, 0.14);
+    border-radius: var(--radius-card);
+    padding: 1.25rem 0.85rem 1rem;
+    min-height: 230px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    background: transparent;
+    transition: all var(--transition);
+    cursor: pointer;
+}
+
+.ds-personal-target:hover {
+    border-color: var(--cs-accent);
+    background: rgba(161, 57, 0, 0.03);
+}
+
+.ds-personal-stage {
+    min-height: 140px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ds-personal-meta {
+    margin-top: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.ds-vinyl-showcase {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.ds-mini-turntable {
+    position: relative;
+    width: 86px;
+    height: 86px;
+    flex-shrink: 0;
+}
+
+.ds-mini-tonearm {
+    position: absolute;
+    z-index: 10;
+    top: -6%;
+    right: -10%;
+    width: 60%;
+    height: 15%;
+    pointer-events: none;
+    transform-origin: top right;
+    transform: rotate(8deg);
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.is-playing .ds-mini-tonearm,
+.ds-turntable-preview-stage.is-playing .ds-mini-tonearm {
+    transform: rotate(-22deg);
+}
+
+.ds-mini-tonearm-base {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #d4d4d8;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+    transform: translate(50%, -50%);
+    border: 2px solid #18181b;
+}
+
+.ds-mini-tonearm-stick {
+    position: absolute;
+    top: 0;
+    right: 4px;
+    width: 88%;
+    height: 3px;
+    background-color: #e4e4e7;
+    border-radius: 9999px;
+    transform-origin: right;
+    transform: rotate(-10deg);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.ds-mini-needle {
+    width: 6px;
+    height: 6px;
+    background-color: #3f3f46;
+    border-radius: 1px;
+    transform: translateX(-50%) rotate(10deg);
+}
+
+.ds-mini-disc {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+    overflow: hidden;
+    animation: spin 5s linear infinite;
+    animation-play-state: paused;
+}
+
+.is-playing .ds-mini-disc,
+.ds-turntable-preview-stage.is-playing .ds-mini-disc {
+    animation-play-state: running;
+}
+
+.ds-mini-vinyl-body {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+            rgba(232, 232, 241, 0.85) 0%,
+            rgba(175, 175, 182, 0.7) 60%,
+            rgba(135, 135, 143, 0.6) 100%);
+    border: 2px solid rgba(0, 0, 0, 0.08);
+}
+
+.ds-mini-grooves {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+            transparent 25%,
+            rgba(255, 255, 255, 0.18) 26%,
+            transparent 27%,
+            transparent 40%,
+            rgba(0, 0, 0, 0.08) 41%,
+            transparent 42%,
+            transparent 55%,
+            rgba(255, 255, 255, 0.14) 56%,
+            transparent 57%,
+            transparent 70%,
+            rgba(0, 0, 0, 0.09) 71%,
+            transparent 72%,
+            transparent 85%,
+            rgba(255, 255, 255, 0.1) 86%,
+            transparent 87%);
+}
+
+.ds-mini-glare {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.4) 0%,
+            transparent 45%,
+            transparent 55%,
+            rgba(255, 255, 255, 0.15) 100%);
+}
+
+.ds-mini-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 32%;
+    height: 32%;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ds-mini-flower {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(120%);
+}
+
+.ds-mini-hole {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background-color: #1e1e21;
+    border-radius: 50%;
+}
+
+.ds-mini-track {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.ds-mini-track-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ds-mini-artist {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #71717a;
+    letter-spacing: -0.01em;
+}
+
+.ds-mini-song {
+    font-size: 0.8125rem;
+    color: var(--cs-text);
+    letter-spacing: 0.02em;
+}
+
+.ds-mini-bars {
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 12px;
+}
+
+.ds-mini-bars span {
+    display: block;
+    width: 2.5px;
+    height: 3px;
+    background-color: var(--cs-accent);
+    border-radius: 1px;
+    opacity: 0.4;
+    transition: height 0.2s ease, opacity 0.2s ease;
+}
+
+.is-playing .ds-mini-bars span,
+.ds-turntable-preview-stage.is-playing .ds-mini-bars span {
+    opacity: 1;
+    animation: dsSoundBar 1s ease-in-out infinite alternate;
+}
+
+.is-playing .ds-mini-bars span:nth-child(1),
+.ds-turntable-preview-stage.is-playing .ds-mini-bars span:nth-child(1) {
+    animation-delay: 0.1s;
+    height: 11px;
+}
+
+.is-playing .ds-mini-bars span:nth-child(2),
+.ds-turntable-preview-stage.is-playing .ds-mini-bars span:nth-child(2) {
+    animation-delay: 0.35s;
+    height: 5px;
+}
+
+.is-playing .ds-mini-bars span:nth-child(3),
+.ds-turntable-preview-stage.is-playing .ds-mini-bars span:nth-child(3) {
+    animation-delay: 0.2s;
+    height: 12px;
+}
+
+.is-playing .ds-mini-bars span:nth-child(4),
+.ds-turntable-preview-stage.is-playing .ds-mini-bars span:nth-child(4) {
+    animation-delay: 0.45s;
+    height: 7px;
+}
+
+@keyframes dsSoundBar {
+    0% {
+        height: 3px;
+    }
+
+    100% {
+        height: 12px;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Cat Note Showcase */
+.ds-cat-showcase {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    position: relative;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.ds-cat-photo-frame {
+    width: 68px;
+    height: 68px;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(59, 54, 54, 0.15);
+    flex-shrink: 0;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.ds-personal-target:active .ds-cat-photo-frame {
+    transform: scale(0.94) rotate(-3deg);
+}
+
+.ds-cat-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.ds-cat-note-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ds-cat-arrow-svg {
+    width: 44px;
+    height: 18px;
+    display: block;
+    flex-shrink: 0;
+}
+
+.ds-cat-note-label {
+    font-family: var(--cs-font-hand);
+    font-size: 1.15rem;
+    color: var(--cs-accent);
+    letter-spacing: -0.04em;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+/* Washi-Tape Lined Notepad Flip Card Showcase */
+.ds-mini-flip-card {
+    width: 155px;
+    height: 135px;
+    position: relative;
+    outline: none;
+}
+
+.ds-mini-flip-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-card);
+    transform-style: preserve-3d;
+    transition: transform 0.65s cubic-bezier(0.34, 1.4, 0.64, 1), box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.ds-personal-target:hover .ds-mini-flip-inner,
+.ds-mini-flip-card:hover .ds-mini-flip-inner {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.ds-mini-flip-card.is-flipped .ds-mini-flip-inner {
+    transform: rotateY(180deg);
+}
+
+.ds-mini-flip-front,
+.ds-mini-flip-back {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-card);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    overflow: hidden;
+}
+
+.ds-mini-flip-front {
+    transform: rotateY(0deg);
+    position: relative;
+    background: #e8e6e1;
+}
+
+.ds-mini-flip-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.ds-mini-flip-hint {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    padding: 2px 7px;
+    background: rgba(38, 34, 34, 0.75);
+    color: #fefdfb;
+    font-size: 0.65rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    letter-spacing: 0.02em;
+    backdrop-filter: blur(4px);
+}
+
+/* Lined Notepad Back */
+.ds-mini-flip-back {
+    background: #fbf9f4;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    transform: rotateY(180deg);
+    padding: 0.85rem 0.75rem 0.65rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    background-image:
+        radial-gradient(circle at 100% 100%, rgba(161, 57, 0, 0.03) 0%, transparent 60%),
+        repeating-linear-gradient(0deg,
+            transparent,
+            transparent 21px,
+            rgba(0, 0, 0, 0.04) 22px);
+}
+
+.ds-mini-washi-tape {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-1.5deg);
+    width: 48px;
+    height: 14px;
+    background: rgba(230, 220, 205, 0.75);
+    border-left: 2px dashed rgba(180, 165, 145, 0.45);
+    border-right: 2px dashed rgba(180, 165, 145, 0.45);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    pointer-events: none;
+}
+
+.ds-mini-note-title {
+    font-family: var(--cs-font-hand);
+    font-size: 0.95rem;
+    color: var(--cs-accent);
+    line-height: 1.2;
+    margin-top: 4px;
+}
+
+.ds-mini-note-text {
+    font-family: var(--cs-font);
+    font-size: 0.6875rem !important;
+    line-height: 1.35;
+    color: var(--cs-text);
+    margin: 4px 0 0;
+    opacity: 0.9;
+}
+
+.ds-mini-note-tag {
+    font-family: var(--cs-font);
+    font-size: 0.625rem;
+    font-weight: 600;
+    color: #8c827a;
+    letter-spacing: 0.02em;
+    margin-top: 4px;
 }
 
 /* ================================================

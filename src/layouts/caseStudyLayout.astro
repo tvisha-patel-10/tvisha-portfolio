@@ -145,6 +145,26 @@ import SiteFooter from "../components/SiteFooter.astro";
                 padding: 0;
             }
 
+            ::-moz-selection {
+                background-color: #a13900 !important;
+                color: #fefdfb !important;
+            }
+
+            ::selection {
+                background-color: #a13900 !important;
+                color: #fefdfb !important;
+            }
+
+            *::-moz-selection {
+                background-color: #a13900 !important;
+                color: #fefdfb !important;
+            }
+
+            *::selection {
+                background-color: #a13900 !important;
+                color: #fefdfb !important;
+            }
+
             html {
                 scroll-behavior: smooth;
             }
