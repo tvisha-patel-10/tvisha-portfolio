@@ -120,6 +120,12 @@ import SiteFooter from "../components/SiteFooter.astro";
         <meta name="twitter:description" content={metaDescription} />
         <meta name="twitter:image" content={imageURL} />
 
+        {
+            passwordProtected && (
+                <meta name="robots" content="noindex, nofollow" />
+            )
+        }
+
         <style is:global>
             /* --- Google Fonts (matches rest of site) --- */
             @import url("https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Geom:ital,wght@0,300..900;1,300..900&display=swap");
@@ -499,9 +505,9 @@ import SiteFooter from "../components/SiteFooter.astro";
             }
 
             .cs-section a.external-link {
-                display: inline-inline;
-                align-items: baseline;
-                gap: 0.3em;
+                display: inline-flex;
+                align-items: center;
+                gap: 0.25em;
                 text-decoration: underline;
                 text-decoration-style: dotted;
                 text-decoration-color: #a13900;
@@ -511,16 +517,15 @@ import SiteFooter from "../components/SiteFooter.astro";
 
             .cs-section a .external-arrow {
                 display: inline-block;
-                width: 0.85em;
-                height: 0.85em;
-                margin-left: 0.3em;
-                vertical-align: -0.05em;
+                width: 0.8em;
+                height: 0.8em;
                 stroke: currentColor;
                 stroke-width: 2.2;
                 fill: none;
                 stroke-linecap: round;
                 stroke-linejoin: round;
                 transition: transform 0.2s ease;
+                flex-shrink: 0;
             }
 
             .cs-section a:hover .external-arrow {
@@ -1530,7 +1535,6 @@ import SiteFooter from "../components/SiteFooter.astro";
                 opacity: 0.7;
             }
 
-
             /* ================================================
                PASSWORD PROTECTION GATE STYLING
                ================================================ */
@@ -1884,14 +1888,14 @@ import SiteFooter from "../components/SiteFooter.astro";
                                         />
                                     </form>
                                     <p class="cs-lock-help">
-                                        Don't have the password?{" "}
+                                        Need the password? Use the link or check the note I shared with you, or feel free to{" "}
                                         <a
                                             href="mailto:tvishapatel0@gmail.com?subject=Password%20Access%20Request:%20Strawberry.me%20AI"
                                             data-umami-event="Password Request Click"
                                             data-umami-event-location="lock-screen"
                                         >
-                                            Email me for access
-                                        </a>
+                                            email me for access
+                                        </a>.
                                     </p>
                                 </div>
 
@@ -2015,7 +2019,15 @@ import SiteFooter from "../components/SiteFooter.astro";
 
         <!-- ======== SCROLLSPY JS ======== -->
         <script>
+            import {
+                initGlobalAccessKey,
+                getAccessKey,
+                saveAccessKey,
+            } from "../scripts/accessKey.js";
+
             document.addEventListener("DOMContentLoaded", () => {
+                initGlobalAccessKey();
+
                 const navLinks = Array.from(
                     document.querySelectorAll(".cs-nav .nav-link"),
                 );
@@ -2137,26 +2149,29 @@ import SiteFooter from "../components/SiteFooter.astro";
                 });
 
                 // Copy email functionality
-                document.querySelectorAll(".copy-email, [data-copy]").forEach((btn) => {
-                    btn.addEventListener("click", async () => {
-                        const email =
-                            btn.getAttribute("data-copy") ||
-                            btn.getAttribute("data-email") ||
-                            "tvishapatel0@gmail.com";
-                        try {
-                            await navigator.clipboard.writeText(email);
-                        } catch (err) {
-                            const textarea = document.createElement("textarea");
-                            textarea.value = email;
-                            textarea.style.position = "fixed";
-                            textarea.style.opacity = "0";
-                            document.body.appendChild(textarea);
-                            textarea.select();
-                            document.execCommand("copy");
-                            document.body.removeChild(textarea);
-                        }
+                document
+                    .querySelectorAll(".copy-email, [data-copy]")
+                    .forEach((btn) => {
+                        btn.addEventListener("click", async () => {
+                            const email =
+                                btn.getAttribute("data-copy") ||
+                                btn.getAttribute("data-email") ||
+                                "tvishapatel0@gmail.com";
+                            try {
+                                await navigator.clipboard.writeText(email);
+                            } catch (err) {
+                                const textarea =
+                                    document.createElement("textarea");
+                                textarea.value = email;
+                                textarea.style.position = "fixed";
+                                textarea.style.opacity = "0";
+                                document.body.appendChild(textarea);
+                                textarea.select();
+                                document.execCommand("copy");
+                                document.body.removeChild(textarea);
+                            }
+                        });
                     });
-                });
 
                 // Expandable comparison canvases
                 document.querySelectorAll(".expand-btn").forEach((btn) => {
@@ -2216,9 +2231,29 @@ import SiteFooter from "../components/SiteFooter.astro";
                         : null;
 
                     async function handleUnlock(
-                        password: string,
+                        inputKeyOrPass: string,
                         shouldScrollToTop: boolean = false,
+                        isFromManualForm: boolean = false,
                     ) {
+                        const cleaned = inputKeyOrPass.toLowerCase().trim();
+
+                        // If user is typing in the manual lock form, only allow 'peek-a-boo' / 'peekaboo'
+                        if (isFromManualForm && cleaned === "access") {
+                            return false;
+                        }
+
+                        // URL key or valid password both map to the decryption key 'peek-a-boo'
+                        const isAuthorized =
+                            cleaned === "access" ||
+                            cleaned === "peekaboo" ||
+                            cleaned === "peek-a-boo";
+
+                        if (!isAuthorized) {
+                            return false;
+                        }
+
+                        const encryptionKey = "peek-a-boo";
+
                         // 1. Production Mode: Encrypted Payload exists
                         if (payloadRaw && protectedSlot) {
                             try {
@@ -2227,7 +2262,7 @@ import SiteFooter from "../components/SiteFooter.astro";
                                 const passwordKey =
                                     await window.crypto.subtle.importKey(
                                         "raw",
-                                        enc.encode(password),
+                                        enc.encode(encryptionKey),
                                         "PBKDF2",
                                         false,
                                         ["deriveKey"],
@@ -2308,6 +2343,7 @@ import SiteFooter from "../components/SiteFooter.astro";
                                     "cs_unlocked_session",
                                     password,
                                 );
+                                saveAccessKey(password);
 
                                 if (shouldScrollToTop) {
                                     window.scrollTo({
@@ -2336,7 +2372,7 @@ import SiteFooter from "../components/SiteFooter.astro";
 
                         // 2. Dev Mode Fallback: Content is hidden via cs-protected-locked class
                         if (protectedBody) {
-                            if (password.toLowerCase() === "peek-a-boo") {
+                            if (isAuthorized) {
                                 protectedBody.classList.remove(
                                     "cs-protected-locked",
                                 );
@@ -2351,6 +2387,7 @@ import SiteFooter from "../components/SiteFooter.astro";
                                     "cs_unlocked_session",
                                     password,
                                 );
+                                saveAccessKey(password);
 
                                 if (shouldScrollToTop) {
                                     window.scrollTo({
@@ -2379,12 +2416,10 @@ import SiteFooter from "../components/SiteFooter.astro";
                         return false;
                     }
 
-                    // Check if already unlocked in this browser session
-                    const savedPassword = sessionStorage.getItem(
-                        "cs_unlocked_session",
-                    );
-                    if (savedPassword) {
-                        handleUnlock(savedPassword, false);
+                    // Check if already unlocked in this browser or via URL parameter
+                    const candidateKey = getAccessKey();
+                    if (candidateKey) {
+                        handleUnlock(candidateKey, false);
                     }
 
                     if (lockForm && passwordInput) {
@@ -2397,7 +2432,10 @@ import SiteFooter from "../components/SiteFooter.astro";
                             if (unlockBtn)
                                 unlockBtn.textContent = "Unlocking...";
 
-                            const success = await handleUnlock(pass, true);
+                            const success = await handleUnlock(pass, true, true);
+                            if (success) {
+                                saveAccessKey("access");
+                            }
                             if (unlockBtn) unlockBtn.textContent = "Unlock →";
 
                             if (!success) {

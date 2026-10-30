@@ -74,6 +74,15 @@ passwordProtected: true
     </div>
   </div>
 
+  <p>
+    <a
+      href="https://www.figma.com/make/Mu4VVa1zfIwMj7YDtZQNyv/Prototype-message-draft-flow?fullscreen=1&t=gda4FhTBfRQrYa5a-1"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="external-link"
+    >Open Prototype in Figma full screen<svg class="external-arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 1.5h7v7M10.5 1.5L2 10" /></svg></a>
+  </p>
+
   <div class="section-divider"></div>
 </section>
 

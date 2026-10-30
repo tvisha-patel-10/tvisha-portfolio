@@ -67,6 +67,22 @@ sections:
     </div>
   </div>
 
+  <div class="figma-container">
+    <iframe
+      src="https://embed.figma.com/proto/hhSFPe32C9clDjoklSpRjx/Internship-designs-reflection?node-id=205-32637&viewport=-4937%2C3627%2C0.32&scaling=scale-down&content-scaling=fixed&starting-point-node-id=205%3A32674&page-id=1%3A2&embed-host=share"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+  <p>
+    <a
+      href="https://www.figma.com/proto/hhSFPe32C9clDjoklSpRjx/Internship-designs-reflection?node-id=205-32637&viewport=-4937%2C3627%2C0.32&scaling=scale-down&content-scaling=fixed&starting-point-node-id=205%3A32674&page-id=1%3A2"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="external-link"
+    >Open Prototype in Figma full screen<svg class="external-arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 1.5h7v7M10.5 1.5L2 10" /></svg></a>
+  </p>
+
   <div class="section-divider"></div>
 </section>
 
@@ -423,14 +439,14 @@ sections:
 
   <div class="figma-container">
     <iframe
-      src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2FhhSFPe32C9clDjoklSpRjx%2FInternship-designs%252Freflection%3Fpage-id%3D1%253A2%26type%3Ddesign%26node-id%3D205-32637%26viewport%3D-1496%252C963%252C0.09%26t%3D2xQui5CbJoRByFAP-1%26scaling%3Dscale-down%26starting-point-node-id%3D205%253A32674%26mode%3Ddesign"
+      src="https://embed.figma.com/proto/hhSFPe32C9clDjoklSpRjx/Internship-designs-reflection?node-id=205-32637&viewport=-4937%2C3627%2C0.32&scaling=scale-down&content-scaling=fixed&starting-point-node-id=205%3A32674&page-id=1%3A2&embed-host=share"
       allowfullscreen
     ></iframe>
   </div>
 
   <p>
     <a
-      href="https://www.figma.com/proto/hhSFPe32C9clDjoklSpRjx/Internship-designs/reflection?page-id=1%3A2&type=design&node-id=205-32637&viewport=-1496%2C963%2C0.09&t=2xQui5CbJoRByFAP-1&scaling=scale-down&starting-point-node-id=205%3A32674&mode=design"
+      href="https://www.figma.com/proto/hhSFPe32C9clDjoklSpRjx/Internship-designs-reflection?node-id=205-32637&viewport=-4937%2C3627%2C0.32&scaling=scale-down&content-scaling=fixed&starting-point-node-id=205%3A32674&page-id=1%3A2"
       target="_blank"
       rel="noopener noreferrer"
       class="external-link"

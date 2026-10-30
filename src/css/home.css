@@ -54,6 +54,23 @@
     text-underline-offset: 0.18em;
     display: inline-flex;
     align-items: center;
+    white-space: nowrap;
+}
+
+.hero-role a .icon {
+    width: 0.9em;
+    height: 0.9em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 0.05em;
+    flex-shrink: 0;
+}
+
+.hero-role a .icon img {
+    width: 100%;
+    height: 100%;
+    display: block;
 }
 
 .hero-role a:hover {
@@ -237,6 +254,11 @@
 
     .hero-role {
         font-size: var(--text-body);
+    }
+
+    .hero-role a .icon {
+        width: 0.8em;
+        height: 0.8em;
     }
 
     .work-list {

@@ -65,6 +65,22 @@ sections:
     </div>
   </div>
 
+  <div class="figma-container">
+    <iframe
+      src="https://www.figma.com/embed?embed_host=notion&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fwo1jbicqeWG7i1J0XElc76%2FTvisha---EchoKids-Redesign-(Copy)%3Fnode-id%3D277%253A87%26scaling%3Dscale-down%26page-id%3D0%253A1%26starting-point-node-id%3D7%253A2%26hide-ui%3D1"
+      allowfullscreen
+    ></iframe>
+  </div>
+
+  <p>
+    <a
+      href="https://www.figma.com/proto/wo1jbicqeWG7i1J0XElc76/Tvisha---EchoKids-Redesign-(Copy)?node-id=277%3A87&scaling=scale-down&page-id=0%3A1&starting-point-node-id=7%3A2"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="external-link"
+    >Open Prototype in Figma full screen<svg class="external-arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 1.5h7v7M10.5 1.5L2 10" /></svg></a>
+  </p>
+
   <div class="section-divider"></div>
 </section>
 

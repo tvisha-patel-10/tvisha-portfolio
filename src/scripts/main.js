@@ -1,3 +1,8 @@
+import { initGlobalAccessKey } from "./accessKey.js";
+
+// Initialize global access key tracking and URL link syncing
+initGlobalAccessKey();
+
 const header = document.querySelector(".site-header");
 const navToggle = document.querySelector(".nav-toggle");
 
