@@ -78,7 +78,7 @@ sections:
       target="_blank"
       rel="noopener noreferrer"
       class="external-link"
-    >Open Prototype in Figma full screen<svg class="external-arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 1.5h7v7M10.5 1.5L2 10" /></svg></a>
+    >Open prototype in Figma<svg class="external-arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 1.5h7v7M10.5 1.5L2 10" /></svg></a>
   </p>
 
   <div class="section-divider"></div>
@@ -510,7 +510,7 @@ sections:
       target="_blank"
       rel="noopener noreferrer"
       class="external-link"
-    >Open Prototype in Figma full screen<svg class="external-arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 1.5h7v7M10.5 1.5L2 10" /></svg></a>
+    >Open prototype in Figma<svg class="external-arrow" viewBox="0 0 12 12" aria-hidden="true"><path d="M3.5 1.5h7v7M10.5 1.5L2 10" /></svg></a>
   </p>
 
   <div class="section-divider"></div>

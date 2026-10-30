@@ -95,8 +95,9 @@
 
 .card-title-row {
     display: flex;
-    align-items: end;
-    gap: var(--space-12);
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: var(--space-4) var(--space-12);
 }
 
 .code-link {
